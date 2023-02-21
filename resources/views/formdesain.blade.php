@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-10">
                         <label class="label" for="disabledTextInput">ID Penawaran</label>
-                        <input id="idPenawaran" class="form-control" placeholder="ID Penawaran" disabled>
+                        <input id="idPenawaran" class="form-control" placeholder="ID Penawaran" >
                     </div>
                 </div>
                 <div class="row">
