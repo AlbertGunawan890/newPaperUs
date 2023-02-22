@@ -69,11 +69,8 @@
                     <label>Role</label>
                     <select id="rolePegawai" class="form-control">
                             <option>Pilih Role</option>
-                            <option>Super Admin</option>
                             <option>Admin</option>
-                            <option>Accounting</option>
-                            <option>Supervisor</option>
-                            <option>Kurir</option>
+                            <option>Staff</option>
                         </select>
                 </div>
             </div>

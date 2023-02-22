@@ -32,15 +32,18 @@
 <body>
     <div class="wrapper">
         <img src="asset/logo.png" alt="">
-        <h1>Login</h1>
+        <h1>Sign Up</h1>
         <form action="#">
             <input type="text" placeholder="Username">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email Address">
             <input type="password" placeholder="Password">
+            <input type="password" placeholder="Confirm Password">
         </form>
         <button>Sign Up</button>
         <div class="member">
-            Belum punya akun?
-            <a href="{{ url('register') }}">Register</a>
+            Punya akun?
+            <a href="{{ url('login') }}">Login</a>
         </div>
     </div>
 </body>

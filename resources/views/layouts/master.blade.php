@@ -19,11 +19,17 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/login.css">
 
-     <!-- Latest compiled and minified CSS -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
-</head>
+    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script defer src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <script defer src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
+    <script defer src="js/script.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css">
+    </head>
 
 <body id="page-top">
 
@@ -54,7 +60,7 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-sitemap"></i>
+                    <i class="fas fa-sitemap"></i>  
                     <span>Master</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -98,12 +104,6 @@
                     <span>History Barang Selesai</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('/') }}">
-                    <i class="fas fa-arrow-right"></i>
-                    <span>Logout</span>
-                </a>
-            </li>
         </ul>
         <!-- End of Sidebar -->
 
@@ -127,7 +127,7 @@
                 <div class="container-fluid">
 
                     @yield('content')
-
+                    
                 </div>
                 <!-- End of Content Wrapper -->
 
@@ -135,7 +135,7 @@
             <!-- End of Page Wrapper -->
 
             <!-- Bootstrap core JavaScript-->
-            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/jquery/jquery.min.js"></script> 
             <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
             <!-- Core plugin JavaScript-->
