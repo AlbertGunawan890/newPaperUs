@@ -44,7 +44,7 @@
                 <div class="sidebar-brand-icon">
                     <img src="asset/logo.png" height="30px" width="60px">
                 </div>
-                <div class="sidebar-brand-text mx-3">Paperus</div>
+                <div class="sidebar-brand-text mx-2">Paperus ID</div>
             </a>
 
             <!-- Divider -->
@@ -54,7 +54,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>Home</span></a>
             </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -67,11 +67,11 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Master:</h6>
                         <a class="collapse-item" href="{{ url('masterpegawai') }}">Master Pegawai</a>
-                        <a class="collapse-item" href="{{ url('mastersubcon') }}">Master Subcon</a>
-                        <a class="collapse-item" href="{{ url('mastercustomer') }}">Master Customers</a>
+                        <a class="collapse-item" href="{{ url('mastercustomer') }}">Master Customer</a>
                         <a class="collapse-item" href="{{ url('mastersupplier') }}">Master Supplier</a>
-                        <a class="collapse-item" href="{{ url('masterpenawaran') }}">Master Penawaran</a>
-                        <a class="collapse-item" href="{{ url('masterstok') }}">Master Stok</a>
+                        <a class="collapse-item" href="{{ url('masterbox') }}">Master Box</a>
+                        <a class="collapse-item" href="{{ url('mastervendor') }}">Master Vendor</a>
+                        <a class="collapse-item" href="{{ url('permissionrole') }}">Permission Role</a>
                     </div>
                 </div>
             </li>
@@ -80,19 +80,49 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fab fa-wpforms"></i>
-                    <span>Form</span>
+                    <span>Item</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Form:</h6>
-                        <a class="collapse-item" href="{{ url('formdesain') }}">Form Desain</a>
-                        <a class="collapse-item" href="{{ url('formpo') }}">Form PO</a>
-                        <a class="collapse-item" href="{{ url('formpengiriman') }}">Form Pengiriman Barang</a>
-                        <a class="collapse-item" href="{{ url('formprocess') }}">Form Processing</a>
+                        <a class="collapse-item" href="{{ url('stokbarang') }}">Stok Barang</a>
+                        <a class="collapse-item" href="{{ url('pembelianbarang') }}">Pembelian Barang</a>
+                        <a class="collapse-item" href="{{ url('arusbarang') }}">Masuk/Keluar Barang</a>
+                        <a class="collapse-item" href="{{ url('formprocess') }}">Stok Barang Jadi</a>
                     </div>
                 </div>
             </li>
             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseprocess" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fab fa-wpforms"></i>
+                    <span>Processing</span>
+                </a>
+                <div id="collapseprocess" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Form:</h6>
+                        <a class="collapse-item" href="{{ url('formdesain') }}">Form Penawaran</a>
+                        <a class="collapse-item" href="{{ url('formpo') }}">Form DP/Pembayaran</a>
+                        <a class="collapse-item" href="{{ url('formpengiriman') }}">Form Desain dan Gunting</a>
+                        <a class="collapse-item" href="{{ url('formprocess') }}">Pengiriman Barang</a>
+                        <a class="collapse-item" href="{{ url('formprocess') }}">Penagihan/Invoicing</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapselaporan" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fab fa-wpforms"></i>
+                    <span>Laporan</span>
+                </a>
+                <div id="collapselaporan" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Form:</h6>
+                        <a class="collapse-item" href="{{ url('formdesain') }}">Laporan Login</a>
+                        <a class="collapse-item" href="{{ url('formpo') }}">Laporan Transaksi</a>
+                        <a class="collapse-item" href="{{ url('formpengiriman') }}">Laporan Keuangan</a>
+                    </div>
+                </div>
+            </li>
+            <!--<li class="nav-item">
                 <a class="nav-link" href="{{ url('kartustok') }}">
                     <i class="fas fa-layer-group"></i>
                     <span>Kartu Stok</span>
@@ -103,7 +133,7 @@
                     <i class="fas fa-history"></i>
                     <span>History Barang Selesai</span>
                 </a>
-            </li>
+            </li>-->
         </ul>
         <!-- End of Sidebar -->
 

@@ -1,86 +1,114 @@
 @extends('layouts.master')
 @section('content')
-<!-- Begin Page Content -->
-<div class="container-fluid">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
 
-    <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Master Pegawai</h1>
-    </div>
-
-    <div class="container" style="float: left;">
-        <div class="form-group">
-            <div class="row">
-                <div class="col-2">
-                    <label for="disabledTextInput">Kode Pegawai</label>
-                    <input id="idPegawai" class="form-control" placeholder="Kode" disabled>
-                </div>
-                <div class="col">
-                    <label>Nama Pegawai</label>
-                    <input id="namaPegawai" type="text" class="form-control" placeholder="Masukkan Nama Lengkap">
-                </div>
-                <div class="col-3">
-                    <label>NPWP</label>
-                    <input id="npwpPegawai" type="number" class="form-control" placeholder="Masukkan NPWP">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <label>Provinsi</label>
-                    <input id="provinsiPegawai" type="text" class="form-control" placeholder="Masukkan Provinsi">
-                </div>
-                <div class="col">
-                    <label>Kota</label>
-                    <input id="kotaPegawai" type="text" class="form-control" placeholder="Masukkan Kota">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-5">
-                    <label>Kecamatan</label>
-                    <input id="kecamatanPegawai" type="text" class="form-control" placeholder="Masukkan Kecamatan">
-                </div>
-                <div class="col-5">
-                    <label>Kelurahan</label>
-                    <input id="kelurahanPegawai" type="text" class="form-control" placeholder="Masukkan Kelurahan">
-                </div>
-                <div class="col-2">
-                    <label>Kode Pos</label>
-                    <input id="kosposPegawai" type="text" class="form-control" placeholder="Masukkan Kode Pos">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <label>Alamat</label>
-                    <input id="alamatPegawai" type="text" class="form-control" placeholder="Masukkan Alamat Lengkap">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <label>No Telp.</label>
-                    <input id="telpPegawai" type="number" class="form-control" placeholder="Masukkan No Telp.">
-                </div>
-                <div class="col">
-                    <label>Email</label>
-                    <input id="emailPegawai" type="email" class="form-control" placeholder="Masukkan Alamat Email">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <label>Role</label>
-                    <select id="rolePegawai" class="form-control">
-                            <option>Pilih Role</option>
-                            <option>Admin</option>
-                            <option>Staff</option>
-                        </select>
-                </div>
-            </div>
-
-            <button type="submit" class="btn btn-primary my-3">Submit</button>
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Master Pegawai</h1>
         </div>
-        <!-- /.container-fluid -->
+
+        <div class="card">
+            <div class="card-header">
+                <button type="button" class="btn btn-primary my-auto" data-toggle="modal" data-target="#exampleModalCenter">
+                    Tambah Data
+                  </button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">Form Pegawai</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                   
+                                <label class="label" for="disabledTextInput">ID Pegawai</label>
+                                <input id="disabledTextInput" class="form-control" placeholder="ID Pegawai" disabled>
+
+                                <label class="label">Nama Pegawai</label>
+                                <input class="form-control" placeholder="Masukkan Nama">
+
+                                <label class="label">NPWP</label>
+                                <input class="form-control" placeholder="Masukkan NPWP">
+
+                                <label class="label">Alamat</label>
+                                <input class="form-control" placeholder="Masukkan Alamat">
+
+                                <label class="label">Provinsi</label>
+                                <input class="form-control" placeholder="Masukkan Provinsi">
+
+                                <label class="label">Kota</label>
+                                <input class="form-control" placeholder="Masukkan Kota">
+
+                                <label class="label">Kecamatan</label>
+                                <input class="form-control" placeholder="Masukkan Kecamatan">
+
+                                <label class="label">Kelurahan</label>
+                                <input class="form-control" placeholder="Masukkan Kelurahan">
+
+                                <label class="label">Kode Pos</label>
+                                <input class="form-control" placeholder="Kode Pos">
+
+                                <label class="label">No. Telp</label>
+                                <input type="number" class="form-control" placeholder="Masukkan No. Telp">
+
+                                <label class="label">Fax</label>
+                                <input type="number" class="form-control" placeholder="Masukkan No. Fax">
+
+                                <label class="label">Email</label>
+                                <input type="email" class="form-control" placeholder="Masukkan Email">
+
+                                <label class="label">Kontak Personal</label>
+                                <input type="text" class="form-control" placeholder="Masukkan Kontak Personal">
+
+                                <label class="label">Password</label>
+                                <input type="password" class="form-control" placeholder="Masukkan Password">
+                            
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="card-body">
+            <table id="tabelMasterPegawai" class="table table-bordered table-no-wrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>ID Pegawai</th>
+                        <th>Nama</th>
+                        <th>Alamat</th>
+                        <th>No. Telp</th>
+                        <th>Email</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12321312</td>
+                        <td>Hendra Setiawan</td>
+                        <td>Jl. Semampir Barat Gg. VIII No.11</td>
+                        <td>08123456678</td>
+                        <td>example@example.com</td>
+                        <td>
+                            <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                            <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        </div>
 
     </div>
-    <!-- End of Main Content -->
-</div>
-<!-- End of Content Wrapper -->
-@endsection
+    <!-- /.container-fluid -->
+    @endsection

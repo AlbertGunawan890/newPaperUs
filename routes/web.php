@@ -50,8 +50,21 @@ Route::get('/formpo', function () {
 Route::get('/formdesain', function () {
     return view('formdesain');
 });
-
+Route::get('/masterbox', function () {
+    return view('masterbox');
+});
 Route::get('/history', function () {
     return view('history');
 });
-
+Route::get('/mastervendor', function () {
+    return view('mastervendor');
+});
+Route::get('/stokbarang', function () {
+    return view('stokbarang');
+});
+Route::get('/pembelianbarang', function () {
+    return view('pembelianbarang');
+});
+Route::get('/arusbarang', function () {
+    return view('arusbarang');
+});
