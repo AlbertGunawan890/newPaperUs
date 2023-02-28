@@ -85,6 +85,100 @@ $(document).ready(function() {
         ]
     });
 });
+$(document).ready(function() {
+    $('#tabelSuratJalan').DataTable({
+        "columnDefs": [
+            { "targets": -1, "className": 'dt-center' },
+            { "width": "5%", "targets": 0 },
+            { "width": "20%", "targets": 1 },
+            { "width": "20%", "targets": 2 },
+            { "width": "30%", "targets": 3 },
+            { "width": "10%", "targets": 4 }
+        ]
+    });
+});
+$(document).ready(function() {
+    $('#tabelFormDesain').DataTable({
+        "columnDefs": [
+            { "targets": -1, "className": 'dt-center' },
+            { "width": "10%", "targets": 0 },
+            { "width": "20%", "targets": 1 },
+            { "width": "20%", "targets": 2 },
+            { "width": "15%", "targets": 3 }
+        ]
+    });
+});
+$(document).ready(function() {
+    $('#tabelFormDP').DataTable({
+        "columnDefs": [
+            { "targets": -1, "className": 'dt-center' },
+            { "width": "10%", "targets": 0 },
+            { "width": "20%", "targets": 1 },
+            { "width": "20%", "targets": 2 },
+            { "width": "20%", "targets": 3 },
+            { "width": "10%", "targets": 4 }
+        ]
+    });
+});
+$(document).ready(function() {
+    $('#tabelPenagihan').DataTable({
+        "columnDefs": [
+            { "targets": -1, "className": 'dt-center' },
+            { "width": "10%", "targets": 0 },
+            { "width": "10%", "targets": 1 },
+            { "width": "15%", "targets": 2 },
+            { "width": "20%", "targets": 3 },
+            { "width": "10%", "targets": 4 },
+            { "width": "10%", "targets": 5 },
+            { "width": "10%", "targets": 6 }
+        ]
+    });
+});
+$(document).ready(function() {
+    $('#tabelFormPenawaran').DataTable({
+        "columnDefs": [
+            { "targets": -1, "className": 'dt-center' },
+            { "width": "10%", "targets": 0 },
+            { "width": "10%", "targets": 1 },
+            { "width": "15%", "targets": 2 },
+            { "width": "10%", "targets": 3 },
+            { "width": "10%", "targets": 4 },
+            { "width": "10%", "targets": 5 },
+            { "width": "5%", "targets": 6 },
+            { "width": "10%", "targets": 7 },
+            { "width": "10%", "targets": 8 }
+        ]
+    });
+});
+$(document).ready(function() {
+    $('#tabelProses').DataTable({
+        "columnDefs": [
+            { "targets": -1, "className": 'dt-center' },
+            { "width": "2%", "targets": 0 },
+            { "width": "10%", "targets": 1 },
+            { "width": "5%", "targets": 2 },
+            { "width": "10%", "targets": 3 },
+            { "width": "10%", "targets": 4 },
+            { "width": "10%", "targets": 5 },
+            { "width": "5%", "targets": 6 },
+            { "width": "10%", "targets": 7 }
+        ]
+    });
+});
+$(document).ready(function() {
+    $('#tabelStokBarangJadi').DataTable({
+        "columnDefs": [
+            { "targets": -1, "className": 'dt-center' },
+            { "width": "10%", "targets": 0 },
+            { "width": "10%", "targets": 1 },
+            { "width": "15%", "targets": 2 },
+            { "width": "20%", "targets": 3 },
+            { "width": "10%", "targets": 4 },
+            { "width": "10%", "targets": 5 },
+            { "width": "10%", "targets": 6 }
+        ]
+    });
+});
 $('#myModal').on('shown.bs.modal', function() {
     $('#myInput').trigger('focus')
 })

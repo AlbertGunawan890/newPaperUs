@@ -33,7 +33,7 @@
                                 <label class="label">Link Desain</label>
                                 <input class="form-control" placeholder="Masukkan Link Desain">
                             
-                                <label for="exampleFormControlTextarea1" class="label">lk</label>
+                                <label for="exampleFormControlTextarea1" class="label">Keterangan</label>
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                             
                             </div>
@@ -70,6 +70,8 @@
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
                                 <label class="form-check-label" for="inlineRadio2">Accept</label>
                               </div>
+                              <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                              <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                         </td>
                     </tr>
                     <tr>
@@ -85,6 +87,8 @@
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="option2">
                                 <label class="form-check-label" for="inlineRadio2">Accept</label>
                               </div>
+                              <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                              <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                         </td>
                     </tr>
                 </tbody>

@@ -68,3 +68,18 @@ Route::get('/pembelianbarang', function () {
 Route::get('/arusbarang', function () {
     return view('arusbarang');
 });
+Route::get('/suratjalan', function () {
+    return view('suratjalan');
+});
+Route::get('/penagihan', function () {
+    return view('penagihan');
+});
+Route::get('/stokbarangjadi', function () {
+    return view('stokbarangjadi');
+});
+Route::get('/formdp', function () {
+    return view('formdp');
+});
+Route::get('/suratperintahkerja', function () {
+    return view('suratperintahkerja');
+});

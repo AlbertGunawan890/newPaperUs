@@ -88,7 +88,7 @@
                         <a class="collapse-item" href="{{ url('stokbarang') }}">Stok Barang</a>
                         <a class="collapse-item" href="{{ url('pembelianbarang') }}">Pembelian Barang</a>
                         <a class="collapse-item" href="{{ url('arusbarang') }}">Masuk/Keluar Barang</a>
-                        <a class="collapse-item" href="{{ url('formprocess') }}">Stok Barang Jadi</a>
+                        <a class="collapse-item" href="{{ url('stokbarangjadi') }}">Stok Barang Jadi</a>
                     </div>
                 </div>
             </li>
@@ -100,11 +100,11 @@
                 <div id="collapseprocess" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Form:</h6>
-                        <a class="collapse-item" href="{{ url('formdesain') }}">Form Penawaran</a>
-                        <a class="collapse-item" href="{{ url('formpo') }}">Form DP/Pembayaran</a>
-                        <a class="collapse-item" href="{{ url('formpengiriman') }}">Form Desain dan Gunting</a>
-                        <a class="collapse-item" href="{{ url('formprocess') }}">Pengiriman Barang</a>
-                        <a class="collapse-item" href="{{ url('formprocess') }}">Penagihan/Invoicing</a>
+                        <a class="collapse-item" href="{{ url('masterpenawaran') }}">Form Penawaran</a>
+                        <a class="collapse-item" href="{{ url('formdp') }}">Form DP/Pembayaran</a>
+                        <a class="collapse-item" href="{{ url('formdesain') }}">Form Desain dan Gunting</a>
+                        <a class="collapse-item" href="{{ url('suratjalan') }}">Pengiriman Barang</a>
+                        <a class="collapse-item" href="{{ url('penagihan') }}">Penagihan/Invoicing</a>
                     </div>
                 </div>
             </li>

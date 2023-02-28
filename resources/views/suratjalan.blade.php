@@ -5,7 +5,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Penawaran</h1>
+            <h1 class="h3 mb-0 text-gray-800">Surat Jalan</h1>
         </div>
 
         <div class="card">
@@ -19,7 +19,7 @@
                     <div class="modal-dialog modal-dialog-centered" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLongTitle">Form Penawaran</h5>
+                          <h5 class="modal-title" id="exampleModalLongTitle">Form Surat Jalan</h5>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>
@@ -27,29 +27,21 @@
                         <div class="modal-body">
                             <div class="form-group">
                                    
-                                <label class="label" for="disabledTextInput">No. Penawaran</label>
+                                <label class="label" for="disabledTextInput">No. SPK</label>
                                 <input id="disabledTextInput" class="form-control" placeholder="No. SPK" disabled>
 
-                                <label class="label">Customer</label>
-                                <input class="form-control" placeholder="Pilih Customer">
+                                <label class="label">No. Surat Jalan</label>
+                                <input class="form-control" placeholder="Masukkan No. Surat Jalan">
                             
-                                <label for="exampleFormControlTextarea1" class="label">Jenis Box</label>
-                                <input class="form-control" placeholder="Jenis Box">
+                                <label for="exampleFormControlTextarea1" class="label">No. Kendaraan</label>
+                                <input class="form-control" placeholder="Masukkan No. Kendaraan">
 
-                                <label for="exampleFormControlTextarea1" class="label">Quantity</label>
-                                <input type="number" class="form-control" placeholder="Masukkan Quantity">
+                                <label for="exampleFormControlTextarea1" class="label">Nama Pengirim</label>
+                                <input class="form-control" placeholder="Masukkan No. Kendaraan">
 
-                                <label for="exampleFormControlTextarea1" class="label">Jumlah Produksi</label>
-                                <input type="number" class="form-control" placeholder="Masukkan Jumlah">
-
-                                <label for="exampleFormControlTextarea1" class="label">Harga</label>
-                                <input type="number" class="form-control" placeholder="Masukkan Harga">
-
-                                <label for="exampleFormControlTextarea1" class="label">Diskon</label>
-                                <input class="form-control" placeholder="Masukkan Diskon">
-
-                                <label for="exampleFormControlTextarea1" class="label">Nett</label>
-                                <input class="form-control">
+                                <label for="exampleFormControlTextarea1" class="label">Tanggal</label>
+                                <input type="date" class="form-control" placeholder="Pilih Tanggal">
+                            
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -61,44 +53,32 @@
                   </div>
             </div>
             <div class="card-body">
-            <table id="tabelFormPenawaran" class="table table-bordered table-no-wrap" style="width:100%">
+            <table id="tabelSuratJalan" class="table table-bordered table-no-wrap" style="width:100%">
                 <thead>
                     <tr>
-                        <th>No. Penawaran</th>
-                        <th>Nama Customer</th>
-                        <th>Jenis Box</th>
-                        <th>Quantity</th>
-                        <th>Jumlah Produksi</th>
-                        <th>Harga</th>
-                        <th>Diskon</th>
-                        <th>Nett</th>
+                        <th>No.</th>
+                        <th>No. SPK</th>
+                        <th>No. Surat Jalan</th>
+                        <th>Surat Jalan</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>123456</td>
-                        <td>Bambang bambang</td>
-                        <td>10x10cm</td>
-                        <td>10000</td>
-                        <td>3000</td>
-                        <td>Rp10.000</td>
-                        <td>5%</td>
-                        <td>Rp95.000</td>
+                        <td>1</td>
+                        <td>12321312</td>
+                        <td>242324</td>
+                        <td>https://datatables.net/examples/styling/bootstrap5.html</td>
                         <td>
                             <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                             <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                         </td>
                     </tr>
                     <tr>
-                        <td>123456</td>
-                        <td>Andi Wijaya</td>
-                        <td>20x10cm</td>
-                        <td>3000</td>
-                        <td>1000</td>
-                        <td>Rp5.000</td>
-                        <td>20%</td>
-                        <td>Rp4.000</td>
+                        <td>2</td>
+                        <td>12321312</td>
+                        <td>242324</td>
+                        <td>https://datatables.net/examples/styling/bootstrap5.html</td>
                         <td>
                             <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                             <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
