@@ -72,6 +72,7 @@
                         <th>Harga</th>
                         <th>Diskon</th>
                         <th>Nett</th>
+                        <th>Penerimaan</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -86,6 +87,10 @@
                         <td>5%</td>
                         <td>Rp95.000</td>
                         <td>
+                            <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
+                            <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                        </td>
+                        <td>
                             <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                             <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                         </td>
@@ -99,6 +104,10 @@
                         <td>Rp5.000</td>
                         <td>20%</td>
                         <td>Rp4.000</td>
+                        <td>
+                            <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
+                            <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                        </td>
                         <td>
                             <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                             <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>

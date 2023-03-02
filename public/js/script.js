@@ -138,6 +138,7 @@ $(document).ready(function() {
     $('#tabelFormPenawaran').DataTable({
         "columnDefs": [
             { "targets": -1, "className": 'dt-center' },
+            { "targets": -2, "className": 'dt-center' },
             { "width": "10%", "targets": 0 },
             { "width": "10%", "targets": 1 },
             { "width": "15%", "targets": 2 },
