@@ -136,18 +136,21 @@ $(document).ready(function() {
 });
 $(document).ready(function() {
     $('#tabelFormPenawaran').DataTable({
+        responsive: true,
         "columnDefs": [
             { "targets": -1, "className": 'dt-center' },
             { "targets": -2, "className": 'dt-center' },
             { "width": "10%", "targets": 0 },
             { "width": "10%", "targets": 1 },
-            { "width": "15%", "targets": 2 },
+            { "width": "10%", "targets": 2 },
             { "width": "10%", "targets": 3 },
             { "width": "10%", "targets": 4 },
             { "width": "10%", "targets": 5 },
             { "width": "5%", "targets": 6 },
-            { "width": "10%", "targets": 7 },
-            { "width": "10%", "targets": 8 }
+            { "width": "5%", "targets": 7 },
+            { "width": "10%", "targets": 8 },
+            { "width": "10%", "targets": 9 }
+
         ]
     });
 });
@@ -163,6 +166,19 @@ $(document).ready(function() {
             { "width": "10%", "targets": 5 },
             { "width": "5%", "targets": 6 },
             { "width": "10%", "targets": 7 }
+        ]
+    });
+});
+$(document).ready(function() {
+    $('#tabelMasterVendor').DataTable({
+        "columnDefs": [
+            { "targets": -1, "className": 'dt-center' },
+            { "width": "10%", "targets": 0 },
+            { "width": "20%", "targets": 1 },
+            { "width": "20%", "targets": 2 },
+            { "width": "20%", "targets": 3 },
+            { "width": "20%", "targets": 4 },
+            { "width": "20%", "targets": 5 }
         ]
     });
 });

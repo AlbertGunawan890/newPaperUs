@@ -47,13 +47,13 @@
                   </div>
             </div>
             <div class="card-body">
-            <table id="tabelFormDesain" class="table table-bordered table-no-wrap" style="width:100%">
+            <table id="tabelFormDesain" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
                 <thead>
                     <tr>
                         <th>ID Penawaran</th>
                         <th>Link Desain</th>
                         <th>Keterangan</th>
-                        <th>Aksi</th>
+                        <th style="min-width: 250px">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>

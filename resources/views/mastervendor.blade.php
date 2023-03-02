@@ -88,7 +88,7 @@
                   </div>
             </div>
             <div class="card-body">
-                <table id="tabelMasterCustomer" class="table table-bordered table-no-wrap" style="width:100%">
+                <table id="tabelMasterVendor" class="table table-bordered table-no-wrap" style="width:100%">
                     <thead>
                         <tr>
                             <th>ID Vendor</th>
@@ -111,7 +111,17 @@
                                 <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>
-                        
+                        <tr>
+                          <td>12321312</td>
+                          <td>ABCDEFGH</td>
+                          <td>Accessories</td>
+                          <td>example</td>
+                          <td>example@example.com</td>
+                          <td>
+                              <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                              <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                          </td>
+                      </tr>
                     </tbody>
                 </table>
         </div>

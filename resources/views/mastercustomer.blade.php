@@ -85,7 +85,7 @@
                   </div>
             </div>
             <div class="card-body">
-                <table id="tabelMasterCustomer" class="table table-bordered table-no-wrap" style="width:100%">
+                <table id="tabelMasterCustomer" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
                     <thead>
                         <tr>
                             <th>ID Customer</th>
