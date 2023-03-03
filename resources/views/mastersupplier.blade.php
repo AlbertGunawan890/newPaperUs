@@ -13,7 +13,7 @@
                 <button type="button" class="btn btn-primary my-auto" data-toggle="modal" data-target="#exampleModalCenter">
                     Tambah Data
                   </button>
-                  
+
                   <!-- Modal -->
                   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -26,46 +26,48 @@
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                   
+
                                 <label class="label" for="disabledTextInput">ID Supplier</label>
-                                <input id="disabledTextInput" class="form-control" placeholder="ID Supplier" disabled>
+                                <input name="id" id="disabledTextInput" class="form-control" placeholder="ID Supplier" disabled>
 
                                 <label class="label">Nama Pegawai</label>
-                                <input class="form-control" placeholder="Masukkan Nama">
+                                <input name="nama" class="form-control" placeholder="Masukkan Nama">
 
                                 <label class="label">NPWP</label>
-                                <input class="form-control" placeholder="Masukkan NPWP">
+                                <input name="npwp" class="form-control" placeholder="Masukkan NPWP">
 
                                 <label class="label">Alamat</label>
-                                <input class="form-control" placeholder="Masukkan Alamat">
+                                <input name="alamat" class="form-control" placeholder="Masukkan Alamat">
 
                                 <label class="label">Provinsi</label>
-                                <input class="form-control" placeholder="Masukkan Provinsi">
+                                <input name="provinsi" class="form-control" placeholder="Masukkan Provinsi">
 
                                 <label class="label">Kota</label>
-                                <input class="form-control" placeholder="Masukkan Kota">
+                                <input name="kota" class="form-control" placeholder="Masukkan Kota">
 
                                 <label class="label">Kecamatan</label>
-                                <input class="form-control" placeholder="Masukkan Kecamatan">
+                                <input name="kecamatan" class="form-control" placeholder="Masukkan Kecamatan">
 
                                 <label class="label">Kelurahan</label>
-                                <input class="form-control" placeholder="Masukkan Kelurahan">
+                                <input name="kelurahan" class="form-control" placeholder="Masukkan Kelurahan">
 
                                 <label class="label">Kode Pos</label>
-                                <input class="form-control" placeholder="Kode Pos">
+                                <input name="kodepos" class="form-control" placeholder="Kode Pos">
 
                                 <label class="label">No. Telp</label>
-                                <input type="number" class="form-control" placeholder="Masukkan No. Telp">
+                                <input name="notelp" type="number" class="form-control" placeholder="Masukkan No. Telp">
 
                                 <label class="label">Email</label>
-                                <input type="email" class="form-control" placeholder="Masukkan Email">
+                                <input name="email" type="email" class="form-control" placeholder="Masukkan Email">
 
                                 <label class="label">Item</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Item">
+                                <input name="item" type="text" class="form-control" placeholder="Masukkan Item">
+
                                 <label class="label">Nama Bank</label>
-                                <input type="text" class="form-control" placeholder="Pilih Nama Bank">
+                                <input name="nama_bank" type="text" class="form-control" placeholder="Pilih Nama Bank">
+
                                 <label class="label">No. Rekening</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Nomor Rekening">
+                                <input name="no_rekening" type="text" class="form-control" placeholder="Masukkan Nomor Rekening">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -100,7 +102,7 @@
                             <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                         </td>
                     </tr>
-                    
+
                 </tbody>
             </table>
         </div>

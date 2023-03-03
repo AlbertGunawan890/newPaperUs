@@ -13,7 +13,7 @@
                 <button type="button" class="btn btn-primary my-auto" data-toggle="modal" data-target="#exampleModalCenter">
                     Tambah Data
                   </button>
-                  
+
                   <!-- Modal -->
                   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -26,57 +26,57 @@
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                   
+
                                 <label class="label" for="disabledTextInput">ID Vendor</label>
-                                <input id="disabledTextInput" class="form-control" placeholder="ID Customer" disabled>
+                                <input name="id" id="disabledTextInput" class="form-control" placeholder="ID Customer" disabled>
 
                                 <label class="label">Nama Vendor</label>
-                                <input class="form-control" placeholder="Masukkan Nama Vendor">
+                                <input name="nama" class="form-control" placeholder="Masukkan Nama Vendor">
 
                                 <label class="label">Jenis Item</label>
-                                <input class="form-control" placeholder="Masukkan Jenis Item">
+                                <input name="jenis_item" class="form-control" placeholder="Masukkan Jenis Item">
 
                                 <label class="label">Kategori</label>
-                                <input class="form-control" placeholder="Masukkan Kategori">
+                                <input name="kategori" class="form-control" placeholder="Masukkan Kategori">
 
                                 <label class="label">Alamat</label>
-                                <input class="form-control" placeholder="Masukkan Provinsi">
+                                <input name="alamat" class="form-control" placeholder="Masukkan Provinsi">
 
                                 <label class="label">Kota</label>
-                                <input class="form-control" placeholder="Masukkan Kota">
+                                <input name="kota" class="form-control" placeholder="Masukkan Kota">
 
                                 <label class="label">Kecamatan</label>
-                                <input class="form-control" placeholder="Masukkan Kecamatan">
+                                <input name="kecamatan" class="form-control" placeholder="Masukkan Kecamatan">
 
                                 <label class="label">Kelurahan</label>
-                                <input class="form-control" placeholder="Masukkan Kelurahan">
+                                <input name="kelurahan" class="form-control" placeholder="Masukkan Kelurahan">
 
                                 <label class="label">Email</label>
-                                <input type="email" class="form-control" placeholder="Masukkan Email">
+                                <input name="email" type="email" class="form-control" placeholder="Masukkan Email">
 
                                 <label class="label">Nama Bank</label>
-                                <input class="form-control" placeholder="Masukkan Nama Bank">
+                                <input name="nama_bank" class="form-control" placeholder="Masukkan Nama Bank">
 
                                 <label class="label">No. Akun</label>
-                                <input class="form-control" placeholder="Masukkan No. Akun">
+                                <input name="no_akun" class="form-control" placeholder="Masukkan No. Akun">
 
                                 <label class="label">No. Rekening</label>
-                                <input class="form-control" placeholder="Masukkan No. Rek">
+                                <input name="no_rekening" class="form-control" placeholder="Masukkan No. Rek">
 
                                 <label class="label">Batasan Hutang</label>
-                                <input type="number" class="form-control">
+                                <input name="batasan_hutang" type="number" class="form-control">
 
                                 <label class="label">Hutang Sekarang</label>
-                                <input type="number" class="form-control">
+                                <input name="hutang_sekarang" type="number" class="form-control">
 
                                 <label class="label">Hutang Tersedia</label>
-                                <input type="number" class="form-control">
+                                <input name="hutang_tersedia" type="number" class="form-control">
 
                                 <label class="label">Sisa Hutang</label>
-                                <input type="number" class="form-control">
+                                <input name="sisa_hutang" type="number" class="form-control">
 
                                 <label class="label">Metode Pembayaran</label>
-                                <input type="number" class="form-control">                            
+                                <input name="metode_pembayaran" type="number" class="form-control">
                             </div>
                         </div>
                         <div class="modal-footer">

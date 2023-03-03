@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/login', [LoginController::class, "login"]);
+
 Route::get('/', function () {
     return view('login');
 });
+
 Route::get('/dashboard', function () {
     return view('layouts.master');
 });

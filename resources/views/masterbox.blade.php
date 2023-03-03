@@ -13,7 +13,7 @@
                 <button type="button" class="btn btn-primary my-auto" data-toggle="modal" data-target="#exampleModalCenter">
                     Tambah Data
                   </button>
-                  
+
                   <!-- Modal -->
                   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -26,24 +26,24 @@
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                   
+
                                 <label class="label" for="disabledTextInput">Tipe Box</label>
-                                <input id="disabledTextInput" class="form-control" placeholder="Masukkan Tipe Box">
+                                <input name="id" id="disabledTextInput" class="form-control" placeholder="Masukkan Tipe Box">
 
                                 <label class="label">Nama</label>
-                                <input class="form-control" placeholder="Masukkan Nama Box">
+                                <input name="nama" class="form-control" placeholder="Masukkan Nama Box">
 
                                 <label class="label">Panjang</label>
-                                <input class="form-control" placeholder="Panjang (cm)">
+                                <input name="panjang" class="form-control" placeholder="Panjang (cm)">
 
                                 <label class="label">Lebar</label>
-                                <input class="form-control" placeholder="Lebar (cm)">
+                                <input name="lebar" class="form-control" placeholder="Lebar (cm)">
 
                                 <label class="label">Tinggi</label>
-                                <input class="form-control" placeholder="Tinggi (cm)">
+                                <input name="tinggi" class="form-control" placeholder="Tinggi (cm)">
 
                                 <label class="label">Keterangan</label>
-                                <textarea class="form-control" aria-label="With textarea"></textarea>
+                                <textarea name="keterangan" class="form-control" aria-label="With textarea"></textarea>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -78,7 +78,7 @@
                                 <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>
-                        
+
                     </tbody>
                 </table>
         </div>
