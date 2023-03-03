@@ -5,6 +5,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\VendorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,8 +41,8 @@ Route::post('/doAddcustomer', [CustomerController::class, "doAdd"]);
 Route::get('/mastersupplier', [SupplierController::class, "show"]);
 Route::post('/doAddsupplier', [SupplierController::class, "doAdd"]);
 
-Route::get('/mastervendor', [SupplierController::class, "show"]);
-Route::post('/doAddvendor', [SupplierController::class, "doAdd"]);
+Route::get('/mastervendor', [VendorController::class, "show"]);
+Route::post('/doAddvendor', [VendorController::class, "doAdd"]);
 
 Route::get('/masterpenawaran', function () {
     return view('masterpenawaran');

@@ -30,18 +30,21 @@ class VendorController extends Controller
         Vendor::create([
             'id_vendor' => $kode,
             'nama_vendor'=>$req->nama,
-            'npwp_vendor'=>$req->npwp,
+            'jenis_item'=>$req->jenis_item,
+            'kategori_vendor'=>$req->kategori,
             'alamat_vendor'=>$req->alamat,
-            'provinsi_vendor'=>$req->provinsi,
             'kota_vendor'=>$req->kota,
             'kecamatan_vendor'=>$req->kecamatan,
             'kelurahan_vendor'=>$req->kelurahan,
-            'kodepos_vendor'=>$req->kodepos,
-            'notelp_vendor'=>$req->notelp,
             'email_vendor'=>$req->email,
-            'item'=>$req->item,
             'nama_bank'=>$req->nama_bank,
-            'no_rekening'=> $req->no_rekening
+            'no_akun'=>$req->no_akun,
+            'no_rekening'=> $req->no_rekening,
+            'batasan_hutang'=>$req->batasan_hutang,
+            'hutang_sekarang'=>$req->hutang_sekarang,
+            'hutang_tersedia'=>$req->hutang_tersedia,
+            'sisa_hutang'=>$req->sisa_hutang,
+            'metode_pembayaran'=>$req->metode_pembayaran
 
         ]);
         return redirect("/mastervendor");
