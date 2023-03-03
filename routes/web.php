@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\BoxController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,12 +28,21 @@ Route::get('/dashboard', function () {
     return view('layouts.master');
 });
 
-Route::get('/masterpegawai', function () {
-    return view('masterpegawai');
-});
-Route::get('/mastercustomer', function () {
-    return view('mastercustomer');
-});
+Route::get('/masterpegawai', [PegawaiController::class, "show"]);
+Route::post('/doAddpegawai', [PegawaiController::class, "doAdd"]);
+
+Route::get('/masterbox', [BoxController::class, "show"]);
+Route::post('/doAddbox', [BoxController::class, "doAdd"]);
+
+Route::get('/mastercustomer', [CustomerController::class, "show"]);
+Route::post('/doAddcustomer', [CustomerController::class, "doAdd"]);
+
+Route::get('/mastersupplier', [SupplierController::class, "show"]);
+Route::post('/doAddsupplier', [SupplierController::class, "doAdd"]);
+
+Route::get('/mastervendor', [SupplierController::class, "show"]);
+Route::post('/doAddvendor', [SupplierController::class, "doAdd"]);
+
 Route::get('/masterpenawaran', function () {
     return view('masterpenawaran');
 });
@@ -38,9 +51,6 @@ Route::get('/mastersubcon', function () {
 });
 Route::get('/masterstok', function () {
     return view('masterstok');
-});
-Route::get('/mastersupplier', function () {
-    return view('mastersupplier');
 });
 Route::get('/kartustok', function () {
     return view('kartustok');
@@ -54,15 +64,11 @@ Route::get('/formpo', function () {
 Route::get('/formdesain', function () {
     return view('formdesain');
 });
-Route::get('/masterbox', function () {
-    return view('masterbox');
-});
+
 Route::get('/history', function () {
     return view('history');
 });
-Route::get('/mastervendor', function () {
-    return view('mastervendor');
-});
+
 Route::get('/stokbarang', function () {
     return view('stokbarang');
 });

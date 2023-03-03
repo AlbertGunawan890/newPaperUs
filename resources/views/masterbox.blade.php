@@ -12,50 +12,56 @@
             <div class="card-header">
                 <button type="button" class="btn btn-primary my-auto" data-toggle="modal" data-target="#exampleModalCenter">
                     Tambah Data
-                  </button>
+                </button>
 
-                  <!-- Modal -->
-                  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLongTitle">Add Box Model</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-
-                                <label class="label" for="disabledTextInput">Tipe Box</label>
-                                <input name="id" id="disabledTextInput" class="form-control" placeholder="Masukkan Tipe Box">
-
-                                <label class="label">Nama</label>
-                                <input name="nama" class="form-control" placeholder="Masukkan Nama Box">
-
-                                <label class="label">Panjang</label>
-                                <input name="panjang" class="form-control" placeholder="Panjang (cm)">
-
-                                <label class="label">Lebar</label>
-                                <input name="lebar" class="form-control" placeholder="Lebar (cm)">
-
-                                <label class="label">Tinggi</label>
-                                <input name="tinggi" class="form-control" placeholder="Tinggi (cm)">
-
-                                <label class="label">Keterangan</label>
-                                <textarea name="keterangan" class="form-control" aria-label="With textarea"></textarea>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Add Box Model</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
+                            <form action="{{url('doAddbox')}}" method="post">
+                                @csrf
+                            <div class="modal-body">
+                                <div class="form-group">
+
+                                    <label class="label" for="disabledTextInput">Tipe Box</label>
+                                    <input name="tipe_box" id="disabledTextInput" class="form-control"
+                                        placeholder="Masukkan Tipe Box">
+
+                                    <label class="label">Nama</label>
+                                    <input name="nama" class="form-control" placeholder="Masukkan Nama Box">
+
+                                    <label class="label">Panjang</label>
+                                    <input name="panjang" class="form-control" placeholder="Panjang (cm)">
+
+                                    <label class="label">Lebar</label>
+                                    <input name="lebar" class="form-control" placeholder="Lebar (cm)">
+
+                                    <label class="label">Tinggi</label>
+                                    <input name="tinggi" class="form-control" placeholder="Tinggi (cm)">
+
+                                    <label class="label">Keterangan</label>
+                                    <textarea name="keterangan" class="form-control" aria-label="With textarea"></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                            </form>
                         </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                      </div>
                     </div>
-                  </div>
+                </div>
             </div>
             <div class="card-body">
-                <table id="tabelMasterCustomer" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
+                <table id="tabelMasterCustomer" class="table table-bordered table-no-wrap table-responsive"
+                    style="width:100%">
                     <thead>
                         <tr>
                             <th>Tipe Box</th>
@@ -68,22 +74,25 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>12321312</td>
-                            <td>ABCDEFGH</td>
-                            <td>10</td>
-                            <td>20</td>
-                            <td>20</td>
+                            @foreach ($arrBox as $prm)
+
+                            <td>{{$prm->tipe_box}}</td>
+                            <td>{{$prm->nama_box}}</td>
+                            <td>{{$prm->panjang_box}}</td>
+                            <td>{{$prm->lebar_box}}</td>
+                            <td>{{$prm->tinggi_box}}</td>
                             <td>
                                 <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                                 <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                             </td>
+                            @endforeach
                         </tr>
 
                     </tbody>
                 </table>
-        </div>
+            </div>
         </div>
 
     </div>
     <!-- /.container-fluid -->
-    @endsection
+@endsection

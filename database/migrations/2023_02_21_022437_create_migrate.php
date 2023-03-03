@@ -72,6 +72,7 @@ return new class extends Migration
         });
         Schema::create('master_box', function (Blueprint $table) {
             $table->string('id_box')->primary();
+            $table->string('tipe_box');
             $table->string('nama_box');
             $table->string('panjang_box');
             $table->string('lebar_box');
