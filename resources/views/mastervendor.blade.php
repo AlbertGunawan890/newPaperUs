@@ -29,32 +29,24 @@
                         </tr>
                     </thead>
                     <tbody>
+
                         <tr>
-                            <td>12321312</td>
-                            <td>ABCDEFGH</td>
-                            <td>Accessories</td>
-                            <td>example</td>
-                            <td>example@example.com</td>
+                            @foreach ($arrVendor as $prm)
+                            <td>{{$prm->id_vendor}}</td>
+                            <td>{{$prm->nama_vendor}}</td>
+                            <td>{{$prm->jenis_item}}</td>
+                            <td>{{$prm->kategori_vendor}}</td>
+                            <td>{{$prm->alamat_vendor}}</td>
                             <td>
                                 <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                                 <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                             </td>
+                            @endforeach
                         </tr>
-                        <tr>
-                          <td>12321312</td>
-                          <td>ABCDEFGH</td>
-                          <td>Accessories</td>
-                          <td>example</td>
-                          <td>example@example.com</td>
-                          <td>
-                              <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                              <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                          </td>
-                      </tr>
                     </tbody>
                 </table>
         </div>
 
     </div>
     <!-- /.container-fluid -->
-    @endsection
+@endsection

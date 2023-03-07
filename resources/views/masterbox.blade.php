@@ -30,22 +30,25 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>12321312</td>
-                            <td>ABCDEFGH</td>
-                            <td>10</td>
-                            <td>20</td>
-                            <td>20</td>
+                            @foreach ($arrBox as $prm)
+
+                            <td>{{$prm->tipe_box}}</td>
+                            <td>{{$prm->nama_box}}</td>
+                            <td>{{$prm->panjang_box}}</td>
+                            <td>{{$prm->lebar_box}}</td>
+                            <td>{{$prm->tinggi_box}}</td>
                             <td>
                                 <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                                 <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                             </td>
+                            @endforeach
                         </tr>
-                        
+
                     </tbody>
                 </table>
-        </div>
+            </div>
         </div>
 
     </div>
     <!-- /.container-fluid -->
-    @endsection
+@endsection

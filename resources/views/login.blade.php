@@ -33,11 +33,11 @@
     <div class="wrapper">
         <img src="asset/logo.png" alt="">
         <h1>Login</h1>
-        <form action="#">
+        <form action="{{ url('/login') }}" method="get">
             <input type="text" placeholder="Username">
             <input type="password" placeholder="Password">
+            <button type="submit">Sign Up</button>
         </form>
-        <button>Sign Up</button>
         <div class="member">
             Belum punya akun?
             <a href="{{ url('register') }}">Register</a>

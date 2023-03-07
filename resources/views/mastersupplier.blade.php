@@ -17,35 +17,39 @@
                 </a>
             </div>
             <div class="card-body">
-            <table id="tabelMasterSupplier" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>ID Supplier</th>
-                        <th>Nama</th>
-                        <th>Item</th>
-                        <th>Alamat</th>
-                        <th>No. Telp</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>12321312</td>
-                        <td>PT. ABC</td>
-                        <td>Kertas</td>
-                        <td>Jl. Darmo Indah X</td>
-                        <td>08123456678</td>
-                        <td>
-                            <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                        </td>
-                    </tr>
-                    
-                </tbody>
-            </table>
-        </div>
+                <table id="tabelMasterSupplier" class="table table-bordered table-no-wrap table-responsive"
+                    style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>ID Supplier</th>
+                            <th>Nama</th>
+                            <th>Item</th>
+                            <th>Alamat</th>
+                            <th>No. Telp</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            @foreach ($arrSupplier as $prm)
+
+                            <td>{{$prm->id_supplier}}</td>
+                            <td>{{$prm->nama_supplier}}</td>
+                            <td>{{$prm->item}}</td>
+                            <td>{{$prm->alamat_supplier}}</td>
+                            <td>{{$prm->notelp_supplier}}</td>
+                            <td>
+                                <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                            </td>
+                            @endforeach
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
 
     </div>
     <!-- /.container-fluid -->
-    @endsection
+@endsection
