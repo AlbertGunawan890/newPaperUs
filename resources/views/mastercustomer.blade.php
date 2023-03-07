@@ -10,10 +10,10 @@
 
         <div class="card">
             <div class="card-header">
-              <a href={{ url('tambahcustomer') }}>
-                <button type="button" class="btn btn-primary my-auto">
-                    Tambah Data
-                  </button>
+                <a href={{ url('tambahcustomer') }}>
+                    <button type="button" class="btn btn-primary my-auto">
+                        Tambah Data
+                    </button>
                 </a>
             </div>
             <div class="card-body">
@@ -29,8 +29,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            @foreach ($arrCustomer as $prm)
+                        @foreach ($arrCustomer as $prm)
+                            <tr>
                                 <td>{{ $prm->id_customer }}</td>
                                 <td>{{ $prm->nama_customer }}</td>
                                 <td>{{ $prm->alamat_customer }}</td>
@@ -40,8 +40,8 @@
                                     <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                                     <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                                 </td>
-                            @endforeach
-                        </tr>
+                            </tr>
+                        @endforeach
 
                     </tbody>
                 </table>

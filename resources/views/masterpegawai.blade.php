@@ -15,7 +15,7 @@
                     Tambah Data
                   </button>
                 </a>
-                  
+
             </div>
             <div class="card-body">
             <table id="tabelMasterPegawai" class="table table-bordered table-no-wrap" style="width:100%">
@@ -30,18 +30,19 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($arrPegawai as $prm)
                     <tr>
-                        <td>12321312</td>
-                        <td>Hendra Setiawan</td>
-                        <td>Jl. Semampir Barat Gg. VIII No.11</td>
-                        <td>08123456678</td>
-                        <td>example@example.com</td>
+                        <td>{{$prm->id_pegawai}}</td>
+                        <td>{{$prm->nama_pegawai}}</td>
+                        <td>{{$prm->alamat_pegawai}}</td>
+                        <td>{{$prm->notelp_pegawai}}</td>
+                        <td>{{$prm->email_pegawai}}</td>
                         <td>
                             <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                             <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                         </td>
                     </tr>
-                    
+                    @endforeach
                 </tbody>
             </table>
         </div>
