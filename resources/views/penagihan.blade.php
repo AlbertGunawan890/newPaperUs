@@ -10,55 +10,11 @@
 
         <div class="card">
             <div class="card-header">
-                <button type="button" class="btn btn-primary my-auto" data-toggle="modal" data-target="#exampleModalCenter">
-                    Tambah Data
-                  </button>
-                  
-                  <!-- Modal -->
-                  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLongTitle">Form Penagihan</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                   
-                                <label class="label" for="disabledTextInput">No. Penawaran</label>
-                                <input id="disabledTextInput" class="form-control" placeholder="No. Penawaran" disabled>
-
-                                <label class="label">Customer</label>
-                                <input class="form-control" placeholder="Pilih Customer">
-                            
-                                <label for="exampleFormControlTextarea1" class="label">Jenis Box</label>
-                                <input class="form-control" placeholder="Pilih Jenis Box">
-
-                                <label for="exampleFormControlTextarea1" class="label">Jumlah</label>
-                                <input class="form-control" placeholder="Jumlah">
-
-                                <label for="exampleFormControlTextarea1" class="label">Nominal</label>
-                                <input type="number" class="form-control" placeholder="Nominal">
-
-                                <label for="exampleFormControlTextarea1" class="label">Sudah Terbayar</label>
-                                <input type="number" class="form-control">
-
-                                <label for="exampleFormControlTextarea1" class="label">Sisa Hutang</label>
-                                <input type="number" class="form-control">
-
-                                <label for="exampleFormControlTextarea1" class="label">Jumlah Bayar</label>
-                                <input type="number" class="form-control">
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <a href={{ url('tambahpenagihan') }}>
+                    <button type="button" class="btn btn-primary my-auto">
+                        Tambah Data
+                      </button>
+                    </a>
             </div>
             <div class="card-body">
             <table id="tabelPenagihan" class="table table-bordered table-no-wrap" style="width:100%">

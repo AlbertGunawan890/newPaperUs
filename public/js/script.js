@@ -90,10 +90,12 @@ $(document).ready(function() {
         "columnDefs": [
             { "targets": -1, "className": 'dt-center' },
             { "width": "5%", "targets": 0 },
-            { "width": "20%", "targets": 1 },
-            { "width": "20%", "targets": 2 },
-            { "width": "30%", "targets": 3 },
-            { "width": "10%", "targets": 4 }
+            { "width": "5%", "targets": 1 },
+            { "width": "5%", "targets": 2 },
+            { "width": "10%", "targets": 3 },
+            { "width": "10%", "targets": 4 },
+            { "width": "10%", "targets": 5 },
+            { "width": "10%", "targets": 6 }
         ]
     });
 });

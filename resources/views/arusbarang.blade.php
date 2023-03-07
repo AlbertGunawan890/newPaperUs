@@ -21,42 +21,12 @@
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                 <div class="card">
                     <div class="card-header">
-                        <button type="button" class="btn btn-primary my-auto" data-toggle="modal" data-target="#exampleModalCenter">
+                      <a href={{ url('barangmasuk') }}>
+                        <button type="button" class="btn btn-primary my-auto">
                             Tambah Data
                           </button>
+                        </a>
                           
-                          <!-- Modal -->
-                          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLongTitle">Form Barang Masuk</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <label class="label">Nama Barang</label>
-                                        <input class="form-control" placeholder="Masukkan Nama Barang">
-
-                                        <label class="label">Jenis Barang</label>
-                                        <input class="form-control" placeholder="Masukkan Jenis Barang">
-        
-                                        <label class="label">Jumlah Masuk</label>
-                                        <input class="form-control" placeholder="Masukkan Jumlah">
-        
-                                        <label class="label">Keterangan</label>
-                                        <textarea class="form-control" aria-label="With textarea"></textarea>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                  <button type="submit" class="btn btn-primary">Add</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
                     </div>
                     <div class="card-body">
                         <table id="tabelBarangMasuk" class="table table-bordered table-no-wrap" style="width:100%">
@@ -86,42 +56,11 @@
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 <div class="card">
                     <div class="card-header">
-                        <button type="button" class="btn btn-primary my-auto" data-toggle="modal" data-target="#exampleModalCenter">
+                      <a href={{ url('barangkeluar') }}>
+                        <button type="button" class="btn btn-primary my-auto">
                             Tambah Data
                           </button>
-                          
-                          <!-- Modal -->
-                          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLongTitle">Form Barang Keluar</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <label class="label">Nama Barang</label>
-                                        <input class="form-control" placeholder="Masukkan Nama Barang">
-
-                                        <label class="label">Jenis Barang</label>
-                                        <input class="form-control" placeholder="Masukkan Jenis Barang">
-        
-                                        <label class="label">Jumlah Keluar</label>
-                                        <input class="form-control" placeholder="Masukkan Jumlah">
-        
-                                        <label class="label">Keterangan</label>
-                                        <textarea class="form-control" aria-label="With textarea"></textarea>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                  <button type="submit" class="btn btn-primary">Add</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                        </a>                
                     </div>
                     <div class="card-body">
                         <table id="tabelBarangKeluar" class="table table-bordered table-no-wrap" style="width:100%">

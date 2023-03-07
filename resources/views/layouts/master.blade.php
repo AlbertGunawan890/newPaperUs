@@ -52,7 +52,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{{ url('home') }}"">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Home</span></a>
             </li>
@@ -103,9 +103,10 @@
                         <a class="collapse-item" href="{{ url('masterpenawaran') }}">Form Penawaran</a>
                         <a class="collapse-item" href="{{ url('formdp') }}">Form DP/Pembayaran</a>
                         <a class="collapse-item" href="{{ url('formdesain') }}">Form Desain dan Pisau</a>
+                        <a class="collapse-item" href="{{ url('suratperintahkerja') }}">Surat Perintah Kerja</a>
                         <a class="collapse-item" href="{{ url('suratjalan') }}">Pengiriman Barang</a>
                         <a class="collapse-item" href="{{ url('penagihan') }}">Penagihan/Invoicing</a>
-                        <a class="collapse-item" href="{{ url('suratperintahkerja') }}">Surat Perintah Kerja</a>
+                        
                     </div>
                 </div>
             </li>

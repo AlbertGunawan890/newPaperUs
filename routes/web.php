@@ -83,3 +83,46 @@ Route::get('/formdp', function () {
 Route::get('/suratperintahkerja', function () {
     return view('suratperintahkerja');
 });
+Route::get('/home', function () {
+    return view('home');
+});
+// Form Tambah Data
+Route::get('/tambahpegawai', function () {
+    return view('tambahpegawai');
+});
+Route::get('/tambahcustomer', function () {
+    return view('tambahcustomer');
+});
+Route::get('/tambahsupplier', function () {
+    return view('tambahsupplier');
+});
+Route::get('/tambahbox', function () {
+    return view('tambahbox');
+});
+Route::get('/tambahvendor', function () {
+    return view('tambahvendor');
+});
+Route::get('/tambahpembelian', function () {
+    return view('tambahpembelian');
+});
+Route::get('/barangmasuk', function () {
+    return view('barangmasuk');
+});
+Route::get('/barangkeluar', function () {
+    return view('barangkeluar');
+});
+Route::get('/tambahpenawaran', function () {
+    return view('tambahpenawaran');
+});
+Route::get('/tambahdp', function () {
+    return view('tambahdp');
+});
+Route::get('/tambahdesain', function () {
+    return view('tambahdesain');
+});
+Route::get('/tambahpengiriman', function () {
+    return view('tambahpengiriman');
+});
+Route::get('/tambahpenagihan', function () {
+    return view('tambahpenagihan');
+});

@@ -10,82 +10,14 @@
 
         <div class="card">
             <div class="card-header">
-                <button type="button" class="btn btn-primary my-auto" data-toggle="modal" data-target="#exampleModalCenter">
+              <a href={{ url('tambahcustomer') }}>
+                <button type="button" class="btn btn-primary my-auto">
                     Tambah Data
                   </button>
-                  
-                  <!-- Modal -->
-                  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLongTitle">Form Customer</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                   
-                                <label class="label" for="disabledTextInput">ID Customer</label>
-                                <input id="disabledTextInput" class="form-control" placeholder="ID Customer" disabled>
-
-                                <label class="label">Nama</label>
-                                <input class="form-control" placeholder="Masukkan Nama">
-
-                                <label class="label">NPWP</label>
-                                <input class="form-control" placeholder="Masukkan NPWP">
-
-                                <label class="label">Alamat</label>
-                                <input class="form-control" placeholder="Masukkan Alamat">
-
-                                <label class="label">Provinsi</label>
-                                <input class="form-control" placeholder="Masukkan Provinsi">
-
-                                <label class="label">Kota</label>
-                                <input class="form-control" placeholder="Masukkan Kota">
-
-                                <label class="label">Kecamatan</label>
-                                <input class="form-control" placeholder="Masukkan Kecamatan">
-
-                                <label class="label">Kelurahan</label>
-                                <input class="form-control" placeholder="Masukkan Kelurahan">
-
-                                <label class="label">Kode Pos</label>
-                                <input class="form-control" placeholder="Kode Pos">
-
-                                <label class="label">No. Telp</label>
-                                <input type="number" class="form-control" placeholder="Masukkan No. Telp">
-
-                                <label class="label">Fax</label>
-                                <input type="number" class="form-control" placeholder="Masukkan No. Fax">
-
-                                <label class="label">Email</label>
-                                <input type="email" class="form-control" placeholder="Masukkan Email">
-
-                                <label class="label">Batasan Hutang</label>
-                                <input type="number" class="form-control">
-                                <label class="label">Hutang Sekarang</label>
-                                <input type="number" class="form-control">
-                                <label class="label">Hutang Tersedia</label>
-                                <input type="number" class="form-control">
-                                <label class="label">Nomor Rekening</label>
-                                <input type="number" class="form-control">
-
-                                <label class="label">Metode Pembayaran</label>
-                                <input type="number" class="form-control">                            
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                </a>
             </div>
             <div class="card-body">
-                <table id="tabelMasterCustomer" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
+                <table id="tabelMasterCustomer" class="table table-bordered table-no-wrap" style="width:100%">
                     <thead>
                         <tr>
                             <th>ID Customer</th>
