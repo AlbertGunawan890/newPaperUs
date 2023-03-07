@@ -6,14 +6,20 @@
     </div>
     <div class="form-group">
                                    
-        <label class="label" for="disabledTextInput">ID Penawaran</label>
+        <label class="label" for="disabledTextInput">No. Penawaran</label>
         <input id="disabledTextInput" class="form-control" placeholder="ID Penawaran" disabled>
 
+        <label class="label">Customer</label>
+        <input class="form-control" placeholder="Pilih Customer">
+
+        <label class="label">Jenis Box</label>
+        <input class="form-control" placeholder="Jenis Box">
+
         <label class="label">Link Desain</label>
-        <input class="form-control" placeholder="Masukkan Link Desain">
-    
-        <label for="exampleFormControlTextarea1" class="label">Keterangan</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <input class="form-control" placeholder="Link Desain">
+
+        <label class="label">Jenis Pisau</label>
+        <input class="form-control" placeholder="Jenis Pisau">
     
         <br>
         <button type="submit" class="btn btn-primary">Submit</button>

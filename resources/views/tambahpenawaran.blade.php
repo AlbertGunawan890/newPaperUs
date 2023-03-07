@@ -44,33 +44,35 @@
         <br>
 
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-            <label class="form-check-label" for="inlineRadio1">Beli kertas</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-            <label class="form-check-label" for="inlineRadio2">Cetak kertas</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-            <label class="form-check-label" for="inlineRadio3">Plong</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option3">
-            <label class="form-check-label" for="inlineRadio4">Embos</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option3">
-            <label class="form-check-label" for="inlineRadio5">Hot print</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option3">
-            <label class="form-check-label" for="inlineRadio6">Laminasi</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="option3">
-            <label class="form-check-label" for="inlineRadio7">Add-on</label>
-        </div>
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+            <label class="form-check-label" for="inlineCheckbox1">Beli Kertas</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+            <label class="form-check-label" for="inlineCheckbox2">Cetak Kertas</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option1">
+            <label class="form-check-label" for="inlineCheckbox3">Plong</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option2">
+            <label class="form-check-label" for="inlineCheckbox4">Embos</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option1">
+            <label class="form-check-label" for="inlineCheckbox5">Hot Print</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option2">
+            <label class="form-check-label" for="inlineCheckbox6">Laminasi</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option2">
+            <label class="form-check-label" for="inlineCheckbox7">Add on</label>
+          </div>
+
+        
 
         <br>
         <label for="exampleFormControlTextarea1" class="label">Harga Satuan</label>
