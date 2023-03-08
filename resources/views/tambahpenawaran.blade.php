@@ -45,31 +45,35 @@
 
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-            <label class="form-check-label" for="inlineCheckbox1">Beli Kertas</label>
+            <label class="form-check-label" for="inlineCheckbox1">Kertas</label>
           </div>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-            <label class="form-check-label" for="inlineCheckbox2">Cetak Kertas</label>
+            <label class="form-check-label" for="inlineCheckbox2">Tinta</label>
           </div>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option1">
-            <label class="form-check-label" for="inlineCheckbox3">Plong</label>
+            <label class="form-check-label" for="inlineCheckbox3">Laminasi</label>
           </div>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option2">
-            <label class="form-check-label" for="inlineCheckbox4">Embos</label>
+            <label class="form-check-label" for="inlineCheckbox4">Plong</label>
           </div>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option1">
-            <label class="form-check-label" for="inlineCheckbox5">Hot Print</label>
+            <label class="form-check-label" for="inlineCheckbox5">Hotprint</label>
           </div>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option2">
-            <label class="form-check-label" for="inlineCheckbox6">Laminasi</label>
+            <label class="form-check-label" for="inlineCheckbox6">Sortir</label>
           </div>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option2">
-            <label class="form-check-label" for="inlineCheckbox7">Add on</label>
+            <label class="form-check-label" for="inlineCheckbox7">Pembelian Dus</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option2">
+            <label class="form-check-label" for="inlineCheckbox8">Packing</label>
           </div>
 
         

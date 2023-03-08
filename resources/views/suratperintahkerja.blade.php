@@ -39,7 +39,7 @@
     </br>
         <div class="card">
             <div class="card-body">
-            <table id="tabelProses" class="table table-bordered table-no-wrap" style="width:100%">
+            <table id="tabelProses" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
                 <thead>
                     <tr>
                         <th>No.</th>
@@ -49,6 +49,8 @@
                         <th>Harga Total</th>
                         <th>Harga Satuan Sebelumnya</th>
                         <th>Harga Total Sebelumnya</th>
+                        <th>Nama Vendor</th>
+                        <th>Penerimaan</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -61,6 +63,11 @@
                         <td>Rp30.000</td>
                         <td>Rp10.000</td>
                         <td>Rp20.000</td>
+                        <td>ABC</td>
+                        <td>
+                            <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
+                            <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                        </td>
                         <td>
                             <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                             <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
@@ -74,6 +81,11 @@
                         <td>Rp30.000</td>
                         <td>Rp10.000</td>
                         <td>Rp20.000</td>
+                        <td>ABC</td>
+                        <td>
+                            <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
+                            <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                        </td>
                         <td>
                             <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                             <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>

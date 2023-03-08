@@ -20,6 +20,9 @@
 
         <label class="label">Jenis Pisau</label>
         <input class="form-control" placeholder="Jenis Pisau">
+
+        <label for="exampleFormControlTextarea1" class="label">Jenis Plat</label>
+        <input class="form-control" placeholder="Jenis Plat">
     
         <br>
         <button type="submit" class="btn btn-primary">Submit</button>

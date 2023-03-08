@@ -17,7 +17,7 @@
                     </a>
             </div>
             <div class="card-body">
-            <table id="tabelPenagihan" class="table table-bordered table-no-wrap" style="width:100%">
+            <table id="tabelPenagihan" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
                 <thead>
                     <tr>
                         <th>No. Penawaran</th>
@@ -26,6 +26,7 @@
                         <th>Jumlah</th>
                         <th>Nominal</th>
                         <th>Sisa Hutang</th>
+                        <th>Penerimaan</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -38,6 +39,10 @@
                         <td>242324</td>
                         <td>300000</td>
                         <td>
+                            <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
+                            <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                        </td>
+                        <td>
                             <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                             <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                         </td>
@@ -49,6 +54,10 @@
                         <td>242324</td>
                         <td>242324</td>
                         <td>400000</td>
+                        <td>
+                            <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
+                            <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                        </td>
                         <td>
                             <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                             <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
