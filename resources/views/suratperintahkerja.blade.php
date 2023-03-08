@@ -29,6 +29,9 @@
 
             <label for="exampleFormControlTextarea1" class="label">Jenis Gunting</label>
             <input class="form-control" placeholder="Jenis Gunting">
+
+            <label for="exampleFormControlTextarea1" class="label">Jenis Plat</label>
+            <input class="form-control" placeholder="Jenis Plat">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
