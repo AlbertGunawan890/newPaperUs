@@ -102,7 +102,7 @@
                         <h6 class="collapse-header">Form:</h6>
                         <a class="collapse-item" href="{{ url('masterpenawaran') }}">Form Penawaran</a>
                         <a class="collapse-item" href="{{ url('formdp') }}">Form DP/Pembayaran</a>
-                        <a class="collapse-item" href="{{ url('formdesain') }}">Form Desain dan Pisau</a>
+                        <a class="collapse-item" href="{{ url('formdesain') }}">Form Desain, Pisau, Plat</a>
                         <a class="collapse-item" href="{{ url('suratperintahkerja') }}">Surat Perintah Kerja</a>
                         <a class="collapse-item" href="{{ url('suratjalan') }}">Pengiriman Barang</a>
                         <a class="collapse-item" href="{{ url('penagihan') }}">Penagihan/Invoicing</a>
