@@ -57,7 +57,7 @@
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td><input type="text" class="form-control" placeholder="Pilih proses"></td>
+                        <td><input type="text" class="form-control" placeholder="Pilih proses" disabled ></td>
                         <td><input type="number" class="form-control" placeholder="Jumlah"></td>
                         <td><input type="number" class="form-control" placeholder="Harga satuan"></td>
                         <td>Rp30.000</td>
@@ -75,7 +75,7 @@
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td><input type="text" class="form-control" placeholder="Pilih proses"></td>
+                        <td><input type="text" class="form-control" placeholder="Pilih proses"disabled ></td>
                         <td><input type="number" class="form-control" placeholder="Jumlah"></td>
                         <td><input type="number" class="form-control" placeholder="Harga satuan"></td>
                         <td>Rp30.000</td>
