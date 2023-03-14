@@ -47,6 +47,12 @@ $(document).ready(function() {
     $('#tabelStokBarangB').DataTable({});
 });
 $(document).ready(function() {
+    $('#tabelStokBarangC').DataTable({});
+});
+$(document).ready(function() {
+    $('#tabelStokBarangD').DataTable({});
+});
+$(document).ready(function() {
     $('#tabelPembelianBarang').DataTable({
         "columnDefs": [
             { "targets": -1, "className": 'dt-center' },
@@ -68,9 +74,10 @@ $(document).ready(function() {
             { "targets": -1, "className": 'dt-center' },
             { "width": "30%", "targets": 0 },
             { "width": "30%", "targets": 1 },
-            { "width": "20%", "targets": 2 },
-            { "width": "10%", "targets": 3 },
-            {}
+            { "width": "10%", "targets": 2 },
+            { "width": "15%", "targets": 3 },
+            { "width": "15%", "targets": 4 },
+            { "width": "10%", "targets": 5 }
         ]
     });
 });
@@ -203,10 +210,15 @@ $(document).ready(function() {
             { "width": "20%", "targets": 3 },
             { "width": "10%", "targets": 4 },
             { "width": "10%", "targets": 5 },
-            { "width": "10%", "targets": 6 }
+            { "width": "10%", "targets": 6 },
+            { "width": "10%", "targets": 7 },
+            { "width": "10%", "targets": 8 }
         ]
     });
 });
 $('#myModal').on('shown.bs.modal', function() {
     $('#myInput').trigger('focus')
 })
+$(document).ready(function() {
+    $('.my-select').selectpicker();
+});

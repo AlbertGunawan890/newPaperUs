@@ -17,6 +17,12 @@
             <label class="label">Jumlah Masuk</label>
             <input class="form-control" placeholder="Masukkan Jumlah">
 
+            <label class="label">Harga Satuan</label>
+            <input class="form-control" placeholder="Masukkan Harga Satuan">
+
+            <label class="label">Harga Total</label>
+            <input class="form-control" placeholder="Harga Total">
+
             <label class="label">Keterangan</label>
             <textarea class="form-control" aria-label="With textarea"></textarea>
 

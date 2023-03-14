@@ -20,8 +20,13 @@
         </div>
         <br>
 
-        <label class="label">Customer</label>
-        <input class="form-control" placeholder="Pilih Customer">
+        <label class="label">Nama Brand</label>
+        <select data-live-search="true" class="selectpicker form-control">
+          <option selected>Pilih Nama Brand</option>
+          <option>Alpha</option>
+          <option>Bravo</option>
+          <option>Charlie</option>
+        </select>
     
         <label for="exampleFormControlTextarea1" class="label">Jenis Box</label>
         <input class="form-control" placeholder="Jenis Box">
@@ -74,6 +79,10 @@
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option2">
             <label class="form-check-label" for="inlineCheckbox8">Packing</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option2">
+            <label class="form-check-label" for="inlineCheckbox9">Emboss</label>
           </div>
 
         

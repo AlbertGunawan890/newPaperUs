@@ -10,10 +10,12 @@
 
         <div class="card">
             <div class="card-body">
-            <table id="tabelStokBarangJadi" class="table table-bordered table-no-wrap" style="width:100%">
+            <table id="tabelStokBarangJadi" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
                 <thead>
                     <tr>
                         <th>Nomor</th>
+                        <th>Nama Brand</th>
+                        <th>PIC</th>
                         <th>Nama Barang</th>
                         <th>Harga</th>
                         <th>Quantity</th>
@@ -25,6 +27,8 @@
                 <tbody>
                     <tr>
                         <td>B7FD-8E</td>
+                        <td>Example</td>
+                        <td>Adi Adi</td>
                         <td>Box 10x10cm</td>
                         <td>Rp5000</td>
                         <td>250</td>
@@ -37,6 +41,8 @@
                     </tr>
                     <tr>
                         <td>B8FD-1E</td>
+                        <td>Exam</td>
+                        <td>Adi acil</td>
                         <td>Box 20x10cm</td>
                         <td>Rp7000</td>
                         <td>250</td>

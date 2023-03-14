@@ -7,10 +7,21 @@
     <div class="form-group">
                                    
         <label class="label" for="disabledTextInput">No. Penawaran</label>
-        <input id="disabledTextInput" class="form-control" placeholder="No. SPK" disabled>
+        <select data-live-search="true" class="selectpicker form-control">
+            <option selected>Pilih No. Penawaran</option>
+            <option>1001</option>
+            <option>2002</option>
+            <option>3003</option>
+        </select>
+
+        <label class="label">Nama Brand</label>
+        <input class="form-control" placeholder="Masukkan nama brand">
+
+        <label class="label">Nama PIC</label>
+        <input class="form-control" placeholder="Masukkan Nama PIC">
 
         <label class="label">Customer</label>
-        <input class="form-control" placeholder="Pilih Customer">
+        <input class="form-control" placeholder="Masukkan Customer">
     
         <label for="exampleFormControlTextarea1" class="label">Jenis Box</label>
         <input class="form-control" placeholder="Jenis Box">

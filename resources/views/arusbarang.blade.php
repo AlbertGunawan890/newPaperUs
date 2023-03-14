@@ -35,6 +35,8 @@
                                     <th>Nama Barang</th>
                                     <th>Jenis Barang</th>
                                     <th>Jumlah Masuk</th>
+                                    <th>Harga Satuan</th>
+                                    <th>Harga Total</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -43,6 +45,8 @@
                                     <td>ABCDF</td>
                                     <td>HURUF</td>
                                     <td>100</td>
+                                    <td>Rp10.000</td>
+                                    <td>Rp1.000.000</td>
                                     <td>
                                         <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                                         <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>

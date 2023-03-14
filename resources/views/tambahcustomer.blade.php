@@ -11,8 +11,11 @@
                 <label class="label" for="disabledTextInput">ID Customer</label>
                 <input name="id" id="disabledTextInput" class="form-control" placeholder="ID Customer" disabled>
 
-                <label class="label">Nama</label>
-                <input name="nama" class="form-control" placeholder="Masukkan Nama">
+                <label class="label">Nama Brand</label>
+                <input name="nama" class="form-control" placeholder="Masukkan Nama Brand">
+
+                <label class="label">Nama PIC</label>
+                <input name="pic" class="form-control" placeholder="Masukkan Nama PIC">
 
                 <label class="label">NPWP</label>
                 <input name="npwp" class="form-control" placeholder="Masukkan NPWP">
@@ -44,8 +47,6 @@
                 <label class="label">Email</label>
                 <input name="email" type="email" class="form-control" placeholder="Masukkan Email">
 
-                <label class="label">Batasan Hutang</label>
-                <input name="batasan_hutang" type="number" class="form-control">
                 <label class="label">Hutang Sekarang</label>
                 <input name="hutang_sekarang" type="number" class="form-control">
                 <label class="label">Hutang Tersedia</label>
