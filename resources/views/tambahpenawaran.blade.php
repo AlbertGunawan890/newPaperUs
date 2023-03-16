@@ -48,6 +48,7 @@
         
         <br>
 
+        <div class="checkbox">
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
             <label class="form-check-label" for="inlineCheckbox1">Kertas</label>
@@ -85,6 +86,50 @@
             <label class="form-check-label" for="inlineCheckbox9">Emboss</label>
           </div>
 
+          <button onclick="showCheckbox()" type="button" class="btn btn-info">Tambah</button>
+        </div>
+        <div class="checkbox" id="myCheckbox" style="display: none;">
+          <br>
+          <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">Kertas</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+              <label class="form-check-label" for="inlineCheckbox2">Tinta</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option1">
+              <label class="form-check-label" for="inlineCheckbox3">Laminasi</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option2">
+              <label class="form-check-label" for="inlineCheckbox4">Plong</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option1">
+              <label class="form-check-label" for="inlineCheckbox5">Hotprint</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option2">
+              <label class="form-check-label" for="inlineCheckbox6">Sortir</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option2">
+              <label class="form-check-label" for="inlineCheckbox7">Pembelian Dus</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option2">
+              <label class="form-check-label" for="inlineCheckbox8">Packing</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option2">
+              <label class="form-check-label" for="inlineCheckbox9">Emboss</label>
+            </div>
+          </div>
+        
+          
+
         
 
         <br>
@@ -119,6 +164,14 @@
                 alert("Penjualan");
                 document.getElementById("formHarga").disabled = false;
             }
+        }
+
+        function showCheckbox() {
+          var x = document.getElementById("myCheckbox");
+
+          if (x.style.display == "none"){
+            x.style.display = "block";
+          }
         }
     </script>
 </div>
