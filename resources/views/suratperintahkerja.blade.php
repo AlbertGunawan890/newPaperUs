@@ -15,6 +15,17 @@
             <label class="label">No. SPK</label>
             <input class="form-control" placeholder="No. SPK">
         
+            <br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions1" value="option3">
+                <label class="form-check-label" for="inlineRadioA">Produk</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions1" value="option3">
+                <label class="form-check-label" for="inlineRadioB">Stok Barang Jadi</label>
+            </div>
+            <br>
+
             <label for="exampleFormControlTextarea1" class="label">Nama Customer</label>
             <input class="form-control" placeholder="Pilih Nama Customer">
 

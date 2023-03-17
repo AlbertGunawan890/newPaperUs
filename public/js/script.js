@@ -222,3 +222,37 @@ $('#myModal').on('shown.bs.modal', function() {
 $(document).ready(function() {
     $('.my-select').selectpicker();
 });
+$(document).ready(function() {
+    $('#tabelLogin').DataTable({
+        "columnDefs": [
+            { "width": "5%", "targets": 0 },
+            { "width": "10%", "targets": 1 },
+            { "width": "10%", "targets": 2 },
+            { "width": "10%", "targets": 3 },
+            { "width": "20%", "targets": 4 },
+        ]
+    });
+});
+$(document).ready(function() {
+    $('#tabelTransaksi').DataTable({
+        "columnDefs": [
+            { "width": "5%", "targets": 0 },
+            { "width": "20%", "targets": 1 },
+            { "width": "20%", "targets": 2 },
+            { "width": "20%", "targets": 3 },
+            { "width": "20%", "targets": 4 },
+        ]
+    });
+});
+$(document).ready(function() {
+    $('#tabelKeuangan').DataTable({
+        "columnDefs": [
+            { "width": "5%", "targets": 0 },
+            { "width": "15%", "targets": 1 },
+            { "width": "20%", "targets": 2 },
+            { "width": "20%", "targets": 3 },
+            { "width": "20%", "targets": 4 },
+            { "width": "20%", "targets": 4 },
+        ]
+    });
+});

@@ -127,9 +127,9 @@
                 <div id="collapselaporan" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Form:</h6>
-                        <a class="collapse-item" href="{{ url('formdesain') }}">Laporan Login</a>
-                        <a class="collapse-item" href="{{ url('formpo') }}">Laporan Transaksi</a>
-                        <a class="collapse-item" href="{{ url('formpengiriman') }}">Laporan Keuangan</a>
+                        <a class="collapse-item" href="{{ url('laporanlogin') }}">Laporan Login</a>
+                        <a class="collapse-item" href="{{ url('laporantransaksi') }}">Laporan Transaksi</a>
+                        <a class="collapse-item" href="{{ url('laporankeuangan') }}">Laporan Keuangan</a>
                     </div>
                 </div>
             </li>

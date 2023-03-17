@@ -137,3 +137,12 @@ Route::get('/tambahpengiriman', function () {
 Route::get('/tambahpenagihan', function () {
     return view('tambahpenagihan');
 });
+Route::get('/laporanlogin', function () {
+    return view('laporanlogin');
+});
+Route::get('/laporankeuangan', function () {
+    return view('laporankeuangan');
+});
+Route::get('/laporantransaksi', function () {
+    return view('laporantransaksi');
+});
