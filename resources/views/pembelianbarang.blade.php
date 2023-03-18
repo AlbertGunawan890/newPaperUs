@@ -13,8 +13,8 @@
                 <a href={{ url('tambahpembelian') }}>
                     <button type="button" class="btn btn-primary my-auto">
                         Tambah Data
-                      </button>
-                    </a>
+                    </button>
+                </a>
             </div>
             <div class="card-body">
                 <table id="tabelPembelianBarang" class="table table-bordered table-no-wrap" style="width:100%">
@@ -44,7 +44,22 @@
                                 <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>
-                        
+
+                        @foreach ($arrpembelianbarang as $prm)
+                            <tr>
+                                <td> {{ $prm->namabarang }} </td>
+                                <td>{{ $prm->jenisbarang }}</td>
+                                <td>{{ $prm->supplier }}</td>
+                                <td>{{ $prm->jumlah }}</td>
+                                <td>{{ $prm->harga }}</td>
+                                <td>{{ $prm->diskon }}</td>
+                                <td>{{ $prm->nett }}</td>
+                                <td>
+                                    <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                    <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -52,4 +67,4 @@
 
     </div>
     <!-- /.container-fluid -->
-    @endsection
+@endsection

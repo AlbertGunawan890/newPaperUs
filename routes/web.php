@@ -4,6 +4,7 @@ use App\Http\Controllers\BoxController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\PembelianBarangcontroller;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\VendorController;
 use Illuminate\Support\Facades\Route;
@@ -73,9 +74,7 @@ Route::get('/history', function () {
 Route::get('/stokbarang', function () {
     return view('stokbarang');
 });
-Route::get('/pembelianbarang', function () {
-    return view('pembelianbarang');
-});
+
 Route::get('/arusbarang', function () {
     return view('arusbarang');
 });
@@ -113,9 +112,18 @@ Route::get('/tambahbox', function () {
 Route::get('/tambahvendor', function () {
     return view('tambahvendor');
 });
-Route::get('/tambahpembelian', function () {
-    return view('tambahpembelian');
-});
+
+
+Route::get('/tambahpembelian', [PembelianBarangcontroller::class, "show"]);
+// Route::get('/tambahpembelian', function () {
+//     return view('tambahpembelian');
+// });
+Route::post('/doPembelianbarang', [PembelianBarangcontroller::class, "doAdd"]);
+Route::get('/pembelianbarang', [PembelianBarangcontroller::class, "showpembelian"]);
+// Route::get('/pembelianbarang', function () {
+//     return view('pembelianbarang');
+// });
+
 Route::get('/barangmasuk', function () {
     return view('barangmasuk');
 });
