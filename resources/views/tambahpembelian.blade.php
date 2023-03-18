@@ -10,16 +10,22 @@
         <input id="disabledTextInput" class="form-control" placeholder="Masukkan Tipe Box">
 
         <label class="label">Nama Barang</label>
-        <input class="form-control" placeholder="Masukkan Nama Box">
+        <input class="form-control">
 
         <label class="label">Jenis Barang</label>
-        <input class="form-control" placeholder="Panjang (cm)">
+        <select data-live-search="true" class="selectpicker form-control">
+            <option selected>Pilih Jenis Barang</option>
+            <option>Pisau</option>
+            <option>Plat</option>
+            <option>Kertas Sisa</option>
+            <option>Barang Lain-lain</option>
+        </select>
 
         <label class="label">Supplier</label>
-        <input class="form-control" placeholder="Lebar (cm)">
+        <input class="form-control">
 
         <label class="label">Jumlah</label>
-        <input class="form-control" placeholder="Tinggi (cm)">
+        <input class="form-control">
 
         <label class="label">Harga</label>
         <input type="number" class="form-control" placeholder="Masukkan Harga">
