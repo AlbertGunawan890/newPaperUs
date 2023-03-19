@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BoxController;
+use App\Http\Controllers\controllerMasukKeluarStok;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PegawaiController;
@@ -124,12 +125,22 @@ Route::get('/pembelianbarang', [PembelianBarangcontroller::class, "showpembelian
 //     return view('pembelianbarang');
 // });
 
-Route::get('/barangmasuk', function () {
-    return view('barangmasuk');
-});
-Route::get('/barangkeluar', function () {
-    return view('barangkeluar');
-});
+Route::get('/barangmasuk', [controllerMasukKeluarStok::class, "showmasuk"]);
+Route::post('/dobarangmasuk', [controllerMasukKeluarStok::class, "doaddmasuk"]);
+Route::get('/barangkeluar', [controllerMasukKeluarStok::class, "showkeluar"]);
+Route::post('/dobarangkeluar', [controllerMasukKeluarStok::class, "doaddkeluar"]);
+// Route::get('/barangmasuk', function () {
+//     return view('barangmasuk');
+// });
+// Route::get('/barangkeluar', function () {
+//     return view('barangkeluar');
+// });
+
+
+
+
+
+
 Route::get('/tambahpenawaran', function () {
     return view('tambahpenawaran');
 });
