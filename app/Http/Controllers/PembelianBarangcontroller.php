@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\masukkeluarstok;
 use App\Models\PembelianBarang;
 use Illuminate\Http\Request;
 
@@ -9,10 +10,15 @@ class PembelianBarangcontroller extends Controller
 {
     public function show()
     {
-
         return view('tambahpembelian');
         
     }
+    public function showarus()
+    {
+        $arusmasukkeluar = masukkeluarstok::all();
+        return view("arusbarang",compact('arusmasukkeluar'));
+    }
+    
     public function showpembelian()
     {
         $arrpembelianbarang = PembelianBarang::all();

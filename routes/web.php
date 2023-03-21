@@ -6,6 +6,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PembelianBarangcontroller;
+use App\Http\Controllers\stokbarangController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\VendorController;
 use Illuminate\Support\Facades\Route;
@@ -72,13 +73,9 @@ Route::get('/history', function () {
     return view('history');
 });
 
-Route::get('/stokbarang', function () {
-    return view('stokbarang');
-});
 
-Route::get('/arusbarang', function () {
-    return view('arusbarang');
-});
+
+
 Route::get('/suratjalan', function () {
     return view('suratjalan');
 });
@@ -124,6 +121,10 @@ Route::get('/pembelianbarang', [PembelianBarangcontroller::class, "showpembelian
 // Route::get('/pembelianbarang', function () {
 //     return view('pembelianbarang');
 // });
+Route::get('/arusbarang', [PembelianBarangcontroller::class, "showarus"]);
+// Route::get('/arusbarang', function () {
+//     return view('arusbarang');
+// });
 
 Route::get('/barangmasuk', [controllerMasukKeluarStok::class, "showmasuk"]);
 Route::post('/dobarangmasuk', [controllerMasukKeluarStok::class, "doaddmasuk"]);
@@ -134,6 +135,12 @@ Route::post('/dobarangkeluar', [controllerMasukKeluarStok::class, "doaddkeluar"]
 // });
 // Route::get('/barangkeluar', function () {
 //     return view('barangkeluar');
+// });
+
+
+Route::get('/stokbarang', [stokbarangController::class, "showstok"]);
+// Route::get('/stokbarang', function () {
+//     return view('stokbarang');
 // });
 
 
