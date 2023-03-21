@@ -17,6 +17,7 @@ class masukkeluarstok extends Model
         'jumlahmasuk',
         'hargasatuan',
         'hargatotal',
+        'lokasibarang',
         'keterangan'
     ];
     protected $keyType = 'string';

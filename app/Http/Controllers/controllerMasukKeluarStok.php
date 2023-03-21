@@ -17,21 +17,19 @@ class controllerMasukKeluarStok extends Controller
     }
     public function doaddmasuk(Request $req)
     {
-        // $arusstok = masukkeluarstok::withTrashed()->get();
-
+        $arusstok = masukkeluarstok::withTrashed()->get();
         
-        // $sumtotalnya = ();
-        
-        // masukkeluarstok::create([
-        //     'namabarang' => $req->tnama,
-        //     'jenisbarang' => $req->tjenisbarang,
-        //     'jumlah' => $req->tjumlah,
-        //     'jumlahsatuan' => $req->tjumsatuan,
-        //     'jumlahtotal' => ($req->tjumlah) * ($req->tjumsatuan),
-        //     'keterangan' => $req->tketerangan
-        // ]);
-        // dd('jumlahtotal');
-        // return redirect("/arusbarang");
+        masukkeluarstok::create([
+            'namabarang' => $req->tnama,
+            'jenisbarang' => $req->tjenisbarang,
+            'jumlah' => $req->tjumlah,
+            'jumlahsatuan' => $req->tjumsatuan,
+            'jumlahtotal' => $req->tjumlahtotal,
+            'lokasibarang' => $req->tlokasi,
+            'keterangan' => $req->tketerangan
+        ]);
+        dd('jumlahtotal');
+        return redirect("/arusbarang");
     }
     // public function dooaddkeluar(Request $req)
     // {

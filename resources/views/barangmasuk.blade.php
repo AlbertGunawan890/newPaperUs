@@ -31,6 +31,9 @@
                 <label class="label">Harga Total</label>
                 <input class="form-control" name="tjumlahtotal" placeholder="Harga Total">
 
+                <label class="label">Lokasi Barang</label>
+                <input class="form-control" name="tlokasi" placeholder="Masukkan Jumlah">
+
                 <label class="label">Keterangan</label>
                 <textarea class="form-control" name="tketerangan" aria-label="With textarea"></textarea>
 

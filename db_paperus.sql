@@ -54,9 +54,6 @@ CREATE TABLE `master_box` (
 
 /*Data for the table `master_box` */
 
-insert  into `master_box`(`id_box`,`tipe_box`,`nama_box`,`panjang_box`,`lebar_box`,`tinggi_box`,`keterangan`,`created_at`,`updated_at`,`deleted_at`) values 
-('B001','a','a','12','12','12','asasa','2023-03-03 15:21:30','2023-03-03 15:21:30',NULL);
-
 /*Table structure for table `master_customer` */
 
 DROP TABLE IF EXISTS `master_customer`;
@@ -87,8 +84,19 @@ CREATE TABLE `master_customer` (
 
 /*Data for the table `master_customer` */
 
-insert  into `master_customer`(`id_customer`,`nama_customer`,`npwp_customer`,`alamat_customer`,`provinsi_customer`,`kota_customer`,`kecamatan_customer`,`kelurahan_customer`,`kodepos_customer`,`notelp_customer`,`nofax_customer`,`email_customer`,`batasan_hutang`,`hutang_sekarang`,`hutang_tersedia`,`no_rekening`,`metode_pembayaran`,`created_at`,`updated_at`,`deleted_at`) values 
-('CU001','a','a','a','a','a','a','a','a','23423423','32423432','admi5n@gmail.com','2323','23213','232132','23123213','as','2023-03-03 15:32:50','2023-03-03 15:32:50',NULL);
+/*Table structure for table `master_desaingunting` */
+
+DROP TABLE IF EXISTS `master_desaingunting`;
+
+CREATE TABLE `master_desaingunting` (
+  `id_penawaran` varchar(255) DEFAULT NULL,
+  `link_desain` varchar(255) DEFAULT NULL,
+  `keterangan` varchar(255) DEFAULT NULL,
+  KEY `id_penawaran` (`id_penawaran`),
+  CONSTRAINT `master_desaingunting_ibfk_1` FOREIGN KEY (`id_penawaran`) REFERENCES `master_penawaran` (`id_penawaran`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `master_desaingunting` */
 
 /*Table structure for table `master_pegawai` */
 
@@ -117,8 +125,68 @@ CREATE TABLE `master_pegawai` (
 
 /*Data for the table `master_pegawai` */
 
-insert  into `master_pegawai`(`id_pegawai`,`nama_pegawai`,`npwp_pegawai`,`alamat_pegawai`,`provinsi_pegawai`,`kota_pegawai`,`kecamatan_pegawai`,`kelurahan_pegawai`,`kodepos_pegawai`,`notelp_pegawai`,`fax_pegawai`,`email_pegawai`,`kontak_personal`,`password`,`created_at`,`updated_at`,`deleted_at`) values 
-('P001','a','23423','weas','b','KABUPATEN BANYUWANGI','d','e','321314','123123','12312312','admin@gmail.com','aa','$2y$10$/otjcMrD6Uxo4H/3X2yydOj.AlFnJ6klfvghmpIPopoCfw1pLf0xe','2023-03-03 15:04:31','2023-03-03 15:04:31',NULL);
+/*Table structure for table `master_pembelianbarang` */
+
+DROP TABLE IF EXISTS `master_pembelianbarang`;
+
+CREATE TABLE `master_pembelianbarang` (
+  `tipebox` varchar(255) DEFAULT NULL,
+  `namabarang` varchar(255) NOT NULL,
+  `jenisbarang` varchar(100) DEFAULT NULL,
+  `supplier` varchar(255) DEFAULT NULL,
+  `jumlah` varchar(255) DEFAULT NULL,
+  `harga` varchar(255) DEFAULT NULL,
+  `diskon` varchar(255) DEFAULT NULL,
+  `nett` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`namabarang`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `master_pembelianbarang` */
+
+insert  into `master_pembelianbarang`(`tipebox`,`namabarang`,`jenisbarang`,`supplier`,`jumlah`,`harga`,`diskon`,`nett`) values 
+('qweqwe','qwe','qwe','qe','123','123',NULL,'123');
+
+/*Table structure for table `master_penawaran` */
+
+DROP TABLE IF EXISTS `master_penawaran`;
+
+CREATE TABLE `master_penawaran` (
+  `id_penawaran` varchar(255) NOT NULL,
+  `nama_customer` varchar(255) DEFAULT NULL,
+  `jenis_box` varchar(255) DEFAULT NULL,
+  `qty` varchar(255) DEFAULT NULL,
+  `jum_produksi` varchar(255) DEFAULT NULL,
+  `harga` varchar(255) DEFAULT NULL,
+  `diskon` varchar(255) DEFAULT NULL,
+  `net` varchar(255) DEFAULT NULL,
+  `status_penawaran` varchar(3) DEFAULT NULL,
+  PRIMARY KEY (`id_penawaran`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `master_penawaran` */
+
+/*Table structure for table `master_stokbarang` */
+
+DROP TABLE IF EXISTS `master_stokbarang`;
+
+CREATE TABLE `master_stokbarang` (
+  `namabarang` varchar(255) NOT NULL,
+  `jenisbarang` varchar(20) DEFAULT NULL,
+  `jumlahmasuk` varchar(30) DEFAULT NULL,
+  `hargasatuan` varchar(255) DEFAULT NULL,
+  `hargatotal` varchar(255) DEFAULT NULL,
+  `lokasibarang` varchar(10) DEFAULT NULL,
+  `keterangan` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`namabarang`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `master_stokbarang` */
+
+insert  into `master_stokbarang`(`namabarang`,`jenisbarang`,`jumlahmasuk`,`hargasatuan`,`hargatotal`,`lokasibarang`,`keterangan`) values 
+('a','Pisau',NULL,NULL,NULL,NULL,'qwque'),
+('q','Pisau',NULL,NULL,NULL,NULL,'123123'),
+('qwer','Plat',NULL,NULL,NULL,NULL,'qwe'),
+('qwerty','Plat',NULL,NULL,NULL,NULL,'qweriwqajd');
 
 /*Table structure for table `master_supplier` */
 
@@ -146,9 +214,6 @@ CREATE TABLE `master_supplier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `master_supplier` */
-
-insert  into `master_supplier`(`id_supplier`,`nama_supplier`,`npwp_supplier`,`alamat_supplier`,`provinsi_supplier`,`kota_supplier`,`kecamatan_supplier`,`kelurahan_supplier`,`kodepos_supplier`,`notelp_supplier`,`email_supplier`,`item`,`nama_bank`,`no_rekening`,`created_at`,`updated_at`,`deleted_at`) values 
-('S001','a','a','a','a','a','a','a','a','324324','admi5n@gmail.com','aaa','aa','232344','2023-03-03 15:40:38','2023-03-03 15:40:38',NULL);
 
 /*Table structure for table `master_vendor` */
 
@@ -180,9 +245,6 @@ CREATE TABLE `master_vendor` (
 
 /*Data for the table `master_vendor` */
 
-insert  into `master_vendor`(`id_vendor`,`nama_vendor`,`jenis_item`,`kategori_vendor`,`alamat_vendor`,`kota_vendor`,`kecamatan_vendor`,`kelurahan_vendor`,`email_vendor`,`nama_bank`,`no_akun`,`no_rekening`,`batasan_hutang`,`hutang_sekarang`,`hutang_tersedia`,`sisa_hutang`,`metode_pembayaran`,`created_at`,`updated_at`,`deleted_at`) values 
-('V001','a','a','a','a','a','a','a','admi5n@gmail.com','a','a','342342','343','3424','342','34234','ASDSD','2023-03-03 15:55:00','2023-03-03 15:55:00',NULL);
-
 /*Table structure for table `migrations` */
 
 DROP TABLE IF EXISTS `migrations`;
@@ -192,16 +254,16 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `migrations` */
 
 insert  into `migrations`(`id`,`migration`,`batch`) values 
-(6,'2014_10_12_000000_create_users_table',1),
-(7,'2014_10_12_100000_create_password_reset_tokens_table',1),
-(8,'2019_08_19_000000_create_failed_jobs_table',1),
-(9,'2019_12_14_000001_create_personal_access_tokens_table',1),
-(10,'2023_02_21_022437_create_migrate',1);
+(1,'2014_10_12_000000_create_users_table',1),
+(2,'2014_10_12_100000_create_password_reset_tokens_table',1),
+(3,'2019_08_19_000000_create_failed_jobs_table',1),
+(4,'2019_12_14_000001_create_personal_access_tokens_table',1),
+(5,'2023_02_21_022437_create_migrate',1);
 
 /*Table structure for table `password_reset_tokens` */
 
