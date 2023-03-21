@@ -17,13 +17,13 @@ class controllerMasukKeluarStok extends Controller
     }
     public function doaddmasuk(Request $req)
     {
-        // $arusstok = masukkeluarstok::withTrashed()->get();
+        $arusstok = masukkeluarstok::withTrashed()->get();
 
-        // $jum = $req->tjumlah;
-        // $jumsatuan = $req->tjumsatuan;
-        
-        // $hasiltotal = $jum * $jumsatuan;
-        
+        $jum = $req->tjumlah;
+        $jumsatuan = $req->tjumlahsatuan;
+
+        $hasiltotal = $jum * $jumsatuan;
+        dd($hasiltotal);
         // masukkeluarstok::create([
         //     'namabarang' => $req->tnama,
         //     'jenisbarang' => $req->tjenisbarang,
@@ -32,10 +32,10 @@ class controllerMasukKeluarStok extends Controller
         //     'jumlahtotal' => $hasiltotal,
         //     'keterangan' => $req->tketerangan
         // ]);
-        // return redirect("/arusbarang");
+        return redirect("/arusbarang");
     }
     // public function dooaddkeluar(Request $req)
     // {
-        
+
     // }
 }
