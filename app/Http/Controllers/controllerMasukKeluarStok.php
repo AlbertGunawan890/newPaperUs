@@ -25,7 +25,7 @@ class controllerMasukKeluarStok extends Controller
         $jumsatuan = $req->tjumlahsatuan;
         $tanggalsekarang = new DateTime();
         $hasiltotal = $jum * $jumsatuan;
-        masukkeluarstok::create([   
+        masukkeluarstok::create([
             'namabarang' => $req->tnama,
             'jenisbarang' => $req->tjenisbarang,
             'jumlah' => $jum,

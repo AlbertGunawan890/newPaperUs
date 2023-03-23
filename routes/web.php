@@ -50,6 +50,9 @@ Route::post('/doAddvendor', [VendorController::class, "doAdd"]);
 Route::get('/masterpenawaran', function () {
     return view('masterpenawaran');
 });
+Route::get('/tambahpenawaran', [PenawaranController::class, "show"]);
+Route::get('/doAddpenawaran', [PenawaranController::class, "doAddpenawaran"]);
+
 Route::get('/mastersubcon', function () {
     return view('mastersubcon');
 });
@@ -148,9 +151,7 @@ Route::get('/stokbarang', [stokbarangController::class, "showstok"]);
 
 
 
-Route::get('/tambahpenawaran', function () {
-    return view('tambahpenawaran');
-});
+
 Route::get('/tambahdp', function () {
     return view('tambahdp');
 });

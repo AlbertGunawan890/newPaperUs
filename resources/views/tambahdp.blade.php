@@ -5,7 +5,7 @@
         <h1 class="h3 mb-0 text-gray-800">Form DP/Pembayaran</h1>
     </div>
     <div class="form-group">
-                                   
+
         <label class="label" for="disabledTextInput">No. Penawaran</label>
         <select data-live-search="true" class="selectpicker form-control">
             <option selected>Pilih No. Penawaran</option>
@@ -20,9 +20,6 @@
         <label class="label">Nama PIC</label>
         <input class="form-control" placeholder="Masukkan Nama PIC">
 
-        <label class="label">Customer</label>
-        <input class="form-control" placeholder="Masukkan Customer">
-    
         <label for="exampleFormControlTextarea1" class="label">Jenis Box</label>
         <input class="form-control" placeholder="Jenis Box">
 
@@ -43,11 +40,11 @@
 
         <label for="exampleFormControlTextarea1" class="label">Termin Pembayaran</label>
         <input class="form-control" placeholder="Masukkan termin pembayaran">
-    
+
         <br>
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
-    
+
 
 </div>
 @endsection

@@ -15,15 +15,15 @@
                         Tambah Data
                       </button>
                     </a>
-                  
-                 
+
+
             </div>
             <div class="card-body">
             <table id="tabelFormDP" class="table table-bordered table-no-wrap" style="width:100%">
                 <thead>
                     <tr>
                         <th>No. Penawaran</th>
-                        <th>Nama Customer</th>
+                        <th>PIC</th>
                         <th>Pembayaran</th>
                         <th>Sisa</th>
                         <th>Penerimaan</th>

@@ -19,7 +19,6 @@
                         <th>Nama Barang</th>
                         <th>Harga</th>
                         <th>Quantity</th>
-                        <th>Lokasi Barang</th>
                         <th>Tanggal Masuk</th>
                         <th>Aksi</th>
                     </tr>
@@ -32,7 +31,6 @@
                         <td>Box 10x10cm</td>
                         <td>Rp5000</td>
                         <td>250</td>
-                        <td>A-9</td>
                         <td>27-02-2023</td>
                         <td>
                             <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
@@ -46,7 +44,6 @@
                         <td>Box 20x10cm</td>
                         <td>Rp7000</td>
                         <td>250</td>
-                        <td>A-8</td>
                         <td>26-02-2023</td>
                         <td>
                             <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>

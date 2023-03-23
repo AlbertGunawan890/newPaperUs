@@ -15,14 +15,14 @@
                         Tambah Data
                       </button>
                     </a>
-                  
+
             </div>
             <div class="card-body">
                 <table id="tabelFormPenawaran" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
                     <thead>
                         <tr>
                             <th>No. Penawaran</th>
-                            <th>Nama Customer</th>
+                            <th>PIC</th>
                             <th>Jenis Box</th>
                             <th>Quantity</th>
                             <th>Jumlah Produksi</th>
@@ -73,7 +73,7 @@
                     </tbody>
                 </table>
             </div>
-            
+
         </div>
         </div>
 
