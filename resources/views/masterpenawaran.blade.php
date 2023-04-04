@@ -34,15 +34,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($penawaran as $prm)
                         <tr>
-                            <td>123456</td>
-                            <td>Bambang bambang</td>
-                            <td>10x10cm</td>
-                            <td>10000</td>
-                            <td>3000</td>
-                            <td>Rp10.000</td>
-                            <td>5%</td>
-                            <td>Rp95.000</td>
+                            <td>{{$prm->id_penawaran}}</td>
+                            <td>{{$prm->pic}}</td>
+                            <td>{{$prm->jenis_box}}</td>
+                            <td>{{$prm->qty}}</td>
+                            <td>{{$prm->jum_produksi}}</td>
+                            <td>{{$prm->harga_satuan}}</td>
+                            <td>{{$prm->diskon}}</td>
+                            <td>{{$prm->net}}</td>
                             <td>
                                 <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
                                 <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
@@ -52,24 +53,7 @@
                                 <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>
-                        <tr>
-                            <td>123456</td>
-                            <td>Andi Wijaya</td>
-                            <td>20x10cm</td>
-                            <td>3000</td>
-                            <td>1000</td>
-                            <td>Rp5.000</td>
-                            <td>20%</td>
-                            <td>Rp4.000</td>
-                            <td>
-                                <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
-                                <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                                <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                            </td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

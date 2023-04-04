@@ -6,6 +6,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PembelianBarangcontroller;
+use App\Http\Controllers\PenawaranController;
 use App\Http\Controllers\stokbarangController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\VendorController;
@@ -47,11 +48,10 @@ Route::post('/doAddsupplier', [SupplierController::class, "doAdd"]);
 Route::get('/mastervendor', [VendorController::class, "show"]);
 Route::post('/doAddvendor', [VendorController::class, "doAdd"]);
 
-Route::get('/masterpenawaran', function () {
-    return view('masterpenawaran');
-});
-Route::get('/tambahpenawaran', [PenawaranController::class, "show"]);
-Route::get('/doAddpenawaran', [PenawaranController::class, "doAddpenawaran"]);
+
+Route::get('/masterpenawaran', [PenawaranController::class, "show"]);
+Route::get('/tambahpenawaran', [PenawaranController::class, "showBrand"]);
+Route::post('/doAddpenawaran', [PenawaranController::class, "doAddpenawaran"]);
 
 Route::get('/mastersubcon', function () {
     return view('mastersubcon');

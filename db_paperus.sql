@@ -152,18 +152,28 @@ DROP TABLE IF EXISTS `master_penawaran`;
 
 CREATE TABLE `master_penawaran` (
   `id_penawaran` varchar(255) NOT NULL,
-  `nama_customer` varchar(255) DEFAULT NULL,
+  `nama_brand` varchar(255) DEFAULT NULL,
+  `pic` varchar(255) DEFAULT NULL,
   `jenis_box` varchar(255) DEFAULT NULL,
+  `panjang` varchar(255) DEFAULT NULL,
+  `lebar` varchar(255) DEFAULT NULL,
+  `tinggi` varchar(255) DEFAULT NULL,
   `qty` varchar(255) DEFAULT NULL,
   `jum_produksi` varchar(255) DEFAULT NULL,
-  `harga` varchar(255) DEFAULT NULL,
+  `processing` varchar(255) DEFAULT NULL,
+  `harga_satuan` varchar(255) DEFAULT NULL,
+  `harga_satuan_terakhir` varchar(255) DEFAULT NULL,
   `diskon` varchar(255) DEFAULT NULL,
   `net` varchar(255) DEFAULT NULL,
-  `status_penawaran` varchar(3) DEFAULT NULL,
+  `harga_net_terakhir` varchar(255) DEFAULT NULL,
+  `status_penawaran` bigint(1) DEFAULT NULL,
   PRIMARY KEY (`id_penawaran`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `master_penawaran` */
+
+insert  into `master_penawaran`(`id_penawaran`,`nama_brand`,`pic`,`jenis_box`,`panjang`,`lebar`,`tinggi`,`qty`,`jum_produksi`,`processing`,`harga_satuan`,`harga_satuan_terakhir`,`diskon`,`net`,`harga_net_terakhir`,`status_penawaran`) values 
+('P001','Sidu','Angga','10x10','12','12','12','5','5','Kertas,Tinta,','3434343',NULL,'342','3242342',NULL,1);
 
 /*Table structure for table `master_stokbarang` */
 
@@ -244,6 +254,10 @@ CREATE TABLE `master_vendor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `master_vendor` */
+
+insert  into `master_vendor`(`id_vendor`,`nama_vendor`,`jenis_item`,`kategori_vendor`,`alamat_vendor`,`kota_vendor`,`kecamatan_vendor`,`kelurahan_vendor`,`email_vendor`,`nama_bank`,`no_akun`,`no_rekening`,`batasan_hutang`,`hutang_sekarang`,`hutang_tersedia`,`sisa_hutang`,`metode_pembayaran`,`created_at`,`updated_at`,`deleted_at`) values 
+('V001','Sidu','Kertas','Kertas','asd','asd','asd','asd','sidu@gmail.com','bca','123','12334234234','324234234','324234234','34234234','324234234','transfer','2023-03-21 04:21:43','2023-03-21 04:21:43',NULL),
+('V002','Kiki','Kertas','Kertas','asddsdas','aasdasd','sadasdasd','sdasdasd','kiki@gmail.com','bca','123','32423423434','234234234','344543543','53453453','453453453','transfer','2023-03-21 04:21:43','2023-03-21 04:21:43',NULL);
 
 /*Table structure for table `migrations` */
 
