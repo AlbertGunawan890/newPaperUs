@@ -23,10 +23,10 @@
                 </select>
 
                 <label class="label">Jumlah Masuk</label>
-                <input class="form-control" name="tjumlah" placeholder="Masukkan Jumlah">
+                <input class="form-control" onchange="hartot()" name="tjumlah" placeholder="Masukkan Jumlah">
 
                 <label class="label">Harga Satuan</label>
-                <input class="form-control" name="tjumlahsatuan" placeholder="Masukkan Harga Satuan">
+                <input class="form-control" onchange="hartot()" name="tjumlahsatuan" placeholder="Masukkan Harga Satuan">
 
                 <label class="label">Harga Total</label>
                 <input class="form-control" name="tjumlahtotal" placeholder="Harga Total">
@@ -42,4 +42,14 @@
             </form>
         </div>
     </div>
+
+    <script>
+        function hartot(){
+            var qtynya = parseInt($("[name='tjumlah']").val());
+            var hargasatuannya = parseInt($("[name='tjumlahsatuan']").val());
+            // var harga_satuan = parseInt($("[name='harga_satuan']").val());
+            var temp = (qtynya*hargasatuannya);
+            $("[name='tjumlahtotal']").val(temp);
+        }
+    </script>
 @endsection

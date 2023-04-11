@@ -27,8 +27,6 @@ class PembelianBarangcontroller extends Controller
     }
     public function doAdd(Request $req)
     {
-        $pembbarang = PembelianBarang::withTrashed()->get();
-
         PembelianBarang::create([
             'tipebox' => $req->ttipebox,
             'namabarang' => $req->tnamabarang,
@@ -36,7 +34,7 @@ class PembelianBarangcontroller extends Controller
             'supplier' => $req->tsupplier,
             'jumlah' => $req->tjumlah,
             'harga' => $req->tharga,
-            'diskon' => $req->tdiskkon,
+            'diskon' => $req->tdiskon,
             'nett' => $req->tnett
         ]);
         return redirect("/tambahpembelian");
