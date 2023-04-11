@@ -64,7 +64,7 @@ class PenawaranController extends Controller
             'diskon' => $request->diskon,
             'net' => $request->net,
             'harga_net_terkahir' => $harga_net_terakhir,
-            'status_penawaran' => 1,
+            'status_penawaran' => 0,
         ]);
 
         $checked = $request->cb;

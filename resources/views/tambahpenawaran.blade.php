@@ -288,7 +288,7 @@
                     <input type="number" class="form-control" value="0" disabled name="harga_net_terakhir">
                 </div>
                 <br>
-                <input type="hidden" name="data">
+                {{-- <input type="hidden" name="data"> --}}
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>

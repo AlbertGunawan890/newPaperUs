@@ -3,8 +3,10 @@
 use App\Http\Controllers\BoxController;
 use App\Http\Controllers\controllerMasukKeluarStok;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\DesainController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PembelianBarangcontroller;
 use App\Http\Controllers\PenawaranController;
 use App\Http\Controllers\stokbarangController;
@@ -53,6 +55,15 @@ Route::get('/masterpenawaran', [PenawaranController::class, "show"]);
 Route::get('/tambahpenawaran', [PenawaranController::class, "showBrand"]);
 Route::post('/doAddpenawaran', [PenawaranController::class, "doAddpenawaran"]);
 
+Route::get('/formdp', [PembayaranController::class, "show"]);
+Route::get('/tambahdp', [PembayaranController::class, "showBrand"]);
+Route::post('/doAddpembayaran', [PembayaranController::class, "doAddpembayaran"]);
+
+Route::get('/formdesain', function () {
+    return view('formdesain');
+});
+Route::get('/tambahdesain', [DesainController::class, "showBrand"]);
+
 Route::get('/mastersubcon', function () {
     return view('mastersubcon');
 });
@@ -68,9 +79,7 @@ Route::get('/formprocess', function () {
 Route::get('/formpo', function () {
     return view('formpo');
 });
-Route::get('/formdesain', function () {
-    return view('formdesain');
-});
+
 
 Route::get('/history', function () {
     return view('history');
@@ -88,9 +97,7 @@ Route::get('/penagihan', function () {
 Route::get('/stokbarangjadi', function () {
     return view('stokbarangjadi');
 });
-Route::get('/formdp', function () {
-    return view('formdp');
-});
+
 Route::get('/suratperintahkerja', function () {
     return view('suratperintahkerja');
 });
@@ -147,17 +154,6 @@ Route::get('/stokbarang', [stokbarangController::class, "showstok"]);
 // });
 
 
-
-
-
-
-
-Route::get('/tambahdp', function () {
-    return view('tambahdp');
-});
-Route::get('/tambahdesain', function () {
-    return view('tambahdesain');
-});
 Route::get('/tambahpengiriman', function () {
     return view('tambahpengiriman');
 });

@@ -13,8 +13,8 @@
                 <a href={{ url('tambahpenawaran') }}>
                     <button type="button" class="btn btn-primary my-auto">
                         Tambah Data
-                      </button>
-                    </a>
+                    </button>
+                </a>
 
             </div>
             <div class="card-body">
@@ -35,32 +35,58 @@
                     </thead>
                     <tbody>
                         @foreach ($penawaran as $prm)
-                        <tr>
-                            <td>{{$prm->id_penawaran}}</td>
-                            <td>{{$prm->pic}}</td>
-                            <td>{{$prm->jenis_box}}</td>
-                            <td>{{$prm->qty}}</td>
-                            <td>{{$prm->jum_produksi}}</td>
-                            <td>{{$prm->harga_satuan}}</td>
-                            <td>{{$prm->diskon}}</td>
-                            <td>{{$prm->net}}</td>
-                            <td>
-                                <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
-                                <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                                <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>{{ $prm->id_penawaran }}</td>
+                                <td>{{ $prm->pic }}</td>
+                                <td>{{ $prm->jenis_box }}</td>
+                                <td>{{ $prm->qty }}</td>
+                                <td>{{ $prm->jum_produksi }}</td>
+                                <td>{{ $prm->harga_satuan }}</td>
+                                <td>{{ $prm->diskon }}</td>
+                                <td>{{ $prm->net }}</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" onclick="btnAcc('{{$prm->id_penawaran}}');"><i class="fas fa-check"></i></button>
+                                    <button type="button" class="btn btn-danger"  onclick="btnDecline('{{$prm->id_penawaran}}');"><i class="fas fa-times"></i></button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                    <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
             </div>
 
         </div>
-        </div>
-
     </div>
+    <script>
+        function btnAcc(id){
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "AccPenawaran"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+        function btnDecline(id){
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "DeclinePenawaran"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+    </script>
     <!-- /.container-fluid -->
-    @endsection
+@endsection

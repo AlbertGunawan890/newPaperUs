@@ -125,6 +125,33 @@ CREATE TABLE `master_pegawai` (
 
 /*Data for the table `master_pegawai` */
 
+/*Table structure for table `master_pembayaran` */
+
+DROP TABLE IF EXISTS `master_pembayaran`;
+
+CREATE TABLE `master_pembayaran` (
+  `id_pembayaran` varchar(255) NOT NULL,
+  `id_penawaran` varchar(255) DEFAULT NULL,
+  `nama_brand` varchar(255) DEFAULT NULL,
+  `pic` varchar(255) DEFAULT NULL,
+  `jenis_box` varchar(255) DEFAULT NULL,
+  `qty` varchar(255) DEFAULT NULL,
+  `jum_produksi` varchar(255) DEFAULT NULL,
+  `harga` varchar(255) DEFAULT NULL,
+  `pembayaran` varchar(255) DEFAULT NULL,
+  `sisa` varchar(255) DEFAULT NULL,
+  `termin` date DEFAULT NULL,
+  `status_pembayaran` bigint(1) DEFAULT NULL,
+  PRIMARY KEY (`id_pembayaran`),
+  KEY `id_penawaran` (`id_penawaran`),
+  CONSTRAINT `master_pembayaran_ibfk_1` FOREIGN KEY (`id_penawaran`) REFERENCES `master_penawaran` (`id_penawaran`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `master_pembayaran` */
+
+insert  into `master_pembayaran`(`id_pembayaran`,`id_penawaran`,`nama_brand`,`pic`,`jenis_box`,`qty`,`jum_produksi`,`harga`,`pembayaran`,`sisa`,`termin`,`status_pembayaran`) values 
+('PB001','P001','Sidu','Angga','10x10 cm','5','10','45000','45000','0','2023-04-10',1);
+
 /*Table structure for table `master_pembelianbarang` */
 
 DROP TABLE IF EXISTS `master_pembelianbarang`;
@@ -160,7 +187,6 @@ CREATE TABLE `master_penawaran` (
   `tinggi` varchar(255) DEFAULT NULL,
   `qty` varchar(255) DEFAULT NULL,
   `jum_produksi` varchar(255) DEFAULT NULL,
-  `processing` varchar(255) DEFAULT NULL,
   `harga_satuan` varchar(255) DEFAULT NULL,
   `harga_satuan_terakhir` varchar(255) DEFAULT NULL,
   `diskon` varchar(255) DEFAULT NULL,
@@ -172,8 +198,8 @@ CREATE TABLE `master_penawaran` (
 
 /*Data for the table `master_penawaran` */
 
-insert  into `master_penawaran`(`id_penawaran`,`nama_brand`,`pic`,`jenis_box`,`panjang`,`lebar`,`tinggi`,`qty`,`jum_produksi`,`processing`,`harga_satuan`,`harga_satuan_terakhir`,`diskon`,`net`,`harga_net_terakhir`,`status_penawaran`) values 
-('P001','Sidu','Angga','10x10','12','12','12','5','5','Kertas,Tinta,','3434343',NULL,'342','3242342',NULL,1);
+insert  into `master_penawaran`(`id_penawaran`,`nama_brand`,`pic`,`jenis_box`,`panjang`,`lebar`,`tinggi`,`qty`,`jum_produksi`,`harga_satuan`,`harga_satuan_terakhir`,`diskon`,`net`,`harga_net_terakhir`,`status_penawaran`) values 
+('P001','Sidu','Angga','10x10 cm','12','12','12','5','10','10000','0','10','45000',NULL,1);
 
 /*Table structure for table `master_stokbarang` */
 
@@ -313,6 +339,40 @@ CREATE TABLE `personal_access_tokens` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `personal_access_tokens` */
+
+/*Table structure for table `processing1` */
+
+DROP TABLE IF EXISTS `processing1`;
+
+CREATE TABLE `processing1` (
+  `id_proses1` int(11) NOT NULL AUTO_INCREMENT,
+  `id_penawaran` varchar(255) DEFAULT NULL,
+  `nama_brand` varchar(255) DEFAULT NULL,
+  `proses` varchar(255) DEFAULT NULL,
+  `status` bigint(1) DEFAULT NULL,
+  PRIMARY KEY (`id_proses1`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `processing1` */
+
+insert  into `processing1`(`id_proses1`,`id_penawaran`,`nama_brand`,`proses`,`status`) values 
+(1,'P001','Sidu','Kertas',0),
+(2,'P001','Sidu','Tinta',0),
+(3,'P001','Sidu','Laminasi',0);
+
+/*Table structure for table `processing2` */
+
+DROP TABLE IF EXISTS `processing2`;
+
+CREATE TABLE `processing2` (
+  `id_proses2` int(11) NOT NULL AUTO_INCREMENT,
+  `id_penawaran` varchar(255) DEFAULT NULL,
+  `nama_brand` varchar(255) DEFAULT NULL,
+  `status` bigint(1) DEFAULT NULL,
+  PRIMARY KEY (`id_proses2`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `processing2` */
 
 /*Table structure for table `users` */
 

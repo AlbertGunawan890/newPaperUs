@@ -31,39 +31,53 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($pembayaran as $prm)
                     <tr>
-                        <td>1234</td>
-                        <td>Pak Bambang</td>
-                        <td>Rp300.000</td>
-                        <td>Rp.450.000</td>
+                        <td>{{$prm->id_penawaran}}</td>
+                        <td>{{$prm->pic}}</td>
+                        <td>{{$prm->pembayaran}}</td>
+                        <td>{{$prm->sisa}}</td>
                         <td>
-                            <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                            <button type="button" class="btn btn-success" onclick="btnAcc('{{$prm->id_pembayaran}}');"><i class="fas fa-check"></i></button>
+                            <button type="button" class="btn btn-danger"  onclick="btnDecline('{{$prm->id_pembayaran}}');"><i class="fas fa-times"></i></button>
                         </td>
                         <td>
                             <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                             <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2345</td>
-                        <td>Sugiono</td>
-                        <td>Rp500.000</td>
-                        <td>Rp300.000</td>
-                        <td>
-                            <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                        </td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
-        </div>
+        <script>
+            function btnAcc(id){
+                $.ajax({
+                    url: "autocomplete.php",
+                    method: "POST",
+                    data: {
+                        query: id,
+                        ctr: "AccPembayaran"
+                    },
+                    success: function(data) {
 
+                    }
+                });
+            }
+            function btnDecline(id){
+                $.ajax({
+                    url: "autocomplete.php",
+                    method: "POST",
+                    data: {
+                        query: id,
+                        ctr: "DeclinePembayaran"
+                    },
+                    success: function(data) {
+
+                    }
+                });
+            }
+        </script>
     </div>
     <!-- /.container-fluid -->
     @endsection
