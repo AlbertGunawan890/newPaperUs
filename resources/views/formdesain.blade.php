@@ -33,11 +33,11 @@
                         <td>Tes</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                <input class="form-check-input" type="radio" onclick="rbCheck(name)" name="Acc" id="inlineRadio1" value="option1">
                                 <label class="form-check-label" for="inlineRadio1">Reject</label>
                               </div>
                               <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                <input class="form-check-input" type="radio" onclick="rbCheck(name)" name="Reject" id="inlineRadio2" value="option2">
                                 <label class="form-check-label" for="inlineRadio2">Accept</label>
                               </div>
                               <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
@@ -64,8 +64,11 @@
                 </tbody>
             </table>
         </div>
-        </div>
-
+        <script>
+            function rbCheck(name) {
+                console.log(name);
+            }
+        </script>
     </div>
     <!-- /.container-fluid -->
     @endsection
