@@ -84,19 +84,25 @@ CREATE TABLE `master_customer` (
 
 /*Data for the table `master_customer` */
 
-/*Table structure for table `master_desaingunting` */
+/*Table structure for table `master_desain` */
 
-DROP TABLE IF EXISTS `master_desaingunting`;
+DROP TABLE IF EXISTS `master_desain`;
 
-CREATE TABLE `master_desaingunting` (
+CREATE TABLE `master_desain` (
+  `id_desain` varchar(255) NOT NULL,
   `id_penawaran` varchar(255) DEFAULT NULL,
+  `pic` varchar(255) DEFAULT NULL,
+  `jenis_box` varchar(255) DEFAULT NULL,
   `link_desain` varchar(255) DEFAULT NULL,
-  `keterangan` varchar(255) DEFAULT NULL,
+  `pisau` varchar(255) DEFAULT NULL,
+  `plat` varchar(255) DEFAULT NULL,
+  `status_desain` bigint(1) DEFAULT NULL,
+  PRIMARY KEY (`id_desain`),
   KEY `id_penawaran` (`id_penawaran`),
-  CONSTRAINT `master_desaingunting_ibfk_1` FOREIGN KEY (`id_penawaran`) REFERENCES `master_penawaran` (`id_penawaran`)
+  CONSTRAINT `master_desain_ibfk_1` FOREIGN KEY (`id_penawaran`) REFERENCES `master_pembayaran` (`id_pembayaran`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-/*Data for the table `master_desaingunting` */
+/*Data for the table `master_desain` */
 
 /*Table structure for table `master_pegawai` */
 
