@@ -59,10 +59,9 @@ Route::get('/formdp', [PembayaranController::class, "show"]);
 Route::get('/tambahdp', [PembayaranController::class, "showBrand"]);
 Route::post('/doAddpembayaran', [PembayaranController::class, "doAddpembayaran"]);
 
-Route::get('/formdesain', function () {
-    return view('formdesain');
-});
+Route::get('/formdesain', [DesainController::class, "show"]);
 Route::get('/tambahdesain', [DesainController::class, "showBrand"]);
+Route::post('/doAddDesain', [DesainController::class, "doAddDesain"]);
 
 Route::get('/mastersubcon', function () {
     return view('mastersubcon');

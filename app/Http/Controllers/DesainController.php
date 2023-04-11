@@ -16,8 +16,39 @@ class DesainController extends Controller
         $plat = masukkeluarstok::where('jenisbarang','Plat')->get();
         return view('tambahdesain', compact('pembayaran','pisau','plat'));
     }
+    public function show()
+    {
+       $desain = Desain::all();
+        return view('formdesain', compact('desain'));
+    }
     public function doAddDesain(Request $req)
     {
+        $desain = Desain::withTrashed()->get();
+        $ctr = 1;
+        foreach($desain as $c){
+            $ctr = intval(substr($c->id_desain, 2)) + 1;
+        }
+        if($ctr<10){
+            $kode = "DE00{$ctr}";
+        }else if($ctr<100){
+            $kode = "DE0{$ctr}";
+        }else{
+            $kode = "DE{$ctr}";
+        }
         $desain = Desain::all();
+
+        Desain::create([
+            'id_desain' => $kode,
+            'id_penawaran'=>$req->id_penawaran,
+            'pic'=>$req->pic,
+            'jenis_box'=>$req->jenis_box,
+            'link_desain'=>$req->link,
+            'pisau'=>$req->pisau,
+            'plat'=>$req->plat,
+            'status_desain'=> 0,
+
+
+        ]);
+        return redirect("/");
     }
 }

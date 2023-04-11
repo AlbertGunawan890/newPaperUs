@@ -5,7 +5,7 @@
             <h1 class="h3 mb-0 text-gray-800">Form Desain dan Pisau</h1>
         </div>
         <div class="form-group">
-            <form action="" method="post">
+            <form action="{{ url('/doAddDesain') }}" method="post">
                 @csrf
                 <label class="label" for="disabledTextInput">No. Penawaran</label>
                 <select data-live-search="true" class="selectpicker form-control" name="id_penawaran"
@@ -15,7 +15,6 @@
                         <option value={{ $prm->id_penawaran }}>{{ $prm->id_penawaran }}</option>
                     @endforeach
                 </select>
-                @csrf
                 <label class="label">Customer</label>
                 <input class="form-control" name="pic" placeholder="Customer">
 
