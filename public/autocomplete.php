@@ -42,6 +42,18 @@ else if ($_REQUEST["ctr"] == "DeclinePembayaran") {
         $result = mysqli_query($connect, $query);
     }
 }
+else if ($_REQUEST["ctr"] == "AccDesain") {
+    if (isset($_POST["query"])) {
+        $query = "UPDATE master_desain SET status_desain = 1 WHERE id_desain='".$_POST["query"]."'";
+        $result = mysqli_query($connect, $query);
+    }
+}
+else if ($_REQUEST["ctr"] == "DeclineDesain") {
+    if (isset($_POST["query"])) {
+        $query = "UPDATE master_desain SET status_desain = -1 WHERE id_desain='".$_POST["query"]."'";
+        $result = mysqli_query($connect, $query);
+    }
+}
 else if ($_REQUEST["ctr"] == "Pembayaran") {
     if (isset($_POST["query"])) {
         $output = "";
@@ -65,6 +77,21 @@ else if ($_REQUEST["ctr"] == "DesainCustomer") {
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_array($result)) {
                 $output=$row["pic"].",".$row["jenis_box"];
+            }
+        } else {
+            $output .= '';
+        }
+        echo $output;
+    }
+}
+else if ($_REQUEST["ctr"] == "PenawaranSPK") {
+    if (isset($_POST["query"])) {
+        $output = "";
+        $query = "SELECT * FROM master_desain md, master_penawaran mp WHERE md.id_penawaran = '" . $_POST["query"] . "' AND mp.id_penawaran = '" . $_POST["query"] . "'";
+        $result = mysqli_query($connect, $query);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_array($result)) {
+                $output=$row["pic"].",".$row["jenis_box"].",".$row["jum_produksi"].",".$row["link_desain"].",".$row["pisau"].",".$row["plat"];
             }
         } else {
             $output .= '';

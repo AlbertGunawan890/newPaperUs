@@ -5,13 +5,13 @@
         <h1 class="h3 mb-0 text-gray-800">Form Penagihan / Invoicing</h1>
     </div>
     <div class="form-group">
-                                   
-        <label class="label" for="disabledTextInput">No. Penawaran</label>
-        <input id="disabledTextInput" class="form-control" placeholder="No. Penawaran" disabled>
+
+        <label class="label" for="readonlyTextInput">No. Penawaran</label>
+        <input id="readonlyTextInput" class="form-control" placeholder="No. Penawaran" readonly>
 
         <label class="label">Customer</label>
         <input class="form-control" placeholder="Pilih Customer">
-    
+
         <label for="exampleFormControlTextarea1" class="label">Jenis Box</label>
         <input class="form-control" placeholder="Pilih Jenis Box">
 

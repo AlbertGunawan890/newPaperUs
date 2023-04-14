@@ -7,8 +7,8 @@
         <div class="form-group">
             <form action="{{ url('doAddpenawaran') }}" method="post">
                 @csrf
-                <label class="label" for="disabledTextInput">No. Penawaran</label>
-                <input id="disabledTextInput" class="form-control" placeholder="No. Penawaran" disabled>
+                <label class="label" for="readonlyTextInput">No. Penawaran</label>
+                <input id="readonlyTextInput" class="form-control" placeholder="No. Penawaran" readonly>
 
                 <br>
                 <div class="form-check form-check-inline">
@@ -262,7 +262,7 @@
                         name="harga_satuan">
 
                     <label for="exampleFormControlTextarea1" class="label">Harga Satuan Terakhir</label>
-                    <input type="number" class="form-control" disabled value="0" name="harga_satuan_terakhir">
+                    <input type="number" class="form-control" readonly value="0" name="harga_satuan_terakhir">
                     <br>
                     <div style="display:flex;">
                         <div style="margin-left: -3%;" class="col-sm-6"></div>
@@ -272,7 +272,7 @@
                             <label for="exampleFormControlTextarea1" class="label">Diskon</label>
                             <div style="display: flex;">
                                 <input class="form-control" style="width: 100%;" placeholder="Masukkan Diskon" name="diskon" onchange="disc();nett();">
-                                <button disabled="disabled" class="btn" style="height: 10px;">%</button>
+                                <button readonly="readonly" class="btn" style="height: 10px;">%</button>
                             </div>
                         </div>
                         <div style="width: 100%;">
@@ -285,7 +285,7 @@
                     <input class="form-control" placeholder="Masukkan Nett" name="net">
 
                     <label for="exampleFormControlTextarea1" class="label">Harga Nett Terakhir</label>
-                    <input type="number" class="form-control" value="0" disabled name="harga_net_terakhir">
+                    <input type="number" class="form-control" value="0" readonly name="harga_net_terakhir">
                 </div>
                 <br>
                 {{-- <input type="hidden" name="data"> --}}
@@ -294,6 +294,7 @@
         </div>
     </div>
     <script>
+
         function nett(){
             var qty = parseInt($("[name='qty']").val());
             var harga_satuan = parseInt($("[name='harga_satuan']").val());
@@ -324,13 +325,13 @@
 
             if (checkBox.checked == true) {
                 // --Stock Jadi--
-                document.getElementById("formHarga").disabled = true;
+                document.getElementById("formHarga").readonly = true;
                 document.getElementById("penjualan").style.display = "none";
                 document.getElementById("stok_jadi").style.display = "block";
 
             } else {
                 // --Penjualan--
-                document.getElementById("formHarga").disabled = false;
+                document.getElementById("formHarga").readonly = false;
                 document.getElementById("penjualan").style.display = "block";
                 document.getElementById("stok_jadi").style.display = "none";
             }

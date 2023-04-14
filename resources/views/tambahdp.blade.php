@@ -7,7 +7,7 @@
         <div class="form-group">
             <form action="{{ url('doAddpembayaran') }}" method="post">
                 @csrf
-                <label class="label" for="disabledTextInput">No. Penawaran</label>
+                <label class="label" for="readonlyTextInput">No. Penawaran</label>
                 <select data-live-search="true" class="selectpicker form-control" name="id_penawaran"
                     onchange="nama_brand_change()">
                     <option selected>Pilih No. Penawaran</option>

@@ -22,8 +22,8 @@
                         </div>
                     </div>
                     <div class="col-3">
-                        <label class="label" for="disabledTextInput">Jumlah Barang</label>
-                        <input id="stokJumlah" class="form-control" placeholder="Jenis barang" disabled>
+                        <label class="label" for="readonlyTextInput">Jumlah Barang</label>
+                        <input id="stokJumlah" class="form-control" placeholder="Jenis barang" readonly>
                     </div>
                 </div>
                 <div class="row">
@@ -43,8 +43,8 @@
                         <input id="stokQty" type="number" class="form-control" placeholder="Jumlah">
                     </div>
                     <div class="col-4">
-                        <label class="label" for="disabledTextInput">Jumlah</label>
-                        <input id="stokJumlah" class="form-control" placeholder="Jumlah" disabled>
+                        <label class="label" for="readonlyTextInput">Jumlah</label>
+                        <input id="stokJumlah" class="form-control" placeholder="Jumlah" readonly>
                     </div>
 
                 </div>

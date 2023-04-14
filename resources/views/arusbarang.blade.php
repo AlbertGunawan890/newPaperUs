@@ -43,22 +43,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>ABCDF</td>
-                                    <td>HURUF</td>
-                                    <td>100</td>
-                                    <td>Rp10.000</td>
-                                    <td>Rp1.000.000</td>
-                                    <td>
-                                        <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                                        <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                                    </td>
-                                </tr>
+                                
                                 @foreach ($arusmasukkeluar as $prm)
                                     <tr>
                                         <td>{{ $prm->namabarang }}</td>
                                         <td>{{ $prm->jenisbarang }}</td>
-                                        <td>{{ $prm->jumlah }}</td>
+                                        <td>{{ $prm->jumlahmasuk }}</td>
                                         <td>{{ $prm->hargasatuan }}</td>
                                         <td>{{ $prm->hargatotal }}</td>
                                         <td>

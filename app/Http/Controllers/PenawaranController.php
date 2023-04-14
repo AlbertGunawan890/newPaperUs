@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Penawaran;
 use App\Models\Processing1;
 use App\Models\Processing2;
+use App\Models\SPK;
 use App\Models\Vendor;
 use Illuminate\Http\Request;
 
@@ -13,8 +14,8 @@ class PenawaranController extends Controller
     public function showBrand()
     {
         $arrBrand = Vendor::all();
-        $penawaran = Penawaran::all();
-        return view('tambahpenawaran', compact('arrBrand'));
+        $spk = SPK::all();
+        return view('tambahpenawaran', compact('arrBrand','spk'));
     }
 
     public function show()

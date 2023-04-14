@@ -5,21 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Desain extends Model
+class SPK extends Model
 {
     use HasFactory;
-    protected $table = "master_desain";
-    protected $primaryKey = "id_desain";
+    protected $table = "master_spk";
+    protected $primaryKey = "no_spk";
     public $timestamps = false;
     protected $fillable = [
-        'id_desain',
+        'no_spk',
         'id_penawaran',
         'pic',
         'jenis_box',
+        'jum_produksi',
         'link_desain',
         'pisau',
-        'plat',
-        'status_desain'
+        'plat'
     ];
     protected $keyType = 'string';
 }

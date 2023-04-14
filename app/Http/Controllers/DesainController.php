@@ -23,7 +23,7 @@ class DesainController extends Controller
     }
     public function doAddDesain(Request $req)
     {
-        $desain = Desain::withTrashed()->get();
+        $desain = Desain::get();
         $ctr = 1;
         foreach($desain as $c){
             $ctr = intval(substr($c->id_desain, 2)) + 1;
@@ -35,7 +35,6 @@ class DesainController extends Controller
         }else{
             $kode = "DE{$ctr}";
         }
-        $desain = Desain::all();
 
         Desain::create([
             'id_desain' => $kode,
@@ -45,10 +44,8 @@ class DesainController extends Controller
             'link_desain'=>$req->link,
             'pisau'=>$req->pisau,
             'plat'=>$req->plat,
-            'status_desain'=> 0,
-
-
+            'status_desain'=> 0
         ]);
-        return redirect("/");
+        return redirect("/formdesain");
     }
 }

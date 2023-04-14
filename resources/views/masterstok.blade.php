@@ -10,7 +10,7 @@
 
         <div class="container" style="float: left;">
             <div class="form-group">
-                
+
                 <div class="row">
                     <div class="col">
                         <div class="form-floating">
@@ -25,12 +25,12 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <label class="label" for="disabledTextInput">Jenis Barang</label>
-                        <input id="jenisPO" class="form-control" placeholder="Jenis barang" disabled>
+                        <label class="label" for="readonlyTextInput">Jenis Barang</label>
+                        <input id="jenisPO" class="form-control" placeholder="Jenis barang" readonly>
                     </div>
                     <div class="col">
-                        <label class="label" for="disabledTextInput">Jumlah Barang</label>
-                        <input id="jumlahPO" class="form-control" placeholder="Jumlah" disabled>
+                        <label class="label" for="readonlyTextInput">Jumlah Barang</label>
+                        <input id="jumlahPO" class="form-control" placeholder="Jumlah" readonly>
                     </div>
                 </div>
 

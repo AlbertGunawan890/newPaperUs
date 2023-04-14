@@ -5,13 +5,13 @@
         <h1 class="h3 mb-0 text-gray-800">Form Surat Jalan</h1>
     </div>
     <div class="form-group">
-                                   
-        <label class="label" for="disabledTextInput">No. SPK</label>
-        <input id="disabledTextInput" class="form-control" placeholder="No. SPK" disabled>
+
+        <label class="label" for="readonlyTextInput">No. SPK</label>
+        <input id="readonlyTextInput" class="form-control" placeholder="No. SPK" readonly>
 
         <label class="label">No. Surat Jalan</label>
         <input class="form-control" placeholder="Masukkan No. Surat Jalan">
-    
+
         <label for="exampleFormControlTextarea1" class="label">No. Kendaraan</label>
         <input class="form-control" placeholder="Masukkan No. Kendaraan">
 
@@ -29,7 +29,7 @@
 
         <label for="exampleFormControlTextarea1" class="label">Tanggal</label>
         <input type="date" class="form-control" placeholder="Pilih Tanggal">
-    
+
         <br>
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>

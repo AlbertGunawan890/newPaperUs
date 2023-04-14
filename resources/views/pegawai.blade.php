@@ -12,8 +12,8 @@
         <div class="form-group">
             <div class="row">
                 <div class="col-2">
-                    <label for="disabledTextInput">Kode Pegawai</label>
-                    <input id="disabledTextInput" class="form-control" placeholder="Kode" disabled>
+                    <label for="readonlyTextInput">Kode Pegawai</label>
+                    <input id="readonlyTextInput" class="form-control" placeholder="Kode" readonly>
                 </div>
                 <div class="col">
                     <label>Nama Pegawai</label>

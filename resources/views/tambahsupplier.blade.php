@@ -5,9 +5,9 @@
         <h1 class="h3 mb-0 text-gray-800">Master Supplier</h1>
     </div>
     <div class="form-group">
-                                   
-        <label class="label" for="disabledTextInput">ID Supplier</label>
-        <input id="disabledTextInput" class="form-control" placeholder="ID Supplier" disabled>
+
+        <label class="label" for="readonlyTextInput">ID Supplier</label>
+        <input id="readonlyTextInput" class="form-control" placeholder="ID Supplier" readonly>
 
         <label class="label">Nama Pegawai</label>
         <input class="form-control" placeholder="Masukkan Nama">

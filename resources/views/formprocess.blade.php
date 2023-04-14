@@ -24,24 +24,24 @@
                 </div>
                 <div class="row">
                     <div class="col-8">
-                        <label class="label" for="disabledTextInput">Nama Customer</label>
-                        <input id="custProcess" class="form-control" placeholder="Nama Customer" disabled>
+                        <label class="label" for="readonlyTextInput">Nama Customer</label>
+                        <input id="custProcess" class="form-control" placeholder="Nama Customer" readonly>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-3">
                         <label class="label">Jenis Barang</label>
-                        <input id="processJenisBarang" type="number" class="form-control" placeholder="Jenis Barang" disabled>
+                        <input id="processJenisBarang" type="number" class="form-control" placeholder="Jenis Barang" readonly>
                     </div>
                     <div class="col-5">
-                        <label class="label" for="disabledTextInput">Link Desain</label>
-                        <input id="processLink" class="form-control" placeholder="Link Desain" disabled>
+                        <label class="label" for="readonlyTextInput">Link Desain</label>
+                        <input id="processLink" class="form-control" placeholder="Link Desain" readonly>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-8">
-                        <label class="label" for="disabledTextInput">Harga</label>
-                        <input id="processHarga" class="form-control" placeholder="Harga" disabled>
+                        <label class="label" for="readonlyTextInput">Harga</label>
+                        <input id="processHarga" class="form-control" placeholder="Harga" readonly>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary my-4">Submit</button>
@@ -90,16 +90,16 @@
                             <input id="tableHarga" class="form-control" placeholder="Masukkan Harga">
                         </td>
                         <td>
-                            <input id="tableProduksi.Terakhir" class="form-control" placeholder="Produksi Terakhir" disabled>
+                            <input id="tableProduksi.Terakhir" class="form-control" placeholder="Produksi Terakhir" readonly>
                         </td>
                         <td>
-                            <input id="tableHarga.Terakhir" class="form-control" placeholder="Harga Terakhir" disabled>
+                            <input id="tableHarga.Terakhir" class="form-control" placeholder="Harga Terakhir" readonly>
                         </td>
                         <td>
                             <input id="tableQty" class="form-control" placeholder="Qty">
                         </td>
                         <td>
-                            <input id="tableRusak" class="form-control" placeholder="Rusak" disabled>
+                            <input id="tableRusak" class="form-control" placeholder="Rusak" readonly>
                         </td>
                         <td>
                             <button type="button" class="btn btn-success">Accept</button>

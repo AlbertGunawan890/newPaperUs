@@ -43,21 +43,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>12321312</td>
-                                <td>Pisau</td>
-                                <td>100.000</td>
-                                <td>200</td>
-                                <td>20A</td>
-                                <td>12/12/12</td>
-                            </tr>
                             <?php $ctr=1; ?>
                             @foreach ($arrStokpisau as $prm)
                                 <tr>
                                     <td>{{ $ctr }}</td>
                                     <td>{{ $prm->jenisbarang }}</td>
                                     <td>{{ $prm->hargasatuan }}</td>
-                                    <td>{{ $prm->jumlah }}</td>
+                                    <td>{{ $prm->jumlahmasuk }}</td>
                                     <td>{{ $prm->lokasibarang }}</td>
                                     <td>{{ $prm->tanggalmasuk }}</td>
                                 </tr>
@@ -81,21 +73,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>12321312</td>
-                                <td>Plat</td>
-                                <td>20.000</td>
-                                <td>100</td>
-                                <td>AA10</td>
-                                <td>10/01/23</td>
-                            </tr>
+
                             <?php $ctr=1; ?>
                             @foreach ($arrStokplat as $prm)
                                 <tr>
                                     <td>{{ $ctr }}</td>
                                     <td>{{ $prm->jenisbarang }}</td>
                                     <td>{{ $prm->hargasatuan }}</td>
-                                    <td>{{ $prm->jumlah }}</td>
+                                    <td>{{ $prm->jumlahmasuk }}</td>
                                     <td>{{ $prm->lokasibarang }}</td>
                                     <td>{{ $prm->tanggalmasuk }}</td>
                                 </tr>
@@ -107,7 +92,7 @@
             </div>
             <div class="tab-pane fade" id="sisa" role="tabpanel" aria-labelledby="sisa-tab">
                 <div class="card-body">
-                    <table id="tabelStokBarangC" class="table table-bordered table-no-wrap" style="width:100%">
+                    <table id="tabelStokBarangC" class="table table-bordered table-no-wrap " style="width:100%">
                         <thead>
                             <tr>
                                 <th>Nomor</th>
@@ -119,21 +104,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>12321312</td>
-                                <td>Sisa</td>
-                                <td>20.000</td>
-                                <td>100</td>
-                                <td>AA10</td>
-                                <td>10/01/23</td>
-                            </tr>
+
                             <?php $ctr=1; ?>
                             @foreach ($arrStokkertassisa as $prm)
                                 <tr>
                                     <td>{{ $ctr }}</td>
                                     <td>{{ $prm->jenisbarang }}</td>
                                     <td>{{ $prm->hargasatuan }}</td>
-                                    <td>{{ $prm->jumlah }}</td>
+                                    <td>{{ $prm->jumlahmasuk }}</td>
                                     <td>{{ $prm->lokasibarang }}</td>
                                     <td>{{ $prm->tanggalmasuk }}</td>
                                 </tr>
@@ -157,21 +135,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>12321312</td>
-                                <td>Lain</td>
-                                <td>20.000</td>
-                                <td>100</td>
-                                <td>AA10</td>
-                                <td>10/01/23</td>
-                            </tr>
+
                             <?php $ctr=1; ?>
                             @foreach ($arrStokbaranglain as $prm)
                                 <tr>
                                     <td>{{ $ctr }}</td>
                                     <td>{{ $prm->jenisbarang }}</td>
                                     <td>{{ $prm->hargasatuan }}</td>
-                                    <td>{{ $prm->jumlah }}</td>
+                                    <td>{{ $prm->jumlahmasuk }}</td>
                                     <td>{{ $prm->lokasibarang }}</td>
                                     <td>{{ $prm->tanggalmasuk }}</td>
                                 </tr>

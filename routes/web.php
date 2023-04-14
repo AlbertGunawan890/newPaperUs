@@ -9,6 +9,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PembelianBarangcontroller;
 use App\Http\Controllers\PenawaranController;
+use App\Http\Controllers\SPKController;
 use App\Http\Controllers\stokbarangController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\VendorController;
@@ -63,6 +64,9 @@ Route::get('/formdesain', [DesainController::class, "show"]);
 Route::get('/tambahdesain', [DesainController::class, "showBrand"]);
 Route::post('/doAddDesain', [DesainController::class, "doAddDesain"]);
 
+Route::get('/suratperintahkerja', [SPKController::class, "showBrand"]);
+Route::post('/doAddSPK', [SPKController::class, "doAddSPK"]);
+
 Route::get('/mastersubcon', function () {
     return view('mastersubcon');
 });
@@ -97,9 +101,7 @@ Route::get('/stokbarangjadi', function () {
     return view('stokbarangjadi');
 });
 
-Route::get('/suratperintahkerja', function () {
-    return view('suratperintahkerja');
-});
+
 Route::get('/home', function () {
     return view('home');
 });

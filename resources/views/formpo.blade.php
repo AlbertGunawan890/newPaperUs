@@ -24,16 +24,16 @@
                 </div>
                 <div class="row">
                     <div class="col-4">
-                        <label class="label" for="disabledTextInput">Jenis Barang</label>
-                        <input id="poJenis" class="form-control" placeholder="Jenis barang" disabled>
+                        <label class="label" for="readonlyTextInput">Jenis Barang</label>
+                        <input id="poJenis" class="form-control" placeholder="Jenis barang" readonly>
                     </div>
                     <div class="col-3">
                         <label class="label">Jumlah Pesanan</label>
                         <input id="poJumlah" type="number" class="form-control" placeholder="Masukkan Jumlah Pesanan">
                     </div>
                     <div class="col-3">
-                        <label class="label" for="disabledTextInput">Pesanan terakhir</label>
-                        <input id="poPesananTerakhir" class="form-control" placeholder="Pesanan terakhir" disabled>
+                        <label class="label" for="readonlyTextInput">Pesanan terakhir</label>
+                        <input id="poPesananTerakhir" class="form-control" placeholder="Pesanan terakhir" readonly>
                     </div>
                 </div>
                 <div class="row">
@@ -42,8 +42,8 @@
                         <input id="poHarga" type="number" class="form-control" placeholder="Masukkan Harga">
                     </div>
                     <div class="col-5">
-                        <label class="label" for="disabledTextInput">Harga Pesanan Terakhir</label>
-                        <input id="poHargaTerakhir" class="form-control" placeholder="Harga Pesanan terakhir" disabled>
+                        <label class="label" for="readonlyTextInput">Harga Pesanan Terakhir</label>
+                        <input id="poHargaTerakhir" class="form-control" placeholder="Harga Pesanan terakhir" readonly>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary my-4">Submit</button>

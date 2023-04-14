@@ -16,7 +16,7 @@ class masukkeluarstok extends Model
     protected $fillable = [
         'namabarang',
         'jenisbarang',
-        'jumlah',
+        'jumlahmasuk',
         'hargasatuan',
         'hargatotal',
         'lokasibarang',

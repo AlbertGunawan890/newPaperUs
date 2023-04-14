@@ -10,11 +10,11 @@
 
 <div class="container" style="float: left;">
     <div class="form-group">
-        
+
         <div class="row">
             <div class="col-2">
-                <label class="label" for="disabledTextInput">Kode</label>
-                <input id="idSubcon" class="form-control" placeholder="Kode" disabled>
+                <label class="label" for="readonlyTextInput">Kode</label>
+                <input id="idSubcon" class="form-control" placeholder="Kode" readonly>
             </div>
             <div class="col">
                 <label class="label">Nama</label>

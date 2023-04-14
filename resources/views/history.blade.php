@@ -22,8 +22,8 @@
                         </div>
                     </div>
                     <div class="col-6">
-                        <label class="label" for="disabledTextInput">Nama Customer</label>
-                        <input id="historyCustomer" class="form-control" placeholder="Jenis barang" disabled>
+                        <label class="label" for="readonlyTextInput">Nama Customer</label>
+                        <input id="historyCustomer" class="form-control" placeholder="Jenis barang" readonly>
                     </div>
                 </div>
                 <div class="row">
@@ -32,8 +32,8 @@
                         <input id="jenisHistory" type="text" class="form-control" placeholder="Jumlah">
                     </div>
                     <div class="col-5">
-                        <label class="label" for="disabledTextInput">Jumlah</label>
-                        <input id="jumlahHistory" class="form-control" placeholder="Jumlah" disabled>
+                        <label class="label" for="readonlyTextInput">Jumlah</label>
+                        <input id="jumlahHistory" class="form-control" placeholder="Jumlah" readonly>
                     </div>
 
                 </div>

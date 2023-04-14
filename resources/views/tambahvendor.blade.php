@@ -7,8 +7,8 @@
     <div class="form-group">
         <form action="{{url('doAddvendor')}}"method="post">
         @csrf
-        <label class="label" for="disabledTextInput">ID Vendor</label>
-        <input id="disabledTextInput" class="form-control" placeholder="ID Vendor" disabled>
+        <label class="label" for="readonlyTextInput">ID Vendor</label>
+        <input id="readonlyTextInput" class="form-control" placeholder="ID Vendor" readonly>
 
         <label class="label">Nama Vendor</label>
         <input class="form-control" placeholder="Masukkan Nama Vendor" name="nama">

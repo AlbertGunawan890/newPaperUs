@@ -7,7 +7,7 @@
         <div class="form-group">
             <form action="{{ url('/doAddDesain') }}" method="post">
                 @csrf
-                <label class="label" for="disabledTextInput">No. Penawaran</label>
+                <label class="label" for="readonlyTextInput">No. Penawaran</label>
                 <select data-live-search="true" class="selectpicker form-control" name="id_penawaran"
                     onchange="nama_brand_change()">
                     <option selected>Pilih No. Penawaran</option>
@@ -24,7 +24,7 @@
                 <label class="label">Link Desain</label>
                 <input class="form-control" name="link" placeholder="Link Desain">
 
-                <label class="label" for="disabledTextInput">Jenis Pisau</label>
+                <label class="label" for="readonlyTextInput">Jenis Pisau</label>
                 <select data-live-search="true" class="selectpicker form-control" name="pisau">
                     <option selected>Pilih Jenis Pisau</option>
                     @foreach ($pisau as $prm)
@@ -32,7 +32,7 @@
                     @endforeach
                 </select>
 
-                <label class="label" for="disabledTextInput">Jenis Plat</label>
+                <label class="label" for="readonlyTextInput">Jenis Plat</label>
                 <select data-live-search="true" class="selectpicker form-control" name="plat">
                     <option selected>Pilih Jenis Plat</option>
                     @foreach ($plat as $prm)

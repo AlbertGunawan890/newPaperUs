@@ -8,8 +8,8 @@
             @csrf
             <div class="form-group">
 
-                <label class="label" for="disabledTextInput">ID Customer</label>
-                <input name="id" id="disabledTextInput" class="form-control" placeholder="ID Customer" disabled>
+                <label class="label" for="readonlyTextInput">ID Customer</label>
+                <input name="id" id="readonlyTextInput" class="form-control" placeholder="ID Customer" readonly>
 
                 <label class="label">Nama Brand</label>
                 <input name="nama" class="form-control" placeholder="Masukkan Nama Brand">
