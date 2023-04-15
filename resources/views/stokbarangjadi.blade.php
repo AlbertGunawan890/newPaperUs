@@ -10,6 +10,7 @@
 
         <div class="card">
             <div class="card-body">
+            
             <table id="tabelStokBarangJadi" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
                 <thead>
                     <tr>
