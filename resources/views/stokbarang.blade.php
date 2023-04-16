@@ -30,7 +30,6 @@
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" name="Pisau" id="pisau" role="tabpanel" aria-labelledby="pisau-tab">
             <div class="card-body">
-                
                     <table id="tabelStokBarangA" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
                         <thead>
                             <tr>
@@ -62,7 +61,6 @@
         </div>
         <div class="tab-pane fade" id="plat" role="tabpanel" aria-labelledby="plat-tab">
             <div class="card-body">
-                
                     <table id="tabelStokBarangB" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
                         <thead>
                             <tr>

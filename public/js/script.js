@@ -54,16 +54,57 @@ $(document).ready(function() {
     });
 });
 $(document).ready(function() {
-    $('#tabelStokBarangA').DataTable({});
+    $('#tabelStokBarangA').DataTable({
+        "autoWidth": false,
+        "columnDefs": [
+            { "width": "5%", "targets": 0 },
+            { "width": "20%", "targets": 1 },
+            { "width": "20%", "targets": 2 },
+            { "width": "10%", "targets": 3 },
+            { "width": "10%", "targets": 4 },
+            { "width": "20%", "targets": 5 }
+        ]
+    });
 });
 $(document).ready(function() {
-    $('#tabelStokBarangB').DataTable({});
+    $('#tabelStokBarangB').DataTable({
+        "autoWidth": false,
+        "columnDefs": [
+            { name: 'desktop', width: Infinity },
+            { "width": "5%", "targets": 0 },
+            { "width": "20%", "targets": 1 },
+            { "width": "20%", "targets": 2 },
+            { "width": "20%", "targets": 3 },
+            { "width": "15%", "targets": 4 },
+            { "width": "20%", "targets": 5 }
+        ]
+    });
 });
 $(document).ready(function() {
-    $('#tabelStokBarangC').DataTable({});
+    $('#tabelStokBarangC').DataTable({
+        "autoWidth": false,
+        "columnDefs": [
+            { "width": "5%", "targets": 0 },
+            { "width": "20%", "targets": 1 },
+            { "width": "20%", "targets": 2 },
+            { "width": "10%", "targets": 3 },
+            { "width": "10%", "targets": 4 },
+            { "width": "20%", "targets": 5 }
+        ]
+    });
 });
 $(document).ready(function() {
-    $('#tabelStokBarangD').DataTable({});
+    $('#tabelStokBarangD').DataTable({
+        "autoWidth": false,
+        "columnDefs": [
+            { "width": "5%", "targets": 0 },
+            { "width": "20%", "targets": 1 },
+            { "width": "20%", "targets": 2 },
+            { "width": "10%", "targets": 3 },
+            { "width": "10%", "targets": 4 },
+            { "width": "20%", "targets": 5 }
+        ]
+    });
 });
 $(document).ready(function() {
     $('#tabelPembelianBarang').DataTable({
