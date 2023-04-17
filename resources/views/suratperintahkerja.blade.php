@@ -114,6 +114,65 @@
             </table>
         </div>
     </div>
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <table id="tabelProses2" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Jenis Proses</th>
+                        <th>Jumlah</th>
+                        <th>Harga Satuan</th>
+                        <th>Harga Total</th>
+                        <th>Harga Satuan Sebelumnya</th>
+                        <th>Harga Total Sebelumnya</th>
+                        <th>Nama Vendor</th>
+                        <th>Penerimaan</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><input type="text" class="form-control" placeholder="Pilih proses" readonly></td>
+                        <td><input type="number" class="form-control" placeholder="Jumlah"></td>
+                        <td><input type="number" class="form-control" placeholder="Harga satuan"></td>
+                        <td>Rp30.000</td>
+                        <td>Rp10.000</td>
+                        <td>Rp20.000</td>
+                        <td>ABC</td>
+                        <td>
+                            <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
+                            <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                            <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><input type="text" class="form-control" placeholder="Pilih proses"readonly></td>
+                        <td><input type="number" class="form-control" placeholder="Jumlah"></td>
+                        <td><input type="number" class="form-control" placeholder="Harga satuan"></td>
+                        <td>Rp30.000</td>
+                        <td>Rp10.000</td>
+                        <td>Rp20.000</td>
+                        <td>ABC</td>
+                        <td>
+                            <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
+                            <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                            <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
     <script>
         var jArray = <?php echo json_encode($spk); ?>;
         var no_spk = "";
