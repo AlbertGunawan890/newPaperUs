@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Desain;
+use App\Models\Processing1;
+use App\Models\Processing2;
 use App\Models\SPK;
 use Illuminate\Http\Request;
 
@@ -12,12 +14,14 @@ class SPKController extends Controller
     {
         $desain = Desain::where('status_desain', '1')->get();
         $spk = SPK::all();
-        return view('suratperintahkerja', compact('desain','spk'));
+        $spk = SPK::join('processing1', 'processing1.id_penawaran', '=', 'master_spk.id_penawaran')->get();
+        $proces1 = Processing1::paginate(5);
+        $proces2 = Processing2::paginate(5);
+        return view('suratperintahkerja', compact('desain','spk','proces1','proces2'));
     }
 
     public function doAddSPK(Request $req)
     {
-
         SPK::create([
             'no_spk' => $req->no_spk,
             'id_penawaran'=>$req->id_penawaran,
