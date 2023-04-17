@@ -22,4 +22,6 @@ class SPK extends Model
         'plat'
     ];
     protected $keyType = 'string';
+
+
 }

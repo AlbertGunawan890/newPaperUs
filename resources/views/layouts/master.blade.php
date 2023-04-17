@@ -61,7 +61,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('home') }}"">
+                <a class="nav-link" href="{{ url('home') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Home</span></a>
             </li>
@@ -69,7 +69,7 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-sitemap"></i>  
+                    <i class="fas fa-sitemap"></i>
                     <span>Master</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -115,7 +115,7 @@
                         <a class="collapse-item" href="{{ url('suratperintahkerja') }}">Surat Perintah Kerja</a>
                         <a class="collapse-item" href="{{ url('suratjalan') }}">Pengiriman Barang</a>
                         <a class="collapse-item" href="{{ url('penagihan') }}">Penagihan/Invoicing</a>
-                        
+
                     </div>
                 </div>
             </li>
@@ -168,7 +168,7 @@
                 <div class="container-fluid">
 
                     @yield('content')
-                    
+
                 </div>
                 <!-- End of Content Wrapper -->
 
@@ -176,7 +176,7 @@
             <!-- End of Page Wrapper -->
 
             <!-- Bootstrap core JavaScript-->
-            <script src="vendor/jquery/jquery.min.js"></script> 
+            <script src="vendor/jquery/jquery.min.js"></script>
             <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
             <!-- Core plugin JavaScript-->

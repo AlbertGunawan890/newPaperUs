@@ -99,10 +99,13 @@ CREATE TABLE `master_desain` (
   `status_desain` bigint(1) DEFAULT NULL,
   PRIMARY KEY (`id_desain`),
   KEY `id_penawaran` (`id_penawaran`),
-  CONSTRAINT `master_desain_ibfk_1` FOREIGN KEY (`id_penawaran`) REFERENCES `master_pembayaran` (`id_pembayaran`)
+  CONSTRAINT `master_desain_ibfk_1` FOREIGN KEY (`id_penawaran`) REFERENCES `master_pembayaran` (`id_penawaran`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `master_desain` */
+
+insert  into `master_desain`(`id_desain`,`id_penawaran`,`pic`,`jenis_box`,`link_desain`,`pisau`,`plat`,`status_desain`) values 
+('DE001','P001','Angga','10x10 cm','asdadasdasdasd','a','qwerty',1);
 
 /*Table structure for table `master_pegawai` */
 
@@ -205,7 +208,29 @@ CREATE TABLE `master_penawaran` (
 /*Data for the table `master_penawaran` */
 
 insert  into `master_penawaran`(`id_penawaran`,`nama_brand`,`pic`,`jenis_box`,`panjang`,`lebar`,`tinggi`,`qty`,`jum_produksi`,`harga_satuan`,`harga_satuan_terakhir`,`diskon`,`net`,`harga_net_terakhir`,`status_penawaran`) values 
-('P001','Sidu','Angga','10x10 cm','12','12','12','5','10','10000','0','10','45000',NULL,1);
+('P001','Sidu','Angga','10x10 cm','12','12','12','5','10','10000','0','10','45000',NULL,1),
+('P002','Sidu','Budi','10x10 cm','12','12','12','5','100','10000','10000','10','45000',NULL,0);
+
+/*Table structure for table `master_spk` */
+
+DROP TABLE IF EXISTS `master_spk`;
+
+CREATE TABLE `master_spk` (
+  `no_spk` varchar(255) NOT NULL,
+  `id_penawaran` varchar(255) DEFAULT NULL,
+  `pic` varchar(255) DEFAULT NULL,
+  `jenis_box` varchar(255) DEFAULT NULL,
+  `jum_produksi` varchar(255) DEFAULT NULL,
+  `link_desain` varchar(255) DEFAULT NULL,
+  `pisau` varchar(255) DEFAULT NULL,
+  `plat` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`no_spk`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `master_spk` */
+
+insert  into `master_spk`(`no_spk`,`id_penawaran`,`pic`,`jenis_box`,`jum_produksi`,`link_desain`,`pisau`,`plat`) values 
+('SP001','P001','Angga','10x10 cm','10','asdadasdasdasd','a','qwerty');
 
 /*Table structure for table `master_stokbarang` */
 
@@ -357,14 +382,17 @@ CREATE TABLE `processing1` (
   `proses` varchar(255) DEFAULT NULL,
   `status` bigint(1) DEFAULT NULL,
   PRIMARY KEY (`id_proses1`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `processing1` */
 
 insert  into `processing1`(`id_proses1`,`id_penawaran`,`nama_brand`,`proses`,`status`) values 
 (1,'P001','Sidu','Kertas',0),
 (2,'P001','Sidu','Tinta',0),
-(3,'P001','Sidu','Laminasi',0);
+(3,'P001','Sidu','Laminasi',0),
+(4,'P002','Sidu','Laminasi',0),
+(5,'P002','Sidu','Plong',0),
+(6,'P002','Sidu','Hotprint',0);
 
 /*Table structure for table `processing2` */
 
