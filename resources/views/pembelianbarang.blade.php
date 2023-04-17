@@ -17,7 +17,7 @@
                 </a>
             </div>
             <div class="card-body">
-                <table id="tabelPembelianBarang" class="table table-bordered table-no-wrap" style="width:100%">
+                <table id="tabelPembelianBarang" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
                     <thead>
                         <tr>
                             <th>Nama Barang</th>

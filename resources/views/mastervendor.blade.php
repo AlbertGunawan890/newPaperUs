@@ -17,7 +17,7 @@
                 </a>
             </div>
             <div class="card-body">
-                <table id="tabelMasterVendor" class="table table-bordered table-no-wrap" style="width:100%">
+                <table id="tabelMasterVendor" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
                     <thead>
                         <tr>
                             <th>ID Vendor</th>

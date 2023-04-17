@@ -18,6 +18,7 @@
 
             </div>
             <div class="card-body">
+                
                 <table id="tabelFormPenawaran" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
                     <thead>
                         <tr>

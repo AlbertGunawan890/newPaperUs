@@ -10,10 +10,10 @@
 
         <div class="card">
             <div class="card-header">
-                <a href="#">
-                    <button type="button" class="btn btn-primary my-auto">Import</button>
-                    <button type="button" class="btn btn-primary my-auto">Export</button>
-                </a>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary">Import</button>
+                    <button type="button" class="btn btn-primary">Export</button>
+                </div>
             </div>
             <div class="card-body">
                 <table id="tabelKeuangan" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
