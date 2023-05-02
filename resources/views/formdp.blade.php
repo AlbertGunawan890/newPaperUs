@@ -19,7 +19,7 @@
 
         </div>
         <div class="card-body">
-            
+
                 <table id="tabelFormDP" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
                     <thead>
                         <tr>
@@ -29,6 +29,7 @@
                             <th>Sisa</th>
                             <th>Penerimaan</th>
                             <th>Aksi</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,20 +41,25 @@
                             <td>{{$prm->sisa}}</td>
                             <td>
                                 <button type="button" class="btn btn-success"
-                                    onclick="btnAcc('{{$prm->id_pembayaran}}');"><i class="fas fa-check"></i></button>
+                                    onclick="btnAcc('{{$prm->id_pembayaran}}');window.location.reload();"><i class="fas fa-check"></i></button>
                                 <button type="button" class="btn btn-danger"
-                                    onclick="btnDecline('{{$prm->id_pembayaran}}');"><i
+                                    onclick="btnDecline('{{$prm->id_pembayaran}}');window.location.reload();"><i
                                         class="fas fa-times"></i></button>
                             </td>
                             <td>
                                 <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                                 <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                             </td>
+                            @if ($prm->status_pembayaran == '1')
+                                <td>Diterima</td>
+                            @else
+                                <td>Ditolak</td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
-            
+
         </div>
         <script>
             function btnAcc(id) {

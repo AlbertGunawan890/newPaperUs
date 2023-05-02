@@ -18,7 +18,7 @@
 
             </div>
             <div class="card-body">
-                
+
                 <table id="tabelFormPenawaran" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
                     <thead>
                         <tr>
@@ -32,6 +32,7 @@
                             <th>Nett</th>
                             <th>Penerimaan</th>
                             <th>Aksi</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,13 +47,18 @@
                                 <td>{{ $prm->diskon }}</td>
                                 <td>{{ $prm->net }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-success" onclick="btnAcc('{{$prm->id_penawaran}}');"><i class="fas fa-check"></i></button>
-                                    <button type="button" class="btn btn-danger"  onclick="btnDecline('{{$prm->id_penawaran}}');"><i class="fas fa-times"></i></button>
+                                    <button type="button" class="btn btn-success" onclick="btnAcc('{{$prm->id_penawaran}}');window.location.reload();"><i class="fas fa-check"></i></button>
+                                    <button type="button" class="btn btn-danger"  onclick="btnDecline('{{$prm->id_penawaran}}');window.location.reload();"><i class="fas fa-times"></i></button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                                     <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                                 </td>
+                                @if ($prm->status_penawaran == '1')
+                                <td>Diterima</td>
+                            @else
+                                <td>Ditolak</td>
+                            @endif
                             </tr>
                         @endforeach
                     </tbody>

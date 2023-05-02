@@ -71,6 +71,7 @@
                         <th>Nama Vendor</th>
                         <th>Penerimaan</th>
                         <th>Aksi</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -93,6 +94,7 @@
                             <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                             <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                         </td>
+                        <td>{{$prm->status}}</td>
                     </tr>
                     <?php $ctr++; ?>
                     @endforeach
