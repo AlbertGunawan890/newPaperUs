@@ -99,3 +99,51 @@ else if ($_REQUEST["ctr"] == "PenawaranSPK") {
         echo $output;
     }
 }
+else if ($_REQUEST["ctr"] == "Processing1SPK") {
+    if (isset($_POST["query"])) {
+        $output = "";
+        $arr = [];
+        $query = "SELECT * FROM processing1 p1, master_penawaran mp WHERE p1.id_penawaran = '" . $_POST["query"] . "' AND mp.id_penawaran = '" . $_POST["query"] . "'";
+        $queryVendor = "SELECT * FROM master_vendor";
+        $result = mysqli_query($connect, $query);
+        $ctr = 1;
+        // if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_array($result)) {
+                $output .= '
+                    <tr>
+                        <td>' . $ctr . '</td>
+                        <td><input type="text" class="form-control" placeholder="Pilih proses"
+                        value="'.$row["proses"].'" name="proses['.$ctr.']" readonly></td>
+                        <td><select data-live-search="true" class=" form-control" id="id_vendor"
+                        name="nama_vendor">
+                        <option selected>---Pilih Vendor---</option>';
+                        $resultVendor = mysqli_query($connect, $queryVendor);
+                        while ($rowVendor = mysqli_fetch_array($resultVendor)){
+                            $output .= '<option value="'. $rowVendor["nama_vendor"] .'">'. $rowVendor["nama_vendor"] .'</option>';
+                        }
+                $output .= '</select></td>
+                    </tr>
+                ';
+                $ctr++;
+            }
+        // } else {
+        //     $output .= '';
+        // }
+        echo $output;
+    }
+}
+// else if ($_REQUEST["ctr"] == "AccSPKProcess1") {
+//     if (isset($_POST["query"])) {
+//         $id_proses=$_POST['query'][0];
+//         $jenis_proses=$_POST['query'][1];
+//         $nama_vendor=$_POST['query'][2];
+//         $jumlah=$_POST['query'][3];
+//         $harga_satuan=$_POST['query'][4];
+//         $harga_total=$_POST['query'][5];
+//         $harga_satuan_sebelumnya=$_POST['query'][6];
+//         $harga_total_sebelumnya=$_POST['query'][7];
+//         $query =  "INSERT INTO `spk_processing1`(`id`,`id_proses` ,`jenis_proses`,`nama_vendor`, `jumlah`, `harga_satuan`,`harga_total`,`harga_satuan_sebelumnya`, `harga_total_sebelumnya`, `status`)
+//         VALUES ('','$id_proses','$jenis_proses','$nama_vendor','$jumlah','$harga_satuan','$harga_total','$harga_satuan_sebelumnya','$harga_total_sebelumnya',1)";
+//         $result = mysqli_query($connect, $query);
+//     }
+// }

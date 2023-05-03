@@ -129,12 +129,13 @@
                 <div id="penjualan" style="display: none">
 
                     <label class="label">Nama Brand</label>
-                    <select data-live-search="true" class="selectpicker form-control" name="nama_brand" onchange="nama_brand_change()">
+                    <input class="form-control" placeholder="Masukkan Nama Brand" name="nama_brand" onchange="nama_brand_change()">
+                    {{-- <select data-live-search="true" class="selectpicker form-control" name="nama_brand" onchange="nama_brand_change()">
                         <option selected>Pilih Nama Brand</option>
                         @foreach ($arrBrand as $prm)
                             <option value={{ $prm->nama_vendor }}>{{ $prm->nama_vendor }}</option>
                         @endforeach
-                    </select>
+                    </select> --}}
 
                     <label for="exampleFormControlTextarea1" class="label">PIC</label>
                     <input class="form-control" placeholder="Masukkan pic" name="pic">

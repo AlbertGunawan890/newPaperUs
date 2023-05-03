@@ -30,8 +30,8 @@
                     </thead>
                     <tbody>
 
+                        @foreach ($arrVendor as $prm)
                         <tr>
-                            @foreach ($arrVendor as $prm)
                             <td>{{$prm->id_vendor}}</td>
                             <td>{{$prm->nama_vendor}}</td>
                             <td>{{$prm->jenis_item}}</td>
@@ -41,8 +41,8 @@
                                 <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                                 <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                             </td>
-                            @endforeach
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
         </div>

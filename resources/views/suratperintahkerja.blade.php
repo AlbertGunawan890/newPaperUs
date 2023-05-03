@@ -16,7 +16,7 @@
 
                     <label class="label" for="readonlyTextInput">No. Penawaran</label>
                     <select data-live-search="true" class="selectpicker form-control" id="id_penawaran" name="id_penawaran"
-                        onchange="nama_brand_change()">
+                        onchange="nama_brand_change();nama_brand_change_processing1();">
                         <option selected>Pilih No. Penawaran</option>
                         @foreach ($desain as $prm)
                             <option value={{ $prm->id_penawaran }}>{{ $prm->id_penawaran }}</option>
@@ -51,6 +51,7 @@
                     <label for="exampleFormControlTextarea1" class="label">Jenis Plat</label>
                     <input class="form-control" name="plat" placeholder="Jenis Plat">
                     <button type="submit" class="btn btn-primary">Submit</button>
+                    <input type="hidden" name="temp">
                 </form>
             </div>
         </div>
@@ -63,40 +64,62 @@
                     <tr>
                         <th>No.</th>
                         <th>Jenis Proses</th>
+                        <th>Nama Vendor</th>
                         <th>Jumlah</th>
                         <th>Harga Satuan</th>
                         <th>Harga Total</th>
                         <th>Harga Satuan Sebelumnya</th>
                         <th>Harga Total Sebelumnya</th>
-                        <th>Nama Vendor</th>
                         <th>Penerimaan</th>
                         <th>Aksi</th>
                         <th>Status</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <?php $ctr=1; ?>
-                    @foreach ($spk as $prm)
-                    <tr>
-                        <td>{{$ctr}}</td>
-                        <td><input type="text" class="form-control" placeholder="Pilih proses" value="{{$prm->proses}}" readonly></td>
-                        <td><input type="number" class="form-control" placeholder="Jumlah"></td>
-                        <td><input type="number" class="form-control" placeholder="Harga satuan"></td>
-                        <td>Rp30.000</td>
-                        <td>Rp10.000</td>
-                        <td>Rp20.000</td>
-                        <td>{{$prm->nama_brand}}</td>
-                        <td>
-                            <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                        </td>
-                        <td>{{$prm->status}}</td>
-                    </tr>
-                    <?php $ctr++; ?>
+                <tbody id="processing1">
+                    <?php
+                        $ctr = 1;
+                    ?>
+                    @foreach ($proces1 as $prm)
+                        <tr>
+                            <td>{{ $ctr }}</td>
+                            <td><input type="text" class="form-control" placeholder="Pilih proses"
+                                    value="{{ $prm->proses }}" name="proses[{{ $ctr }}]" readonly></td>
+                            <td>
+                                <select data-live-search="true" class="selectpicker form-control" id="id_vendor"
+                                    name="nama_vendor">
+                                    <option selected>Pilih Vendor</option>
+
+                                    @foreach ($vendor as $prm2)
+                                        <option value='{{ $prm2->nama_vendor }}'>{{ $prm2->nama_vendor }}</option>
+                                    @endforeach
+                                </select>
+                            </td>
+                            <td><input type="number" class="form-control" placeholder="Jumlah"
+                                    name="jumlah[{{ $prm->id_proses1 }}]"
+                                    onchange="harga_total_change({{ $prm->id_proses1 }})">
+                            </td>
+                            <td><input type="number" class="form-control" placeholder="Harga satuan"
+                                    name="harga_satuan[{{ $prm->id_proses1 }}]"
+                                    onchange="harga_total_change({{ $prm->id_proses1 }})"></td>
+                            <td>
+                                <input readonly type="number" class="form-control"
+                                    name="harga_total[{{ $prm->id_proses1 }}]" value="0">
+                            </td>
+                            <td><input readonly type="number" class="form-control"
+                                    name="harga_satuan_sebelumnya[{{ $prm->id_proses1 }}]" value="0"></td>
+                            <td><input readonly type="number" class="form-control"
+                                    name="harga_total_sebelumnya[{{ $prm->id_proses1 }}]" value="0"></td>
+                            <td>
+                                <button type="button" class="btn btn-success"
+                                    onclick="btnAcc({{ $prm->id_proses1 }})"><i class="fas fa-check"></i></button>
+                                <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <?php $ctr++; ?>
                     @endforeach
                 </tbody>
             </table>
@@ -110,12 +133,12 @@
                     <tr>
                         <th>No.</th>
                         <th>Jenis Proses</th>
+                        <th>Nama Vendor</th>
                         <th>Jumlah</th>
                         <th>Harga Satuan</th>
                         <th>Harga Total</th>
                         <th>Harga Satuan Sebelumnya</th>
                         <th>Harga Total Sebelumnya</th>
-                        <th>Nama Vendor</th>
                         <th>Penerimaan</th>
                         <th>Aksi</th>
                     </tr>
@@ -124,12 +147,14 @@
                     <tr>
                         <td>1</td>
                         <td><input type="text" class="form-control" placeholder="Pilih proses" readonly></td>
+                        <td>
+                            ABC
+                        </td>
                         <td><input type="number" class="form-control" placeholder="Jumlah"></td>
                         <td><input type="number" class="form-control" placeholder="Harga satuan"></td>
                         <td>Rp30.000</td>
                         <td>Rp10.000</td>
                         <td>Rp20.000</td>
-                        <td>ABC</td>
                         <td>
                             <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
                             <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
@@ -142,12 +167,12 @@
                     <tr>
                         <td>2</td>
                         <td><input type="text" class="form-control" placeholder="Pilih proses"readonly></td>
+                        <td>ABC</td>
                         <td><input type="number" class="form-control" placeholder="Jumlah"></td>
                         <td><input type="number" class="form-control" placeholder="Harga satuan"></td>
                         <td>Rp30.000</td>
                         <td>Rp10.000</td>
                         <td>Rp20.000</td>
-                        <td>ABC</td>
                         <td>
                             <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
                             <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
@@ -162,9 +187,9 @@
         </div>
     </div>
     <script>
-        var jArray = <?php echo json_encode($spk); ?>;
+        var jArray = <?php echo json_encode($no_spk); ?>;
         var no_spk = "";
-        va = temp = 0;
+        var temp = 0;
         if (jArray.length == 0) {
             no_spk = "SP0";
         } else {
@@ -174,7 +199,6 @@
         }
         temp = parseInt(no_spk.substring(no_spk.length, 2)) + 1;
         no_spk = "SP" + temp.toString().padStart(3, '0');
-        console.log(no_spk);
         document.getElementsByName("no_spk")[0].value = no_spk.toString();
 
         function nama_brand_change() {
@@ -195,6 +219,51 @@
                     $("[name='plat']").val(temp[5]);
                 }
             });
+        }
+
+        function nama_brand_change_processing1() {
+            $("[name='temp']").val($("[name='id_penawaran']").val());
+            console.log($("[name='temp']").val());
+            // $.ajax({
+            //     url: "autocomplete.php",
+            //     method: "POST",
+            //     data: {
+            //         query: $("[name='id_penawaran']").val(),
+            //         ctr: "Processing1SPK"
+            //     },
+            //     success: function(data) {
+            //         var temp = data.split(",");
+            //         for (let i = 0; i < temp.length - 1; i++) {
+            //             console.log(temp[i]);
+            //             $("[name='proses[" + i + "]']").val(temp[i]);
+            //         }
+            //         $("[name='temp']").val(temp.length-1);
+            //         $("#processing1").html("");
+            //         $('#processing1').append(temp);
+            //     }
+            // });
+        }
+
+        function harga_total_change($id) {
+            var qty = parseInt($("[name='jumlah[" + $id + "]']").val());
+            var harga_satuan = parseInt($("[name='harga_satuan[" + $id + "]']").val());
+            var temp = harga_satuan * qty;
+            $("[name='harga_total[" + $id + "]']").val(temp);
+        }
+
+        function btnAcc($id) {
+            // $.ajax({
+            //     url: "autocomplete.php",
+            //     method: "POST",
+            //     data: {
+            //         query: [$id,$("[name='proses']").val(),$("[name='nama_vendor']").val(),$("[name='jumlah[" + $id + "]']").val(),$("[name='harga_satuan[" + $id + "]']").val(),$("[name='harga_total[" + $id + "]']").val(),
+            //         $("[name='harga_satuan_sebelumnya[" + $id + "]']").val(),$("[name='harga_total_sebelumnya[" + $id + "]']").val()],
+            //         ctr: "AccSPKProcess1"
+            //     },
+            //     success: function(data) {
+
+            //     }
+            // });
         }
     </script>
 

@@ -17,7 +17,7 @@
                 </a>
             </div>
             <div class="card-body">
-                
+
                 <table id="tabelMasterBox" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
                     <thead>
                         <tr>
@@ -30,8 +30,8 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($arrBox as $prm)
                         <tr>
-                            @foreach ($arrBox as $prm)
 
                             <td>{{$prm->tipe_box}}</td>
                             <td>{{$prm->nama_box}}</td>
@@ -42,8 +42,8 @@
                                 <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                                 <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                             </td>
-                            @endforeach
                         </tr>
+                        @endforeach
 
                     </tbody>
                 </table>
