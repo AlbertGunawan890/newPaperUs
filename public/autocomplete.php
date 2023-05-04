@@ -122,6 +122,30 @@ else if ($_REQUEST["ctr"] == "Processing1SPK") {
                             $output .= '<option value="'. $rowVendor["nama_vendor"] .'">'. $rowVendor["nama_vendor"] .'</option>';
                         }
                 $output .= '</select></td>
+                                    <td><input type="number" class="form-control" placeholder="Jumlah"
+                                    name="jumlah['. $row["id_proses1"] .']"
+                                    onchange="harga_total_change('.$row["id_proses1"].')">
+                            </td>
+                            <td><input type="number" class="form-control" placeholder="Harga satuan"
+                                    name="harga_satuan['. $row["id_proses1"].']"
+                                    onchange="harga_total_change('. $row["id_proses1"].')"></td>
+                            <td>
+                                <input readonly type="number" class="form-control"
+                                    name="harga_total['. $row["id_proses1"].']" value="0">
+                            </td>
+                            <td><input readonly type="number" class="form-control"
+                                    name="harga_satuan_sebelumnya['. $row["id_proses1"].']" value="0"></td>
+                            <td><input readonly type="number" class="form-control"
+                                    name="harga_total_sebelumnya['. $row["id_proses1"].']" value="0"></td>
+                            <td>
+                                <button type="button" class="btn btn-success"
+                                    onclick="btnAcc('. $row["id_proses1"].')"><i class="fas fa-check"></i></button>
+                                <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                            </td>
                     </tr>
                 ';
                 $ctr++;

@@ -72,15 +72,14 @@
                         <th>Harga Total Sebelumnya</th>
                         <th>Penerimaan</th>
                         <th>Aksi</th>
-                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody id="processing1">
                     <?php
                         $ctr = 1;
                     ?>
-                    @foreach ($proces1 as $prm)
-                        <tr>
+                    {{-- @foreach ($proces1 as $prm) --}}
+                        {{-- <tr>
                             <td>{{ $ctr }}</td>
                             <td><input type="text" class="form-control" placeholder="Pilih proses"
                                     value="{{ $prm->proses }}" name="proses[{{ $ctr }}]" readonly></td>
@@ -118,9 +117,9 @@
                                 <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                                 <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                             </td>
-                        </tr>
-                        <?php $ctr++; ?>
-                    @endforeach
+                        </tr> --}}
+                        {{-- <?php $ctr++; ?>
+                    @endforeach --}}
                 </tbody>
             </table>
         </div>
@@ -224,24 +223,24 @@
         function nama_brand_change_processing1() {
             $("[name='temp']").val($("[name='id_penawaran']").val());
             console.log($("[name='temp']").val());
-            // $.ajax({
-            //     url: "autocomplete.php",
-            //     method: "POST",
-            //     data: {
-            //         query: $("[name='id_penawaran']").val(),
-            //         ctr: "Processing1SPK"
-            //     },
-            //     success: function(data) {
-            //         var temp = data.split(",");
-            //         for (let i = 0; i < temp.length - 1; i++) {
-            //             console.log(temp[i]);
-            //             $("[name='proses[" + i + "]']").val(temp[i]);
-            //         }
-            //         $("[name='temp']").val(temp.length-1);
-            //         $("#processing1").html("");
-            //         $('#processing1').append(temp);
-            //     }
-            // });
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: $("[name='id_penawaran']").val(),
+                    ctr: "Processing1SPK"
+                },
+                success: function(data) {
+                    var temp = data.split(",");
+                    for (let i = 0; i < temp.length - 1; i++) {
+                        console.log(temp[i]);
+                        $("[name='proses[" + i + "]']").val(temp[i]);
+                    }
+                    $("[name='temp']").val(temp.length-1);
+                    $("#processing1").html("");
+                    $('#processing1').append(temp);
+                }
+            });
         }
 
         function harga_total_change($id) {
@@ -252,18 +251,18 @@
         }
 
         function btnAcc($id) {
-            // $.ajax({
-            //     url: "autocomplete.php",
-            //     method: "POST",
-            //     data: {
-            //         query: [$id,$("[name='proses']").val(),$("[name='nama_vendor']").val(),$("[name='jumlah[" + $id + "]']").val(),$("[name='harga_satuan[" + $id + "]']").val(),$("[name='harga_total[" + $id + "]']").val(),
-            //         $("[name='harga_satuan_sebelumnya[" + $id + "]']").val(),$("[name='harga_total_sebelumnya[" + $id + "]']").val()],
-            //         ctr: "AccSPKProcess1"
-            //     },
-            //     success: function(data) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: [$id,$("[name='proses']").val(),$("[name='nama_vendor']").val(),$("[name='jumlah[" + $id + "]']").val(),$("[name='harga_satuan[" + $id + "]']").val(),$("[name='harga_total[" + $id + "]']").val(),
+                    $("[name='harga_satuan_sebelumnya[" + $id + "]']").val(),$("[name='harga_total_sebelumnya[" + $id + "]']").val()],
+                    ctr: "AccSPKProcess1"
+                },
+                success: function(data) {
 
-            //     }
-            // });
+                }
+            });
         }
     </script>
 
