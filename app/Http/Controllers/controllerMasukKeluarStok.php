@@ -31,7 +31,6 @@ class controllerMasukKeluarStok extends Controller
                 "tjumlahtotal" => 'required',
                 "tlokasi" => 'required',
                 "tketerangan" => 'required',
-                "tanggalsekarang" => 'required',
             ],
             [
                 "tnama.required" => "Nama Barang harus di isi",
@@ -41,7 +40,6 @@ class controllerMasukKeluarStok extends Controller
                 "tjumlahtotal.required" => "Harga Total harus di isi",
                 "tlokasi.required" => "Lokasi harus di isi",
                 "tketerangan.required" => "Keterangan harus di isi",
-                "tanggalsekarang.required" => "Nett harus di isi",
             ]
         );
 

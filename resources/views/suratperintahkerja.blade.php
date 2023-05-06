@@ -78,8 +78,8 @@
                     <?php
                         $ctr = 1;
                     ?>
-                    {{-- @foreach ($proces1 as $prm)
-                        <tr>
+                    @foreach ($proces1 as $prm) 
+                        {{-- <tr>
                             <td>{{ $ctr }}</td>
                             <td><input type="text" class="form-control" placeholder="Pilih proses"
                                     value="{{ $prm->proses }}" name="proses[{{ $ctr }}]" readonly></td>
@@ -117,9 +117,9 @@
                                 <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                                 <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                             </td>
-                        </tr>
+                        </tr> --}}
                         <?php $ctr++; ?>
-                    @endforeach --}}
+                    @endforeach 
 
                 </tbody>
             </table>
