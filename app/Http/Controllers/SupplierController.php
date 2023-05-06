@@ -14,6 +14,33 @@ class SupplierController extends Controller
     }
     public function doAdd(Request $req)
     {
+        $req->validate(
+            [
+                "nama" => 'required',
+                "alamat" => 'required',
+                "provinsi" => 'required',
+                "kota" => 'required',
+                "kodepos" => 'required',
+                "notelp" => 'required',
+                "email"=> 'required',
+                "item" => 'required',
+                "nama_bank" => 'required',
+                "no_rekening" => 'required',
+            ],
+            [
+                "nama.required" => 'Nama Harus Terisi',
+                "pic.required" => 'PIC Harus Terisi',
+                "alamat.required" => 'Alamat Harus Terisi',
+                "provinsi.required" => 'Provinisi Harus Terisi',
+                "kota.required" => 'Kota Harus Terisi',
+                "kodepos.required" => 'Kode Pos Harus Terisi',
+                "notelp.required" => 'Nomor Telpon Harus Terisi',
+                "email.required"=> 'Email Harus Terisi',
+                "item.required" => 'Item Harus Terisi',
+                "nama_bank.required" => 'Nama Bank Harus Terisi',
+                "no_rekening.required" => 'Nomor Rekening Harus Terisi',
+            ]
+        );
         $supplier = Supplier::withTrashed()->get();
         $ctr = 1;
         foreach($supplier as $s){

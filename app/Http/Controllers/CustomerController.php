@@ -14,6 +14,32 @@ class CustomerController extends Controller
     }
     public function doAdd(Request $req)
     {
+        $req->validate(
+            [
+                "nama" => 'required',
+                "pic" => 'required',
+                "alamat" => 'required',
+                "provinsi" => 'required',
+                "kota" => 'required',
+                "kodepos" => 'required',
+                "notelp" => 'required',
+                "email"=> 'required',
+                "no_rekening" => 'required',
+                "metode_pembayaran" => 'required',
+            ],
+            [
+                "nama.required" => 'Nama Harus Terisi',
+                "pic.required" => 'PIC Harus Terisi',
+                "alamat.required" => 'Alamat Harus Terisi',
+                "provinsi.required" => 'Provinisi Harus Terisi',
+                "kota.required" => 'Kota Harus Terisi',
+                "kodepos.required" => 'Kode Pos Harus Terisi',
+                "notelp.required" => 'Nomor Telepon Harus Terisi',
+                "email.required"=> 'Email Harus Terisi',
+                "no_rekening.required" => 'Nomor Rekening Harus Terisi',
+                "metode_pembayaran.required" => 'Metode Pembayaran Harus Terisi',
+            ]
+        );
         $customer = Customer::withTrashed()->get();
         $ctr = 1;
         foreach($customer as $c){
