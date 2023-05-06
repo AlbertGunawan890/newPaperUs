@@ -19,8 +19,31 @@ class controllerMasukKeluarStok extends Controller
     }
     public function doaddmasuk(Request $req)
     {
-        
+
         $tanggalsekarang = new DateTime();
+
+        $req->validate(
+            [
+                "tnama" => 'required',
+                "tjenisbarang" => 'required',
+                "tjumlah" => 'required',
+                "tjumlahsatuan" => 'required',
+                "tjumlahtotal" => 'required',
+                "tlokasi" => 'required',
+                "tketerangan" => 'required',
+                "tanggalsekarang" => 'required',
+            ],
+            [
+                "tnama.required" => "Nama Barang harus di isi",
+                "tjenisbarang.required" => "Jenis Barang harus di isi",
+                "tjumlah.required" => "Jumlah Masuk harus di isi",
+                "tjumlahsatuan.required" => "Harga Satuan harus di isi",
+                "tjumlahtotal.required" => "Harga Total harus di isi",
+                "tlokasi.required" => "Lokasi harus di isi",
+                "tketerangan.required" => "Keterangan harus di isi",
+                "tanggalsekarang.required" => "Nett harus di isi",
+            ]
+        );
 
         masukkeluarstok::create([
             'namabarang' => $req->tnama,
