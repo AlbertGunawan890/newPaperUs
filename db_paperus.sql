@@ -61,19 +61,19 @@ DROP TABLE IF EXISTS `master_customer`;
 CREATE TABLE `master_customer` (
   `id_customer` varchar(255) NOT NULL,
   `nama_customer` varchar(255) NOT NULL,
-  `npwp_customer` varchar(255) NOT NULL,
+  `npwp_customer` varchar(255) DEFAULT NULL,
   `alamat_customer` varchar(255) NOT NULL,
   `provinsi_customer` varchar(255) NOT NULL,
   `kota_customer` varchar(255) NOT NULL,
-  `kecamatan_customer` varchar(255) NOT NULL,
-  `kelurahan_customer` varchar(255) NOT NULL,
+  `kecamatan_customer` varchar(255) DEFAULT NULL,
+  `kelurahan_customer` varchar(255) DEFAULT NULL,
   `kodepos_customer` varchar(255) NOT NULL,
   `notelp_customer` varchar(255) NOT NULL,
-  `nofax_customer` varchar(255) NOT NULL,
+  `nofax_customer` varchar(255) DEFAULT NULL,
   `email_customer` varchar(255) NOT NULL,
-  `batasan_hutang` varchar(255) NOT NULL,
-  `hutang_sekarang` varchar(255) NOT NULL,
-  `hutang_tersedia` varchar(255) NOT NULL,
+  `batasan_hutang` varchar(255) DEFAULT NULL,
+  `hutang_sekarang` varchar(255) DEFAULT NULL,
+  `hutang_tersedia` varchar(255) DEFAULT NULL,
   `no_rekening` varchar(255) NOT NULL,
   `metode_pembayaran` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -106,6 +106,20 @@ CREATE TABLE `master_desain` (
 
 insert  into `master_desain`(`id_desain`,`id_penawaran`,`pic`,`jenis_box`,`link_desain`,`pisau`,`plat`,`status_desain`) values 
 ('DE001','P001','Angga','10x10 cm','asdadasdasdasd','a','qwerty',1);
+
+/*Table structure for table `master_desaingunting` */
+
+DROP TABLE IF EXISTS `master_desaingunting`;
+
+CREATE TABLE `master_desaingunting` (
+  `id_penawaran` varchar(255) DEFAULT NULL,
+  `link_desain` varchar(255) DEFAULT NULL,
+  `keterangan` varchar(255) DEFAULT NULL,
+  KEY `id_penawaran` (`id_penawaran`),
+  CONSTRAINT `master_desaingunting_ibfk_1` FOREIGN KEY (`id_penawaran`) REFERENCES `master_penawaran` (`id_penawaran`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `master_desaingunting` */
 
 /*Table structure for table `master_pegawai` */
 
@@ -262,12 +276,12 @@ DROP TABLE IF EXISTS `master_supplier`;
 CREATE TABLE `master_supplier` (
   `id_supplier` varchar(255) NOT NULL,
   `nama_supplier` varchar(255) NOT NULL,
-  `npwp_supplier` varchar(255) NOT NULL,
+  `npwp_supplier` varchar(255) DEFAULT NULL,
   `alamat_supplier` varchar(255) NOT NULL,
   `provinsi_supplier` varchar(255) NOT NULL,
   `kota_supplier` varchar(255) NOT NULL,
-  `kecamatan_supplier` varchar(255) NOT NULL,
-  `kelurahan_supplier` varchar(255) NOT NULL,
+  `kecamatan_supplier` varchar(255) DEFAULT NULL,
+  `kelurahan_supplier` varchar(255) DEFAULT NULL,
   `kodepos_supplier` varchar(255) NOT NULL,
   `notelp_supplier` varchar(255) NOT NULL,
   `email_supplier` varchar(255) NOT NULL,
