@@ -26,7 +26,31 @@ class VendorController extends Controller
         }else{
             $kode = "V{$ctr}";
         }
-
+        $req->validate(
+            [
+                "nama" => 'required',
+                "jenis_item" => 'required',
+                "kategori" => 'required',
+                "alamat" => 'required',
+                "kota" => 'required',
+                "email" => 'required',
+                "nama_bank" => 'required',
+                "no_akun" => 'required',
+                "no_rekening" => 'required',
+            ],
+            [
+                "nama.required" => "Nama harus di isi",
+                "jenis_item.required" => "Jenis Item harus di isi",
+                "kategori.required" => "Kategori harus di isi",
+                "alamat.required" => "Alamat harus di isi",
+                "kota.required" => "Kota harus di isi",
+                "email.required" => "Email harus di isi",
+                "nama_bank.required" => "Nama Bank harus di isi",
+                "no_akun.required" => "No Akun harus di isi",
+                "no_rekening.required" => "No Rekening harus di isi",
+                
+            ]
+        );
         Vendor::create([
             'id_vendor' => $kode,
             'nama_vendor'=>$req->nama,

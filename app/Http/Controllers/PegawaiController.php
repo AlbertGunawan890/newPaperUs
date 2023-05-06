@@ -27,6 +27,28 @@ class PegawaiController extends Controller
         }else{
             $kode = "P{$ctr}";
         }
+        $req->validate(
+            [
+                "nama" => 'required',
+                "alamat" => 'required',
+                "provinsi" => 'required',
+                "kota" => 'required',
+                "kodepos" => 'required',
+                "telpon" => 'required',
+                "email" => 'required',
+                "password" => 'required',
+            ],
+            [
+                "nama.required" => "Nama harus di isi",
+                "alamat.required" => "Alamat harus di isi",
+                "provinsi.required" => "Provinsi harus di isi",
+                "kota.required" => "Kota harus di isi",
+                "kodepos.required" => "Kode Pos harus di isi",
+                "telpon.required" => "No Telpon harus di isi",
+                "email.required" => "Email harus di isi",
+                "password.required" => "Password harus di isi",
+            ]
+        );
         $password = Hash::make($req->password);
         Pegawai::create([
             'id_pegawai' => $kode,

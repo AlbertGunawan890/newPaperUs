@@ -26,6 +26,22 @@ class BoxController extends Controller
         }else{
             $kode = "B{$ctr}";
         }
+        $req->validate(
+            [
+                "nama" => 'required',
+                "tipe_box" => 'required',
+                "panjang" => 'required',
+                "lebar" => 'required',
+                "tinggi" => 'required',
+            ],
+            [
+                "nama.required" => "Nama Box harus di isi",
+                "tipe_box.required" => "Tipe Box harus di isi",
+                "panjang.required" => "Panjang harus di isi",
+                "lebar.required" => "Lebar harus di isi",
+                "tinggi.required" => "Tinggi harus di isi",
+            ]
+        );
         Box::create([
             'id_box' => $kode,
             'nama_box'=>$req->nama,

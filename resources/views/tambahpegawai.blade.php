@@ -6,6 +6,11 @@
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Master Pegawai</h1>
         </div>
+        @if ($errors->any())
+        @foreach ($errors->all() as $err)
+            <div class="alert alert-danger">{{ $err }}</div>
+        @endforeach
+    @endif
         <form action="{{ url('doAddpegawai') }}" method="post">
             @csrf
             <div class="form-group">
