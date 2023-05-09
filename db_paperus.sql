@@ -268,10 +268,6 @@ CREATE TABLE `master_spk` (
 
 /*Data for the table `master_spk` */
 
-insert  into `master_spk`(`no_spk`,`id_penawaran`,`pic`,`jenis_box`,`jum_produksi`,`link_desain`,`pisau`,`plat`) values 
-('SP001','P001','Angga','10x10 cm','10','asdadasdasdasd','a','qwerty'),
-('SP002','P001','Angga','10x10 cm','10',NULL,'a','qwer');
-
 /*Table structure for table `master_stokbarang` */
 
 DROP TABLE IF EXISTS `master_stokbarang`;
@@ -509,6 +505,30 @@ insert  into `processing2`(`id_penawaran`,`nama_brand`,`proses`,`status`) values
 ('P005','Sidu','Hotprint',0),
 ('P006','Sidu','Hotprint',0),
 ('P007','Sidu','Plong',0);
+
+/*Table structure for table `spk_processing1` */
+
+DROP TABLE IF EXISTS `spk_processing1`;
+
+CREATE TABLE `spk_processing1` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_proses` varchar(255) DEFAULT NULL,
+  `jenis_proses` varchar(255) DEFAULT NULL,
+  `nama_vendor` varchar(255) DEFAULT NULL,
+  `jumlah` varchar(255) DEFAULT NULL,
+  `harga_satuan` varchar(255) DEFAULT NULL,
+  `harga_total` varchar(255) DEFAULT NULL,
+  `harga_satuan_sebelumnya` varchar(255) DEFAULT NULL,
+  `harga_total_sebelumnya` varchar(255) DEFAULT NULL,
+  `status` int(1) DEFAULT NULL,
+  `no_spk` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `spk_processing1` */
+
+insert  into `spk_processing1`(`id`,`id_proses`,`jenis_proses`,`nama_vendor`,`jumlah`,`harga_satuan`,`harga_total`,`harga_satuan_sebelumnya`,`harga_total_sebelumnya`,`status`,`no_spk`) values 
+(5,'1','Kertas','Sidu','10','1000','10000','0','0',1,'SP001');
 
 /*Table structure for table `users` */
 
