@@ -54,9 +54,6 @@ CREATE TABLE `master_box` (
 
 /*Data for the table `master_box` */
 
-insert  into `master_box`(`id_box`,`tipe_box`,`nama_box`,`panjang_box`,`lebar_box`,`tinggi_box`,`keterangan`,`created_at`,`updated_at`,`deleted_at`) values 
-('B001','Box 12 x 1 Kukis','BOX Kukis 1211','12','1','1','Untuk Box Parcel','2023-05-06 04:48:46','2023-05-06 04:48:46',NULL);
-
 /*Table structure for table `master_customer` */
 
 DROP TABLE IF EXISTS `master_customer`;
@@ -87,9 +84,6 @@ CREATE TABLE `master_customer` (
 
 /*Data for the table `master_customer` */
 
-insert  into `master_customer`(`id_customer`,`nama_customer`,`npwp_customer`,`alamat_customer`,`provinsi_customer`,`kota_customer`,`kecamatan_customer`,`kelurahan_customer`,`kodepos_customer`,`notelp_customer`,`nofax_customer`,`email_customer`,`batasan_hutang`,`hutang_sekarang`,`hutang_tersedia`,`no_rekening`,`metode_pembayaran`,`created_at`,`updated_at`,`deleted_at`) values 
-('CU001','kukis Law','12312','jalan pegasus 12','Jawa Timur','Surabaya','Ngaggel','Ngaggel','12312','2139812903','031283612','qweq@gmail.com',NULL,'12000','1200','2129312','cash','2023-05-06 04:46:49','2023-05-06 04:46:49',NULL);
-
 /*Table structure for table `master_desain` */
 
 DROP TABLE IF EXISTS `master_desain`;
@@ -111,11 +105,7 @@ CREATE TABLE `master_desain` (
 /*Data for the table `master_desain` */
 
 insert  into `master_desain`(`id_desain`,`id_penawaran`,`pic`,`jenis_box`,`link_desain`,`pisau`,`plat`,`status_desain`) values 
-('DE001','P001','Angga','10x10 cm','asdadasdasdasd','a','qwerty',-1),
-('DE002','P001','Angga','10x10 cm',NULL,'a','qwer',-1),
-('DE003','P001','Angga','10x10 cm',NULL,'a','qwer',1),
-('DE004','P002','Budi','10x10 cm',NULL,'a','qwer',1),
-('DE005','P003','Patrick','kotak dos makanan kotak','eh123w78eh2378rhdfwe9ahfd12edq','a','qwer',1);
+('DE001','P001','Angga','10x10 cm','asdadasdasdasd','a','qwerty',1);
 
 /*Table structure for table `master_desaingunting` */
 
@@ -159,7 +149,7 @@ CREATE TABLE `master_pegawai` (
 /*Data for the table `master_pegawai` */
 
 insert  into `master_pegawai`(`id_pegawai`,`nama_pegawai`,`npwp_pegawai`,`alamat_pegawai`,`provinsi_pegawai`,`kota_pegawai`,`kecamatan_pegawai`,`kelurahan_pegawai`,`kodepos_pegawai`,`notelp_pegawai`,`fax_pegawai`,`email_pegawai`,`kontak_personal`,`password`,`created_at`,`updated_at`,`deleted_at`) values 
-('P001','Lawrance','1231231213','jalan gatot subrotot 3','Jawa Timur','Surabaya','Ngaggel','Ngaggel','12312','08112125612','031862223','qweq@gmail.com','Lawrance','$2y$10$6SCpyTGU9q1IoZkxgtS8ie/0ijAccCNr/CytS4aoEYcf9EklMISWW','2023-05-06 04:45:39','2023-05-06 04:45:39',NULL);
+('P001','Hwe','231312','Surabaya','Jawa Timur','Bandung','Sidoarjo','Sidoarjo','61213','12345','12345','lala@gmail.com','+123456789','$2y$10$IZYmK/V56VjFYPh8lPkrr.nhVE7MlFjjFThig4rkqSfUfpGH8zjzC','2023-05-09 03:48:33','2023-05-09 03:48:33',NULL);
 
 /*Table structure for table `master_pembayaran` */
 
@@ -186,10 +176,7 @@ CREATE TABLE `master_pembayaran` (
 /*Data for the table `master_pembayaran` */
 
 insert  into `master_pembayaran`(`id_pembayaran`,`id_penawaran`,`nama_brand`,`pic`,`jenis_box`,`qty`,`jum_produksi`,`harga`,`pembayaran`,`sisa`,`termin`,`status_pembayaran`) values 
-('PB001','P001','Sidu','Angga','10x10 cm','5','10','45000','45000','0','2023-04-10',-1),
-('PB002','P001','Sidu','Angga','10x10 cm','5','10','45000','5000','40000','2023-06-27',1),
-('PB003','P002','Sidu','Budi','10x10 cm','5','100','45000','5000','40000','2023-05-06',1),
-('PB004','P003','Sidu','Patrick','kotak dos makanan kotak','30','15','27000000','200000','26800000','2023-05-06',1);
+('PB001','P001','Sidu','Angga','10x10 cm','5','10','45000','45000','0','2023-04-10',1);
 
 /*Table structure for table `master_pembelianbarang` */
 
@@ -210,9 +197,7 @@ CREATE TABLE `master_pembelianbarang` (
 /*Data for the table `master_pembelianbarang` */
 
 insert  into `master_pembelianbarang`(`tipebox`,`namabarang`,`jenisbarang`,`supplier`,`jumlah`,`harga`,`diskon`,`nett`) values 
-('box makanan','Kotak Makan Bungkus','Kotak','sidu','123','20000','10','2214000'),
-('qweqwe','qwe','qwe','qe','123','123',NULL,'123'),
-('q','qweq','q','q','q','1','1','1');
+('qweqwe','qwe','qwe','qe','123','123',NULL,'123');
 
 /*Table structure for table `master_penawaran` */
 
@@ -241,14 +226,25 @@ CREATE TABLE `master_penawaran` (
 
 insert  into `master_penawaran`(`id_penawaran`,`nama_brand`,`pic`,`jenis_box`,`panjang`,`lebar`,`tinggi`,`qty`,`jum_produksi`,`harga_satuan`,`harga_satuan_terakhir`,`diskon`,`net`,`harga_net_terakhir`,`status_penawaran`) values 
 ('P001','Sidu','Angga','10x10 cm','12','12','12','5','10','10000','0','10','45000',NULL,1),
-('P002','Sidu','Budi','10x10 cm','12','12','12','5','100','10000','10000','10','45000',NULL,1),
-('P003','Sidu','Patrick','kotak dos makanan kotak','15','1','1','30','15','1000000','10000','10','27000000',NULL,1),
-('P004','Sidu','Patrick','kotak dos makanan kotak','15','1','1','30','15','1000000','10000','10','27000000',NULL,1),
-('P005','Sidu','Patrick','kotak dos makanan kotak','15','1','1','30','15','1000000','10000','10','27000000',NULL,1),
-('P006','Sidu','Patrick','kotak dos makanan kotak','15','1','1','30','15','1000000','10000','10','27000000',NULL,1),
-('P007','Sidu','Patrick','kotak dos makanan kotak','15','1','1','20','10000','100000','1000000','20','1600000',NULL,0),
-('P008','qwe','qwe','qwe','11','1','1','1','12','1000','0','10','900',NULL,0),
-('P009','Sidu','Patrick','kotak dos makanan kotak','15','1','1','100','100','10000','100000','10','900000',NULL,0);
+('P002','Sidu','Budi','10x10 cm','12','12','12','5','100','10000','10000','10','45000',NULL,0);
+
+/*Table structure for table `master_pengiriman` */
+
+DROP TABLE IF EXISTS `master_pengiriman`;
+
+CREATE TABLE `master_pengiriman` (
+  `no_spk` varchar(255) NOT NULL,
+  `no_surat_jalan` varchar(255) DEFAULT NULL,
+  `no_kendaraan` varchar(255) DEFAULT NULL,
+  `nama_pengiriman` varchar(255) DEFAULT NULL,
+  `nama_penerima` varchar(255) DEFAULT NULL,
+  `alamat_penerima` varchar(255) DEFAULT NULL,
+  `qty` varchar(255) DEFAULT NULL,
+  `tanggal` date DEFAULT NULL,
+  PRIMARY KEY (`no_spk`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `master_pengiriman` */
 
 /*Table structure for table `master_spk` */
 
@@ -268,6 +264,10 @@ CREATE TABLE `master_spk` (
 
 /*Data for the table `master_spk` */
 
+insert  into `master_spk`(`no_spk`,`id_penawaran`,`pic`,`jenis_box`,`jum_produksi`,`link_desain`,`pisau`,`plat`) values 
+('1',NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('SP001','P001','Angga','10x10 cm','10','asdadasdasdasd','a','qwerty');
+
 /*Table structure for table `master_stokbarang` */
 
 DROP TABLE IF EXISTS `master_stokbarang`;
@@ -280,18 +280,16 @@ CREATE TABLE `master_stokbarang` (
   `hargatotal` varchar(255) DEFAULT NULL,
   `lokasibarang` varchar(10) DEFAULT NULL,
   `keterangan` varchar(255) DEFAULT NULL,
-  `tanggalmasuk` date DEFAULT NULL,
   PRIMARY KEY (`namabarang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `master_stokbarang` */
 
-insert  into `master_stokbarang`(`namabarang`,`jenisbarang`,`jumlahmasuk`,`hargasatuan`,`hargatotal`,`lokasibarang`,`keterangan`,`tanggalmasuk`) values 
-('a','Pisau',NULL,NULL,NULL,NULL,'qwque',NULL),
-('kertas sisa','Kertas Sisa','120','10000','1200000','a12','Dekat Pintu Masuk','2023-05-06'),
-('q','Pisau',NULL,NULL,NULL,NULL,'123123',NULL),
-('qwer','Plat',NULL,NULL,NULL,NULL,'qwe',NULL),
-('qwerty','Plat',NULL,NULL,NULL,NULL,'qweriwqajd',NULL);
+insert  into `master_stokbarang`(`namabarang`,`jenisbarang`,`jumlahmasuk`,`hargasatuan`,`hargatotal`,`lokasibarang`,`keterangan`) values 
+('a','Pisau',NULL,NULL,NULL,NULL,'qwque'),
+('q','Pisau',NULL,NULL,NULL,NULL,'123123'),
+('qwer','Plat',NULL,NULL,NULL,NULL,'qwe'),
+('qwerty','Plat',NULL,NULL,NULL,NULL,'qweriwqajd');
 
 /*Table structure for table `master_supplier` */
 
@@ -319,9 +317,6 @@ CREATE TABLE `master_supplier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `master_supplier` */
-
-insert  into `master_supplier`(`id_supplier`,`nama_supplier`,`npwp_supplier`,`alamat_supplier`,`provinsi_supplier`,`kota_supplier`,`kecamatan_supplier`,`kelurahan_supplier`,`kodepos_supplier`,`notelp_supplier`,`email_supplier`,`item`,`nama_bank`,`no_rekening`,`created_at`,`updated_at`,`deleted_at`) values 
-('S001','aa','12312','Jln Makassar no  10','Jawa Timur','Surabaya','Ngaggel','Ngaggel','12312','01283123122','qweq@gmail.com','Kertas HVS A2','BCA','912378122','2023-05-06 04:47:52','2023-05-06 04:47:52',NULL);
 
 /*Table structure for table `master_vendor` */
 
@@ -355,8 +350,7 @@ CREATE TABLE `master_vendor` (
 
 insert  into `master_vendor`(`id_vendor`,`nama_vendor`,`jenis_item`,`kategori_vendor`,`alamat_vendor`,`kota_vendor`,`kecamatan_vendor`,`kelurahan_vendor`,`email_vendor`,`nama_bank`,`no_akun`,`no_rekening`,`batasan_hutang`,`hutang_sekarang`,`hutang_tersedia`,`sisa_hutang`,`metode_pembayaran`,`created_at`,`updated_at`,`deleted_at`) values 
 ('V001','Sidu','Kertas','Kertas','asd','asd','asd','asd','sidu@gmail.com','bca','123','12334234234','324234234','324234234','34234234','324234234','transfer','2023-03-21 04:21:43','2023-03-21 04:21:43',NULL),
-('V002','Kiki','Kertas','Kertas','asddsdas','aasdasd','sadasdasd','sdasdasd','kiki@gmail.com','bca','123','32423423434','234234234','344543543','53453453','453453453','transfer','2023-03-21 04:21:43','2023-03-21 04:21:43',NULL),
-('V003','Sidu','Kertas','Kertas','jalan ngaggel jaya tengah 12','Surabaya','Ngaggel','Ngaggel','qweq@gmail.com','BCA','12312323','23123321','10000000','50000','59999','9001','cash','2023-05-06 04:49:56','2023-05-06 04:49:56',NULL);
+('V002','Kiki','Kertas','Kertas','asddsdas','aasdasd','sadasdasd','sdasdasd','kiki@gmail.com','bca','123','32423423434','234234234','344543543','53453453','453453453','transfer','2023-03-21 04:21:43','2023-03-21 04:21:43',NULL);
 
 /*Table structure for table `migrations` */
 
@@ -424,7 +418,7 @@ CREATE TABLE `processing1` (
   `proses` varchar(255) DEFAULT NULL,
   `status` bigint(1) DEFAULT NULL,
   PRIMARY KEY (`id_proses1`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `processing1` */
 
@@ -434,101 +428,21 @@ insert  into `processing1`(`id_proses1`,`id_penawaran`,`nama_brand`,`proses`,`st
 (3,'P001','Sidu','Laminasi',0),
 (4,'P002','Sidu','Laminasi',0),
 (5,'P002','Sidu','Plong',0),
-(6,'P002','Sidu','Hotprint',0),
-(7,'P003','Sidu','Kertas',0),
-(8,'P003','Sidu','Tinta',0),
-(9,'P003','Sidu','Laminasi',0),
-(10,'P003','Sidu','Plong',0),
-(11,'P003','Sidu','Pembelian Dus',0),
-(12,'P003','Sidu','Packing',0),
-(13,'P003','Sidu','Emboss',0),
-(14,'P004','Sidu','Kertas',0),
-(15,'P004','Sidu','Tinta',0),
-(16,'P004','Sidu','Laminasi',0),
-(17,'P004','Sidu','Plong',0),
-(18,'P004','Sidu','Pembelian Dus',0),
-(19,'P004','Sidu','Packing',0),
-(20,'P004','Sidu','Emboss',0),
-(21,'P005','Sidu','Kertas',0),
-(22,'P005','Sidu','Tinta',0),
-(23,'P005','Sidu','Laminasi',0),
-(24,'P005','Sidu','Plong',0),
-(25,'P005','Sidu','Pembelian Dus',0),
-(26,'P005','Sidu','Packing',0),
-(27,'P005','Sidu','Emboss',0),
-(28,'P006','Sidu','Kertas',0),
-(29,'P006','Sidu','Tinta',0),
-(30,'P006','Sidu','Laminasi',0),
-(31,'P006','Sidu','Plong',0),
-(32,'P006','Sidu','Pembelian Dus',0),
-(33,'P006','Sidu','Packing',0),
-(34,'P006','Sidu','Emboss',0),
-(35,'P007','Sidu','Kertas',0),
-(36,'P007','Sidu','Tinta',0),
-(37,'P007','Sidu','Laminasi',0),
-(38,'P007','Sidu','Plong',0),
-(39,'P007','Sidu','Hotprint',0),
-(40,'P007','Sidu','Sortir',0),
-(41,'P007','Sidu','Pembelian Dus',0),
-(42,'P007','Sidu','Packing',0),
-(43,'P007','Sidu','Emboss',0),
-(44,'P008','qwe','Plong',0),
-(45,'P008','qwe','Hotprint',0),
-(46,'P008','qwe','Pembelian Dus',0),
-(47,'P008','qwe','Packing',0),
-(48,'P008','qwe','Emboss',0),
-(49,'P009','Sidu','Kertas',0),
-(50,'P009','Sidu','Tinta',0),
-(51,'P009','Sidu','Laminasi',0),
-(52,'P009','Sidu','Plong',0),
-(53,'P009','Sidu','Hotprint',0),
-(54,'P009','Sidu','Sortir',0),
-(55,'P009','Sidu','Pembelian Dus',0),
-(56,'P009','Sidu','Packing',0),
-(57,'P009','Sidu','Emboss',0);
+(6,'P002','Sidu','Hotprint',0);
 
 /*Table structure for table `processing2` */
 
 DROP TABLE IF EXISTS `processing2`;
 
 CREATE TABLE `processing2` (
-  `id_penawaran` varchar(255) NOT NULL,
+  `id_proses2` int(11) NOT NULL AUTO_INCREMENT,
+  `id_penawaran` varchar(255) DEFAULT NULL,
   `nama_brand` varchar(255) DEFAULT NULL,
-  `proses` varchar(255) DEFAULT NULL,
   `status` bigint(1) DEFAULT NULL,
-  PRIMARY KEY (`id_penawaran`)
+  PRIMARY KEY (`id_proses2`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `processing2` */
-
-insert  into `processing2`(`id_penawaran`,`nama_brand`,`proses`,`status`) values 
-('P005','Sidu','Hotprint',0),
-('P006','Sidu','Hotprint',0),
-('P007','Sidu','Plong',0);
-
-/*Table structure for table `spk_processing1` */
-
-DROP TABLE IF EXISTS `spk_processing1`;
-
-CREATE TABLE `spk_processing1` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_proses` varchar(255) DEFAULT NULL,
-  `jenis_proses` varchar(255) DEFAULT NULL,
-  `nama_vendor` varchar(255) DEFAULT NULL,
-  `jumlah` varchar(255) DEFAULT NULL,
-  `harga_satuan` varchar(255) DEFAULT NULL,
-  `harga_total` varchar(255) DEFAULT NULL,
-  `harga_satuan_sebelumnya` varchar(255) DEFAULT NULL,
-  `harga_total_sebelumnya` varchar(255) DEFAULT NULL,
-  `status` int(1) DEFAULT NULL,
-  `no_spk` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-/*Data for the table `spk_processing1` */
-
-insert  into `spk_processing1`(`id`,`id_proses`,`jenis_proses`,`nama_vendor`,`jumlah`,`harga_satuan`,`harga_total`,`harga_satuan_sebelumnya`,`harga_total_sebelumnya`,`status`,`no_spk`) values 
-(5,'1','Kertas','Sidu','10','1000','10000','0','0',1,'SP001');
 
 /*Table structure for table `users` */
 

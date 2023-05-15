@@ -5,7 +5,7 @@
             <h1 class="h3 mb-0 text-gray-800">Master Penawaran</h1>
         </div>
         <div class="form-group">
-            <form action="{{ url('doAddpenawaran') }}" method="post">
+            <form action="{{ url('/doAddpenawaran') }}" method="post">
                 @csrf
                 <label class="label" for="readonlyTextInput">No. Penawaran</label>
                 <input id="readonlyTextInput" class="form-control" placeholder="No. Penawaran" readonly>

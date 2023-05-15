@@ -13,6 +13,7 @@ use App\Http\Controllers\SPKController;
 use App\Http\Controllers\stokbarangController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\VendorController;
+use App\Http\Controllers\PengirimanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -66,6 +67,11 @@ Route::post('/doAddDesain', [DesainController::class, "doAddDesain"]);
 
 Route::get('/suratperintahkerja', [SPKController::class, "showBrand"]);
 Route::post('/doAddSPK', [SPKController::class, "doAddSPK"]);
+
+
+Route::get('/suratjalan', [PengirimanController::class, "show"]);
+Route::post('/tambahPengiriman', [PengirimanController::class, "doAddPengiriman"]);
+
 
 Route::get('/mastersubcon', function () {
     return view('mastersubcon');
