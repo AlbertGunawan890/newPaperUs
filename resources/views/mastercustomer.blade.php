@@ -17,8 +17,9 @@
                 </a>
             </div>
             <div class="card-body">
-                
-                <table id="tabelMasterCustomer" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
+
+                <table id="tabelMasterCustomer" class="table table-bordered table-no-wrap table-responsive"
+                    style="width:100%">
                     <thead>
                         <tr>
                             <th>ID Customer</th>
@@ -38,8 +39,16 @@
                                 <td>{{ $prm->notelp_customer }}</td>
                                 <td>{{ $prm->email_customer }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                                    <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                    <div style="display: flex">
+                                            <button style="margin-right: 5px;" type="button" class="btn btn-warning"><i
+                                                    class="fas fa-edit"></i></button>
+                                            <form method="post"
+                                                action="{{ url('mastercustomer/delete/' . $prm->id_customer) }}">
+                                                @csrf
+                                                <button style="margin-left: 5px;" type="submit" class="btn btn-danger"><i
+                                                        class="fas fa-trash"></i></button>
+                                            </form>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach
