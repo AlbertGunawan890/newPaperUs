@@ -52,6 +52,7 @@ Route::post('/doAddsupplier', [SupplierController::class, "doAdd"]);
 
 Route::get('/mastervendor', [VendorController::class, "show"]);
 Route::post('/doAddvendor', [VendorController::class, "doAdd"]);
+Route::post('/mastervendor/delete/{id}', [VendorController::class, "delete"]);
 
 
 Route::get('/masterpenawaran', [PenawaranController::class, "show"]);

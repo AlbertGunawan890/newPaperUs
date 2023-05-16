@@ -73,4 +73,18 @@ class VendorController extends Controller
         ]);
         return redirect("/mastervendor");
     }
+    public function delete(Request $req,$id)
+    {
+        $vendor = Vendor::withTrashed()->find($id);
+        if($vendor->trashed()){
+            $result = $vendor->restore();
+        }else{
+            $result = $vendor->delete();
+        }
+        if ($result) {
+            return redirect('/mastervendor');
+        } else {
+            return redirect('/mastervendor');
+        }
+    }
 }

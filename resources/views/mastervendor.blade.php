@@ -38,8 +38,15 @@
                             <td>{{$prm->kategori_vendor}}</td>
                             <td>{{$prm->alamat_vendor}}</td>
                             <td>
-                                <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                                <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                               <div style="display: flex">
+                                    <button style="margin-right: 5px;" type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                    <form method="post"
+                                        action="{{ url('/mastervendor/delete/' . $prm->id_vendor) }}">
+                                        @csrf
+                                        <button style="margin-left: 5px;" type="submit" class="btn btn-danger"><i
+                                                class="fas fa-trash"></i></button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                         @endforeach

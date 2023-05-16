@@ -54,6 +54,9 @@ CREATE TABLE `master_box` (
 
 /*Data for the table `master_box` */
 
+insert  into `master_box`(`id_box`,`tipe_box`,`nama_box`,`panjang_box`,`lebar_box`,`tinggi_box`,`keterangan`,`created_at`,`updated_at`,`deleted_at`) values 
+('B001','a','a','a','a','a','a','2023-05-16 03:38:28','2023-05-16 03:38:28',NULL);
+
 /*Table structure for table `master_customer` */
 
 DROP TABLE IF EXISTS `master_customer`;
@@ -83,6 +86,10 @@ CREATE TABLE `master_customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `master_customer` */
+
+insert  into `master_customer`(`id_customer`,`nama_customer`,`npwp_customer`,`alamat_customer`,`provinsi_customer`,`kota_customer`,`kecamatan_customer`,`kelurahan_customer`,`kodepos_customer`,`notelp_customer`,`nofax_customer`,`email_customer`,`batasan_hutang`,`hutang_sekarang`,`hutang_tersedia`,`no_rekening`,`metode_pembayaran`,`created_at`,`updated_at`,`deleted_at`) values 
+('CU001','a','a','a','a','a','a','a','a','1','1','1@gmail.com',NULL,'1','1','1','1','2023-05-16 03:22:35','2023-05-16 03:25:13','2023-05-16 03:25:13'),
+('CU002','a','a','a','a','a','a','aa','a','1','1','1@gmail.com',NULL,'1','1','123','1','2023-05-16 03:31:26','2023-05-16 03:31:26',NULL);
 
 /*Table structure for table `master_desain` */
 
@@ -280,16 +287,18 @@ CREATE TABLE `master_stokbarang` (
   `hargatotal` varchar(255) DEFAULT NULL,
   `lokasibarang` varchar(10) DEFAULT NULL,
   `keterangan` varchar(255) DEFAULT NULL,
+  `tanggalmasuk` datetime DEFAULT NULL,
   PRIMARY KEY (`namabarang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `master_stokbarang` */
 
-insert  into `master_stokbarang`(`namabarang`,`jenisbarang`,`jumlahmasuk`,`hargasatuan`,`hargatotal`,`lokasibarang`,`keterangan`) values 
-('a','Pisau',NULL,NULL,NULL,NULL,'qwque'),
-('q','Pisau',NULL,NULL,NULL,NULL,'123123'),
-('qwer','Plat',NULL,NULL,NULL,NULL,'qwe'),
-('qwerty','Plat',NULL,NULL,NULL,NULL,'qweriwqajd');
+insert  into `master_stokbarang`(`namabarang`,`jenisbarang`,`jumlahmasuk`,`hargasatuan`,`hargatotal`,`lokasibarang`,`keterangan`,`tanggalmasuk`) values 
+('123e21eq','Pisau','12','2000','24000','wsdeq','dws','2023-05-16 04:00:41'),
+('a','Pisau',NULL,NULL,NULL,NULL,'qwque',NULL),
+('q','Pisau',NULL,NULL,NULL,NULL,'123123',NULL),
+('qwer','Plat',NULL,NULL,NULL,NULL,'qwe',NULL),
+('qwerty','Plat',NULL,NULL,NULL,NULL,'qweriwqajd',NULL);
 
 /*Table structure for table `master_supplier` */
 
@@ -350,7 +359,7 @@ CREATE TABLE `master_vendor` (
 
 insert  into `master_vendor`(`id_vendor`,`nama_vendor`,`jenis_item`,`kategori_vendor`,`alamat_vendor`,`kota_vendor`,`kecamatan_vendor`,`kelurahan_vendor`,`email_vendor`,`nama_bank`,`no_akun`,`no_rekening`,`batasan_hutang`,`hutang_sekarang`,`hutang_tersedia`,`sisa_hutang`,`metode_pembayaran`,`created_at`,`updated_at`,`deleted_at`) values 
 ('V001','Sidu','Kertas','Kertas','asd','asd','asd','asd','sidu@gmail.com','bca','123','12334234234','324234234','324234234','34234234','324234234','transfer','2023-03-21 04:21:43','2023-03-21 04:21:43',NULL),
-('V002','Kiki','Kertas','Kertas','asddsdas','aasdasd','sadasdasd','sdasdasd','kiki@gmail.com','bca','123','32423423434','234234234','344543543','53453453','453453453','transfer','2023-03-21 04:21:43','2023-03-21 04:21:43',NULL);
+('V002','Kiki','Kertas','Kertas','asddsdas','aasdasd','sadasdasd','sdasdasd','kiki@gmail.com','bca','123','32423423434','234234234','344543543','53453453','453453453','transfer','2023-03-21 04:21:43','2023-05-16 03:55:07','2023-05-16 03:55:07');
 
 /*Table structure for table `migrations` */
 
