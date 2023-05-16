@@ -61,4 +61,18 @@ class PembelianBarangcontroller extends Controller
         ]);
         return redirect("/tambahpembelian");
     }
+    public function delete($id)
+    {
+        $pembelian = PembelianBarang::withTrashed()->find($id);
+        if($pembelian->trashed()){
+            $result = $pembelian->restore();
+        }else{
+            $result = $pembelian->delete();
+        }
+        if ($result){
+            return redirect('/pembelianbarang');
+        } else {
+            return redirect('/pembelianbarang');
+        }
+    }
 }

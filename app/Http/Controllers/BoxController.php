@@ -53,4 +53,18 @@ class BoxController extends Controller
         ]);
         return redirect("/masterbox");
     }
+    public function delete($id)
+    {
+        $box = Box::withTrashed()->find($id);
+        if($box->trashed()){
+            $result = $box->restore();
+        }else{
+            $result = $box->delete();
+        }
+        if ($result){
+            return redirect('/masterbox');
+        } else {
+            return redirect('/masterbox');
+        }
+    }
 }

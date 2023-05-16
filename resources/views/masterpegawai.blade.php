@@ -18,7 +18,10 @@
 
             </div>
             <div class="card-body">
-            
+            <form action="">
+                @csrf
+
+            </form>
             <table id="tabelMasterPegawai" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
                 <thead>
                     <tr>
@@ -39,14 +42,24 @@
                         <td>{{$prm->notelp_pegawai}}</td>
                         <td>{{$prm->email_pegawai}}</td>
                         <td>
-                            <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                            <div style="display: flex;">
+                                <form action="">
+                                    @csrf
+                                    <button type="submit" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                </form>
+                                <form  action="{{ url('masterpegawai/delete/' . $prm->id_pegawai) }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                </form>
+                            </div>
+
+
                         </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
-    
+
         </div>
         </div>
 

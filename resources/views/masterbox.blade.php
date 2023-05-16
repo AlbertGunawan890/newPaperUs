@@ -39,8 +39,16 @@
                             <td>{{$prm->lebar_box}}</td>
                             <td>{{$prm->tinggi_box}}</td>
                             <td>
-                                <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                                <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                <div style="display: flex;">
+                                    <form action="">
+                                        @csrf
+                                        <button type="submit" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                    </form>
+                                    <form  action="{{ url('masterbox/delete/' . $prm->id_box) }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                         @endforeach
