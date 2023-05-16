@@ -19,9 +19,7 @@ class controllerMasukKeluarStok extends Controller
     }
     public function doaddmasuk(Request $req)
     {
-
         $tanggalsekarang = new DateTime();
-
         $req->validate(
             [
                 "tnama" => 'required',

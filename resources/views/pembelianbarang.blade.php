@@ -31,19 +31,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>ABCDF</td>
-                            <td>HURUF</td>
-                            <td>XYZ</td>
-                            <td>20</td>
-                            <td>20000</td>
-                            <td>2000</td>
-                            <td>18000</td>
-                            <td>
-                                <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                                <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                            </td>
-                        </tr>
+
 
                         @foreach ($arrpembelianbarang as $prm)
                             <tr>
@@ -55,8 +43,16 @@
                                 <td>{{ $prm->diskon }}</td>
                                 <td>{{ $prm->nett }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                                    <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                    <div style="display: flex;">
+                                        <form action="">
+                                            @csrf
+                                            <button type="submit" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                        </form>
+                                        <form  action="{{ url('/pembelianbarang/delete/' . $prm->namabarang) }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach
@@ -66,6 +62,6 @@
         </div>
 
     </div>
-    
+
 
 @endsection

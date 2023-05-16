@@ -73,4 +73,18 @@ class SupplierController extends Controller
         ]);
         return redirect("/mastersupplier");
     }
+    public function delete($id)
+    {
+        $supplier = Supplier::withTrashed()->find($id);
+        if($supplier->trashed()){
+            $result = $supplier->restore();
+        }else{
+            $result = $supplier->delete();
+        }
+        if ($result){
+            return redirect('/mastersupplier');
+        } else {
+            return redirect('/mastersupplier');
+        }
+    }
 }

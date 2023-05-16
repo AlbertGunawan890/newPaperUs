@@ -54,6 +54,9 @@ CREATE TABLE `master_box` (
 
 /*Data for the table `master_box` */
 
+insert  into `master_box`(`id_box`,`tipe_box`,`nama_box`,`panjang_box`,`lebar_box`,`tinggi_box`,`keterangan`,`created_at`,`updated_at`,`deleted_at`) values 
+('B001','Box Makanan','Hebat Lezat','12 Cm','10Cm','5 cm','terang','2023-05-16 03:31:02','2023-05-16 03:40:16','2023-05-16 03:40:16');
+
 /*Table structure for table `master_customer` */
 
 DROP TABLE IF EXISTS `master_customer`;
@@ -149,7 +152,7 @@ CREATE TABLE `master_pegawai` (
 /*Data for the table `master_pegawai` */
 
 insert  into `master_pegawai`(`id_pegawai`,`nama_pegawai`,`npwp_pegawai`,`alamat_pegawai`,`provinsi_pegawai`,`kota_pegawai`,`kecamatan_pegawai`,`kelurahan_pegawai`,`kodepos_pegawai`,`notelp_pegawai`,`fax_pegawai`,`email_pegawai`,`kontak_personal`,`password`,`created_at`,`updated_at`,`deleted_at`) values 
-('P001','Hwe','231312','Surabaya','Jawa Timur','Bandung','Sidoarjo','Sidoarjo','61213','12345','12345','lala@gmail.com','+123456789','$2y$10$IZYmK/V56VjFYPh8lPkrr.nhVE7MlFjjFThig4rkqSfUfpGH8zjzC','2023-05-09 03:48:33','2023-05-09 03:48:33',NULL);
+('P001','Hwe','231312','Surabaya','Jawa Timur','Bandung','Sidoarjo','Sidoarjo','61213','12345','12345','lala@gmail.com','+123456789','$2y$10$IZYmK/V56VjFYPh8lPkrr.nhVE7MlFjjFThig4rkqSfUfpGH8zjzC','2023-05-09 03:48:33','2023-05-16 03:36:10','2023-05-16 03:36:10');
 
 /*Table structure for table `master_pembayaran` */
 
@@ -191,13 +194,16 @@ CREATE TABLE `master_pembelianbarang` (
   `harga` varchar(255) DEFAULT NULL,
   `diskon` varchar(255) DEFAULT NULL,
   `nett` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`namabarang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `master_pembelianbarang` */
 
-insert  into `master_pembelianbarang`(`tipebox`,`namabarang`,`jenisbarang`,`supplier`,`jumlah`,`harga`,`diskon`,`nett`) values 
-('qweqwe','qwe','qwe','qe','123','123',NULL,'123');
+insert  into `master_pembelianbarang`(`tipebox`,`namabarang`,`jenisbarang`,`supplier`,`jumlah`,`harga`,`diskon`,`nett`,`created_at`,`updated_at`,`deleted_at`) values 
+('qweqwe','qwe','qwe','qe','123','123',NULL,'123',NULL,'2023-05-16 04:01:31','2023-05-16 04:01:31');
 
 /*Table structure for table `master_penawaran` */
 
@@ -246,6 +252,9 @@ CREATE TABLE `master_pengiriman` (
 
 /*Data for the table `master_pengiriman` */
 
+insert  into `master_pengiriman`(`no_spk`,`no_surat_jalan`,`no_kendaraan`,`nama_pengiriman`,`nama_penerima`,`alamat_penerima`,`qty`,`tanggal`) values 
+('SP001','Los angeles','1','asd','12 8 Let It Be','Los angeles','12','2023-05-16');
+
 /*Table structure for table `master_spk` */
 
 DROP TABLE IF EXISTS `master_spk`;
@@ -265,7 +274,6 @@ CREATE TABLE `master_spk` (
 /*Data for the table `master_spk` */
 
 insert  into `master_spk`(`no_spk`,`id_penawaran`,`pic`,`jenis_box`,`jum_produksi`,`link_desain`,`pisau`,`plat`) values 
-('1',NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 ('SP001','P001','Angga','10x10 cm','10','asdadasdasdasd','a','qwerty');
 
 /*Table structure for table `master_stokbarang` */
@@ -317,6 +325,9 @@ CREATE TABLE `master_supplier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `master_supplier` */
+
+insert  into `master_supplier`(`id_supplier`,`nama_supplier`,`npwp_supplier`,`alamat_supplier`,`provinsi_supplier`,`kota_supplier`,`kecamatan_supplier`,`kelurahan_supplier`,`kodepos_supplier`,`notelp_supplier`,`email_supplier`,`item`,`nama_bank`,`no_rekening`,`created_at`,`updated_at`,`deleted_at`) values 
+('S001','Umbrella Corporation','123','Kabupaten Cikalang no 5','Sulawesi Selatan','Surabaya','Surabaya','Surabaya','5','123456','lalaland@gmail.com','Pisau','Bca','123','2023-05-16 03:23:20','2023-05-16 03:29:24','2023-05-16 03:29:24');
 
 /*Table structure for table `master_vendor` */
 

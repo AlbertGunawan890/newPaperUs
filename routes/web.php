@@ -39,15 +39,18 @@ Route::get('/dashboard', function () {
 
 Route::get('/masterpegawai', [PegawaiController::class, "show"]);
 Route::post('/doAddpegawai', [PegawaiController::class, "doAdd"]);
+Route::post('/masterpegawai/delete/{id}', [PegawaiController::class, "delete"]);
 
 Route::get('/masterbox', [BoxController::class, "show"]);
 Route::post('/doAddbox', [BoxController::class, "doAdd"]);
+Route::post('/masterbox/delete/{id}', [BoxController::class, "delete"]);
 
 Route::get('/mastercustomer', [CustomerController::class, "show"]);
 Route::post('/doAddcustomer', [CustomerController::class, "doAdd"]);
 
 Route::get('/mastersupplier', [SupplierController::class, "show"]);
 Route::post('/doAddsupplier', [SupplierController::class, "doAdd"]);
+Route::post('/mastersupplier/delete/{id}', [SupplierController::class, "delete"]);
 
 Route::get('/mastervendor', [VendorController::class, "show"]);
 Route::post('/doAddvendor', [VendorController::class, "doAdd"]);
@@ -131,6 +134,7 @@ Route::get('/tambahpembelian', [PembelianBarangcontroller::class, "show"]);
 // });
 Route::post('/doPembelianbarang', [PembelianBarangcontroller::class, "doAdd"]);
 Route::get('/pembelianbarang', [PembelianBarangcontroller::class, "showpembelian"]);
+Route::post('/pembelianbarang/delete/{id}', [PembelianBarangcontroller::class, "delete"]);
 // Route::get('/pembelianbarang', function () {
 //     return view('pembelianbarang');
 // });

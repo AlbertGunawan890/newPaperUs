@@ -69,4 +69,18 @@ class PegawaiController extends Controller
         ]);
         return redirect("/masterpegawai");
     }
+    public function delete($id)
+    {
+        $pegawai = Pegawai::withTrashed()->find($id);
+        if($pegawai->trashed()){
+            $result = $pegawai->restore();
+        }else{
+            $result = $pegawai->delete();
+        }
+        if ($result){
+            return redirect('/masterpegawai');
+        } else {
+            return redirect('/masterpegawai');
+        }
+    }
 }
