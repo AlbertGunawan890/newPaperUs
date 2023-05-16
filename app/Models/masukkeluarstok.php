@@ -9,10 +9,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class masukkeluarstok extends Model
 {
     use HasFactory;
-    // use SoftDeletes;
+    use SoftDeletes;
     protected $table = "master_stokbarang";
     protected $primaryKey = "namabarang";
-    public $timestamps = false;
+    public $timestamps = true;
     protected $fillable = [
         'namabarang',
         'jenisbarang',

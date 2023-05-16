@@ -293,17 +293,20 @@ CREATE TABLE `master_stokbarang` (
   `lokasibarang` varchar(10) DEFAULT NULL,
   `keterangan` varchar(255) DEFAULT NULL,
   `tanggalmasuk` datetime DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`namabarang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `master_stokbarang` */
 
-insert  into `master_stokbarang`(`namabarang`,`jenisbarang`,`jumlahmasuk`,`hargasatuan`,`hargatotal`,`lokasibarang`,`keterangan`,`tanggalmasuk`) values 
-('123e21eq','Pisau','12','2000','24000','wsdeq','dws','2023-05-16 04:00:41'),
-('a','Pisau',NULL,NULL,NULL,NULL,'qwque',NULL),
-('q','Pisau',NULL,NULL,NULL,NULL,'123123',NULL),
-('qwer','Plat',NULL,NULL,NULL,NULL,'qwe',NULL),
-('qwerty','Plat',NULL,NULL,NULL,NULL,'qweriwqajd',NULL);
+insert  into `master_stokbarang`(`namabarang`,`jenisbarang`,`jumlahmasuk`,`hargasatuan`,`hargatotal`,`lokasibarang`,`keterangan`,`tanggalmasuk`,`created_at`,`updated_at`,`deleted_at`) values 
+('123e21eq','Pisau','12','2000','24000','wsdeq','dws','2023-05-16 04:00:41',NULL,NULL,NULL),
+('a','Pisau',NULL,NULL,NULL,NULL,'qwque',NULL,NULL,NULL,NULL),
+('q','Pisau',NULL,NULL,NULL,NULL,'123123',NULL,NULL,NULL,NULL),
+('qwer','Plat',NULL,NULL,NULL,NULL,'qwe',NULL,NULL,NULL,NULL),
+('qwerty','Plat',NULL,NULL,NULL,NULL,'qweriwqajd',NULL,NULL,NULL,NULL);
 
 /*Table structure for table `master_supplier` */
 
