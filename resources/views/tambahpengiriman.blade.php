@@ -8,7 +8,12 @@
         <form action="{{ url('/tambahPengiriman') }}" method="POST">
             @csrf
             <label class="label" for="readonlyTextInput">No. SPK</label>
-            <input id="readonlyTextInput" class="form-control" placeholder="No. SPK" name="no_spk">
+            <select data-live-search="true" class="selectpicker form-control" name="no_spk">
+                <option selected>Pilih No. SPK</option>
+                @foreach ($no_spk as $prm)
+                    <option value={{ $prm->no_spk }}>{{ $prm->no_spk }}</option>
+                @endforeach
+            </select>
 
             <label class="label">No. Surat Jalan</label>
             <input class="form-control" placeholder="Masukkan No. Surat Jalan" name="no_surat_jalan">
@@ -17,7 +22,7 @@
             <input class="form-control" placeholder="Masukkan No. Kendaraan" name="no_kendaraan">
 
             <label for="exampleFormControlTextarea1" class="label">Nama Pengirim</label>
-            <input class="form-control" placeholder="Masukkan Nama Pengirim" name="nama_pengirim">
+            <input class="form-control" placeholder="Masukkan Nama Pengirim" name="nama_pengiriman">
 
             <label for="exampleFormControlTextarea1" class="label">Nama Penerima</label>
             <input class="form-control" placeholder="Masukkan Nama Penerima" name="nama_penerima">

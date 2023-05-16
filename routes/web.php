@@ -70,6 +70,7 @@ Route::post('/doAddSPK', [SPKController::class, "doAddSPK"]);
 
 
 Route::get('/suratjalan', [PengirimanController::class, "show"]);
+Route::get('/tambahpengiriman', [PengirimanController::class, "showSPK"]);
 Route::post('/tambahPengiriman', [PengirimanController::class, "doAddPengiriman"]);
 
 
@@ -95,11 +96,6 @@ Route::get('/history', function () {
 });
 
 
-
-
-Route::get('/suratjalan', function () {
-    return view('suratjalan');
-});
 Route::get('/penagihan', function () {
     return view('penagihan');
 });
@@ -160,10 +156,6 @@ Route::get('/stokbarang', [stokbarangController::class, "showstok"]);
 //     return view('stokbarang');
 // });
 
-
-Route::get('/tambahpengiriman', function () {
-    return view('tambahpengiriman');
-});
 Route::get('/tambahpenagihan', function () {
     return view('tambahpenagihan');
 });

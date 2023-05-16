@@ -31,13 +31,15 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php $ctr = 1; ?>
+                    @foreach ($pengiriman as $prm)
                     <tr>
-                        <td>1</td>
-                        <td>1010</td>
-                        <td>001</td>
-                        <td>2</td>
-                        <td>Andi</td>
-                        <td>Manado</td>
+                        <td>{{$ctr}}</td>
+                        <td>{{$prm->no_spk}}</td>
+                        <td>{{$prm->no_surat_jalan}}</td>
+                        <td>{{$prm->qty}}</td>
+                        <td>{{$prm->nama_penerima}}</td>
+                        <td>{{$prm->alamat_penerima}}</td>
                         <td>
                             <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
                             <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
@@ -47,22 +49,8 @@
                             <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>1011</td>
-                        <td>002</td>
-                        <td>10</td>
-                        <td>Fenny</td>
-                        <td>Surabaya</td>
-                        <td>
-                            <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                        </td>
-                    </tr>
+                    <?php $ctr++; ?>
+                    @endforeach
                 </tbody>
             </table>
         </div>

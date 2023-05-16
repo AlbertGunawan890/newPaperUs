@@ -8,15 +8,21 @@ use Illuminate\Http\Request;
 
 class PengirimanController extends Controller
 {
-    public function show(Type $var = null)
+    public function show()
     {
         $pengiriman = Pengiriman::all();
-        $spk = SPK::all();
-        return view('suratjalan', compact('arrPengiriman'));
+        return view('suratjalan', compact('pengiriman'));
     }
+
+    public function showSPK()
+    {
+        $no_spk = SPK::all();
+        return view('tambahpengiriman', compact('no_spk'));
+    }
+
     public function doAddPengiriman(Request $req)
     {
-        SPK::create([
+        Pengiriman::create([
             'no_spk' => $req->no_spk,
             'no_surat_jalan'=>$req->no_surat_jalan,
             'no_kendaraan'=>$req->no_kendaraan,
