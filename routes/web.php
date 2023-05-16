@@ -60,14 +60,17 @@ Route::post('/mastervendor/delete/{id}', [VendorController::class, "delete"]);
 
 Route::get('/masterpenawaran', [PenawaranController::class, "show"]);
 Route::get('/tambahpenawaran', [PenawaranController::class, "showBrand"]);
+Route::post('/masterpenawaran/delete/{id}', [PenawaranController::class, "delete"]);
 Route::post('/doAddpenawaran', [PenawaranController::class, "doAddpenawaran"]);
 
 Route::get('/formdp', [PembayaranController::class, "show"]);
 Route::get('/tambahdp', [PembayaranController::class, "showBrand"]);
+Route::post('/formdp/delete/{id}', [PembayaranController::class, "delete"]);
 Route::post('/doAddpembayaran', [PembayaranController::class, "doAddpembayaran"]);
 
 Route::get('/formdesain', [DesainController::class, "show"]);
 Route::get('/tambahdesain', [DesainController::class, "showBrand"]);
+Route::post('/formdesain/delete/{id}', [DesainController::class, "delete"]);
 Route::post('/doAddDesain', [DesainController::class, "doAddDesain"]);
 
 Route::get('/suratperintahkerja', [SPKController::class, "showBrand"]);

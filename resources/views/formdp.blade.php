@@ -47,8 +47,15 @@
                                         class="fas fa-times"></i></button>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                                <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                <div style="display: flex">
+                                    <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                    <form method="post"
+                                        action="{{ url('formdp/delete/' . $prm->id_pembayaran) }}">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger"><i
+                                                class="fas fa-trash"></i></button>
+                                    </form>
+                                </div>
                             </td>
                             @if ($prm->status_pembayaran == '1')
                                 <td>Diterima</td>

@@ -48,4 +48,19 @@ class DesainController extends Controller
         ]);
         return redirect("/formdesain");
     }
+
+    public function delete(Request $request , $id)
+    {
+        $desain = Desain::withTrashed()->find($id);
+        if($desain->trashed()){
+            $result = $desain->restore();
+        }else{
+            $result = $desain->delete();
+        }
+        if ($result) {
+            return redirect('/formdesain');
+        } else {
+            return redirect('/formdesain');
+        }
+    }
 }

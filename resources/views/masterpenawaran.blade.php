@@ -47,18 +47,29 @@
                                 <td>{{ $prm->diskon }}</td>
                                 <td>{{ $prm->net }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-success" onclick="btnAcc('{{$prm->id_penawaran}}');window.location.reload();"><i class="fas fa-check"></i></button>
-                                    <button type="button" class="btn btn-danger"  onclick="btnDecline('{{$prm->id_penawaran}}');window.location.reload();"><i class="fas fa-times"></i></button>
+                                    <button type="button" class="btn btn-success"
+                                        onclick="btnAcc('{{ $prm->id_penawaran }}');window.location.reload();"><i
+                                            class="fas fa-check"></i></button>
+                                    <button type="button" class="btn btn-danger"
+                                        onclick="btnDecline('{{ $prm->id_penawaran }}');window.location.reload();"><i
+                                            class="fas fa-times"></i></button>
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                                    <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                    <div style="display: flex">
+                                        <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                        <form method="post"
+                                            action="{{ url('masterpenawaran/delete/' . $prm->id_penawaran) }}">
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger"><i
+                                                    class="fas fa-trash"></i></button>
+                                        </form>
+                                    </div>
                                 </td>
                                 @if ($prm->status_penawaran == '1')
-                                <td>Diterima</td>
-                            @else
-                                <td>Ditolak</td>
-                            @endif
+                                    <td>Diterima</td>
+                                @else
+                                    <td>Ditolak</td>
+                                @endif
                             </tr>
                         @endforeach
                     </tbody>
@@ -68,7 +79,7 @@
         </div>
     </div>
     <script>
-        function btnAcc(id){
+        function btnAcc(id) {
             $.ajax({
                 url: "autocomplete.php",
                 method: "POST",
@@ -81,7 +92,8 @@
                 }
             });
         }
-        function btnDecline(id){
+
+        function btnDecline(id) {
             $.ajax({
                 url: "autocomplete.php",
                 method: "POST",

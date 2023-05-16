@@ -92,4 +92,19 @@ class PenawaranController extends Controller
         }
         return redirect("/masterpenawaran");
     }
+
+    public function delete(Request $request , $id)
+    {
+        $penawaran = Penawaran::withTrashed()->find($id);
+        if($penawaran->trashed()){
+            $result = $penawaran->restore();
+        }else{
+            $result = $penawaran->delete();
+        }
+        if ($result) {
+            return redirect('/masterpenawaran');
+        } else {
+            return redirect('/masterpenawaran');
+        }
+    }
 }

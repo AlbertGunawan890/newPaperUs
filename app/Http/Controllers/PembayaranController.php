@@ -52,4 +52,19 @@ class PembayaranController extends Controller
 
         return redirect("/formdp");
     }
+
+    public function delete(Request $request , $id)
+    {
+        $pembayaran = Pembayaran::withTrashed()->find($id);
+        if($pembayaran->trashed()){
+            $result = $pembayaran->restore();
+        }else{
+            $result = $pembayaran->delete();
+        }
+        if ($result) {
+            return redirect('/formdp');
+        } else {
+            return redirect('/formdp');
+        }
+    }
 }
