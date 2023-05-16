@@ -45,6 +45,7 @@ Route::post('/doAddbox', [BoxController::class, "doAdd"]);
 
 Route::get('/mastercustomer', [CustomerController::class, "show"]);
 Route::post('/doAddcustomer', [CustomerController::class, "doAdd"]);
+Route::post('/mastercustomer/delete/{id}', [CustomerController::class, "delete"]);
 
 Route::get('/mastersupplier', [SupplierController::class, "show"]);
 Route::post('/doAddsupplier', [SupplierController::class, "doAdd"]);
