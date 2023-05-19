@@ -104,6 +104,9 @@ CREATE TABLE `master_desain` (
   `pisau` varchar(255) DEFAULT NULL,
   `plat` varchar(255) DEFAULT NULL,
   `status_desain` bigint(1) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id_desain`),
   KEY `id_penawaran` (`id_penawaran`),
   CONSTRAINT `master_desain_ibfk_1` FOREIGN KEY (`id_penawaran`) REFERENCES `master_pembayaran` (`id_penawaran`)
@@ -111,8 +114,8 @@ CREATE TABLE `master_desain` (
 
 /*Data for the table `master_desain` */
 
-insert  into `master_desain`(`id_desain`,`id_penawaran`,`pic`,`jenis_box`,`link_desain`,`pisau`,`plat`,`status_desain`) values 
-('DE001','P001','Angga','10x10 cm','asdadasdasdasd','a','qwerty',1);
+insert  into `master_desain`(`id_desain`,`id_penawaran`,`pic`,`jenis_box`,`link_desain`,`pisau`,`plat`,`status_desain`,`created_at`,`updated_at`,`deleted_at`) values 
+('DE001','P001','Angga','10x10 cm','asdadasdasdasd','a','qwerty',1,NULL,NULL,NULL);
 
 /*Table structure for table `master_desaingunting` */
 
@@ -175,6 +178,9 @@ CREATE TABLE `master_pembayaran` (
   `sisa` varchar(255) DEFAULT NULL,
   `termin` date DEFAULT NULL,
   `status_pembayaran` bigint(1) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id_pembayaran`),
   KEY `id_penawaran` (`id_penawaran`),
   CONSTRAINT `master_pembayaran_ibfk_1` FOREIGN KEY (`id_penawaran`) REFERENCES `master_penawaran` (`id_penawaran`)
@@ -182,8 +188,8 @@ CREATE TABLE `master_pembayaran` (
 
 /*Data for the table `master_pembayaran` */
 
-insert  into `master_pembayaran`(`id_pembayaran`,`id_penawaran`,`nama_brand`,`pic`,`jenis_box`,`qty`,`jum_produksi`,`harga`,`pembayaran`,`sisa`,`termin`,`status_pembayaran`) values 
-('PB001','P001','Sidu','Angga','10x10 cm','5','10','45000','45000','0','2023-04-10',1);
+insert  into `master_pembayaran`(`id_pembayaran`,`id_penawaran`,`nama_brand`,`pic`,`jenis_box`,`qty`,`jum_produksi`,`harga`,`pembayaran`,`sisa`,`termin`,`status_pembayaran`,`created_at`,`updated_at`,`deleted_at`) values 
+('PB001','P001','Sidu','Angga','10x10 cm','5','10','45000','45000','0','2023-04-10',1,NULL,NULL,NULL);
 
 /*Table structure for table `master_pembelianbarang` */
 
@@ -229,14 +235,17 @@ CREATE TABLE `master_penawaran` (
   `net` varchar(255) DEFAULT NULL,
   `harga_net_terakhir` varchar(255) DEFAULT NULL,
   `status_penawaran` bigint(1) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id_penawaran`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `master_penawaran` */
 
-insert  into `master_penawaran`(`id_penawaran`,`nama_brand`,`pic`,`jenis_box`,`panjang`,`lebar`,`tinggi`,`qty`,`jum_produksi`,`harga_satuan`,`harga_satuan_terakhir`,`diskon`,`net`,`harga_net_terakhir`,`status_penawaran`) values 
-('P001','Sidu','Angga','10x10 cm','12','12','12','5','10','10000','0','10','45000',NULL,1),
-('P002','Sidu','Budi','10x10 cm','12','12','12','5','100','10000','10000','10','45000',NULL,0);
+insert  into `master_penawaran`(`id_penawaran`,`nama_brand`,`pic`,`jenis_box`,`panjang`,`lebar`,`tinggi`,`qty`,`jum_produksi`,`harga_satuan`,`harga_satuan_terakhir`,`diskon`,`net`,`harga_net_terakhir`,`status_penawaran`,`created_at`,`updated_at`,`deleted_at`) values 
+('P001','Sidu','Angga','10x10 cm','12','12','12','5','10','10000','0','10','45000',NULL,1,NULL,NULL,NULL),
+('P002','Sidu','Budi','10x10 cm','12','12','12','5','100','10000','10000','10','45000',NULL,0,NULL,NULL,NULL);
 
 /*Table structure for table `master_pengiriman` */
 
