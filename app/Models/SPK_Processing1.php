@@ -14,6 +14,7 @@ class SPK_Processing1 extends Model
     public $timestamps = false;
     protected $fillable = [
         'id',
+        'id_proses',
         'jenis_proses',
         'nama_vendor',
         'jumlah',
@@ -21,6 +22,7 @@ class SPK_Processing1 extends Model
         'harga_total',
         'harga_satuan_sebelumnya',
         'harga_total_sebelumnya',
-        'status'
+        'status',
+        'no_spk'
     ];
 }

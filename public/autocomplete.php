@@ -1,4 +1,4 @@
-<?php
+ <?php
 $connect = mysqli_connect("localhost", "root", "", "db_paperus");
 
 if ($_REQUEST["ctr"] == "Penawaran") {
@@ -115,7 +115,7 @@ else if ($_REQUEST["ctr"] == "Processing1SPK") {
                         <td><input type="text" class="form-control" placeholder="Pilih proses"
                         value="'.$row["proses"].'" name="proses['.$row["id_proses1"].']" readonly></td>
                         <td><select data-live-search="true" class=" form-control" id="id_vendor"
-                        name="nama_vendor">
+                        name="nama_vendor['.$row["id_proses1"].']">
                         <option selected>---Pilih Vendor---</option>';
                         $resultVendor = mysqli_query($connect, $queryVendor);
                         while ($rowVendor = mysqli_fetch_array($resultVendor)){
