@@ -189,13 +189,13 @@
         }
 
         function nama_brand_change_processing1() {
-            $("[name='temp']").val($("[name='id_penawaran']").val());
+            $("[name='temp']").val($("[name='search_spk']").val());
             console.log($("[name='temp']").val());
             $.ajax({
                 url: "autocomplete.php",
                 method: "POST",
                 data: {
-                    query: $("[name='id_penawaran']").val(),
+                    query: $("[name='search_spk']").val(),
                     ctr: "Processing1SPK"
                 },
                 success: function(data) {
