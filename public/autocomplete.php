@@ -143,7 +143,7 @@ else if ($_REQUEST["ctr"] == "Processing1SPK") {
                                     name="harga_total_sebelumnya['. $row["id"].']" value="'. $row["harga_total_sebelumnya"] .'"></td>
                             <td>
                                 <button type="button" class="btn btn-success"
-                                    onclick="btnAcc('. $row["id"].')"><i class="fas fa-check"></i></button>
+                                    onclick="btnAcc('. $row["id"].');nama_brand_change_processing1();"><i class="fas fa-check"></i></button>
                                 <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
                             </td>
                             <td>
