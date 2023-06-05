@@ -7,6 +7,7 @@ use App\Models\Penawaran;
 use App\Models\Processing1;
 use App\Models\Processing2;
 use App\Models\SPK;
+use App\Models\SPK_Processing1;
 use App\Models\Vendor;
 use Illuminate\Http\Request;
 
@@ -58,6 +59,21 @@ class SPKController extends Controller
             'pisau'=>$req->pisau,
             'plat'=>$req->plat
         ]);
+        $spk_proces = Processing1::where('id_penawaran', $req->id_penawaran)->get();
+        foreach ($spk_proces as $prm){
+            SPK_Processing1::create([
+                'id_proses' => $prm->id_proses1,
+                'jenis_proses' => $prm->proses,
+                'nama_vendor' => $prm->nama_brand,
+                'jumlah' => '0',
+                'harga_satuan' => '0',
+                'harga_total' => '0',
+                'harga_satuan_sebelumnya' => '0',
+                'harga_total_sebelumnya' => '0',
+                'status' => '1',
+                'no_spk' => $req->no_spk
+            ]);
+        }
         return redirect("/suratperintahkerja");
     }
 }

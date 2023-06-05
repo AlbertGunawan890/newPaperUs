@@ -17,7 +17,7 @@
                     <label class="label" for="readonlyTextInput">No. Penawaran</label>
                     {{-- livesearch input --}}
                     <select data-live-search="true" class="selectpicker form-control" id="id_penawaran" name="id_penawaran"
-                        onchange="nama_brand_change();nama_brand_change_processing1();">
+                    onchange="nama_brand_change();">
                         <option selected>Pilih No. Penawaran</option>
                         @foreach ($desain as $prm)
                             <option value={{ $prm->id_penawaran }}>{{ $prm->id_penawaran }}</option>
@@ -59,7 +59,14 @@
     </div>
     <br>
     <div class="card">
-        <div class="card-body">
+        <div class="card-body" >
+            <select data-live-search="true" class="selectpicker form-control" id="search_spk" name="search_spk"
+                onchange="nama_brand_change_processing1();">
+                <option selected>Pilih No. SPK</option>
+                @foreach ($no_spk as $prm)
+                    <option value={{ $prm->no_spk }}>{{ $prm->no_spk }}</option>
+                @endforeach
+            </select>
             <table id="tabelProses" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
                 <thead>
                     <tr>
@@ -212,7 +219,7 @@
                 url: "autocomplete.php",
                 method: "POST",
                 data: {
-                    query: $("[name='id_penawaran']").val(),
+                    query: $("[name='search_spk']").val(),
                     ctr: "Processing1SPK"
                 },
                 success: function(data) {
