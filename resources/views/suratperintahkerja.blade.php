@@ -91,68 +91,71 @@
         </div>
     </div>
     <br>
-    <div class="card">
-        <div class="card-body">
-            <table id="tabelProses2" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>Jenis Proses</th>
-                        <th>Nama Vendor</th>
-                        <th>Jumlah</th>
-                        <th>Harga Satuan</th>
-                        <th>Harga Total</th>
-                        <th>Harga Satuan Sebelumnya</th>
-                        <th>Harga Total Sebelumnya</th>
-                        <th>Penerimaan</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td><input type="text" class="form-control" placeholder="Pilih proses" readonly></td>
-                        <td>
-                            ABC
-                        </td>
-                        <td><input type="number" class="form-control" placeholder="Jumlah"></td>
-                        <td><input type="number" class="form-control" placeholder="Harga satuan"></td>
-                        <td>Rp30.000</td>
-                        <td>Rp10.000</td>
-                        <td>Rp20.000</td>
-                        <td>
-                            <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td><input type="text" class="form-control" placeholder="Pilih proses"readonly></td>
-                        <td>ABC</td>
-                        <td><input type="number" class="form-control" placeholder="Jumlah"></td>
-                        <td><input type="number" class="form-control" placeholder="Harga satuan"></td>
-                        <td>Rp30.000</td>
-                        <td>Rp10.000</td>
-                        <td>Rp20.000</td>
-                        <td>
-                            <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+    <div id="p2" style="display: none;">
+        <div class="card">
+            <div class="card-body">
+                <table id="tabelProses2" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Jenis Proses</th>
+                            <th>Nama Vendor</th>
+                            <th>Jumlah</th>
+                            <th>Harga Satuan</th>
+                            <th>Harga Total</th>
+                            <th>Harga Satuan Sebelumnya</th>
+                            <th>Harga Total Sebelumnya</th>
+                            <th>Penerimaan</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><input type="text" class="form-control" placeholder="Pilih proses" readonly></td>
+                            <td>
+                                ABC
+                            </td>
+                            <td><input type="number" class="form-control" placeholder="Jumlah"></td>
+                            <td><input type="number" class="form-control" placeholder="Harga satuan"></td>
+                            <td>Rp30.000</td>
+                            <td>Rp10.000</td>
+                            <td>Rp20.000</td>
+                            <td>
+                                <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
+                                <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" class="form-control" placeholder="Pilih proses"readonly></td>
+                            <td>ABC</td>
+                            <td><input type="number" class="form-control" placeholder="Jumlah"></td>
+                            <td><input type="number" class="form-control" placeholder="Harga satuan"></td>
+                            <td>Rp30.000</td>
+                            <td>Rp10.000</td>
+                            <td>Rp20.000</td>
+                            <td>
+                                <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
+                                <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <script>
         var jArray = <?php echo json_encode($no_spk); ?>;
+
         var no_spk = "";
         var temp = 0;
         if (jArray.length == 0) {
@@ -161,14 +164,36 @@
             for (var i = 0; i < jArray.length; i++) {
                 no_spk = jArray[i]['no_spk'];
             }
-
-
         }
+
         temp = parseInt(no_spk.substring(no_spk.length, 2)) + 1;
         no_spk = "SP" + temp.toString().padStart(3, '0');
         document.getElementsByName("no_spk")[0].value = no_spk.toString();
 
+
+
+
         function nama_brand_change() {
+            var jArray2 = <?php echo json_encode($proces2); ?>;
+            var penawaran2 = '';
+            var ada = true;
+            if (jArray2.length == 0) {
+                penawaran2 = "Tidak ada";
+            } else {
+                for (var i = 0; i < jArray2.length; i++) {
+                    if ($("[name='id_penawaran']").val() == jArray2[i]['id_penawaran']) {
+                        ada = true;
+                    } else if($("[name='id_penawaran']").val() != jArray2[i]['id_penawaran']){
+                        ada = false;
+                    }
+                }
+            }
+            if (ada) {
+                document.getElementById("p2").style.display = "block";
+            }else{
+                document.getElementById("p2").style.display = "none";
+                ada = true;
+            }
             $.ajax({
                 url: "autocomplete.php",
                 method: "POST",
@@ -189,8 +214,7 @@
         }
 
         function nama_brand_change_processing1() {
-            $("[name='temp']").val($("[name='search_spk']").val());
-            console.log($("[name='temp']").val());
+            $("[name='temp']").val($("[name='id_penawaran']").val());
             $.ajax({
                 url: "autocomplete.php",
                 method: "POST",
@@ -201,10 +225,9 @@
                 success: function(data) {
                     var temp = data.split(",");
                     for (let i = 0; i < temp.length - 1; i++) {
-                        console.log(temp[i]);
                         $("[name='proses[" + i + "]']").val(temp[i]);
                     }
-                    $("[name='temp']").val(temp.length-1);
+                    $("[name='temp']").val(temp.length - 1);
                     $("#processing1").html("");
                     $('#processing1').append(temp);
                 }
@@ -223,8 +246,12 @@
                 url: "autocomplete.php",
                 method: "POST",
                 data: {
-                    query: [$id,$("[name='proses[" + $id + "]']").val(),$("[name='nama_vendor[" + $id + "]']").val(),$("[name='jumlah[" + $id + "]']").val(),$("[name='harga_satuan[" + $id + "]']").val(),$("[name='harga_total[" + $id + "]']").val(),
-                    $("[name='harga_satuan_sebelumnya[" + $id + "]']").val(),$("[name='harga_total_sebelumnya[" + $id + "]']").val(),$("[name='search_spk']").val()],
+                    query: [$id, $("[name='proses[" + $id + "]']").val(), $("[name='nama_vendor']").val(), $(
+                            "[name='jumlah[" + $id + "]']").val(), $("[name='harga_satuan[" + $id + "]']")
+                    .val(), $("[name='harga_total[" + $id + "]']").val(),
+                        $("[name='harga_satuan_sebelumnya[" + $id + "]']").val(), $(
+                            "[name='harga_total_sebelumnya[" + $id + "]']").val(), $("[name='no_spk']").val()
+                    ],
                     ctr: "AccSPKProcess1"
                 },
                 success: function(data) {

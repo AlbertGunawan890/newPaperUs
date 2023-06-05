@@ -33,6 +33,30 @@ else if ($_REQUEST["ctr"] == "DeclinePenawaran") {
         $result = mysqli_query($connect, $query);
     }
 }
+else if ($_REQUEST["ctr"] == "AccPengiriman") {
+    if (isset($_POST["query"])) {
+        $query = "UPDATE master_pengiriman SET status_pengiriman = 1 WHERE no_spk='".$_POST["query"]."'";
+        $result = mysqli_query($connect, $query);
+    }
+}
+else if ($_REQUEST["ctr"] == "DeclinePengiriman") {
+    if (isset($_POST["query"])) {
+        $query = "UPDATE master_pengiriman SET status_pengiriman = -1 WHERE no_spk='".$_POST["query"]."'";
+        $result = mysqli_query($connect, $query);
+    }
+}
+else if ($_REQUEST["ctr"] == "AccPenagihan") {
+    if (isset($_POST["query"])) {
+        $query = "UPDATE master_penagihan SET status_penagihan = 1 WHERE id_penawaran='".$_POST["query"]."'";
+        $result = mysqli_query($connect, $query);
+    }
+}
+else if ($_REQUEST["ctr"] == "DeclinePenagihan") {
+    if (isset($_POST["query"])) {
+        $query = "UPDATE master_penagihan SET status_penagihan = -1 WHERE id_penawaran='".$_POST["query"]."'";
+        $result = mysqli_query($connect, $query);
+    }
+}
 else if ($_REQUEST["ctr"] == "AccPembayaran") {
     if (isset($_POST["query"])) {
         $query = "UPDATE master_pembayaran SET status_pembayaran = 1 WHERE id_pembayaran='".$_POST["query"]."'";
@@ -60,11 +84,30 @@ else if ($_REQUEST["ctr"] == "DeclineDesain") {
 else if ($_REQUEST["ctr"] == "Pembayaran") {
     if (isset($_POST["query"])) {
         $output = "";
-        $query = "SELECT * FROM master_penawaran WHERE id_penawaran = '" . $_POST["query"] . "'";
+        $query = "SELECT * FROM master_penawaran mpen, master_pembayaran mpem WHERE mpen.id_penawaran = '" . $_POST["query"] . "' AND mpem.id_penawaran = '" . $_POST["query"] . "'";
         $result = mysqli_query($connect, $query);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_array($result)) {
-                $output=$row["nama_brand"].",".$row["pic"].",".$row["jenis_box"].",".$row["qty"].",".$row["jum_produksi"].",".$row["net"];
+                $output=$row["nama_brand"].",".$row["pic"].",".$row["jenis_box"].",".$row["qty"].",".$row["jum_produksi"].",".$row["net"].",".$row["sisa"];
+            }
+        } else {
+            $query2 = "SELECT * FROM master_penawaran  WHERE id_penawaran = '" . $_POST["query"] . "'";
+            $result2 = mysqli_query($connect, $query2);
+            while ($row2 = mysqli_fetch_array($result2)) {
+                $output=$row2["nama_brand"].",".$row2["pic"].",".$row2["jenis_box"].",".$row2["qty"].",".$row2["jum_produksi"].",".$row2["net"];
+            }
+        }
+        echo $output;
+    }
+}
+else if ($_REQUEST["ctr"] == "Penagihan") {
+    if (isset($_POST["query"])) {
+        $output = "";
+        $query = "SELECT * FROM master_pembayaran WHERE id_penawaran = '" . $_POST["query"] . "'";
+        $result = mysqli_query($connect, $query);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_array($result)) {
+                $output=$row["pic"].",".$row["jenis_box"].",".$row["qty"].",".$row["harga"].",".$row["pembayaran"].",".$row["sisa"];
             }
         } else {
             $output .= '';

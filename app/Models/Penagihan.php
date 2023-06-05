@@ -6,27 +6,24 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Pembayaran extends Model
+class Penagihan extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    protected $table = "master_pembayaran";
-    protected $primaryKey = "id_pembayaran";
+    protected $table = "master_penagihan";
+    protected $primaryKey = "id_penagihan";
     public $timestamps = true;
     protected $fillable = [
-        'id_pembayaran',
+        'id_penagihan',
         'id_penawaran',
-        'nama_brand',
         'pic',
         'jenis_box',
-        'qty',
-        'jum_produksi',
-        'harga',
-        'pembayaran',
-        'sisa',
-        'termin',
-        'status_pembayaran'
+        'jumlah',
+        'nominal',
+        'sudah_terbayar',
+        'sisa_hutang',
+        'jumlah_bayar',
+        'status_penagihan'
     ];
     protected $keyType = 'string';
-    
 }
