@@ -5,7 +5,7 @@
         <h1 class="h3 mb-0 text-gray-800">Form Surat Jalan</h1>
     </div>
     <div class="form-group">
-        <form action="{{ url('/tambahPengiriman') }}" method="POST">
+        <form action="{{ url('/doAddpengiriman') }}" method="POST">
             @csrf
             <label class="label" for="readonlyTextInput">No. SPK</label>
             <select data-live-search="true" class="selectpicker form-control" name="no_spk">

@@ -22,33 +22,42 @@ class PembayaranController extends Controller
 
     public function doAddpembayaran(Request $req)
     {
-        $pembayaran = Pembayaran::get();
-        $ctr = 1;
-        foreach ($pembayaran as $p) {
-            $ctr = intval(substr($p->id_pembayaran, 2)) + 1;
-        }
-        if ($ctr < 10) {
-            $kode = "PB00{$ctr}";
-        } else if ($ctr < 100) {
-            $kode = "PB0{$ctr}";
-        } else {
-            $kode = "PB{$ctr}";
-        }
+        $pemb = Pembayaran::where('id_penawaran', $req->id_penawaran)->where('sisa','!=','0')->get();
+        if(count($pemb)>0){
+            $result = $req->id_penawaran->update([
+                'sisa' => $req->sisa,
+                'pembayaran' => $req->pembayaran
+            ]);
+        }else{
 
-        Pembayaran::create([
-            'id_pembayaran'=>$kode,
-            'id_penawaran'=>$req->id_penawaran,
-            'nama_brand'=>$req->nama_brand,
-            'pic'=>$req->pic,
-            'jenis_box'=>$req->jenis_box,
-            'qty'=>$req->qty,
-            'jum_produksi'=>$req->jum_produksi,
-            'harga'=>$req->harga,
-            'pembayaran'=>$req->pembayaran,
-            'sisa'=>$req->sisa,
-            'termin'=>$req->termin,
-            'status_pembayaran'=> 0
-        ]);
+            $pembayaran = Pembayaran::get();
+            $ctr = 1;
+            foreach ($pembayaran as $p) {
+                $ctr = intval(substr($p->id_pembayaran, 2)) + 1;
+            }
+            if ($ctr < 10) {
+                $kode = "PB00{$ctr}";
+            } else if ($ctr < 100) {
+                $kode = "PB0{$ctr}";
+            } else {
+                $kode = "PB{$ctr}";
+            }
+
+            Pembayaran::create([
+                'id_pembayaran'=>$kode,
+                'id_penawaran'=>$req->id_penawaran,
+                'nama_brand'=>$req->nama_brand,
+                'pic'=>$req->pic,
+                'jenis_box'=>$req->jenis_box,
+                'qty'=>$req->qty,
+                'jum_produksi'=>$req->jum_produksi,
+                'harga'=>$req->harga,
+                'pembayaran'=>$req->pembayaran,
+                'sisa'=>$req->sisa,
+                'termin'=>$req->termin,
+                'status_pembayaran'=> 0
+            ]);
+        }
 
         return redirect("/formdp");
     }

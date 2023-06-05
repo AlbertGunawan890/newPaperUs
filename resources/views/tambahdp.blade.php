@@ -73,6 +73,7 @@
                     $("[name='qty']").val(temp[3]);
                     $("[name='jum_produksi']").val(temp[4]);
                     $("[name='harga']").val(temp[5]);
+                    $("[name='sisa']").val(temp[6]);
                 }
             });
         }

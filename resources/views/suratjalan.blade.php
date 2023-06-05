@@ -28,6 +28,7 @@
                         <th>Alamat Penerima</th>
                         <th>Penerimaan</th>
                         <th>Aksi</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,13 +42,22 @@
                         <td>{{$prm->nama_penerima}}</td>
                         <td>{{$prm->alamat_penerima}}</td>
                         <td>
-                            <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                            <button type="button" class="btn btn-success"
+                                        onclick="btnAcc('{{ $prm->no_spk }}');window.location.reload();"><i
+                                            class="fas fa-check"></i></button>
+                                    <button type="button" class="btn btn-danger"
+                                        onclick="btnDecline('{{ $prm->no_spk }}');window.location.reload();"><i
+                                            class="fas fa-times"></i></button>
                         </td>
                         <td>
                             <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                             <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                         </td>
+                        @if ($prm->status_pengiriman == '1')
+                        <td>Diterima</td>
+                    @else
+                        <td>Ditolak</td>
+                    @endif
                     </tr>
                     <?php $ctr++; ?>
                     @endforeach
@@ -57,5 +67,34 @@
         </div>
 
     </div>
+    <script>
+        function btnAcc(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "AccPengiriman"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+
+        function btnDecline(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "DeclinePengiriman"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+    </script>
     <!-- /.container-fluid -->
     @endsection

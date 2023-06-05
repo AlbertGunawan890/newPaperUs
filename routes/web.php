@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PembelianBarangcontroller;
+use App\Http\Controllers\PenagihanController;
 use App\Http\Controllers\PenawaranController;
 use App\Http\Controllers\SPKController;
 use App\Http\Controllers\stokbarangController;
@@ -79,8 +80,11 @@ Route::post('/doAddSPK', [SPKController::class, "doAddSPK"]);
 
 Route::get('/suratjalan', [PengirimanController::class, "show"]);
 Route::get('/tambahpengiriman', [PengirimanController::class, "showSPK"]);
-Route::post('/tambahPengiriman', [PengirimanController::class, "doAddPengiriman"]);
+Route::post('/doAddpengiriman', [PengirimanController::class, "doAddPengiriman"]);
 
+Route::get('/penagihan', [PenagihanController::class, "show"]);
+Route::get('/tambahpenagihan', [PenagihanController::class, "showBrand"]);
+Route::post('/doAddpenagihan', [PenagihanController::class, "doAddpenagihan"]);
 
 Route::get('/mastersubcon', function () {
     return view('mastersubcon');
@@ -104,9 +108,7 @@ Route::get('/history', function () {
 });
 
 
-Route::get('/penagihan', function () {
-    return view('penagihan');
-});
+
 Route::get('/stokbarangjadi', function () {
     return view('stokbarangjadi');
 });
@@ -165,9 +167,9 @@ Route::get('/stokbarang', [stokbarangController::class, "showstok"]);
 //     return view('stokbarang');
 // });
 
-Route::get('/tambahpenagihan', function () {
-    return view('tambahpenagihan');
-});
+// Route::get('/tambahpenagihan', function () {
+//     return view('tambahpenagihan');
+// });
 Route::get('/laporanlogin', function () {
     return view('laporanlogin');
 });

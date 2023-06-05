@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Desain;
+use App\Models\Penawaran;
 use App\Models\Processing1;
 use App\Models\Processing2;
 use App\Models\SPK;
@@ -16,6 +17,7 @@ class SPKController extends Controller
         $desain = Desain::where('status_desain', '1')->get();
         $vendor = Vendor::all();
         $no_spk = SPK::all();
+        $proces2 = Processing2::all();
         // $arr = [];
         // $arr2 = [];
         // $data = json_decode($request->temp);
@@ -40,7 +42,7 @@ class SPKController extends Controller
         // }else{
         //     $proces1 = Processing1::where('id_penawaran', $data)->get();
         // }
-        $proces2 = Processing2::paginate(5);
+        // $proces2 = Processing2::paginate(5);
         return view('suratperintahkerja', compact('desain','no_spk',/*'spk',*/'proces1','proces2','vendor'));
     }
 
