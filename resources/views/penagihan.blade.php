@@ -49,7 +49,70 @@
                                         class="fas fa-times"></i></button>
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                    <button type="button" style="margin-right: 5px;" class="btn btn-warning"
+                                    data-toggle="modal" data-target="#exampleModal">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                    Edit Penagihan
+                                                </h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body text-left">
+                                                <form>
+                                                    <div class="form-group">
+                                                        @csrf
+                                                        <label class="label" for="readonlyTextInput">No. Penawaran</label>
+                                                        <select data-live-search="true" class="selectpicker form-control" name="id_penawaran"
+                                                            onchange="nama_brand_change()">
+                                                            <option selected>Pilih No. Penawaran</option>
+                                                            @foreach ($pembayaran as $prm)
+                                                                <option value={{ $prm->id_penawaran }}>{{ $prm->id_penawaran }}</option>
+                                                            @endforeach
+                                                        </select>
+                                        
+                                                        <label class="label">Customer</label>
+                                                        <input class="form-control" placeholder="Pilih Customer" name="pic">
+                                        
+                                                        <label for="exampleFormControlTextarea1" class="label">Jenis Box</label>
+                                                        <input class="form-control" placeholder="Pilih Jenis Box" name="jenis_box">
+                                        
+                                                        <label for="exampleFormControlTextarea1" class="label">Jumlah</label>
+                                                        <input class="form-control" placeholder="Jumlah" name="qty">
+                                        
+                                                        <label for="exampleFormControlTextarea1" class="label">Nominal</label>
+                                                        <input type="number" class="form-control" placeholder="Nominal" name="harga">
+                                        
+                                                        <label for="exampleFormControlTextarea1" class="label">Sudah Terbayar</label>
+                                                        <input type="number" class="form-control" name="sudah_terbayar">
+                                        
+                                                        <label for="exampleFormControlTextarea1" class="label">Sisa Hutang</label>
+                                                        <input type="number" class="form-control" name="sisa_hutang">
+                                        
+                                                        <label for="exampleFormControlTextarea1" class="label">Jumlah Bayar</label>
+                                                        <input type="number" class="form-control" name="jumlah_bayar">
+                                        
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Update</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                     <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                                 </td>
                                 @if ($prm->status_penagihan == '1')
