@@ -60,6 +60,8 @@
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
+
+                                            {{-- EDIT CUSTOMER POP UP --}}
                                             <div class="form-group">
                                                 <form action="{{ url('/doEditcustomer') }}" method="post">
                                                 @csrf
@@ -91,6 +93,8 @@
                                                     </div>
                                                 </form>
                                             </div>
+                                            {{-- EDIT CUSTOMER POP UP --}}
+
                                         </div>
                                     </div>
                                 </div>
