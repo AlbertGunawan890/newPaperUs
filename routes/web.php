@@ -53,6 +53,7 @@ Route::post('/doEditcustomer', [CustomerController::class, "doEdit"]);
 Route::post('/mastercustomer/delete/{id}', [CustomerController::class, "delete"]);
 
 Route::get('/mastersupplier', [SupplierController::class, "show"]);
+Route::post('/doEditsupplier', [SupplierController::class, "doEdit"]);
 Route::post('/doAddsupplier', [SupplierController::class, "doAdd"]);
 Route::post('/mastersupplier/delete/{id}', [SupplierController::class, "delete"]);
 

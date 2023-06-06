@@ -483,7 +483,6 @@
         }
 
         function showCheckbox() {
-            console.log("masuk");
 
              var x = document.getElementById("myCheckbox");
              var x2 = document.getElementById("myCheckbox2");

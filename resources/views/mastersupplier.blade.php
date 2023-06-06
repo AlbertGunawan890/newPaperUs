@@ -40,12 +40,11 @@
                             <td>{{$prm->notelp_supplier}}</td>
                             <td>
                                 <div style="display: flex;">
-                                    <form action="">
-                                        @csrf
+                                         <!-- Button trigger modal -->
                                         <button type="button" style="margin-right: 5px;" class="btn btn-warning"
-                                    data-toggle="modal" data-target="#exampleModal">
-                                    <i class="fas fa-edit"></i>
-                                </button>
+                                        data-toggle="modal" data-target="#exampleModal" onclick="btnedit({{ $prm }})">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
 
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
@@ -61,53 +60,33 @@
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
+                                            <form method="POST" action="{{ url('/doEditsupplier') }}">
+                                            @csrf
                                             <div class="modal-body text-left">
-                                                <form>
                                                     <div class="form-group">
+                                                        <label class="label">Id Supplier</label>
+                                                        <input class="form-control" name="id_supplier" placeholder="" readonly>
+
                                                         <label class="label">Nama Supplier</label>
-                <input class="form-control" name="nama" placeholder="Masukkan Nama">
+                                                        <input class="form-control" name="nama" placeholder="Masukkan Nama">
 
-                <label class="label">NPWP</label>
-                <input class="form-control" name="npwp" placeholder="Masukkan NPWP">
+                                                        <label class="label">Item</label>
+                                                        <input class="form-control" name="item" placeholder="Masukkan Provinsi">
 
-                <label class="label">Alamat</label>
-                <input class="form-control" name="alamat" placeholder="Masukkan Alamat">
+                                                        <label class="label">Alamat</label>
+                                                        <input class="form-control" name="alamat" placeholder="Masukkan Alamat">
 
-                <label class="label">Provinsi</label>
-                <input class="form-control" name="provinsi" placeholder="Masukkan Provinsi">
+                                                        <label class="label">No. Telp</label>
+                                                        <input type="number" name="notelp" class="form-control" placeholder="Masukkan No. Telp">
 
-                <label class="label">Kota</label>
-                <input class="form-control" name="kota" placeholder="Masukkan Kota">
-
-                <label class="label">Kecamatan</label>
-                <input class="form-control" name="kecamatan" placeholder="Masukkan Kecamatan">
-
-                <label class="label">Kelurahan</label>
-                <input class="form-control" name="kelurahan" placeholder="Masukkan Kelurahan">
-
-                <label class="label">Kode Pos</label>
-                <input class="form-control" name="kodepos" placeholder="Kode Pos">
-
-                <label class="label">No. Telp</label>
-                <input type="number" name="notelp" class="form-control" placeholder="Masukkan No. Telp">
-
-                <label class="label">Email</label>
-                <input type="email" name="email" class="form-control" placeholder="Masukkan Email">
-
-                <label class="label">Item</label>
-                <input type="text" name="item" class="form-control" placeholder="Masukkan Item">
-                <label class="label">Nama Bank</label>
-                <input type="text" class="form-control" name="nama_bank" placeholder="Pilih Nama Bank">
-                <label class="label">No. Rekening</label>
-                <input type="text" class="form-control" name="no_rekening" placeholder="Masukkan Nomor Rekening">
                                                     </div>
-                                                </form>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Update</button>
+                                                <button type="submit" class="btn btn-primary">Update</button>
                                             </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -129,3 +108,18 @@
     </div>
     <!-- /.container-fluid -->
 @endsection
+
+<script>
+    function btnedit(arrCustomer){
+        // var prm = 0;
+        $("[name='id_supplier']").val(arrCustomer['id_supplier']);
+        $("[name='nama']").val(arrCustomer['nama_supplier']);
+        $("[name='item']").val(arrCustomer['item']);
+        $("[name='alamat']").val(arrCustomer['alamat_supplier']);
+        $("[name='notelp']").val(arrCustomer['notelp_supplier']);
+    }
+
+    function cek(){
+        console.log("halo");
+    }
+</script>
