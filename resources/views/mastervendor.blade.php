@@ -10,10 +10,10 @@
 
         <div class="card">
             <div class="card-header">
-              <a href={{ url('tambahvendor') }}>
-                <button type="button" class="btn btn-primary my-auto">
-                    Tambah Data
-                  </button>
+                <a href={{ url('tambahvendor') }}>
+                    <button type="button" class="btn btn-primary my-auto">
+                        Tambah Data
+                    </button>
                 </a>
             </div>
             <div class="card-body">
@@ -31,109 +31,135 @@
                     <tbody>
 
                         @foreach ($arrVendor as $prm)
-                        <tr>
-                            <td>{{$prm->id_vendor}}</td>
-                            <td>{{$prm->nama_vendor}}</td>
-                            <td>{{$prm->jenis_item}}</td>
-                            <td>{{$prm->kategori_vendor}}</td>
-                            <td>{{$prm->alamat_vendor}}</td>
-                            <td>
-                               <div style="display: flex">
-                                <button type="button" style="margin-right: 5px;" class="btn btn-warning"
-                                data-toggle="modal" data-target="#exampleModal">
-                                <i class="fas fa-edit"></i>
-                            </button>
+                            <tr>
+                                <td>{{ $prm->id_vendor }}</td>
+                                <td>{{ $prm->nama_vendor }}</td>
+                                <td>{{ $prm->jenis_item }}</td>
+                                <td>{{ $prm->kategori_vendor }}</td>
+                                <td>{{ $prm->alamat_vendor }}</td>
+                                <td>
+                                    <div style="display: flex">
+                                        <button type="button" style="margin-right: 5px;" class="btn btn-warning"
+                                            data-toggle="modal" data-target="#exampleModal">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">
-                                                Edit Vendor
-                                            </h5>
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body text-left">
-                                            <form>
-                                                <div class="form-group">
-                                                    <label class="label">Nama Vendor</label>
-        <input class="form-control" placeholder="Masukkan Nama Vendor" name="nama">
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                            Edit Vendor
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body text-left">
+                                                        <form>
+                                                            <div class="form-group">
+                                                                <label class="label">Nama Vendor</label>
+                                                                <input class="form-control"
+                                                                    placeholder="Masukkan Nama Vendor" name="nama">
 
-        <label class="label">Jenis Item</label>
-        <input class="form-control" placeholder="Masukkan Jenis Item" name="jenis_item">
+                                                                <label class="label">Jenis Item</label>
+                                                                <input class="form-control"
+                                                                    placeholder="Masukkan Jenis Item" name="jenis_item">
 
-        <label class="label">Kategori</label>
-        <input class="form-control" placeholder="Masukkan Kategori" name="kategori">
+                                                                <label class="label">Kategori</label>
+                                                                <input class="form-control" placeholder="Masukkan Kategori"
+                                                                    name="kategori">
 
-        <label class="label">Alamat</label>
-        <input class="form-control" placeholder="Masukkan Alamat" name="alamat">
+                                                                <label class="label">Alamat</label>
+                                                                <input class="form-control" placeholder="Masukkan Alamat"
+                                                                    name="alamat">
 
-        <label class="label">Kota</label>
-        <input class="form-control" placeholder="Masukkan Kota" name="kota">
+                                                                <label class="label">Kota</label>
+                                                                <input class="form-control" placeholder="Masukkan Kota"
+                                                                    name="kota">
 
-        <label class="label">Kecamatan</label>
-        <input class="form-control" placeholder="Masukkan Kecamatan" name="kecamatan">
+                                                                <label class="label">Kecamatan</label>
+                                                                <input class="form-control" placeholder="Masukkan Kecamatan"
+                                                                    name="kecamatan">
 
-        <label class="label">Kelurahan</label>
-        <input class="form-control" placeholder="Masukkan Kelurahan" name="kelurahan">
+                                                                <label class="label">Kelurahan</label>
+                                                                <input class="form-control" placeholder="Masukkan Kelurahan"
+                                                                    name="kelurahan">
 
-        <label class="label">Email</label>
-        <input type="email" class="form-control" placeholder="Masukkan Email" name="email">
+                                                                <label class="label">Email</label>
+                                                                <input type="email" class="form-control"
+                                                                    placeholder="Masukkan Email" name="email">
 
-        <label class="label">Nama Bank</label>
-        <input class="form-control" placeholder="Masukkan Nama Bank" name="nama_bank">
+                                                                <label class="label">Nama Bank</label>
+                                                                <input class="form-control" placeholder="Masukkan Nama Bank"
+                                                                    name="nama_bank">
 
-        <label class="label">No. Akun</label>
-        <input type="number" class="form-control" placeholder="Masukkan No. Akun" name="no_akun">
+                                                                <label class="label">No. Akun</label>
+                                                                <input type="number" class="form-control"
+                                                                    placeholder="Masukkan No. Akun" name="no_akun">
 
-        <label class="label">No. Rekening</label>
-        <input type="number" class="form-control" placeholder="Masukkan No. Rek" name="no_rekening">
+                                                                <label class="label">No. Rekening</label>
+                                                                <input type="number" class="form-control"
+                                                                    placeholder="Masukkan No. Rek" name="no_rekening">
 
-        <label class="label">Batasan Hutang</label>
-        <input type="number" class="form-control" name="batasan_hutang">
+                                                                <label class="label">Batasan Hutang</label>
+                                                                <input type="number" class="form-control"
+                                                                    name="batasan_hutang">
 
-        <label class="label">Hutang Sekarang</label>
-        <input type="number" class="form-control" name="hutang_sekarang">
+                                                                <label class="label">Hutang Sekarang</label>
+                                                                <input type="number" class="form-control"
+                                                                    name="hutang_sekarang">
 
-        <label class="label">Hutang Tersedia</label>
-        <input type="number" class="form-control" name="hutang_tersedia">
+                                                                <label class="label">Hutang Tersedia</label>
+                                                                <input type="number" class="form-control"
+                                                                    name="hutang_tersedia">
 
-        <label class="label">Sisa Hutang</label>
-        <input type="number" class="form-control" name="sisa_hutang">
+                                                                <label class="label">Sisa Hutang</label>
+                                                                <input type="number" class="form-control"
+                                                                    name="sisa_hutang">
 
-        <label class="label">Metode Pembayaran</label>
-        <input class="form-control" name="metode_pembayaran">
+                                                                <label class="label">Metode Pembayaran</label>
+                                                                <input class="form-control" name="metode_pembayaran">
 
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Close</button>
+                                                        <button type="submit" onclick="btnedit()"
+                                                            class="btn btn-primary">Update</button>
+                                                    </div>
                                                 </div>
-                                            </form>
+                                            </div>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Update</button>
-                                        </div>
+                                        <form method="post"
+                                            action="{{ url('/mastervendor/delete/' . $prm->id_vendor) }}">
+                                            @csrf
+                                            <button style="margin-left: 5px;" type="submit" class="btn btn-danger"><i
+                                                    class="fas fa-trash"></i></button>
+                                        </form>
                                     </div>
-                                </div>
-                            </div>
-                                    <form method="post"
-                                        action="{{ url('/mastervendor/delete/' . $prm->id_vendor) }}">
-                                        @csrf
-                                        <button style="margin-left: 5px;" type="submit" class="btn btn-danger"><i
-                                                class="fas fa-trash"></i></button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
-        </div>
+            </div>
 
-    </div>
-    <!-- /.container-fluid -->
-@endsection
+        </div>
+        <!-- /.container-fluid -->
+        <script>
+            function btnedit(arrVendor) {
+                // var prm = 0;
+                $("[name='id_customer']").val(arrCustomer['id_customer']);
+                $("[name='nama']").val(arrCustomer['nama_customer']);
+                $("[name='alamat']").val(arrCustomer['alamat_customer']);
+                $("[name='notelp']").val(arrCustomer['notelp_customer']);
+                $("[name='email']").val(arrCustomer['email_customer']);
+            }
+        </script>
+    @endsection

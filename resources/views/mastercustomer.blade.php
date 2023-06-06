@@ -60,6 +60,8 @@
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
+
+                                            {{-- EDIT CUSTOMER POP UP --}}
                                             <div class="form-group">
                                                 <form action="{{ url('/doEditcustomer') }}" method="post">
                                                 @csrf
@@ -91,6 +93,8 @@
                                                     </div>
                                                 </form>
                                             </div>
+                                            {{-- EDIT CUSTOMER POP UP --}}
+
                                         </div>
                                     </div>
                                 </div>
@@ -112,16 +116,11 @@
 </div>
 <script>
     function btnedit(arrCustomer){
-        // var prm = 0;
         $("[name='id_customer']").val(arrCustomer['id_customer']);
         $("[name='nama']").val(arrCustomer['nama_customer']);
         $("[name='alamat']").val(arrCustomer['alamat_customer']);
         $("[name='notelp']").val(arrCustomer['notelp_customer']);
         $("[name='email']").val(arrCustomer['email_customer']);
-    }
-
-    function cek(){
-        console.log("halo");
     }
 </script>
 

@@ -43,11 +43,11 @@
                         <td>{{$prm->email_pegawai}}</td>
                         <td>
                             <div style="display: flex;">
-                                <form action="">
-                                    @csrf
-                                    <button type="button" style="margin-right: 5px;" class="btn btn-warning"
-                                    data-toggle="modal" data-target="#exampleModal">
-                                    <i class="fas fa-edit"></i>
+                                {{-- <form action="">
+                                    @csrf --}}
+                                <button type="button" style="margin-right: 5px;" class="btn btn-warning"
+                                data-toggle="modal" data-target="#exampleModal" onclick="btnedit({{$prm}})">
+                                <i class="fas fa-edit"></i>
                                 </button>
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
@@ -63,55 +63,36 @@
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-                                            <div class="modal-body text-left">
-                                                <form>
-                                                    <div class="form-group">
+                                            <div class="form-group">
+                                                <form action="{{ url('/doEditpegawai') }}" method="post">
+                                                @csrf
+                                                    <div class="modal-body text-left">
+                                                        <label class="label">ID Pegawai</label>
+                                                        <input name="id_pegawai" class="form-control"
+                                                            value="" readonly>
+
                                                         <label class="label">Nama Pegawai</label>
-                <input name="nama" class="form-control" placeholder="Masukkan Nama">
+                                                        <input name="nama" class="form-control"
+                                                            placeholder="Masukkan Nama Pegawai">
 
-                <label class="label">NPWP</label>
-                <input name="npwp" class="form-control" placeholder="Masukkan NPWP">
+                                                        <label class="label">Alamat Pegawai</label>
+                                                        <input name="alamat" class="form-control"
+                                                            placeholder="Masukkan Alamat">
 
-                <label class="label">Alamat</label>
-                <input name="alamat" class="form-control" placeholder="Masukkan Alamat">
+                                                        <label class="label">No. Telp</label>
+                                                        <input name="notelp" class="form-control"
+                                                            placeholder="Masukkan No. Telp">
 
-                <label class="label">Provinsi</label>
-                <input name="provinsi" class="form-control" placeholder="Masukkan Provinsi">
-
-                <label class="label">Kota</label>
-                <input name="kota" class="form-control" placeholder="Masukkan Kota">
-
-                <label class="label">Kecamatan</label>
-                <input name="kecamatan" class="form-control" placeholder="Masukkan Kecamatan">
-
-                <label class="label">Kelurahan</label>
-                <input name="kelurahan" class="form-control" placeholder="Masukkan Kelurahan">
-
-                <label class="label">Kode Pos</label>
-                <input name="kodepos" class="form-control" placeholder="Kode Pos">
-
-                <label class="label">No. Telp</label>
-                <input name="notelp" type="number" class="form-control" placeholder="Masukkan No. Telp">
-
-                <label class="label">Fax</label>
-                <input name="fax" type="number" class="form-control" placeholder="Masukkan No. Fax">
-
-                <label class="label">Email</label>
-                <input name="email" type="email" class="form-control" placeholder="Masukkan Email">
-
-                <label class="label">Kontak Personal</label>
-                <input name="kontak_personal" type="text" class="form-control" placeholder="Masukkan Kontak Personal">
-
-                <label class="label">Password</label>
-                <input name="password" type="password" class="form-control" placeholder="Masukkan Password">
-
+                                                        <label class="label">Email Pegawai</label>
+                                                        <input name="email" class="form-control"
+                                                            placeholder="Masukkan email">
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Close</button>
+                                                        <input type="submit" value="Update" class="btn btn-primary">
                                                     </div>
                                                 </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Update</button>
                                             </div>
                                         </div>
                                     </div>
@@ -134,5 +115,14 @@
         </div>
 
     </div>
+    <script>
+        function btnedit(arrPegawai){
+            $("[name='id_pegawai']").val(arrPegawai['id_pegawai']);
+            $("[name='nama']").val(arrPegawai['nama_pegawai']);
+            $("[name='alamat']").val(arrPegawai['alamat_pegawai']);
+            $("[name='notelp']").val(arrPegawai['notelp_pegawai']);
+            $("[name='email']").val(arrPegawai['email_pegawai']);
+        }
+    </script>
     <!-- /.container-fluid -->
 @endsection

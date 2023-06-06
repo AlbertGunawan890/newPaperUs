@@ -15,7 +15,6 @@ use App\Http\Controllers\stokbarangController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\PengirimanController;
-use App\Models\Customer;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,6 +40,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/masterpegawai', [PegawaiController::class, "show"]);
 Route::post('/doAddpegawai', [PegawaiController::class, "doAdd"]);
+Route::post('/doEditpegawai', [PegawaiController::class, "doEdit"]);
 Route::post('/masterpegawai/delete/{id}', [PegawaiController::class, "delete"]);
 
 Route::get('/masterbox', [BoxController::class, "show"]);
