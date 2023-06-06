@@ -6,6 +6,9 @@ use App\Models\Desain;
 use App\Models\Penawaran;
 use App\Models\Processing1;
 use App\Models\Processing2;
+use App\Models\Processing3;
+use App\Models\Processing4;
+use App\Models\Processing5;
 use App\Models\SPK;
 use App\Models\SPK_Processing1;
 use App\Models\Vendor;
@@ -19,6 +22,9 @@ class SPKController extends Controller
         $vendor = Vendor::all();
         $no_spk = SPK::all();
         $proces2 = Processing2::all();
+        $proces3 = Processing3::all();
+        $proces4 = Processing4::all();
+        $proces5 = Processing5::all();
         // $arr = [];
         // $arr2 = [];
         // $data = json_decode($request->temp);
@@ -44,7 +50,7 @@ class SPKController extends Controller
         //     $proces1 = Processing1::where('id_penawaran', $data)->get();
         // }
         // $proces2 = Processing2::paginate(5);
-        return view('suratperintahkerja', compact('desain','no_spk',/*'spk',*/'proces1','proces2','vendor'));
+        return view('suratperintahkerja', compact('desain','no_spk',/*'spk',*/'proces1','proces2','proces3','proces4','proces5','vendor'));
     }
 
     public function doAddSPK(Request $req)

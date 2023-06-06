@@ -196,6 +196,222 @@ else if ($_REQUEST["ctr"] == "Processing1SPK") {
         echo $output;
     }
 }
+else if ($_REQUEST["ctr"] == "Processing2SPK") {
+    if (isset($_POST["query"])) {
+        $output = "";
+        $arr = [];
+        $query = "SELECT * FROM processing2 p2, master_penawaran mp WHERE p2.id_penawaran = '" . $_POST["query"] . "' AND mp.id_penawaran = '" . $_POST["query"] . "'";
+        $queryVendor = "SELECT * FROM master_vendor";
+        $result = mysqli_query($connect, $query);
+        $ctr = 1;
+        // if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_array($result)) {
+                $output .= '
+                    <tr>
+                        <td>' . $ctr . '</td>
+                        <td><input type="text" class="form-control" placeholder="Pilih proses"
+                        value="'.$row["proses"].'" name="proses2['.$row["id_proses2"].']" readonly></td>
+                        <td><select data-live-search="true" class=" form-control" id="id_vendor"
+                        name="nama_vendor2">
+                        <option selected>---Pilih Vendor---</option>';
+                        $resultVendor = mysqli_query($connect, $queryVendor);
+                        while ($rowVendor = mysqli_fetch_array($resultVendor)){
+                            $output .= '<option value="'. $rowVendor["nama_vendor"] .'">'. $rowVendor["nama_vendor"] .'</option>';
+                        }
+                $output .= '</select></td>
+                                    <td><input type="number" class="form-control" placeholder="Jumlah"
+                                    name="jumlah2['. $row["id_proses2"] .']"
+                                    onchange="harga_total_change2('.$row["id_proses2"].')">
+                            </td>
+                            <td><input type="number" class="form-control" placeholder="Harga satuan"
+                                    name="harga_satuan2['. $row["id_proses2"].']"
+                                    onchange="harga_total_change2('. $row["id_proses2"].')"></td>
+                            <td>
+                                <input readonly type="number" class="form-control"
+                                    name="harga_total2['. $row["id_proses2"].']" value="0">
+                            </td>
+                            <td><input readonly type="number" class="form-control"
+                                    name="harga_satuan_sebelumnya2['. $row["id_proses2"].']" value="0"></td>
+                            <td><input readonly type="number" class="form-control"
+                                    name="harga_total_sebelumnya2['. $row["id_proses2"].']" value="0"></td>
+                            <td>
+                                <button type="button" class="btn btn-success"
+                                    onclick="btnAcc('. $row["id_proses2"].')"><i class="fas fa-check"></i></button>
+                                <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                            </td>
+                    </tr>
+                ';
+                $ctr++;
+            }
+        echo $output;
+    }
+}
+else if ($_REQUEST["ctr"] == "Processing3SPK") {
+    if (isset($_POST["query"])) {
+        $output = "";
+        $arr = [];
+        $query = "SELECT * FROM processing3 p3, master_penawaran mp WHERE p3.id_penawaran = '" . $_POST["query"] . "' AND mp.id_penawaran = '" . $_POST["query"] . "'";
+        $queryVendor = "SELECT * FROM master_vendor";
+        $result = mysqli_query($connect, $query);
+        $ctr = 1;
+        // if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_array($result)) {
+                $output .= '
+                    <tr>
+                        <td>' . $ctr . '</td>
+                        <td><input type="text" class="form-control" placeholder="Pilih proses"
+                        value="'.$row["proses"].'" name="proses3['.$row["id_proses3"].']" readonly></td>
+                        <td><select data-live-search="true" class=" form-control" id="id_vendor"
+                        name="nama_vendor3">
+                        <option selected>---Pilih Vendor---</option>';
+                        $resultVendor = mysqli_query($connect, $queryVendor);
+                        while ($rowVendor = mysqli_fetch_array($resultVendor)){
+                            $output .= '<option value="'. $rowVendor["nama_vendor"] .'">'. $rowVendor["nama_vendor"] .'</option>';
+                        }
+                $output .= '</select></td>
+                                    <td><input type="number" class="form-control" placeholder="Jumlah"
+                                    name="jumlah3['. $row["id_proses3"] .']"
+                                    onchange="harga_total_change3('.$row["id_proses3"].')">
+                            </td>
+                            <td><input type="number" class="form-control" placeholder="Harga satuan"
+                                    name="harga_satuan3['. $row["id_proses3"].']"
+                                    onchange="harga_total_change3('. $row["id_proses3"].')"></td>
+                            <td>
+                                <input readonly type="number" class="form-control"
+                                    name="harga_total3['. $row["id_proses3"].']" value="0">
+                            </td>
+                            <td><input readonly type="number" class="form-control"
+                                    name="harga_satuan_sebelumnya3['. $row["id_proses3"].']" value="0"></td>
+                            <td><input readonly type="number" class="form-control"
+                                    name="harga_total_sebelumnya3['. $row["id_proses3"].']" value="0"></td>
+                            <td>
+                                <button type="button" class="btn btn-success"
+                                    onclick="btnAcc('. $row["id_proses3"].')"><i class="fas fa-check"></i></button>
+                                <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                            </td>
+                    </tr>
+                ';
+                $ctr++;
+            }
+        echo $output;
+    }
+}
+else if ($_REQUEST["ctr"] == "Processing4SPK") {
+    if (isset($_POST["query"])) {
+        $output = "";
+        $arr = [];
+        $query = "SELECT * FROM processing4 p4, master_penawaran mp WHERE p4.id_penawaran = '" . $_POST["query"] . "' AND mp.id_penawaran = '" . $_POST["query"] . "'";
+        $queryVendor = "SELECT * FROM master_vendor";
+        $result = mysqli_query($connect, $query);
+        $ctr = 1;
+        // if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_array($result)) {
+                $output .= '
+                    <tr>
+                        <td>' . $ctr . '</td>
+                        <td><input type="text" class="form-control" placeholder="Pilih proses"
+                        value="'.$row["proses"].'" name="proses4['.$row["id_proses4"].']" readonly></td>
+                        <td><select data-live-search="true" class=" form-control" id="id_vendor"
+                        name="nama_vendor4">
+                        <option selected>---Pilih Vendor---</option>';
+                        $resultVendor = mysqli_query($connect, $queryVendor);
+                        while ($rowVendor = mysqli_fetch_array($resultVendor)){
+                            $output .= '<option value="'. $rowVendor["nama_vendor"] .'">'. $rowVendor["nama_vendor"] .'</option>';
+                        }
+                $output .= '</select></td>
+                                    <td><input type="number" class="form-control" placeholder="Jumlah"
+                                    name="jumlah4['. $row["id_proses4"] .']"
+                                    onchange="harga_total_change4('.$row["id_proses4"].')">
+                            </td>
+                            <td><input type="number" class="form-control" placeholder="Harga satuan"
+                                    name="harga_satuan4['. $row["id_proses4"].']"
+                                    onchange="harga_total_change4('. $row["id_proses4"].')"></td>
+                            <td>
+                                <input readonly type="number" class="form-control"
+                                    name="harga_total4['. $row["id_proses4"].']" value="0">
+                            </td>
+                            <td><input readonly type="number" class="form-control"
+                                    name="harga_satuan_sebelumnya4['. $row["id_proses4"].']" value="0"></td>
+                            <td><input readonly type="number" class="form-control"
+                                    name="harga_total_sebelumnya4['. $row["id_proses4"].']" value="0"></td>
+                            <td>
+                                <button type="button" class="btn btn-success"
+                                    onclick="btnAcc('. $row["id_proses4"].')"><i class="fas fa-check"></i></button>
+                                <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                            </td>
+                    </tr>
+                ';
+                $ctr++;
+            }
+        echo $output;
+    }
+}
+else if ($_REQUEST["ctr"] == "Processing5SPK") {
+    if (isset($_POST["query"])) {
+        $output = "";
+        $arr = [];
+        $query = "SELECT * FROM processing5 p5, master_penawaran mp WHERE p5.id_penawaran = '" . $_POST["query"] . "' AND mp.id_penawaran = '" . $_POST["query"] . "'";
+        $queryVendor = "SELECT * FROM master_vendor";
+        $result = mysqli_query($connect, $query);
+        $ctr = 1;
+        // if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_array($result)) {
+                $output .= '
+                    <tr>
+                        <td>' . $ctr . '</td>
+                        <td><input type="text" class="form-control" placeholder="Pilih proses"
+                        value="'.$row["proses"].'" name="proses5['.$row["id_proses5"].']" readonly></td>
+                        <td><select data-live-search="true" class=" form-control" id="id_vendor"
+                        name="nama_vendor5">
+                        <option selected>---Pilih Vendor---</option>';
+                        $resultVendor = mysqli_query($connect, $queryVendor);
+                        while ($rowVendor = mysqli_fetch_array($resultVendor)){
+                            $output .= '<option value="'. $rowVendor["nama_vendor"] .'">'. $rowVendor["nama_vendor"] .'</option>';
+                        }
+                $output .= '</select></td>
+                                    <td><input type="number" class="form-control" placeholder="Jumlah"
+                                    name="jumlah5['. $row["id_proses5"] .']"
+                                    onchange="harga_total_change5('.$row["id_proses5"].')">
+                            </td>
+                            <td><input type="number" class="form-control" placeholder="Harga satuan"
+                                    name="harga_satuan5['. $row["id_proses5"].']"
+                                    onchange="harga_total_change5('. $row["id_proses5"].')"></td>
+                            <td>
+                                <input readonly type="number" class="form-control"
+                                    name="harga_total5['. $row["id_proses5"].']" value="0">
+                            </td>
+                            <td><input readonly type="number" class="form-control"
+                                    name="harga_satuan_sebelumnya5['. $row["id_proses5"].']" value="0"></td>
+                            <td><input readonly type="number" class="form-control"
+                                    name="harga_total_sebelumnya5['. $row["id_proses5"].']" value="0"></td>
+                            <td>
+                                <button type="button" class="btn btn-success"
+                                    onclick="btnAcc('. $row["id_proses5"].')"><i class="fas fa-check"></i></button>
+                                <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                            </td>
+                    </tr>
+                ';
+                $ctr++;
+            }
+        echo $output;
+    }
+}
 else if ($_REQUEST["ctr"] == "AccSPKProcess1") {
     if (isset($_POST["query"])) {
         $id_proses=$_POST['query'][0];

@@ -98,19 +98,25 @@
                                                           @endforeach
                                                         </select>
 
+
                                                         <label for="exampleFormControlTextarea1" class="label">PIC</label>
                                                         <input class="form-control" placeholder="Masukkan pic">
+
 
                                                         <label for="exampleFormControlTextarea1" class="label">Nama Barang</label>
                                                         <input class="form-control" placeholder="Masukkan nama barang">
 
+
                                                         <label for="exampleFormControlTextarea1" class="label">Harga</label>
                                                         <input class="form-control" placeholder="Masukkan harga">
+
 
                                                         <label for="exampleFormControlTextarea1" class="label">Quantity</label>
                                                         <input class="form-control" placeholder="Masukkan quantity">
 
+
                                                         <br>
+
 
                                                         <div class="checkbox">
                                                         <div class="form-check form-check-inline">
@@ -457,23 +463,6 @@
             }
         }
 
-        function showCheckbox() {
-            console.log("halo");
-            var x = document.getElementById("myCheckbox");
-
-            if (x.style.display == "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-            if ($("[name='proses2']").val() == "0") {
-                $("[name='proses2']").val("1");
-            } else {
-                $("[name='proses2']").val("0");
-            }
-            console.log($("[name='proses2']").val());
-
-        }
         function nama_brand_change(){
             $.ajax({
                 url: "autocomplete.php",

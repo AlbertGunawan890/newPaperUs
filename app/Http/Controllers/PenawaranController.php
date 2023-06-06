@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Penawaran;
 use App\Models\Processing1;
 use App\Models\Processing2;
+use App\Models\Processing3;
+use App\Models\Processing4;
+use App\Models\Processing5;
 use App\Models\SPK;
 use App\Models\Vendor;
 use Illuminate\Http\Request;
@@ -78,6 +81,7 @@ class PenawaranController extends Controller
                 'status' => 0,
             ]);
         }
+
         if ($request->proses2 == "1") {
             $checked2 = $request->cb2;
             for ($i = 0; $i < count($checked2); $i++) {
@@ -86,6 +90,42 @@ class PenawaranController extends Controller
                     'id_penawaran' => $kode,
                     'nama_brand' => $request->nama_brand,
                     'proses' => $checked2[$i],
+                    'status' => 0,
+                ]);
+            }
+        }
+        if($request->proses3 == "1"){
+            $checked3 = $request->cb3;
+            for ($i = 0; $i < count($checked3); $i++) {
+
+                Processing3::create([
+                    'id_penawaran' => $kode,
+                    'nama_brand' => $request->nama_brand,
+                    'proses' => $checked3[$i],
+                    'status' => 0,
+                ]);
+            }
+        }
+        if($request->proses4 == "1"){
+            $checked4 = $request->cb4;
+            for ($i = 0; $i < count($checked4); $i++) {
+
+                Processing4::create([
+                    'id_penawaran' => $kode,
+                    'nama_brand' => $request->nama_brand,
+                    'proses' => $checked4[$i],
+                    'status' => 0,
+                ]);
+            }
+        }
+        if($request->proses5 == "1"){
+            $checked5 = $request->cb5;
+            for ($i = 0; $i < count($checked5); $i++) {
+
+                Processing5::create([
+                    'id_penawaran' => $kode,
+                    'nama_brand' => $request->nama_brand,
+                    'proses' => $checked5[$i],
                     'status' => 0,
                 ]);
             }

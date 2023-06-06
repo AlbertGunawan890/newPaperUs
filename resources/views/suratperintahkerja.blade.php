@@ -17,7 +17,7 @@
                     <label class="label" for="readonlyTextInput">No. Penawaran</label>
                     {{-- livesearch input --}}
                     <select data-live-search="true" class="selectpicker form-control" id="id_penawaran" name="id_penawaran"
-                        onchange="nama_brand_change();nama_brand_change_processing1();">
+                        onchange="nama_brand_change();nama_brand_change_processing1();nama_brand_change_processing2();nama_brand_change_processing3();nama_brand_change_processing4();nama_brand_change_processing5();">
                         <option selected>Pilih No. Penawaran</option>
                         @foreach ($desain as $prm)
                             <option value={{ $prm->id_penawaran }}>{{ $prm->id_penawaran }}</option>
@@ -52,7 +52,7 @@
                     <label for="exampleFormControlTextarea1" class="label">Jenis Plat</label>
                     <input class="form-control" name="plat" placeholder="Jenis Plat">
                     <button type="submit" class="btn btn-primary">Submit</button>
-                    <input type="hidden" name="temp">
+                    {{-- <input type="hidden" name="temp"> --}}
                 </form>
             </div>
         </div>
@@ -74,7 +74,7 @@
                             <th>Harga Total Sebelumnya</th>
                             <th>Penerimaan</th>
                             {{-- <th>Status</th> --}}
-                            <th>Aksi</th>
+                            <th style="min-width: 120px">Aksi</th>
                         </tr>
                     </thead>
                     <tbody id="processing1">
@@ -87,7 +87,6 @@
     </div>
     <br>
     <div id="p2" style="display: none;">
-
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
@@ -104,10 +103,10 @@
                                 <th>Harga Total Sebelumnya</th>
                                 <th>Penerimaan</th>
                                 {{-- <th>Status</th> --}}
-                                <th>Aksi</th>
+                                <th style="min-width: 120px">Aksi</th>
                             </tr>
                         </thead>
-                        <tbody id="processing1">
+                        <tbody id="processing2">
 
 
                         </tbody>
@@ -117,7 +116,7 @@
         </div>
     </div>
     <br>
-    {{-- <div id="p3" style="display: none;"> --}}
+    <div id="p3" style="display: none;">
 
         <div class="card">
             <div class="card-body">
@@ -135,10 +134,10 @@
                                 <th>Harga Total Sebelumnya</th>
                                 <th>Penerimaan</th>
                                 {{-- <th>Status</th> --}}
-                                <th>Aksi</th>
+                                <th style="min-width: 120px">Aksi</th>
                             </tr>
                         </thead>
-                        <tbody id="processing1">
+                        <tbody id="processing3">
 
 
                         </tbody>
@@ -146,9 +145,9 @@
                 </div>
             </div>
         </div>
-    {{-- </div> --}}
+    </div>
     <br>
-    {{-- <div id="p4" style="display: none;"> --}}
+    <div id="p4" style="display: none;">
 
         <div class="card">
             <div class="card-body">
@@ -166,10 +165,10 @@
                                 <th>Harga Total Sebelumnya</th>
                                 <th>Penerimaan</th>
                                 {{-- <th>Status</th> --}}
-                                <th>Aksi</th>
+                                <th style="min-width: 120px">Aksi</th>
                             </tr>
                         </thead>
-                        <tbody id="processing1">
+                        <tbody id="processing4">
 
 
                         </tbody>
@@ -177,9 +176,9 @@
                 </div>
             </div>
         </div>
-    {{-- </div> --}}
+    </div>
     <br>
-    {{-- <div id="p5" style="display: none;"> --}}
+    <div id="p5" style="display: none;">
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
@@ -195,10 +194,10 @@
                                 <th>Harga Satuan Sebelumnya</th>
                                 <th>Harga Total Sebelumnya</th>
                                 <th>Penerimaan</th>
-                                <th>Aksi</th>
+                                <th style="min-width: 120px">Aksi</th>
                             </tr>
                         </thead>
-                        <tbody id="processing1">
+                        <tbody id="processing5">
 
 
                         </tbody>
@@ -206,7 +205,7 @@
                 </div>
             </div>
         </div>
-    {{-- </div> --}}
+    </div>
     <br>
 
     <script>
@@ -225,20 +224,17 @@
         no_spk = "SP" + temp.toString().padStart(3, '0');
         document.getElementsByName("no_spk")[0].value = no_spk.toString();
 
-
-
-
         function nama_brand_change() {
             var jArray2 = <?php echo json_encode($proces2);?>;
-            var penawaran2 = '';
             var ada = true;
             if (jArray2.length == 0) {
-                penawaran2 = "Tidak ada";
+                ada = false;
             } else {
                 for (var i = 0; i < jArray2.length; i++) {
                     if ($("[name='id_penawaran']").val() == jArray2[i]['id_penawaran']) {
                         ada = true;
-                    } else if ($("[name='id_penawaran']").val() != jArray2[i]['id_penawaran']) {
+                        break;
+                    }else if ($("[name='id_penawaran']").val() != jArray2[i]['id_penawaran']) {
                         ada = false;
                     }
                 }
@@ -248,6 +244,69 @@
             } else {
                 document.getElementById("p2").style.display = "none";
                 ada = true;
+            }
+            // ================================================
+            var jArray3 = <?php echo json_encode($proces3);?>;
+            var ada2 = true;
+            if (jArray3.length == 0) {
+                ada2 = false;
+            } else {
+                for (var i = 0; i < jArray3.length; i++) {
+                    if ($("[name='id_penawaran']").val() == jArray3[i]['id_penawaran']) {
+                        ada2 = true;
+                        break;
+                    }else if ($("[name='id_penawaran']").val() != jArray3[i]['id_penawaran']) {
+                        ada2 = false;
+                    }
+                }
+            }
+            if (ada2) {
+                document.getElementById("p3").style.display = "block";
+            } else {
+                document.getElementById("p3").style.display = "none";
+                ada2 = true;
+            }
+            // ================================================
+            var jArray4 = <?php echo json_encode($proces4);?>;
+            var ada3 = true;
+            if (jArray4.length == 0) {
+                ada3 = false;
+            } else {
+                for (var i = 0; i < jArray4.length; i++) {
+                    if ($("[name='id_penawaran']").val() == jArray4[i]['id_penawaran']) {
+                        ada3 = true;
+                        break;
+                    }else if ($("[name='id_penawaran']").val() != jArray4[i]['id_penawaran']) {
+                        ada3 = false;
+                    }
+                }
+            }
+            if (ada3) {
+                document.getElementById("p4").style.display = "block";
+            } else {
+                document.getElementById("p4").style.display = "none";
+                ada3 = true;
+            }
+            // ================================================
+            var jArray5 = <?php echo json_encode($proces5);?>;
+            var ada4 = true;
+            if (jArray5.length == 0) {
+                ada4 = false;
+            } else {
+                for (var i = 0; i < jArray5.length; i++) {
+                    if ($("[name='id_penawaran']").val() == jArray5[i]['id_penawaran']) {
+                        ada4 = true;
+                        break;
+                    }else if ($("[name='id_penawaran']").val() != jArray5[i]['id_penawaran']) {
+                        ada4 = false;
+                    }
+                }
+            }
+            if (ada4) {
+                document.getElementById("p5").style.display = "block";
+            } else {
+                document.getElementById("p5").style.display = "none";
+                ada4 = true;
             }
             $.ajax({
                 url: "autocomplete.php",
@@ -269,7 +328,6 @@
         }
 
         function nama_brand_change_processing1() {
-            $("[name='temp']").val($("[name='id_penawaran']").val());
             $.ajax({
                 url: "autocomplete.php",
                 method: "POST",
@@ -282,9 +340,89 @@
                     for (let i = 0; i < temp.length - 1; i++) {
                         $("[name='proses[" + i + "]']").val(temp[i]);
                     }
-                    $("[name='temp']").val(temp.length - 1);
+                    // $("[name='temp']").val(temp.length - 1);
                     $("#processing1").html("");
                     $('#processing1').append(temp);
+                }
+            });
+        }
+
+        function nama_brand_change_processing2() {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: $("[name='id_penawaran']").val(),
+                    ctr: "Processing2SPK"
+                },
+                success: function(data) {
+                    var temp = data.split(",");
+                    for (let i = 0; i < temp.length - 1; i++) {
+                        $("[name='proses2[" + i + "]']").val(temp[i]);
+                    }
+                    // $("[name='temp']").val(temp.length - 1);
+                    $("#processing2").html("");
+                    $('#processing2').append(temp);
+                }
+            });
+        }
+
+        function nama_brand_change_processing3() {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: $("[name='id_penawaran']").val(),
+                    ctr: "Processing3SPK"
+                },
+                success: function(data) {
+                    var temp = data.split(",");
+                    for (let i = 0; i < temp.length - 1; i++) {
+                        $("[name='proses3[" + i + "]']").val(temp[i]);
+                    }
+                    // $("[name='temp']").val(temp.length - 1);
+                    $("#processing3").html("");
+                    $('#processing3').append(temp);
+                }
+            });
+        }
+
+        function nama_brand_change_processing4() {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: $("[name='id_penawaran']").val(),
+                    ctr: "Processing4SPK"
+                },
+                success: function(data) {
+                    var temp = data.split(",");
+                    for (let i = 0; i < temp.length - 1; i++) {
+                        $("[name='proses4[" + i + "]']").val(temp[i]);
+                    }
+                    // $("[name='temp']").val(temp.length - 1);
+                    $("#processing4").html("");
+                    $('#processing4').append(temp);
+                }
+            });
+        }
+
+        function nama_brand_change_processing5() {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: $("[name='id_penawaran']").val(),
+                    ctr: "Processing5SPK"
+                },
+                success: function(data) {
+                    var temp = data.split(",");
+                    for (let i = 0; i < temp.length - 1; i++) {
+                        $("[name='proses5[" + i + "]']").val(temp[i]);
+                    }
+                    // $("[name='temp']").val(temp.length - 1);
+                    $("#processing5").html("");
+                    $('#processing5').append(temp);
                 }
             });
         }
@@ -294,6 +432,34 @@
             var harga_satuan = parseInt($("[name='harga_satuan[" + $id + "]']").val());
             var temp = harga_satuan * qty;
             $("[name='harga_total[" + $id + "]']").val(temp);
+        }
+        
+        function harga_total_change2($id) {
+            var qty = parseInt($("[name='jumlah2[" + $id + "]']").val());
+            var harga_satuan = parseInt($("[name='harga_satuan2[" + $id + "]']").val());
+            var temp = harga_satuan * qty;
+            $("[name='harga_total2[" + $id + "]']").val(temp);
+        }
+
+        function harga_total_change3($id) {
+            var qty = parseInt($("[name='jumlah3[" + $id + "]']").val());
+            var harga_satuan = parseInt($("[name='harga_satuan3[" + $id + "]']").val());
+            var temp = harga_satuan * qty;
+            $("[name='harga_total3[" + $id + "]']").val(temp);
+        }
+
+        function harga_total_change4($id) {
+            var qty = parseInt($("[name='jumlah4[" + $id + "]']").val());
+            var harga_satuan = parseInt($("[name='harga_satuan4[" + $id + "]']").val());
+            var temp = harga_satuan * qty;
+            $("[name='harga_total4[" + $id + "]']").val(temp);
+        }
+
+        function harga_total_change5($id) {
+            var qty = parseInt($("[name='jumlah5[" + $id + "]']").val());
+            var harga_satuan = parseInt($("[name='harga_satuan5[" + $id + "]']").val());
+            var temp = harga_satuan * qty;
+            $("[name='harga_total5[" + $id + "]']").val(temp);
         }
 
         function btnAcc($id) {
