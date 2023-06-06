@@ -42,7 +42,7 @@
                             <div style="display: flex">
                                 <!-- Button trigger modal -->
                                 <button type="button" style="margin-right: 5px;" class="btn btn-warning"
-                                    data-toggle="modal" data-target="#exampleModal">
+                                    data-toggle="modal" data-target="#exampleModal" onclick="btnedit({{ $prm }})">
                                     <i class="fas fa-edit"></i>
                                 </button>
 
@@ -60,75 +60,36 @@
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-                                            <div class="modal-body text-left">
-                                                <form>
-                                                    <div class="form-group">
-                                                        <label class="label">Nama Brand</label>
+                                            <div class="form-group">
+                                                <form action="{{ url('/doEditcustomer') }}" method="post">
+                                                @csrf
+                                                    <div class="modal-body text-left">
+                                                        <label class="label">ID Customer</label>
+                                                        <input name="id_customer" class="form-control"
+                                                            value="" readonly>
+
+                                                        <label class="label">Nama Customer</label>
                                                         <input name="nama" class="form-control"
-                                                            placeholder="Masukkan Nama Brand">
+                                                            placeholder="Masukkan Nama Customer">
 
-                                                        <label class="label">Nama PIC</label>
-                                                        <input name="pic" class="form-control"
-                                                            placeholder="Masukkan Nama PIC">
-
-                                                        <label class="label">NPWP</label>
-                                                        <input name="npwp" class="form-control"
-                                                            placeholder="Masukkan NPWP">
-
-                                                        <label class="label">Alamat</label>
+                                                        <label class="label">Alamat Customer</label>
                                                         <input name="alamat" class="form-control"
                                                             placeholder="Masukkan Alamat">
 
-                                                        <label class="label">Provinsi</label>
-                                                        <input name="provinsi" class="form-control"
-                                                            placeholder="Masukkan Provinsi">
-
-                                                        <label class="label">Kota</label>
-                                                        <input name="kota" class="form-control"
-                                                            placeholder="Masukkan Kota">
-
-                                                        <label class="label">Kecamatan</label>
-                                                        <input name="kecamatan" class="form-control"
-                                                            placeholder="Masukkan Kecamatan">
-
-                                                        <label class="label">Kelurahan</label>
-                                                        <input name="kelurahan" class="form-control"
-                                                            placeholder="Masukkan Kelurahan">
-
-                                                        <label class="label">Kode Pos</label>
-                                                        <input name="kodepos" class="form-control"
-                                                            placeholder="Kode Pos">
-
                                                         <label class="label">No. Telp</label>
-                                                        <input name="notelp" type="number" class="form-control"
+                                                        <input name="notelp" class="form-control"
                                                             placeholder="Masukkan No. Telp">
 
-                                                        <label class="label">Fax</label>
-                                                        <input name="fax" type="number" class="form-control"
-                                                            placeholder="Masukkan No. Fax">
-
-                                                        <label class="label">Email</label>
-                                                        <input name="email" type="email" class="form-control"
-                                                            placeholder="Masukkan Email">
-
-                                                        <label class="label">Hutang Sekarang</label>
-                                                        <input name="hutang_sekarang" type="number"
-                                                            class="form-control">
-                                                        <label class="label">Hutang Tersedia</label>
-                                                        <input name="hutang_tersedia" type="number"
-                                                            class="form-control">
-                                                        <label class="label">Nomor Rekening</label>
-                                                        <input name="no_rekening" type="number" class="form-control">
-
-                                                        <label class="label">Metode Pembayaran</label>
-                                                        <input name="metode_pembayaran" class="form-control">
+                                                        <label class="label">Email Customer</label>
+                                                        <input name="email" class="form-control"
+                                                            placeholder="Masukkan email">
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Close</button>
+                                                        <input type="submit" value="Update" class="btn btn-primary">
                                                     </div>
                                                 </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Update</button>
                                             </div>
                                         </div>
                                     </div>
@@ -149,5 +110,20 @@
     </div>
 
 </div>
+<script>
+    function btnedit(arrCustomer){
+        // var prm = 0;
+        $("[name='id_customer']").val(arrCustomer['id_customer']);
+        $("[name='nama']").val(arrCustomer['nama_customer']);
+        $("[name='alamat']").val(arrCustomer['alamat_customer']);
+        $("[name='notelp']").val(arrCustomer['notelp_customer']);
+        $("[name='email']").val(arrCustomer['email_customer']);
+    }
+
+    function cek(){
+        console.log("halo");
+    }
+</script>
+
 <!-- /.container-fluid -->
 @endsection

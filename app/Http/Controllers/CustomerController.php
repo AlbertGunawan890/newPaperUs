@@ -75,6 +75,38 @@ class CustomerController extends Controller
         ]);
         return redirect("/mastercustomer");
     }
+
+    public function doEdit(Request $req){
+        $req->validate(
+            [
+                "nama" => "required",
+                "alamat" => "required",
+                "notelp" => "required",
+                "email" => "required",
+            ],
+            [
+                "nama.required" => 'Nama Harus Terisi',
+                "alamat.required" => 'Alamat Harus Terisi',
+                "notelp.required" => 'Nomor Telepon Harus Terisi',
+                "email.required"=> 'Email Harus Terisi',
+            ]
+        );
+
+        $customer = Customer::withTrashed()->find($req->id_customer);
+        $res = $customer->update([
+            "nama_customer" => $req->nama,
+            "alamat_customer" => $req->alamat,
+            "notelp_customer" => $req->notelp,
+            "email_customer" => $req->email
+        ]);
+
+        if($res){
+            return redirect("/mastercustomer");
+        }else{
+            return redirect("/mastercustomer");
+        }
+    }
+
     public function delete(Request $req, $id)
     {
         $customer = Customer::withTrashed()->find($id);

@@ -15,6 +15,7 @@ use App\Http\Controllers\stokbarangController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\PengirimanController;
+use App\Models\Customer;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,6 +49,7 @@ Route::post('/masterbox/delete/{id}', [BoxController::class, "delete"]);
 
 Route::get('/mastercustomer', [CustomerController::class, "show"]);
 Route::post('/doAddcustomer', [CustomerController::class, "doAdd"]);
+Route::post('/doEditcustomer', [CustomerController::class, "doEdit"]);
 Route::post('/mastercustomer/delete/{id}', [CustomerController::class, "delete"]);
 
 Route::get('/mastersupplier', [SupplierController::class, "show"]);
