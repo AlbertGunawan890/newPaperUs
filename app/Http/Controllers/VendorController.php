@@ -87,7 +87,7 @@ class VendorController extends Controller
             return redirect('/mastervendor');
         }
     }
-    public function doEdit(Request $req, $id)
+    public function doEdit(Request $req)
     {
         $req->validate(
             [
@@ -116,6 +116,6 @@ class VendorController extends Controller
         }else{
             return redirect("/mastervendor");
         }
-       
+
     }
 }

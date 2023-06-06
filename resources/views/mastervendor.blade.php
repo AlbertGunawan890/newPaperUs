@@ -63,7 +63,7 @@
 
                                                         <div class="form-group">
                                                             <form
-                                                                action="{{ url('/mastervendor/edit/' . $prm->id_vendor) }}"
+                                                                action="{{ url('/doEditvendor') }}"
                                                                 method="post">
                                                                 @csrf
                                                                 <label class="label">ID Vendor</label>
