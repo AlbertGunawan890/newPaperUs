@@ -237,7 +237,7 @@
 <br>
 
 <script>
-    var jArray = < ? php echo json_encode($no_spk); ? > ;
+    var jArray = <?php echo json_encode($no_spk);?>;
 
     var no_spk = "";
     var temp = 0;
@@ -257,7 +257,7 @@
 
 
     function nama_brand_change() {
-        var jArray2 = < ? php echo json_encode($proces2); ? > ;
+        var jArray2 = <?php echo json_encode($proces2);?> ;
         var penawaran2 = '';
         var ada = true;
         if (jArray2.length == 0) {
