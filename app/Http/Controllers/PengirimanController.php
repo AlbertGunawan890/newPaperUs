@@ -11,7 +11,8 @@ class PengirimanController extends Controller
     public function show()
     {
         $pengiriman = Pengiriman::all();
-        return view('suratjalan', compact('pengiriman'));
+        $no_spk = SPK::all();
+        return view('suratjalan', compact('pengiriman','no_spk'));
     }
 
     public function showSPK()
