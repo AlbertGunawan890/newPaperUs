@@ -74,7 +74,7 @@
                         <th>Harga Total Sebelumnya</th>
                         <th>Penerimaan</th>
                         {{-- <th>Status</th> --}}
-                        <th>Aksi</th>
+                        <th style="min-width: 120px">Aksi</th>
                     </tr>
                 </thead>
                 <tbody id="processing1">
@@ -102,7 +102,7 @@
                         <th>Harga Total Sebelumnya</th>
                         <th>Penerimaan</th>
                         {{-- <th>Status</th> --}}
-                        <th>Aksi</th>
+                        <th style="min-width: 120px">Aksi</th>
                     </tr>
                 </thead>
                 <tbody id="processing1">
@@ -130,7 +130,7 @@
                         <th>Harga Total Sebelumnya</th>
                         <th>Penerimaan</th>
                         {{-- <th>Status</th> --}}
-                        <th>Aksi</th>
+                        <th style="min-width: 120px">Aksi</th>
                     </tr>
                 </thead>
                 <tbody id="processing1">
@@ -158,7 +158,7 @@
                         <th>Harga Total Sebelumnya</th>
                         <th>Penerimaan</th>
                         {{-- <th>Status</th> --}}
-                        <th>Aksi</th>
+                        <th style="min-width: 120px">Aksi</th>
                     </tr>
                 </thead>
                 <tbody id="processing1">
@@ -186,7 +186,7 @@
                             <th>Harga Satuan Sebelumnya</th>
                             <th>Harga Total Sebelumnya</th>
                             <th>Penerimaan</th>
-                            <th>Aksi</th>
+                            <th style="min-width: 120px">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
