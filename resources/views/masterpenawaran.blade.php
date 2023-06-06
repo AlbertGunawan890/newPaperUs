@@ -97,21 +97,21 @@
                                                           <option value={{$prm->id_vendor}}>{{$prm->nama_vendor}}</option>
                                                           @endforeach
                                                         </select>
-                                        
+
                                                         <label for="exampleFormControlTextarea1" class="label">PIC</label>
                                                         <input class="form-control" placeholder="Masukkan pic">
-                                        
+
                                                         <label for="exampleFormControlTextarea1" class="label">Nama Barang</label>
                                                         <input class="form-control" placeholder="Masukkan nama barang">
-                                        
+
                                                         <label for="exampleFormControlTextarea1" class="label">Harga</label>
                                                         <input class="form-control" placeholder="Masukkan harga">
-                                        
+
                                                         <label for="exampleFormControlTextarea1" class="label">Quantity</label>
                                                         <input class="form-control" placeholder="Masukkan quantity">
-                                        
+
                                                         <br>
-                                        
+
                                                         <div class="checkbox">
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
@@ -149,7 +149,7 @@
                                                             <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option2">
                                                             <label class="form-check-label" for="inlineCheckbox9">Emboss</label>
                                                           </div>
-                                        
+
                                                           <button onclick="showCheckbox()" type="button" class="btn btn-info">Tambah</button>
                                                         </div>
                                                         <div class="checkbox" id="myCheckbox" style="display: none;">
@@ -194,7 +194,7 @@
                                                         <br>
                                                     </div> --}}
                                                         <div id="penjualan" style="display: none">
-                                        
+
                                                             <label class="label">Nama Brand</label>
                                                             <input class="form-control" placeholder="Masukkan Nama Brand" name="nama_brand" onchange="nama_brand_change()">
                                                             {{-- <select data-live-search="true" class="selectpicker form-control" name="nama_brand" onchange="nama_brand_change()">
@@ -203,28 +203,28 @@
                                                                     <option value={{ $prm->nama_vendor }}>{{ $prm->nama_vendor }}</option>
                                                                 @endforeach
                                                             </select> --}}
-                                        
+
                                                             <label for="exampleFormControlTextarea1" class="label">PIC</label>
                                                             <input class="form-control" placeholder="Masukkan pic" name="pic">
-                                        
+
                                                             <label for="exampleFormControlTextarea1" class="label">Jenis Box</label>
                                                             <input class="form-control" placeholder="Jenis Box" name="jenis_box">
-                                        
+
                                                             <label for="exampleFormControlTextarea1" class="label">Panjang</label>
                                                             <input class="form-control" placeholder="Masukkan panjang" name="panjang">
-                                        
+
                                                             <label for="exampleFormControlTextarea1" class="label">Lebar</label>
                                                             <input class="form-control" placeholder="Masukkan lebar" name="lebar">
-                                        
+
                                                             <label for="exampleFormControlTextarea1" class="label">Tinggi</label>
                                                             <input class="form-control" placeholder="Masukkan tinggi" name="tinggi">
-                                        
+
                                                             <label for="exampleFormControlTextarea1" class="label">Quantity</label>
                                                             <input type="number" class="form-control" placeholder="Masukkan Quantity" name="qty" onchange="nett()">
-                                        
+
                                                             <label for="exampleFormControlTextarea1" class="label">Jumlah Produksi</label>
                                                             <input type="number" class="form-control" placeholder="Masukkan Jumlah Produksi" name="jum_produksi">
-                                        
+
                                                             <br>
                                                             <div class="checkbox">
                                                                 <div class="form-check form-check-inline">
@@ -272,7 +272,7 @@
                                                                         value="Emboss">
                                                                     <label class="form-check-label" for="inlineCheckbox9">Emboss</label>
                                                                 </div>
-                                        
+
                                                                 <button onclick="showCheckbox()" type="button" class="btn btn-info">Tambah</button>
                                                                 <input type="hidden" name="proses2" value="0">
                                                             </div>
@@ -328,7 +328,7 @@
                                                             <label for="exampleFormControlTextarea1" class="label">Harga Satuan</label>
                                                             <input type="number" id="formHarga" class="form-control" placeholder="Masukkan Harga"onchange="nett()"
                                                                 name="harga_satuan">
-                                        
+
                                                             <label for="exampleFormControlTextarea1" class="label">Harga Satuan Terakhir</label>
                                                             <input type="number" class="form-control" readonly value="0" name="harga_satuan_terakhir">
                                                             <br>
@@ -348,10 +348,10 @@
                                                                     <input class="form-control" style="width: 100%;" placeholder="Masukkan Potongan Harga" name="potongan_harga" onchange="pot();nett();">
                                                                 </div>
                                                             </div>
-                                        
+
                                                             <label for="exampleFormControlTextarea1" class="label">Nett</label>
                                                             <input class="form-control" placeholder="Masukkan Nett" name="net">
-                                        
+
                                                             <label for="exampleFormControlTextarea1" class="label">Harga Nett Terakhir</label>
                                                             <input type="number" class="form-control" value="0" readonly name="harga_net_terakhir">
                                                         </div>
@@ -458,6 +458,7 @@
         }
 
         function showCheckbox() {
+            console.log("halo");
             var x = document.getElementById("myCheckbox");
 
             if (x.style.display == "none") {
@@ -471,6 +472,7 @@
                 $("[name='proses2']").val("0");
             }
             console.log($("[name='proses2']").val());
+
         }
         function nama_brand_change(){
             $.ajax({

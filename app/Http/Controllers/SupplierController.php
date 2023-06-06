@@ -87,4 +87,20 @@ class SupplierController extends Controller
             return redirect('/mastersupplier');
         }
     }
+    public function doEdit(Request $req){
+
+        $supplier = Supplier::withTrashed()->get($req->$id_supplier);
+        $res = $supplier->update([
+            "nama_supplier" => $req->nama,
+            "item" => $req->item,
+            "alamat_supplier" => $req->alamat,
+            "notelp_supplier" => $req->notelp
+        ]);
+
+        if($res){
+            return redirect("/mastersupplier");
+        }else{
+            return redirect("/mastersupplier");
+        }
+    }
 }

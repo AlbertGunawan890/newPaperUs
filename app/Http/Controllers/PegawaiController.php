@@ -69,6 +69,38 @@ class PegawaiController extends Controller
         ]);
         return redirect("/masterpegawai");
     }
+
+    public function doEdit(Request $req){
+        // dd("halo");
+        $req->validate(
+            [
+                "nama" => "required",
+                "alamat" => "required",
+                "notelp" => "required",
+                "email" => "required",
+            ],
+            [
+                "nama.required" => 'Nama Harus Terisi',
+                "alamat.required" => 'Alamat Harus Terisi',
+                "notelp.required" => 'Nomor Telepon Harus Terisi',
+                "email.required"=> 'Email Harus Terisi',
+            ]
+        );
+        $pegawai = Pegawai::withTrashed()->find($req->id_pegawai);
+        $res = $pegawai->update([
+            "nama_pegawai" => $req->nama,
+            "alamat_pegawai" => $req->alamat,
+            "notelp_pegawai" => $req->notelp,
+            "email_pegawai" => $req->email
+        ]);
+
+        if($res){
+            return redirect("/masterpegawai");
+        }else{
+            return redirect("/masterpegawai");
+        }
+    }
+
     public function delete($id)
     {
         $pegawai = Pegawai::withTrashed()->find($id);

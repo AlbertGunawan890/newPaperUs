@@ -43,11 +43,11 @@
                         <td>{{$prm->email_pegawai}}</td>
                         <td>
                             <div style="display: flex;">
-                                <form action="">
-                                    @csrf
-                                    <button type="button" style="margin-right: 5px;" class="btn btn-warning"
-                                    data-toggle="modal" data-target="#exampleModal" onclick="btnedit({{$prm}})">
-                                    <i class="fas fa-edit"></i>
+                                {{-- <form action="">
+                                    @csrf --}}
+                                <button type="button" style="margin-right: 5px;" class="btn btn-warning"
+                                data-toggle="modal" data-target="#exampleModal" onclick="btnedit({{$prm}})">
+                                <i class="fas fa-edit"></i>
                                 </button>
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
@@ -67,15 +67,15 @@
                                                 <form action="{{ url('/doEditpegawai') }}" method="post">
                                                 @csrf
                                                     <div class="modal-body text-left">
-                                                        <label class="label">ID Customer</label>
-                                                        <input name="id_customer" class="form-control"
+                                                        <label class="label">ID Pegawai</label>
+                                                        <input name="id_pegawai" class="form-control"
                                                             value="" readonly>
 
-                                                        <label class="label">Nama Customer</label>
+                                                        <label class="label">Nama Pegawai</label>
                                                         <input name="nama" class="form-control"
-                                                            placeholder="Masukkan Nama Customer">
+                                                            placeholder="Masukkan Nama Pegawai">
 
-                                                        <label class="label">Alamat Customer</label>
+                                                        <label class="label">Alamat Pegawai</label>
                                                         <input name="alamat" class="form-control"
                                                             placeholder="Masukkan Alamat">
 
@@ -83,7 +83,7 @@
                                                         <input name="notelp" class="form-control"
                                                             placeholder="Masukkan No. Telp">
 
-                                                        <label class="label">Email Customer</label>
+                                                        <label class="label">Email Pegawai</label>
                                                         <input name="email" class="form-control"
                                                             placeholder="Masukkan email">
                                                     </div>
@@ -117,16 +117,11 @@
     </div>
     <script>
         function btnedit(arrPegawai){
-            // var prm = 0;
-            $("[name='id_pegawai']").val(arrCustomer['id_pegawai']);
-            $("[name='nama']").val(arrCustomer['nama_customer']);
-            $("[name='alamat']").val(arrCustomer['alamat_customer']);
-            $("[name='notelp']").val(arrCustomer['notelp_customer']);
-            $("[name='email']").val(arrCustomer['email_customer']);
-        }
-
-        function cek(){
-            console.log("halo");
+            $("[name='id_pegawai']").val(arrPegawai['id_pegawai']);
+            $("[name='nama']").val(arrPegawai['nama_pegawai']);
+            $("[name='alamat']").val(arrPegawai['alamat_pegawai']);
+            $("[name='notelp']").val(arrPegawai['notelp_pegawai']);
+            $("[name='email']").val(arrPegawai['email_pegawai']);
         }
     </script>
     <!-- /.container-fluid -->
