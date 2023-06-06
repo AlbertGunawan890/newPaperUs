@@ -40,7 +40,8 @@
                                 <td>
                                     <div style="display: flex">
                                         <button type="button" style="margin-right: 5px;" class="btn btn-warning"
-                                            data-toggle="modal" data-target="#exampleModal">
+                                            data-toggle="modal" data-target="#exampleModal"
+                                            onclick="btnedit({{ $prm }})">
                                             <i class="fas fa-edit"></i>
                                         </button>
 
@@ -59,8 +60,15 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body text-left">
-                                                        <form>
-                                                            <div class="form-group">
+
+                                                        <div class="form-group">
+                                                            <form
+                                                                action="{{ url('/mastervendor/edit/' . $prm->id_vendor) }}"
+                                                                method="post">
+                                                                @csrf
+                                                                <label class="label">ID Vendor</label>
+                                                                <input name="id_vendor" class="form-control"
+                                                                    value="" readonly>
                                                                 <label class="label">Nama Vendor</label>
                                                                 <input class="form-control"
                                                                     placeholder="Masukkan Nama Vendor" name="nama">
@@ -77,67 +85,21 @@
                                                                 <input class="form-control" placeholder="Masukkan Alamat"
                                                                     name="alamat">
 
-                                                                <label class="label">Kota</label>
-                                                                <input class="form-control" placeholder="Masukkan Kota"
-                                                                    name="kota">
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-dismiss="modal">Close</button>
+                                                                    <button type="submit" onclick="btnedit()"
+                                                                        class="btn btn-primary">Update</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
 
-                                                                <label class="label">Kecamatan</label>
-                                                                <input class="form-control" placeholder="Masukkan Kecamatan"
-                                                                    name="kecamatan">
-
-                                                                <label class="label">Kelurahan</label>
-                                                                <input class="form-control" placeholder="Masukkan Kelurahan"
-                                                                    name="kelurahan">
-
-                                                                <label class="label">Email</label>
-                                                                <input type="email" class="form-control"
-                                                                    placeholder="Masukkan Email" name="email">
-
-                                                                <label class="label">Nama Bank</label>
-                                                                <input class="form-control" placeholder="Masukkan Nama Bank"
-                                                                    name="nama_bank">
-
-                                                                <label class="label">No. Akun</label>
-                                                                <input type="number" class="form-control"
-                                                                    placeholder="Masukkan No. Akun" name="no_akun">
-
-                                                                <label class="label">No. Rekening</label>
-                                                                <input type="number" class="form-control"
-                                                                    placeholder="Masukkan No. Rek" name="no_rekening">
-
-                                                                <label class="label">Batasan Hutang</label>
-                                                                <input type="number" class="form-control"
-                                                                    name="batasan_hutang">
-
-                                                                <label class="label">Hutang Sekarang</label>
-                                                                <input type="number" class="form-control"
-                                                                    name="hutang_sekarang">
-
-                                                                <label class="label">Hutang Tersedia</label>
-                                                                <input type="number" class="form-control"
-                                                                    name="hutang_tersedia">
-
-                                                                <label class="label">Sisa Hutang</label>
-                                                                <input type="number" class="form-control"
-                                                                    name="sisa_hutang">
-
-                                                                <label class="label">Metode Pembayaran</label>
-                                                                <input class="form-control" name="metode_pembayaran">
-
-                                                            </div>
-                                                        </form>
                                                     </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-dismiss="modal">Close</button>
-                                                        <button type="submit" onclick="btnedit()"
-                                                            class="btn btn-primary">Update</button>
-                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
-                                        <form method="post"
-                                            action="{{ url('/mastervendor/delete/' . $prm->id_vendor) }}">
+                                        <form method="post" action="{{ url('/mastervendor/delete/' . $prm->id_vendor) }}">
                                             @csrf
                                             <button style="margin-left: 5px;" type="submit" class="btn btn-danger"><i
                                                     class="fas fa-trash"></i></button>
@@ -155,11 +117,11 @@
         <script>
             function btnedit(arrVendor) {
                 // var prm = 0;
-                $("[name='id_customer']").val(arrCustomer['id_customer']);
-                $("[name='nama']").val(arrCustomer['nama_customer']);
-                $("[name='alamat']").val(arrCustomer['alamat_customer']);
-                $("[name='notelp']").val(arrCustomer['notelp_customer']);
-                $("[name='email']").val(arrCustomer['email_customer']);
+                $("[name='id_vendor']").val(arrVendor['id_vendor']);
+                $("[name='nama']").val(arrVendor['nama_vendor']);
+                $("[name='jenis_item']").val(arrVendor['jenis_item']);
+                $("[name='kategori']").val(arrVendor['kategori_vendor']);
+                $("[name='alamat']").val(arrVendor['alamat_vendor']);
             }
         </script>
     @endsection

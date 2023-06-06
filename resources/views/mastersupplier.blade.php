@@ -10,10 +10,10 @@
 
         <div class="card">
             <div class="card-header">
-              <a href={{ url('tambahsupplier') }}>
-                <button type="button" class="btn btn-primary my-auto">
-                    Tambah Data
-                  </button>
+                <a href={{ url('tambahsupplier') }}>
+                    <button type="button" class="btn btn-primary my-auto">
+                        Tambah Data
+                    </button>
                 </a>
             </div>
             <div class="card-body">
@@ -31,95 +31,96 @@
                     </thead>
                     <tbody>
                         @foreach ($arrSupplier as $prm)
-                        <tr>
+                            <tr>
 
-                            <td>{{$prm->id_supplier}}</td>
-                            <td>{{$prm->nama_supplier}}</td>
-                            <td>{{$prm->item}}</td>
-                            <td>{{$prm->alamat_supplier}}</td>
-                            <td>{{$prm->notelp_supplier}}</td>
-                            <td>
-                                <div style="display: flex;">
-                                         <!-- Button trigger modal -->
+                                <td>{{ $prm->id_supplier }}</td>
+                                <td>{{ $prm->nama_supplier }}</td>
+                                <td>{{ $prm->item }}</td>
+                                <td>{{ $prm->alamat_supplier }}</td>
+                                <td>{{ $prm->notelp_supplier }}</td>
+                                <td>
+                                    <div style="display: flex;">
+                                        <!-- Button trigger modal -->
                                         <button type="button" style="margin-right: 5px;" class="btn btn-warning"
-                                        data-toggle="modal" data-target="#exampleModal" onclick="btnedit({{ $prm }})">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
+                                            data-toggle="modal" data-target="#exampleModal" onclick="btnedit({{ $prm }})">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
 
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">
-                                                    Edit Supplier
-                                                </h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <form method="POST" action="{{ url('/doEditsupplier') }}">
-                                            @csrf
-                                            <div class="modal-body text-left">
-                                                    <div class="form-group">
-                                                        <label class="label">Id Supplier</label>
-                                                        <input class="form-control" name="id_supplier" placeholder="" readonly>
-
-                                                        <label class="label">Nama Supplier</label>
-                                                        <input class="form-control" name="nama" placeholder="Masukkan Nama">
-
-                                                        <label class="label">Item</label>
-                                                        <input class="form-control" name="item" placeholder="Masukkan Provinsi">
-
-                                                        <label class="label">Alamat</label>
-                                                        <input class="form-control" name="alamat" placeholder="Masukkan Alamat">
-
-                                                        <label class="label">No. Telp</label>
-                                                        <input type="number" name="notelp" class="form-control" placeholder="Masukkan No. Telp">
-
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                            Edit Supplier
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
                                                     </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Update</button>
-                                            </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                    </form>
-                                    <form  action="{{ url('mastersupplier/delete/' . $prm->id_supplier) }}" method="POST">
-                                        @csrf
-                                        <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
-                        @endforeach
 
+                                                    <div class="form-group">
+                                                        <form action="{{ url('/doEditsupplier') }}" method="post">
+                                                            @csrf
+                                                            <div class="modal-body text-left">
+                                                                <label class="label">ID Supplier</label>
+                                                                <input name="id_supplier" class="form-control"
+                                                                    value="" readonly>
+
+                                                                <label class="label">Nama Supplier</label>
+                                                                <input name="nama" class="form-control"
+                                                                    placeholder="Masukkan Nama Supplier">
+
+                                                                <label class="label">Item</label>
+                                                                <input name="item" class="form-control"
+                                                                    placeholder="Masukkan Item">
+
+                                                                <label class="label">Alamat Supplier</label>
+                                                                <input name="alamat" class="form-control"
+                                                                    placeholder="Masukkan Alamat">
+
+                                                                <label class="label">No. Telp Supplier</label>
+                                                                <input name="notelp" class="form-control"
+                                                                    placeholder="Masukkan No. Telp">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                                <input type="submit" value="Update" class="btn btn-primary">
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <form action="{{ url('mastersupplier/delete/' . $prm->id_supplier) }}" method="POST">
+                                            @csrf
+                                            <button style="margin-left: 5px;" type="submit" class="btn btn-danger"><i
+                                                    class="fas fa-trash"></i></button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
 
     </div>
+    <script>
+        function btnedit(arrSupplier) {
+            // var prm = 0;
+            $("[name='id_supplier']").val(arrSupplier['id_supplier']);
+            $("[name='nama']").val(arrSupplier['nama_supplier']);
+            $("[name='item']").val(arrSupplier['item']);
+            $("[name='alamat']").val(arrSupplier['alamat_supplier']);
+            $("[name='notelp']").val(arrSupplier['notelp_supplier']);
+        }
+    </script>
+
     <!-- /.container-fluid -->
 @endsection
 
-<script>
-    function btnedit(arrCustomer){
-        // var prm = 0;
-        $("[name='id_supplier']").val(arrCustomer['id_supplier']);
-        $("[name='nama']").val(arrCustomer['nama_supplier']);
-        $("[name='item']").val(arrCustomer['item']);
-        $("[name='alamat']").val(arrCustomer['alamat_supplier']);
-        $("[name='notelp']").val(arrCustomer['notelp_supplier']);
-    }
-
-    function cek(){
-        console.log("halo");
-    }
-</script>

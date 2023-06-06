@@ -60,7 +60,7 @@ Route::post('/mastersupplier/delete/{id}', [SupplierController::class, "delete"]
 Route::get('/mastervendor', [VendorController::class, "show"]);
 Route::post('/doAddvendor', [VendorController::class, "doAdd"]);
 Route::post('/mastervendor/delete/{id}', [VendorController::class, "delete"]);
-
+Route::post('/mastervendor/edit/{id}', [VendorController::class, "doEdit"]);
 
 Route::get('/masterpenawaran', [PenawaranController::class, "show"]);
 Route::get('/tambahpenawaran', [PenawaranController::class, "showBrand"]);
