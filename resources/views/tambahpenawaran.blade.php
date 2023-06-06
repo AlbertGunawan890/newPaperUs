@@ -205,9 +205,9 @@
                                 value="Emboss">
                             <label class="form-check-label" for="inlineCheckbox9">Emboss</label>
                         </div>
-
                         <button onclick="showCheckbox()" type="button" class="btn btn-info">Tambah</button>
-                        <input type="hidden" name="proses2" value="0">
+                        <button onclick="hapusCheckbox()" type="button" class="btn btn-info">Hapus</button>
+                        {{-- <input type="hidden" name="proses2" value="0"> --}}
                     </div>
                     <div class="checkbox" id="myCheckbox" style="display: none;">
                         <br>
@@ -257,6 +257,150 @@
                             <label class="form-check-label" for="inlineCheckbox18">Emboss</label>
                         </div>
                     </div>
+                    <div class="checkbox" id="myCheckbox2" style="display: none;">
+                        <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox19"
+                                value="Kertas">
+                            <label class="form-check-label" for="inlineCheckbox10">Kertas</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox20"
+                                value="Tinta">
+                            <label class="form-check-label" for="inlineCheckbox11">Tinta</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox21"
+                                value="Laminasi">
+                            <label class="form-check-label" for="inlineCheckbox12">Laminasi</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox22"
+                                value="Plong">
+                            <label class="form-check-label" for="inlineCheckbox13">Plong</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox23"
+                                value="Hotprint">
+                            <label class="form-check-label" for="inlineCheckbox14">Hotprint</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox24"
+                                value="Sortir">
+                            <label class="form-check-label" for="inlineCheckbox15">Sortir</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox25"
+                                value="Pembelian Dus">
+                            <label class="form-check-label" for="inlineCheckbox16">Pembelian Dus</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox26"
+                                value="Packing">
+                            <label class="form-check-label" for="inlineCheckbox17">Packing</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox27"
+                                value="Emboss">
+                            <label class="form-check-label" for="inlineCheckbox18">Emboss</label>
+                        </div>
+                    </div>
+                    <div class="checkbox" id="myCheckbox3" style="display: none;">
+                        <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox28"
+                                value="Kertas">
+                            <label class="form-check-label" for="inlineCheckbox10">Kertas</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox29"
+                                value="Tinta">
+                            <label class="form-check-label" for="inlineCheckbox11">Tinta</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox30"
+                                value="Laminasi">
+                            <label class="form-check-label" for="inlineCheckbox12">Laminasi</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox31"
+                                value="Plong">
+                            <label class="form-check-label" for="inlineCheckbox13">Plong</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox32"
+                                value="Hotprint">
+                            <label class="form-check-label" for="inlineCheckbox14">Hotprint</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox33"
+                                value="Sortir">
+                            <label class="form-check-label" for="inlineCheckbox15">Sortir</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox34"
+                                value="Pembelian Dus">
+                            <label class="form-check-label" for="inlineCheckbox16">Pembelian Dus</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox35"
+                                value="Packing">
+                            <label class="form-check-label" for="inlineCheckbox17">Packing</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox36"
+                                value="Emboss">
+                            <label class="form-check-label" for="inlineCheckbox18">Emboss</label>
+                        </div>
+                    </div>
+                    <div class="checkbox" id="myCheckbox4" style="display: none;">
+                        <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox37"
+                                value="Kertas">
+                            <label class="form-check-label" for="inlineCheckbox10">Kertas</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox38"
+                                value="Tinta">
+                            <label class="form-check-label" for="inlineCheckbox11">Tinta</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox39"
+                                value="Laminasi">
+                            <label class="form-check-label" for="inlineCheckbox12">Laminasi</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox40"
+                                value="Plong">
+                            <label class="form-check-label" for="inlineCheckbox13">Plong</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox41"
+                                value="Hotprint">
+                            <label class="form-check-label" for="inlineCheckbox14">Hotprint</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox42"
+                                value="Sortir">
+                            <label class="form-check-label" for="inlineCheckbox15">Sortir</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox43"
+                                value="Pembelian Dus">
+                            <label class="form-check-label" for="inlineCheckbox16">Pembelian Dus</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox44"
+                                value="Packing">
+                            <label class="form-check-label" for="inlineCheckbox17">Packing</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="cb2[]" id="inlineCheckbox45"
+                                value="Emboss">
+                            <label class="form-check-label" for="inlineCheckbox18">Emboss</label>
+                        </div>
+                    </div>
                     <br>
                     <label for="exampleFormControlTextarea1" class="label">Harga Satuan</label>
                     <input type="number" id="formHarga" class="form-control" placeholder="Masukkan Harga"onchange="nett()"
@@ -295,7 +439,7 @@
         </div>
     </div>
     <script>
-
+    let counter = 0;
         function nett(){
             var qty = parseInt($("[name='qty']").val());
             var harga_satuan = parseInt($("[name='harga_satuan']").val());
@@ -339,19 +483,63 @@
         }
 
         function showCheckbox() {
-            var x = document.getElementById("myCheckbox");
+            console.log("masuk");
 
-            if (x.style.display == "none") {
+             var x = document.getElementById("myCheckbox");
+             var x2 = document.getElementById("myCheckbox2");
+             var x3 = document.getElementById("myCheckbox3");
+             var x4 = document.getElementById("myCheckbox4");
+            if (counter == 0) {
                 x.style.display = "block";
-            } else {
+
+            }
+           else if (counter == 1) {
+                x2.style.display = "block";
+            }
+            else if (counter == 2) {
+                x3.style.display = "block";
+            }
+            else if (counter == 3) {
+                x4.style.display = "block";
+            }
+            counter++;
+            console.log(counter);
+            // if ($("[name='proses2']").val() == "0") {
+            //     $("[name='proses2']").val("1");
+            // } else {
+            //     $("[name='proses2']").val("0");
+            // }
+
+            // console.log($("[name='proses2']").val());
+        }
+        function hapusCheckbox() {
+            console.log("masuk");
+
+             var x = document.getElementById("myCheckbox");
+             var x2 = document.getElementById("myCheckbox2");
+             var x3 = document.getElementById("myCheckbox3");
+             var x4 = document.getElementById("myCheckbox4");
+            if (counter == 4) {
+                x4.style.display = "none";
+            }
+           else if (counter == 3) {
+                x3.style.display = "none";
+            }
+            else if (counter == 2) {
+                x2.style.display = "none";
+            }
+            else if (counter == 1) {
                 x.style.display = "none";
             }
-            if ($("[name='proses2']").val() == "0") {
-                $("[name='proses2']").val("1");
-            } else {
-                $("[name='proses2']").val("0");
-            }
-            console.log($("[name='proses2']").val());
+            counter--;
+            console.log(counter);
+            // if ($("[name='proses2']").val() == "0") {
+            //     $("[name='proses2']").val("1");
+            // } else {
+            //     $("[name='proses2']").val("0");
+            // }
+
+            // console.log($("[name='proses2']").val());
         }
         function nama_brand_change(){
             $.ajax({
