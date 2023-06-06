@@ -50,7 +50,68 @@
                                             class="fas fa-times"></i></button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                            <button type="button" style="margin-right: 5px;" class="btn btn-warning"
+                                    data-toggle="modal" data-target="#exampleModal">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                    Edit Surat Jalan
+                                                </h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body text-left">
+                                                <form>
+                                                    <div class="form-group">
+                                                        @csrf
+            <label class="label" for="readonlyTextInput">No. SPK</label>
+            <select data-live-search="true" class="selectpicker form-control" name="no_spk">
+                <option selected>Pilih No. SPK</option>
+                @foreach ($no_spk as $prm)
+                    <option value={{ $prm->no_spk }}>{{ $prm->no_spk }}</option>
+                @endforeach
+            </select>
+
+            <label class="label">No. Surat Jalan</label>
+            <input class="form-control" placeholder="Masukkan No. Surat Jalan" name="no_surat_jalan">
+
+            <label for="exampleFormControlTextarea1" class="label">No. Kendaraan</label>
+            <input class="form-control" placeholder="Masukkan No. Kendaraan" name="no_kendaraan">
+
+            <label for="exampleFormControlTextarea1" class="label">Nama Pengirim</label>
+            <input class="form-control" placeholder="Masukkan Nama Pengirim" name="nama_pengiriman">
+
+            <label for="exampleFormControlTextarea1" class="label">Nama Penerima</label>
+            <input class="form-control" placeholder="Masukkan Nama Penerima" name="nama_penerima">
+
+            <label for="exampleFormControlTextarea1" class="label">Alamat Penerima</label>
+            <input class="form-control" placeholder="Masukkan Alamat Lengkap Penerima" name="alamat_penerima">
+
+            <label for="exampleFormControlTextarea1" class="label">Qty</label>
+            <input type="number" class="form-control" placeholder="Masukkan Jumlah" name="qty">
+
+            <label for="exampleFormControlTextarea1" class="label">Tanggal</label>
+            <input type="date" class="form-control" placeholder="Pilih Tanggal" name="tanggal">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Update</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                         </td>
                         @if ($prm->status_pengiriman == '1')

@@ -54,7 +54,73 @@
                                 <td>{{ $prm->hargasatuan }}</td>
                                 <td>{{ $prm->hargatotal }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                    <button type="button" style="margin-right: 5px;" class="btn btn-warning"
+                                        data-toggle="modal" data-target="#exampleModal">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">
+                                                        Edit Barang Masuk
+                                                    </h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body text-left">
+                                                    <form>
+                                                        <div class="form-group">
+                                                            <label class="label">Nama Barang</label>
+                                                            <input class="form-control" name="tnama"
+                                                                placeholder="Masukkan Nama Barang">
+
+                                                            <label class="label">Jenis Barang</label>
+                                                            <select data-live-search="true" name="tjenisbarang"
+                                                                class="selectpicker form-control">
+                                                                <option selected>Pilih Jenis Barang</option>
+                                                                <option>Pisau</option>
+                                                                <option>Plat</option>
+                                                                <option>Kertas Sisa</option>
+                                                                <option>Barang Lain-lain</option>
+                                                            </select>
+
+                                                            <label class="label">Jumlah Masuk</label>
+                                                            <input class="form-control" onchange="hartot()"
+                                                                name="tjumlah" placeholder="Masukkan Jumlah">
+
+                                                            <label class="label">Harga Satuan</label>
+                                                            <input class="form-control" onchange="hartot()"
+                                                                name="tjumlahsatuan"
+                                                                placeholder="Masukkan Harga Satuan">
+
+                                                            <label class="label">Harga Total</label>
+                                                            <input class="form-control" name="tjumlahtotal"
+                                                                placeholder="Harga Total">
+
+                                                            <label class="label">Lokasi Barang</label>
+                                                            <input class="form-control" name="tlokasi"
+                                                                placeholder="Masukkan Jumlah">
+
+                                                            <label class="label">Keterangan</label>
+                                                            <textarea class="form-control" name="tketerangan"
+                                                                aria-label="With textarea"></textarea>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Update</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                                 </td>
                             </tr>
@@ -90,7 +156,60 @@
                                 <td>HURUF</td>
                                 <td>100</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                    <button type="button" style="margin-right: 5px;" class="btn btn-warning"
+                                        data-toggle="modal" data-target="#exampleModal1">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">
+                                                        Edit Barang Keluar
+                                                    </h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body text-left">
+                                                    <form>
+                                                        <div class="form-group">
+                                                            <label class="label">Nama Barang</label>
+                                                            <input class="form-control"
+                                                                placeholder="Masukkan Nama Barang">
+
+                                                            <label class="label">Jenis Barang</label>
+                                                            <select data-live-search="true"
+                                                                class="selectpicker form-control">
+                                                                <option selected>Pilih Jenis Barang</option>
+                                                                <option>Pisau</option>
+                                                                <option>Plat</option>
+                                                                <option>Kertas Sisa</option>
+                                                                <option>Barang Lain-lain</option>
+                                                            </select>
+
+                                                            <label class="label">Jumlah Keluar</label>
+                                                            <input class="form-control" placeholder="Masukkan Jumlah">
+
+                                                            <label class="label">Keterangan</label>
+                                                            <textarea class="form-control"
+                                                                aria-label="With textarea"></textarea>
+
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Update</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                                 </td>
                             </tr>

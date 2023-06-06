@@ -34,7 +34,40 @@
                         <td>250</td>
                         <td>27-02-2023</td>
                         <td>
-                            <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                            <button type="button" style="margin-right: 5px;" class="btn btn-warning"
+                                    data-toggle="modal" data-target="#exampleModal">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                    Edit Stok Barang Jadi
+                                                </h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body text-left">
+                                                <form>
+                                                    <div class="form-group">
+
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Update</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                         </td>
                     </tr>
