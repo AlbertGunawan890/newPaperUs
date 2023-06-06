@@ -242,7 +242,61 @@ $(document).ready(function() {
     });
 });
 $(document).ready(function() {
+    $('#tabelProses1').DataTable({
+        "columnDefs": [
+            { "targets": -1, "className": 'dt-center' },
+            { "targets": -2, "className": 'dt-center' },
+            { "width": "2%", "targets": 0 },
+            { "width": "10%", "targets": 1 },
+            { "width": "5%", "targets": 2 },
+            { "width": "10%", "targets": 3 },
+            { "width": "10%", "targets": 4 },
+            { "width": "10%", "targets": 5 },
+            { "width": "5%", "targets": 6 },
+            { "width": "10%", "targets": 7 },
+            { "width": "10%", "targets": 8 },
+            { "width": "10%", "targets": 9 }
+        ]
+    });
+});
+$(document).ready(function() {
     $('#tabelProses2').DataTable({
+        "columnDefs": [
+            { "targets": -1, "className": 'dt-center' },
+            { "targets": -2, "className": 'dt-center' },
+            { "width": "2%", "targets": 0 },
+            { "width": "10%", "targets": 1 },
+            { "width": "5%", "targets": 2 },
+            { "width": "10%", "targets": 3 },
+            { "width": "10%", "targets": 4 },
+            { "width": "10%", "targets": 5 },
+            { "width": "5%", "targets": 6 },
+            { "width": "10%", "targets": 7 },
+            { "width": "10%", "targets": 8 },
+            { "width": "10%", "targets": 9 }
+        ]
+    });
+});
+$(document).ready(function() {
+    $('#tabelProses3').DataTable({
+        "columnDefs": [
+            { "targets": -1, "className": 'dt-center' },
+            { "targets": -2, "className": 'dt-center' },
+            { "width": "2%", "targets": 0 },
+            { "width": "10%", "targets": 1 },
+            { "width": "5%", "targets": 2 },
+            { "width": "10%", "targets": 3 },
+            { "width": "10%", "targets": 4 },
+            { "width": "10%", "targets": 5 },
+            { "width": "5%", "targets": 6 },
+            { "width": "10%", "targets": 7 },
+            { "width": "10%", "targets": 8 },
+            { "width": "10%", "targets": 9 }
+        ]
+    });
+});
+$(document).ready(function() {
+    $('#tabelProses4').DataTable({
         "columnDefs": [
             { "targets": -1, "className": 'dt-center' },
             { "targets": -2, "className": 'dt-center' },

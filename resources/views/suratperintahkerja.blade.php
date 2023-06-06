@@ -86,7 +86,59 @@
     <br>
     <div class="card">
         <div class="card-body">
-            <table id="tabelProses" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
+            <table id="tabelProses1" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Jenis Proses</th>
+                        <th>Nama Vendor</th>
+                        <th>Jumlah</th>
+                        <th>Harga Satuan</th>
+                        <th>Harga Total</th>
+                        <th>Harga Satuan Sebelumnya</th>
+                        <th>Harga Total Sebelumnya</th>
+                        <th>Penerimaan</th>
+                        {{-- <th>Status</th> --}}
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="processing1">
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <table id="tabelProses2" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Jenis Proses</th>
+                        <th>Nama Vendor</th>
+                        <th>Jumlah</th>
+                        <th>Harga Satuan</th>
+                        <th>Harga Total</th>
+                        <th>Harga Satuan Sebelumnya</th>
+                        <th>Harga Total Sebelumnya</th>
+                        <th>Penerimaan</th>
+                        {{-- <th>Status</th> --}}
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="processing1">
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <table id="tabelProses3" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
                 <thead>
                     <tr>
                         <th>No.</th>
@@ -113,7 +165,7 @@
     <div id="p2" style="display: none;">
         <div class="card">
             <div class="card-body">
-                <table id="tabelProses2" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
+                <table id="tabelProses4" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
                     <thead>
                         <tr>
                             <th>No.</th>
@@ -172,6 +224,7 @@
             </div>
         </div>
     </div>
+    <br>
 
     <script>
         var jArray = <?php echo json_encode($no_spk); ?>;
