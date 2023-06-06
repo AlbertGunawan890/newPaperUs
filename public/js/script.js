@@ -137,11 +137,12 @@ $(document).ready(function() {
 });
 $(document).ready(function() {
     $('#tabelBarangKeluar').DataTable({
+        "autoWidth": false,
         "columnDefs": [
             { "targets": -1, "className": 'dt-center' },
             { "width": "5%", "targets": 0 },
             { "width": "30%", "targets": 1 },
-            { "width": "20%", "targets": 2 },
+            { "width": "30%", "targets": 2 },
             { "width": "10%", "targets": 3 }
         ]
     });
