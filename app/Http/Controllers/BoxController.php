@@ -67,4 +67,39 @@ class BoxController extends Controller
             return redirect('/masterbox');
         }
     }
+    
+    public function doEdit(Request $req, $id)
+    {
+        // $req->validate(
+        //     [
+        //         "tipe_box" => "required",
+        //         "nama_box" => "required",
+        //         "panjang_box" => "required",
+        //         "lebar_box" => "required",
+        //         "tinggi_box" => "required",
+        //     ],
+        //     [
+        //         "tipe_box.required" => 'Tipe Box Harus Terisi',
+        //         "nama_box.required" => 'Nama Box Harus Terisi',
+        //         "panjang_box.required" => 'Panjang Box Harus Terisi',
+        //         "lebar_box.required"=> 'Lebar Box Harus Terisi',
+        //         "tinggi_box.required"=> 'Tinggi Box Harus Terisi',
+        //     ]
+        // );
+
+        $box = Box::withTrashed()->find($req->id_box);
+        $res = $box->update([
+            "tipe_box" => $req->tipe_box,
+            "nama_box" => $req->namabox,
+            "panjang_box" => $req->panjang,
+            "lebar_box" => $req->lebar,
+            "tinggi_box" => $req->tinggi
+        ]);
+        if($res){
+        return redirect("/masterbox");
+        }else{
+            return redirect("/masterbox");
+        }
+       
+    }
 }
