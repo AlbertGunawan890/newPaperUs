@@ -45,8 +45,8 @@ Route::post('/masterpegawai/delete/{id}', [PegawaiController::class, "delete"]);
 
 Route::get('/masterbox', [BoxController::class, "show"]);
 Route::post('/doAddbox', [BoxController::class, "doAdd"]);
+Route::post('/doEditbox', [BoxController::class, "doEdit"]);
 Route::post('/masterbox/delete/{id}', [BoxController::class, "delete"]);
-Route::post('/masterbox/edit/{id}', [BoxController::class, "doEdit"]);
 
 Route::get('/mastercustomer', [CustomerController::class, "show"]);
 Route::post('/doAddcustomer', [CustomerController::class, "doAdd"]);

@@ -67,25 +67,25 @@ class BoxController extends Controller
             return redirect('/masterbox');
         }
     }
-    
-    public function doEdit(Request $req, $id)
+
+    public function doEdit(Request $req)
     {
-        // $req->validate(
-        //     [
-        //         "tipe_box" => "required",
-        //         "nama_box" => "required",
-        //         "panjang_box" => "required",
-        //         "lebar_box" => "required",
-        //         "tinggi_box" => "required",
-        //     ],
-        //     [
-        //         "tipe_box.required" => 'Tipe Box Harus Terisi',
-        //         "nama_box.required" => 'Nama Box Harus Terisi',
-        //         "panjang_box.required" => 'Panjang Box Harus Terisi',
-        //         "lebar_box.required"=> 'Lebar Box Harus Terisi',
-        //         "tinggi_box.required"=> 'Tinggi Box Harus Terisi',
-        //     ]
-        // );
+        $req->validate(
+            [
+                "tipe_box" => "required",
+                "namabox" => "required",
+                "panjang" => "required",
+                "lebar" => "required",
+                "tinggi" => "required",
+            ],
+            [
+                "tipe_box.required" => 'Tipe Box Harus Terisi',
+                "namabox.required" => 'Nama Box Harus Terisi',
+                "panjang.required" => 'Panjang Box Harus Terisi',
+                "lebar.required"=> 'Lebar Box Harus Terisi',
+                "tinggi.required"=> 'Tinggi Box Harus Terisi',
+            ]
+        );
 
         $box = Box::withTrashed()->find($req->id_box);
         $res = $box->update([
@@ -100,6 +100,6 @@ class BoxController extends Controller
         }else{
             return redirect("/masterbox");
         }
-       
+
     }
 }
