@@ -75,7 +75,7 @@
 
                                                                 <label class="label">Nama</label>
                                                                 <input class="form-control"
-                                                                    placeholder="Masukkan Nama Box"name="namabox">
+                                                                    placeholder="Masukkan Nama Box" name="namabox">
 
                                                                 <label class="label">Panjang</label>
                                                                 <input class="form-control"
