@@ -76,9 +76,9 @@
                                                             <label class="label" for="readonlyTextInput">No. SPK</label>
                                                             <select data-live-search="true"
                                                                 class="selectpicker form-control" name="no_spk">
-                                                                <option selected>Pilih No. SPK</option>
-                                                                @foreach ($no_spk as $prm)
-                                                                    <option value={{ $prm->no_spk }}>{{ $prm->no_spk }}
+                                                                <option>Pilih No. SPK</option>
+                                                                @foreach ($no_spk as $prm2)
+                                                                    <option value={{ $prm2->no_spk }}>{{ $prm2->no_spk }}
                                                                     </option>
                                                                 @endforeach
                                                             </select>
@@ -132,14 +132,12 @@
                                     <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
 
                                 </td>
-                                <td>
-                                    {{$prm->status_pengiriman}}
-                                </td>
-                                {{-- @if ()
+
+                                 @if ($prm->status_pengiriman ==1)
                                     <td>Diterima</td>
                                 @else
                                     <td>Ditolak</td>
-                                @endif --}}
+                                @endif
                             </tr>
                             <?php $ctr++; ?>
                         @endforeach
