@@ -36,6 +36,18 @@ class PengirimanController extends Controller
         ]);
         return redirect("/suratjalan");
     }
+    public function delete(Request $req, $id)
+    {
+        $pengiriman = Pengiriman::withTrashed()->find($id);
+        if($pengiriman->trashed()){
+            $result = $pengiriman->restore();
+        }else{
+            $result = $pengiriman->delete();
+        }
+        if ($result) {
+            return redirect('/suratjalan');
+        } else {
+            return redirect('/suratjalan');
     public function doEdit(Request $req)
     {
         $kirim = Pengiriman::withTrashed()->find($req->no_spk);

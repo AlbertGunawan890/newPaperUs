@@ -10,9 +10,10 @@ class Pengiriman extends Model
 {
     use SoftDeletes;
     use HasFactory;
+    use SoftDeletes;
     protected $table = "master_pengiriman";
     protected $primaryKey = "no_spk";
-    public $timestamps = false;
+    public $timestamps = true;
     protected $fillable = [
         'no_spk',
         'no_surat_jalan',

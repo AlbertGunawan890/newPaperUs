@@ -50,12 +50,16 @@
                                             class="fas fa-times"></i></button>
                                 </td>
                                 <td>
-                                    
+
                                     <button type="button" onclick="btnedit({{ $prm }})" style="margin-right: 5px;" class="btn btn-warning"
                                         data-toggle="modal" data-target="#exampleModal">
                                         <i class="fas fa-edit"></i>
+
+                                        <form action="{{ url('suratjalan/delete/' . $prm->no_spk) }}" method="post">
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                        </form>
                                     </button>
-                                    
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -74,7 +78,7 @@
                                                     <form action="{{  url('/doEditSuratJalan') }}" method="post">
                                                         @csrf
                                                         <div class="form-group">
-                                                            <input type="hidden" name="no_spk">                                                            
+                                                            <input type="hidden" name="no_spk">
                                                             <label class="label">No. Surat Jalan</label>
                                                             <input class="form-control"
                                                                 placeholder="Masukkan No. Surat Jalan"
@@ -95,7 +99,7 @@
                                                                 class="label">Qty</label>
                                                             <input type="number" class="form-control"
                                                                 placeholder="Masukkan Jumlah" name="qty">
-                                                            
+
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary"
@@ -107,17 +111,16 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+
+
 
                                 </td>
-                                <td>
-                                    {{$prm->status_pengiriman}}
-                                </td>
-                                {{-- @if ()
+
+                                 @if ($prm->status_pengiriman ==1)
                                     <td>Diterima</td>
                                 @else
                                     <td>Ditolak</td>
-                                @endif --}}
+                                @endif
                             </tr>
                             <?php $ctr++; ?>
                         @endforeach
