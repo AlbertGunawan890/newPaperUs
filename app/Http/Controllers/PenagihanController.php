@@ -68,6 +68,8 @@ class PenagihanController extends Controller
             return redirect('/penagihan');
         } else {
             return redirect('/penagihan');
+        }
+    }
     public function doEdit(Request $req)
     {
         $penagihan = Penagihan::withTrashed()->find($req->id_penagihan);
