@@ -50,8 +50,8 @@
                                             class="fas fa-times"></i></button>
                                 </td>
                                 <td>
-                                    <div style="text-align: center">
-                                        <button type="button" style="margin-right: 5px;" class="btn btn-warning"
+
+                                    <button type="button" onclick="btnedit({{ $prm }})" style="margin-right: 5px;" class="btn btn-warning"
                                         data-toggle="modal" data-target="#exampleModal">
                                         <i class="fas fa-edit"></i>
 
@@ -60,9 +60,6 @@
                                             <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                                         </form>
                                     </button>
-                                    </div>
-
-
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -78,33 +75,14 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body text-left">
-                                                    <form>
+                                                    <form action="{{  url('/doEditSuratJalan') }}" method="post">
+                                                        @csrf
                                                         <div class="form-group">
-                                                            @csrf
-                                                            <label class="label" for="readonlyTextInput">No. SPK</label>
-                                                            <select data-live-search="true"
-                                                                class="selectpicker form-control" name="no_spk">
-                                                                <option>Pilih No. SPK</option>
-                                                                @foreach ($no_spk as $prm2)
-                                                                    <option value={{ $prm2->no_spk }}>{{ $prm2->no_spk }}
-                                                                    </option>
-                                                                @endforeach
-                                                            </select>
-
+                                                            <input type="hidden" name="no_spk">
                                                             <label class="label">No. Surat Jalan</label>
                                                             <input class="form-control"
                                                                 placeholder="Masukkan No. Surat Jalan"
-                                                                name="no_surat_jalan">
-
-                                                            <label for="exampleFormControlTextarea1" class="label">No.
-                                                                Kendaraan</label>
-                                                            <input class="form-control" placeholder="Masukkan No. Kendaraan"
-                                                                name="no_kendaraan">
-
-                                                            <label for="exampleFormControlTextarea1" class="label">Nama
-                                                                Pengirim</label>
-                                                            <input class="form-control" placeholder="Masukkan Nama Pengirim"
-                                                                name="nama_pengiriman">
+                                                                name="no_surat_jalan" >
 
                                                             <label for="exampleFormControlTextarea1" class="label">Nama
                                                                 Penerima</label>
@@ -122,17 +100,13 @@
                                                             <input type="number" class="form-control"
                                                                 placeholder="Masukkan Jumlah" name="qty">
 
-                                                            <label for="exampleFormControlTextarea1"
-                                                                class="label">Tanggal</label>
-                                                            <input type="date" class="form-control"
-                                                                placeholder="Pilih Tanggal" name="tanggal">
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary">Update</button>
                                                         </div>
                                                     </form>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary">Update</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -184,114 +158,14 @@
                 }
             });
         }
-        function btnAcc2(id) {
-            $.ajax({
-                url: "autocomplete.php",
-                method: "POST",
-                data: {
-                    query: id,
-                    ctr: "AccPengiriman"
-                },
-                success: function(data) {
-
-                }
-            });
-        }
-
-        function btnDecline2(id) {
-            $.ajax({
-                url: "autocomplete.php",
-                method: "POST",
-                data: {
-                    query: id,
-                    ctr: "DeclinePengiriman"
-                },
-                success: function(data) {
-
-                }
-            });
-        }
-        function btnAcc3(id) {
-            $.ajax({
-                url: "autocomplete.php",
-                method: "POST",
-                data: {
-                    query: id,
-                    ctr: "AccPengiriman"
-                },
-                success: function(data) {
-
-                }
-            });
-        }
-
-        function btnDecline3(id) {
-            $.ajax({
-                url: "autocomplete.php",
-                method: "POST",
-                data: {
-                    query: id,
-                    ctr: "DeclinePengiriman"
-                },
-                success: function(data) {
-
-                }
-            });
-        }
-        function btnAcc4(id) {
-            $.ajax({
-                url: "autocomplete.php",
-                method: "POST",
-                data: {
-                    query: id,
-                    ctr: "AccPengiriman"
-                },
-                success: function(data) {
-
-                }
-            });
-        }
-
-        function btnDecline4(id) {
-            $.ajax({
-                url: "autocomplete.php",
-                method: "POST",
-                data: {
-                    query: id,
-                    ctr: "DeclinePengiriman"
-                },
-                success: function(data) {
-
-                }
-            });
-        }
-        function btnAcc5(id) {
-            $.ajax({
-                url: "autocomplete.php",
-                method: "POST",
-                data: {
-                    query: id,
-                    ctr: "AccPengiriman"
-                },
-                success: function(data) {
-
-                }
-            });
-        }
-
-        function btnDecline5(id) {
-            $.ajax({
-                url: "autocomplete.php",
-                method: "POST",
-                data: {
-                    query: id,
-                    ctr: "DeclinePengiriman"
-                },
-                success: function(data) {
-
-                }
-            });
-        }
+        function btnedit(pengiriman)
+        {
+                $("[name='no_spk']").val(pengiriman['no_spk']);
+                $("[name='no_surat_jalan']").val(pengiriman['no_surat_jalan']);
+                $("[name='nama_penerima']").val(pengiriman['nama_penerima']);
+                $("[name='alamat_penerima']").val(pengiriman['alamat_penerima']);
+                $("[name='qty']").val(pengiriman['qty']);
+            }
     </script>
     <!-- /.container-fluid -->
 @endsection

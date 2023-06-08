@@ -82,7 +82,7 @@ class PenawaranController extends Controller
             ]);
         }
 
-        if ($request->proses2 == "1") {
+        if ($request->cb2 != null) {
             $checked2 = $request->cb2;
             for ($i = 0; $i < count($checked2); $i++) {
 
@@ -94,7 +94,7 @@ class PenawaranController extends Controller
                 ]);
             }
         }
-        if($request->proses3 == "1"){
+        if($request->cb3 != null){
             $checked3 = $request->cb3;
             for ($i = 0; $i < count($checked3); $i++) {
 
@@ -106,7 +106,7 @@ class PenawaranController extends Controller
                 ]);
             }
         }
-        if($request->proses4 == "1"){
+        if($request->cb4 != null){
             $checked4 = $request->cb4;
             for ($i = 0; $i < count($checked4); $i++) {
 
@@ -118,7 +118,7 @@ class PenawaranController extends Controller
                 ]);
             }
         }
-        if($request->proses5 == "1"){
+        if($request->cb5 != null){
             $checked5 = $request->cb5;
             for ($i = 0; $i < count($checked5); $i++) {
 

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Pengiriman extends Model
 {
+    use SoftDeletes;
     use HasFactory;
     use SoftDeletes;
     protected $table = "master_pengiriman";

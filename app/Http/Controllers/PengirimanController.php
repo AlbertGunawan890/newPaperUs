@@ -48,6 +48,20 @@ class PengirimanController extends Controller
             return redirect('/suratjalan');
         } else {
             return redirect('/suratjalan');
+    public function doEdit(Request $req)
+    {
+        $kirim = Pengiriman::withTrashed()->find($req->no_spk);
+
+        $res = $kirim->update([
+            "so_spk" => $req->no_surat_jalan,
+            "nama_penerima" => $req->nama_penerima,
+            "alamat_penerima" => $req->alamat_penerima,
+            "qty" => $req->qty
+        ]);
+        if($res){
+        return redirect("/suratjalan");
+        }else{
+            return redirect("/suratjalan");
         }
     }
 }

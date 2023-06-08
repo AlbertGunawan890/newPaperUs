@@ -68,6 +68,20 @@ class PenagihanController extends Controller
             return redirect('/penagihan');
         } else {
             return redirect('/penagihan');
+    public function doEdit(Request $req)
+    {
+        $kirim = Penagihan::withTrashed()->find($req->d_penagihan);
+
+        $res = $kirim->update([
+            "no_spk" => $req->no_surat_jalan,
+            "nama_penerima" => $req->nama_penerima,
+            "alamat_penerima" => $req->alamat_penerima,
+            "qty" => $req->qty
+        ]);
+        if($res){
+        return redirect("/suratjalan");
+        }else{
+            return redirect("/suratjalan");
         }
     }
 }
