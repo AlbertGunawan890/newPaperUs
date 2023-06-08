@@ -130,12 +130,16 @@
                                         </div>
                                     </div>
                                     <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+
                                 </td>
-                                @if ($prm->status_pengiriman == '1')
+                                <td>
+                                    {{$prm->status_pengiriman}}
+                                </td>
+                                {{-- @if ()
                                     <td>Diterima</td>
                                 @else
                                     <td>Ditolak</td>
-                                @endif
+                                @endif --}}
                             </tr>
                             <?php $ctr++; ?>
                         @endforeach

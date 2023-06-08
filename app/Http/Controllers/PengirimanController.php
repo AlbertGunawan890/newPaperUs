@@ -31,7 +31,8 @@ class PengirimanController extends Controller
             'nama_penerima'=>$req->nama_penerima,
             'alamat_penerima'=>$req->alamat_penerima,
             'qty'=>$req->qty,
-            'tanggal'=>$req->tanggal
+            'tanggal'=>$req->tanggal,
+            'status_pengiriman'=>0
         ]);
         return redirect("/suratjalan");
     }

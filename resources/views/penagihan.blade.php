@@ -76,32 +76,32 @@
                                                         <select data-live-search="true" class="selectpicker form-control" name="id_penawaran"
                                                             onchange="nama_brand_change()">
                                                             <option selected>Pilih No. Penawaran</option>
-                                                            @foreach ($pembayaran as $prm)
+                                                            @foreach ($penagihan as $prm)
                                                                 <option value={{ $prm->id_penawaran }}>{{ $prm->id_penawaran }}</option>
                                                             @endforeach
                                                         </select>
-                                        
+
                                                         <label class="label">Customer</label>
                                                         <input class="form-control" placeholder="Pilih Customer" name="pic">
-                                        
+
                                                         <label for="exampleFormControlTextarea1" class="label">Jenis Box</label>
                                                         <input class="form-control" placeholder="Pilih Jenis Box" name="jenis_box">
-                                        
+
                                                         <label for="exampleFormControlTextarea1" class="label">Jumlah</label>
                                                         <input class="form-control" placeholder="Jumlah" name="qty">
-                                        
+
                                                         <label for="exampleFormControlTextarea1" class="label">Nominal</label>
                                                         <input type="number" class="form-control" placeholder="Nominal" name="harga">
-                                        
+
                                                         <label for="exampleFormControlTextarea1" class="label">Sudah Terbayar</label>
                                                         <input type="number" class="form-control" name="sudah_terbayar">
-                                        
+
                                                         <label for="exampleFormControlTextarea1" class="label">Sisa Hutang</label>
                                                         <input type="number" class="form-control" name="sisa_hutang">
-                                        
+
                                                         <label for="exampleFormControlTextarea1" class="label">Jumlah Bayar</label>
                                                         <input type="number" class="form-control" name="jumlah_bayar">
-                                        
+
                                                     </div>
                                                 </form>
                                             </div>

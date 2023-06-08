@@ -19,7 +19,8 @@ class Pengiriman extends Model
         'nama_penerima',
         'alamat_penerima',
         'qty',
-        'tanggal'
+        'tanggal',
+        'status_pengiriman'
     ];
     protected $keyType = 'string';
 }
