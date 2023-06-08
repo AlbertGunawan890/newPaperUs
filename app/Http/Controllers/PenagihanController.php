@@ -58,18 +58,17 @@ class PenagihanController extends Controller
     }
     public function doEdit(Request $req)
     {
-        $kirim = Penagihan::withTrashed()->find($req->d_penagihan);
-
-        $res = $kirim->update([
-            "no_spk" => $req->no_surat_jalan,
-            "nama_penerima" => $req->nama_penerima,
-            "alamat_penerima" => $req->alamat_penerima,
-            "qty" => $req->qty
+        $penagihan = Penagihan::withTrashed()->find($req->id_penagihan);
+        $res = $penagihan->update([
+            "jumlah" => $req->qty,
+            "nominal" => $req->harga,
+            "sisa_hutang" => $req->sisa_hutang,
+            "jumlah_bayar" => $req->jumlah_bayar
         ]);
         if($res){
-        return redirect("/suratjalan");
+        return redirect("/penagihan");
         }else{
-            return redirect("/suratjalan");
+            return redirect("/penagihan");
         }
     }
 }

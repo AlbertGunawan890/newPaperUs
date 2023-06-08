@@ -33,7 +33,7 @@
                     </thead>
                     <tbody>
                         @foreach ($penagihan as $prm)
-                        <tr>
+                            <tr>
                                 <td>{{ $prm->id_penawaran }}</td>
                                 <td>{{ $prm->pic }}</td>
                                 <td>{{ $prm->jenis_box }}</td>
@@ -42,86 +42,97 @@
                                 <td>{{ $prm->sisa_hutang }}</td>
                                 <td>
                                     <button type="button" class="btn btn-success"
-                                    onclick="btnAcc('{{ $prm->id_penawaran }}');window.location.reload();"><i
-                                        class="fas fa-check"></i></button>
-                                <button type="button" class="btn btn-danger"
-                                    onclick="btnDecline('{{ $prm->id_penawaran }}');window.location.reload();"><i
-                                        class="fas fa-times"></i></button>
+                                        onclick="btnAcc('{{ $prm->id_penawaran }}');window.location.reload();"><i
+                                            class="fas fa-check"></i></button>
+                                    <button type="button" class="btn btn-danger"
+                                        onclick="btnDecline('{{ $prm->id_penawaran }}');window.location.reload();"><i
+                                            class="fas fa-times"></i></button>
                                 </td>
                                 <td>
-                                    <button type="button" style="margin-right: 5px;" class="btn btn-warning"
-                                    data-toggle="modal" data-target="#exampleModal">
-                                    <i class="fas fa-edit"></i>
-                                </button>
+                                    <button type="button" onclick="btnedit({{ $prm }})" style="margin-right: 5px;" class="btn btn-warning"
+                                        data-toggle="modal" data-target="#exampleModal">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
 
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">
-                                                    Edit Penagihan
-                                                </h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body text-left">
-                                                <form>
-                                                    <div class="form-group">
-                                                        @csrf
-                                                        <label class="label" for="readonlyTextInput">No. Penawaran</label>
-                                                        <select data-live-search="true" class="selectpicker form-control" name="id_penawaran"
-                                                            onchange="nama_brand_change()">
-                                                            <option selected>Pilih No. Penawaran</option>
-                                                            @foreach ($penagihan as $prm)
-                                                                <option value={{ $prm->id_penawaran }}>{{ $prm->id_penawaran }}</option>
-                                                            @endforeach
-                                                        </select>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">
+                                                        Edit Penagihan
+                                                    </h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
 
-                                                        <label class="label">Customer</label>
-                                                        <input class="form-control" placeholder="Pilih Customer" name="pic">
+                                                <div class="modal-body text-left">
 
-                                                        <label for="exampleFormControlTextarea1" class="label">Jenis Box</label>
-                                                        <input class="form-control" placeholder="Pilih Jenis Box" name="jenis_box">
+                                                    @csrf <form action="{{ url('/doEditPenagihan') }}" method="post">
+                                                        <div class="form-group">
+                                                            @csrf
+                                                            <input type="hidden" name="id_penagihan">
+                                                            
+                                                            <label class="label" for="readonlyTextInput">No.
+                                                                Penawaran</label>
+                                                            <input class="form-control" placeholder="Pilih No Penawaran"
+                                                            name="id_penawaran">
 
-                                                        <label for="exampleFormControlTextarea1" class="label">Jumlah</label>
-                                                        <input class="form-control" placeholder="Jumlah" name="qty">
+                                                            <label class="label">Customer</label>
+                                                            <input class="form-control" placeholder="Pilih Customer"
+                                                                name="pic">
 
-                                                        <label for="exampleFormControlTextarea1" class="label">Nominal</label>
-                                                        <input type="number" class="form-control" placeholder="Nominal" name="harga">
+                                                            <label for="exampleFormControlTextarea1" class="label">Jenis
+                                                                Box</label>
+                                                            <input class="form-control" placeholder="Pilih Jenis Box"
+                                                                name="jenis_box" readonly>
 
-                                                        <label for="exampleFormControlTextarea1" class="label">Sudah Terbayar</label>
-                                                        <input type="number" class="form-control" name="sudah_terbayar">
+                                                            <label for="exampleFormControlTextarea1"
+                                                                class="label">Jumlah</label>
+                                                            <input class="form-control" placeholder="Jumlah" name="qty">
 
-                                                        <label for="exampleFormControlTextarea1" class="label">Sisa Hutang</label>
-                                                        <input type="number" class="form-control" name="sisa_hutang">
+                                                            <label for="exampleFormControlTextarea1"
+                                                                class="label">Nominal</label>
+                                                            <input type="number" class="form-control" placeholder="Nominal"
+                                                                name="harga">
 
-                                                        <label for="exampleFormControlTextarea1" class="label">Jumlah Bayar</label>
-                                                        <input type="number" class="form-control" name="jumlah_bayar">
+                                                            <label for="exampleFormControlTextarea1" class="label">Sudah
+                                                                Terbayar</label>
+                                                            <input type="number" class="form-control" name="sudah_terbayar"
+                                                                readonly>
 
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Update</button>
+                                                            <label for="exampleFormControlTextarea1" class="label">Sisa
+                                                                Hutang</label>
+                                                            <input type="number" class="form-control" name="sisa_hutang">
+
+                                                            <label for="exampleFormControlTextarea1" class="label">Jumlah
+                                                                Bayar</label>
+                                                            <input type="number" class="form-control" name="jumlah_bayar">
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary">Update</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                     <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                                 </td>
                                 @if ($prm->status_penagihan == '1')
-                                <td>Diterima</td>
-                            @else
-                                <td>Ditolak</td>
-                            @endif
-                        </tr>
-                    </tr>
+                                    <td>Diterima</td>
+                                @else
+                                    <td>Ditolak</td>
+                                @endif
+                            </tr>
+                            </tr>
                         @endforeach
 
                     </tbody>
@@ -157,6 +168,15 @@
 
                 }
             });
+        }
+
+        function btnedit(penagihan) {
+            $("[name='id_penagihan']").val(penagihan['id_penagihan']);
+            $("[name='id_penawaran']").val(penagihan['id_penawaran']);
+            $("[name='qty']").val(penagihan['jumlah']);
+            $("[name='harga']").val(penagihan['nominal']);
+            $("[name='sisa_hutang']").val(penagihan['sisa_hutang']);
+            $("[name='jumlah_bayar']").val(penagihan['jumlah_bayar']);
         }
     </script>
     <!-- /.container-fluid -->
