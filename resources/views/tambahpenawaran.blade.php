@@ -129,7 +129,8 @@
                 <div id="penjualan" style="display: none">
 
                     <label class="label">Nama Brand</label>
-                    <input class="form-control" placeholder="Masukkan Nama Brand" name="nama_brand" onchange="nama_brand_change()">
+                    <input class="form-control" placeholder="Masukkan Nama Brand" name="nama_brand"
+                        onchange="nama_brand_change()">
                     {{-- <select data-live-search="true" class="selectpicker form-control" name="nama_brand" onchange="nama_brand_change()">
                         <option selected>Pilih Nama Brand</option>
                         @foreach ($arrBrand as $prm)
@@ -153,7 +154,8 @@
                     <input class="form-control" placeholder="Masukkan tinggi" name="tinggi">
 
                     <label for="exampleFormControlTextarea1" class="label">Quantity</label>
-                    <input type="number" class="form-control" placeholder="Masukkan Quantity" name="qty" onchange="nett()">
+                    <input type="number" class="form-control" placeholder="Masukkan Quantity" name="qty"
+                        onchange="nett();disc();">
 
                     <label for="exampleFormControlTextarea1" class="label">Jumlah Produksi</label>
                     <input type="number" class="form-control" placeholder="Masukkan Jumlah Produksi" name="jum_produksi">
@@ -407,8 +409,8 @@
                     </div>
                     <br>
                     <label for="exampleFormControlTextarea1" class="label">Harga Satuan</label>
-                    <input type="number" id="formHarga" class="form-control" placeholder="Masukkan Harga"onchange="nett()"
-                        name="harga_satuan">
+                    <input type="number" id="formHarga" class="form-control"
+                        placeholder="Masukkan Harga" onchange="disc();nett();" name="harga_satuan">
 
                     <label for="exampleFormControlTextarea1" class="label">Harga Satuan Terakhir</label>
                     <input type="number" class="form-control" readonly value="0" name="harga_satuan_terakhir">
@@ -420,13 +422,15 @@
                         <div style="width: 100%;">
                             <label for="exampleFormControlTextarea1" class="label">Diskon</label>
                             <div style="display: flex;">
-                                <input class="form-control" style="width: 100%;" placeholder="Masukkan Diskon" name="diskon" onchange="disc();nett();">
+                                <input class="form-control" style="width: 100%;" placeholder="Masukkan Diskon"
+                                    name="diskon" onchange="disc();nett();">
                                 <button readonly="readonly" class="btn" style="height: 10px;">%</button>
                             </div>
                         </div>
                         <div style="width: 100%;">
                             <label for="exampleFormControlTextarea1" class="label">Potongan Harga</label>
-                            <input class="form-control" style="width: 100%;" placeholder="Masukkan Potongan Harga" name="potongan_harga" onchange="pot();nett();">
+                            <input class="form-control" style="width: 100%;" placeholder="Masukkan Potongan Harga"
+                                name="potongan_harga" onchange="pot();nett();">
                         </div>
                     </div>
 
@@ -443,31 +447,33 @@
         </div>
     </div>
     <script>
-    let counter = 0;
-        function nett(){
-            var qty = parseInt($("[name='qty']").val());
-            var harga_satuan = parseInt($("[name='harga_satuan']").val());
+        let counter = 0;
+
+        function nett() {
+            var qty = parseInt($("[name='qty']").val()) ?? 0;
+            var harga_satuan = parseInt($("[name='harga_satuan']").val()) ?? 0;
             var diskon = parseInt($("[name='diskon']").val());
-            var temp = (harga_satuan*qty)-((harga_satuan*qty)*diskon/100);
+            var temp = (harga_satuan * qty) - ((harga_satuan * qty) * diskon / 100);
             $("[name='net']").val(temp);
         }
 
-        function pot(){
+        function pot() {
             var potongan = parseInt($("[name='potongan_harga']").val());
             var qty = parseInt($("[name='qty']").val());
             var harga_satuan = parseInt($("[name='harga_satuan']").val());
-            var temp = (potongan/(qty*harga_satuan))*100;
+            var temp = (potongan / (qty * harga_satuan)) * 100;
             $("[name='diskon']").val(temp);
         }
 
-        function disc(){
+        function disc() {
             var diskon = parseInt($("[name='diskon']").val());
             var qty = parseInt($("[name='qty']").val());
             var harga_satuan = parseInt($("[name='harga_satuan']").val());
-            var temp = (qty*harga_satuan)*(diskon/100);
+            var temp = (qty * harga_satuan) * (diskon / 100);
             console.log(temp);
             $("[name='potongan_harga']").val(temp);
         }
+
         function myFunction() {
             var checkBox = document.getElementById("cbStok");
             var form = document.getElementById("formHarga");
@@ -488,53 +494,49 @@
 
         function showCheckbox() {
 
-             var x = document.getElementById("myCheckbox");
-             var x2 = document.getElementById("myCheckbox2");
-             var x3 = document.getElementById("myCheckbox3");
-             var x4 = document.getElementById("myCheckbox4");
-             if(counter < 4){
-                 if (counter == 0) {
-                     x.style.display = "block";
-                 }
-                else if (counter == 1) {
-                     x2.style.display = "block";
-                 }
-                 else if (counter == 2) {
-                     x3.style.display = "block";
-                 }
-                 else if (counter == 3) {
-                     x4.style.display = "block";
-                 }
-                 counter++;
-             }else{
+            var x = document.getElementById("myCheckbox");
+            var x2 = document.getElementById("myCheckbox2");
+            var x3 = document.getElementById("myCheckbox3");
+            var x4 = document.getElementById("myCheckbox4");
+            if (counter < 4) {
+                if (counter == 0) {
+                    x.style.display = "block";
+                } else if (counter == 1) {
+                    x2.style.display = "block";
+                } else if (counter == 2) {
+                    x3.style.display = "block";
+                } else if (counter == 3) {
+                    x4.style.display = "block";
+                }
+                counter++;
+            } else {
                 counter = 4;
-             }
+            }
         }
+
         function hapusCheckbox() {
 
-             var x = document.getElementById("myCheckbox");
-             var x2 = document.getElementById("myCheckbox2");
-             var x3 = document.getElementById("myCheckbox3");
-             var x4 = document.getElementById("myCheckbox4");
-             if(counter > 0){
-                 if (counter == 4) {
-                     x4.style.display = "none";
-                 }
-                else if (counter == 3) {
-                     x3.style.display = "none";
-                 }
-                 else if (counter == 2) {
-                     x2.style.display = "none";
-                 }
-                 else if (counter == 1) {
-                     x.style.display = "none";
-                 }
-                 counter--;
-             }else{
+            var x = document.getElementById("myCheckbox");
+            var x2 = document.getElementById("myCheckbox2");
+            var x3 = document.getElementById("myCheckbox3");
+            var x4 = document.getElementById("myCheckbox4");
+            if (counter > 0) {
+                if (counter == 4) {
+                    x4.style.display = "none";
+                } else if (counter == 3) {
+                    x3.style.display = "none";
+                } else if (counter == 2) {
+                    x2.style.display = "none";
+                } else if (counter == 1) {
+                    x.style.display = "none";
+                }
+                counter--;
+            } else {
                 counter = 0;
-             }
+            }
         }
-        function nama_brand_change(){
+
+        function nama_brand_change() {
             $.ajax({
                 url: "autocomplete.php",
                 method: "POST",
