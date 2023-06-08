@@ -85,10 +85,12 @@ Route::post('/doAddSPK', [SPKController::class, "doAddSPK"]);
 Route::get('/suratjalan', [PengirimanController::class, "show"]);
 Route::get('/tambahpengiriman', [PengirimanController::class, "showSPK"]);
 Route::post('/doAddpengiriman', [PengirimanController::class, "doAddPengiriman"]);
+Route::post('/suratjalan/delete/{id}', [PengirimanController::class, "delete"]);
 
 Route::get('/penagihan', [PenagihanController::class, "show"]);
 Route::get('/tambahpenagihan', [PenagihanController::class, "showBrand"]);
 Route::post('/doAddpenagihan', [PenagihanController::class, "doAddpenagihan"]);
+Route::post('/penagihan/delete/{id}', [PenagihanController::class, "delete"]);
 
 Route::get('/mastersubcon', function () {
     return view('mastersubcon');

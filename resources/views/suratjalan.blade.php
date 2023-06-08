@@ -50,10 +50,18 @@
                                             class="fas fa-times"></i></button>
                                 </td>
                                 <td>
-                                    <button type="button" style="margin-right: 5px;" class="btn btn-warning"
+                                    <div style="text-align: center">
+                                        <button type="button" style="margin-right: 5px;" class="btn btn-warning"
                                         data-toggle="modal" data-target="#exampleModal">
                                         <i class="fas fa-edit"></i>
+
+                                        <form action="{{ url('suratjalan/delete/' . $prm->no_spk) }}" method="post">
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                        </form>
                                     </button>
+                                    </div>
+
 
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
@@ -129,7 +137,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+
+
 
                                 </td>
 
@@ -163,6 +172,114 @@
         }
 
         function btnDecline(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "DeclinePengiriman"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+        function btnAcc2(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "AccPengiriman"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+
+        function btnDecline2(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "DeclinePengiriman"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+        function btnAcc3(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "AccPengiriman"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+
+        function btnDecline3(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "DeclinePengiriman"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+        function btnAcc4(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "AccPengiriman"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+
+        function btnDecline4(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "DeclinePengiriman"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+        function btnAcc5(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "AccPengiriman"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+
+        function btnDecline5(id) {
             $.ajax({
                 url: "autocomplete.php",
                 method: "POST",

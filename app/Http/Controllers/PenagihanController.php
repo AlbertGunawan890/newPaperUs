@@ -56,4 +56,18 @@ class PenagihanController extends Controller
 
         return redirect("/penagihan");
     }
+    public function delete(Request $req, $id)
+    {
+        $penagihan = Penagihan::withTrashed()->find($id);
+        if($penagihan->trashed()){
+            $result = $penagihan->restore();
+        }else{
+            $result = $penagihan->delete();
+        }
+        if ($result) {
+            return redirect('/penagihan');
+        } else {
+            return redirect('/penagihan');
+        }
+    }
 }

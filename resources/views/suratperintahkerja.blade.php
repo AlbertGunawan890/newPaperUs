@@ -61,7 +61,7 @@
     <div class="card">
         <div class="card-body">
             <div class="table-responsive">
-                <table id="" class="table table-bordered table-no-wrap" style="width:100%">
+                <table id="table1" class="table table-bordered table-no-wrap" style="width:100%">
                     <thead>
                         <tr>
                             <th>No.</th>
@@ -195,6 +195,7 @@
                                 <th>Harga Total Sebelumnya</th>
                                 <th>Penerimaan</th>
                                 <th style="min-width: 120px">Aksi</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody id="processing5">
@@ -209,6 +210,20 @@
     <br>
 
     <script>
+          function Rule1 ($id) {
+                 var a = document.getElementById("btnAcc"+$id);
+                 var b = document.getElementById("btnDecline"+$id);
+                 a.style.display = "none";
+                 b.style.display = "block";
+        }
+        function Rule2 () {
+                 var a = document.getElementById("btnAcc1");
+                 var b = document.getElementById("btnDecline1");
+                 b.style.display = "none";
+                 a.style.display = "block";
+
+             console.log("halo2");
+        }
         var jArray = <?php echo json_encode($no_spk);?>;
         var no_spk = "";
         var temp = 0;
@@ -433,7 +448,7 @@
             var temp = harga_satuan * qty;
             $("[name='harga_total[" + $id + "]']").val(temp);
         }
-        
+
         function harga_total_change2($id) {
             var qty = parseInt($("[name='jumlah2[" + $id + "]']").val());
             var harga_satuan = parseInt($("[name='harga_satuan2[" + $id + "]']").val());
@@ -474,6 +489,141 @@
                             "[name='harga_total_sebelumnya[" + $id + "]']").val(), $("[name='no_spk']").val()
                     ],
                     ctr: "AccSPKProcess1"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+        function btnAcc1(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "AccProcessing1"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+
+        function btnDecline1(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "DeclineProcessing1"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+        function btnAcc2(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "AccPengiriman"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+
+        function btnDecline2(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "DeclinePengiriman"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+        function btnAcc3(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "AccPengiriman"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+
+        function btnDecline3(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "DeclinePengiriman"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+        function btnAcc4(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "AccPengiriman"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+
+        function btnDecline4(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "DeclinePengiriman"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+        function btnAcc5(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "AccPengiriman"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
+
+        function btnDecline5(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "DeclinePengiriman"
                 },
                 success: function(data) {
 

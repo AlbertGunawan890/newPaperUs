@@ -78,6 +78,19 @@ else if ($_REQUEST["ctr"] == "DeclineDesain") {
         $result = mysqli_query($connect, $query);
     }
 }
+else if ($_REQUEST["ctr"] == "AccProcessing1") {
+    if (isset($_POST["query"])) {
+        $query = "UPDATE processing1 SET status = 1 WHERE id_proses1='".$_POST["query"]."'";
+        $result = mysqli_query($connect, $query);
+    }
+}
+else if ($_REQUEST["ctr"] == "DeclineProcessing1") {
+    if (isset($_POST["query"])) {
+        $query = "UPDATE processing1 SET status = -1 WHERE id_proses1='".$_POST["query"]."'";
+        $result = mysqli_query($connect, $query);
+    }
+}
+
 else if ($_REQUEST["ctr"] == "Pembayaran") {
     if (isset($_POST["query"])) {
         $output = "";
@@ -181,16 +194,16 @@ else if ($_REQUEST["ctr"] == "Processing1SPK") {
                             <td><input readonly type="number" class="form-control"
                                     name="harga_total_sebelumnya['. $row["id_proses1"].']" value="0"></td>
                             <td>
-                                <button type="button" class="btn btn-success"
-                                    onclick="btnAcc('. $row["id_proses1"].')"><i class="fas fa-check"></i></button>
-                                <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                                <button id="btnAcc'.$ctr.'" type="button" class="btn btn-success"
+                                    onclick="btnAcc1('. $row["id_proses1"].');Rule1('.$ctr.');"><i class="fas fa-check"></i></button>
+                                <button id="btnDecline1" type="button" class="btn btn-danger"
+                                onclick="btnDecline1('. $row["id_proses1"].');Rule2();"><i class="fas fa-times"></i></i></button>
                             </td>
                             <td>
                                 <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                                 <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                             </td>
-                    </tr>
-                ';
+                        </tr>';
                 $ctr++;
             }
         echo $output;

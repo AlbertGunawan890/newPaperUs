@@ -49,10 +49,17 @@
                                         class="fas fa-times"></i></button>
                                 </td>
                                 <td>
-                                    <button type="button" style="margin-right: 5px;" class="btn btn-warning"
-                                    data-toggle="modal" data-target="#exampleModal">
-                                    <i class="fas fa-edit"></i>
-                                </button>
+                                    <div style="display: flex">
+                                        <button type="button" style="margin-right: 5px;" class="btn btn-warning"
+                                        data-toggle="modal" data-target="#exampleModal">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <form action="{{ url('penagihan/delete/' . $prm->id_penagihan) }}"method="post">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                    </form>
+
+                                    </div>
 
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
@@ -113,7 +120,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                    <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+
                                 </td>
                                 @if ($prm->status_penagihan == '1')
                                 <td>Diterima</td>
