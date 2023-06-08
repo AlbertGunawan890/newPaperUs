@@ -48,6 +48,9 @@ class PengirimanController extends Controller
             return redirect('/suratjalan');
         } else {
             return redirect('/suratjalan');
+        }
+    }
+
     public function doEdit(Request $req)
     {
         $kirim = Pengiriman::withTrashed()->find($req->no_spk);
@@ -65,3 +68,4 @@ class PengirimanController extends Controller
         }
     }
 }
+

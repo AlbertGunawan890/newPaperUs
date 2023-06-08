@@ -196,8 +196,8 @@ else if ($_REQUEST["ctr"] == "Processing1SPK") {
                             <td>
                                 <button id="btnAcc'.$ctr.'" type="button" class="btn btn-success"
                                     onclick="btnAcc1('. $row["id_proses1"].');Rule1('.$ctr.');"><i class="fas fa-check"></i></button>
-                                <button id="btnDecline1" type="button" class="btn btn-danger"
-                                onclick="btnDecline1('. $row["id_proses1"].');Rule2();"><i class="fas fa-times"></i></i></button>
+                                <button id="btnDecline'.$ctr.'" type="button" class="btn btn-danger"
+                                onclick="btnDecline1('. $row["id_proses1"].');Rule2('.$ctr.');"><i class="fas fa-times"></i></i></button>
                             </td>
                             <td>
                                 <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
@@ -248,9 +248,10 @@ else if ($_REQUEST["ctr"] == "Processing2SPK") {
                             <td><input readonly type="number" class="form-control"
                                     name="harga_total_sebelumnya2['. $row["id_proses2"].']" value="0"></td>
                             <td>
-                                <button type="button" class="btn btn-success"
-                                    onclick="btnAcc('. $row["id_proses2"].')"><i class="fas fa-check"></i></button>
-                                <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                            <button id="btnAcc2'.$ctr.'" type="button" class="btn btn-success"
+                            onclick="btnAcc2('. $row["id_proses2"].');Rule3('.$ctr.');"><i class="fas fa-check"></i></button>
+                        <button id="btnDecline2'.$ctr.'" type="button" class="btn btn-danger"
+                        onclick="btnDecline2('. $row["id_proses2"].');Rule4('.$ctr.');"><i class="fas fa-times"></i></i></button>
                             </td>
                             <td>
                                 <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
@@ -302,9 +303,10 @@ else if ($_REQUEST["ctr"] == "Processing3SPK") {
                             <td><input readonly type="number" class="form-control"
                                     name="harga_total_sebelumnya3['. $row["id_proses3"].']" value="0"></td>
                             <td>
-                                <button type="button" class="btn btn-success"
-                                    onclick="btnAcc('. $row["id_proses3"].')"><i class="fas fa-check"></i></button>
-                                <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                               <button id="btnAcc3'.$ctr.'" type="button" class="btn btn-success"
+                                    onclick="btnAcc3('. $row["id_proses3"].');Rule5('.$ctr.');"><i class="fas fa-check"></i></button>
+                                <button id="btnDecline3'.$ctr.'" type="button" class="btn btn-danger"
+                                onclick="btnDecline3('. $row["id_proses3"].');Rule6('.$ctr.');"><i class="fas fa-times"></i></i></button>
                             </td>
                             <td>
                                 <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
@@ -356,9 +358,10 @@ else if ($_REQUEST["ctr"] == "Processing4SPK") {
                             <td><input readonly type="number" class="form-control"
                                     name="harga_total_sebelumnya4['. $row["id_proses4"].']" value="0"></td>
                             <td>
-                                <button type="button" class="btn btn-success"
-                                    onclick="btnAcc('. $row["id_proses4"].')"><i class="fas fa-check"></i></button>
-                                <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                            <button id="btnAcc4'.$ctr.'" type="button" class="btn btn-success"
+                            onclick="btnAcc4('. $row["id_proses4"].');Rule7('.$ctr.');"><i class="fas fa-check"></i></button>
+                        <button id="btnDecline4'.$ctr.'" type="button" class="btn btn-danger"
+                        onclick="btnDecline4('. $row["id_proses4"].');Rule8('.$ctr.');"><i class="fas fa-times"></i></i></button>
                             </td>
                             <td>
                                 <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
@@ -410,9 +413,10 @@ else if ($_REQUEST["ctr"] == "Processing5SPK") {
                             <td><input readonly type="number" class="form-control"
                                     name="harga_total_sebelumnya5['. $row["id_proses5"].']" value="0"></td>
                             <td>
-                                <button type="button" class="btn btn-success"
-                                    onclick="btnAcc('. $row["id_proses5"].')"><i class="fas fa-check"></i></button>
-                                <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></i></button>
+                            <button id="btnAcc5'.$ctr.'" type="button" class="btn btn-success"
+                            onclick="btnAcc5('. $row["id_proses5"].');Rule9('.$ctr.');"><i class="fas fa-check"></i></button>
+                        <button id="btnDecline5'.$ctr.'" type="button" class="btn btn-danger"
+                        onclick="btnDecline5('. $row["id_proses5"].');Rule10('.$ctr.');"><i class="fas fa-times"></i></i></button>
                             </td>
                             <td>
                                 <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>

@@ -51,7 +51,7 @@
 
                     <label for="exampleFormControlTextarea1" class="label">Jenis Plat</label>
                     <input class="form-control" name="plat" placeholder="Jenis Plat">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" id="btnSubmit">Submit</button>
                     {{-- <input type="hidden" name="temp"> --}}
                 </form>
             </div>
@@ -195,7 +195,6 @@
                                 <th>Harga Total Sebelumnya</th>
                                 <th>Penerimaan</th>
                                 <th style="min-width: 120px">Aksi</th>
-                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody id="processing5">
@@ -210,21 +209,72 @@
     <br>
 
     <script>
-          function Rule1 ($id) {
-                 var a = document.getElementById("btnAcc"+$id);
-                 var b = document.getElementById("btnDecline"+$id);
-                 a.style.display = "none";
-                 b.style.display = "block";
+        function Rule1($id) {
+            var a = document.getElementById("btnAcc" + $id);
+            var b = document.getElementById("btnDecline" + $id);
+            a.style.display = "none";
+            b.style.display = "block";
         }
-        function Rule2 () {
-                 var a = document.getElementById("btnAcc1");
-                 var b = document.getElementById("btnDecline1");
-                 b.style.display = "none";
-                 a.style.display = "block";
 
-             console.log("halo2");
+        function Rule2($id) {
+            var a = document.getElementById("btnAcc2" + $id);
+            var b = document.getElementById("btnDecline2" + $id);
+            b.style.display = "none";
+            a.style.display = "block";
         }
-        var jArray = <?php echo json_encode($no_spk);?>;
+        function Rule3($id) {
+            var a = document.getElementById("btnAcc2" + $id);
+            var b = document.getElementById("btnDecline2" + $id);
+            a.style.display = "none";
+            b.style.display = "block";
+        }
+
+        function Rule4($id) {
+            var a = document.getElementById("btnAcc3" + $id);
+            var b = document.getElementById("btnDecline3" + $id);
+            b.style.display = "none";
+            a.style.display = "block";
+        }
+        function Rule5($id) {
+            var a = document.getElementById("btnAcc3" + $id);
+            var b = document.getElementById("btnDecline3" + $id);
+            a.style.display = "none";
+            b.style.display = "block";
+        }
+
+        function Rule6($id) {
+            var a = document.getElementById("btnAcc4" + $id);
+            var b = document.getElementById("btnDecline4" + $id);
+            b.style.display = "none";
+            a.style.display = "block";
+        }
+        function Rule7($id) {
+            var a = document.getElementById("btnAcc4" + $id);
+            var b = document.getElementById("btnDecline4" + $id);
+            a.style.display = "none";
+            b.style.display = "block";
+        }
+
+        function Rule8($id) {
+            var a = document.getElementById("btnAcc4" + $id);
+            var b = document.getElementById("btnDecline4" + $id);
+            b.style.display = "none";
+            a.style.display = "block";
+        }
+        function Rule9($id) {
+            var a = document.getElementById("btnAcc5" + $id);
+            var b = document.getElementById("btnDecline5" + $id);
+            a.style.display = "none";
+            b.style.display = "block";
+        }
+
+        function Rule10($id) {
+            var a = document.getElementById("btnAcc5" + $id);
+            var b = document.getElementById("btnDecline5" + $id);
+            b.style.display = "none";
+            a.style.display = "block";
+        }
+        var jArray = <?php echo json_encode($no_spk); ?>;
         var no_spk = "";
         var temp = 0;
         if (jArray.length == 0) {
@@ -240,7 +290,19 @@
         document.getElementsByName("no_spk")[0].value = no_spk.toString();
 
         function nama_brand_change() {
-            var jArray2 = <?php echo json_encode($proces2);?>;
+            var jArray1 = <?php echo json_encode($proces1); ?>;
+            for (var i = 0; i < jArray1.length; i++) {
+                if ($("[name='id_penawaran']").val() == jArray1[i]['id_penawaran']) {
+                    if (jArray1[i]['status'] == '0'||jArray1[i]['status'] == '-1') {
+                        document.getElementById("btnSubmit").disabled = true;
+                        break;
+                    }else{
+                        document.getElementById("btnSubmit").disabled = false;
+                    }
+                }
+            }
+            // ===========================================
+            var jArray2 = <?php echo json_encode($proces2); ?>;
             var ada = true;
             if (jArray2.length == 0) {
                 ada = false;
@@ -248,8 +310,11 @@
                 for (var i = 0; i < jArray2.length; i++) {
                     if ($("[name='id_penawaran']").val() == jArray2[i]['id_penawaran']) {
                         ada = true;
-                        break;
-                    }else if ($("[name='id_penawaran']").val() != jArray2[i]['id_penawaran']) {
+                        if (jArray2[i]['status'] == '0') {
+                            document.getElementById("btnSubmit").disabled = true;
+                            break;
+                        }
+                    } else if ($("[name='id_penawaran']").val() != jArray2[i]['id_penawaran']) {
                         ada = false;
                     }
                 }
@@ -261,7 +326,7 @@
                 ada = true;
             }
             // ================================================
-            var jArray3 = <?php echo json_encode($proces3);?>;
+            var jArray3 = <?php echo json_encode($proces3); ?>;
             var ada2 = true;
             if (jArray3.length == 0) {
                 ada2 = false;
@@ -269,8 +334,11 @@
                 for (var i = 0; i < jArray3.length; i++) {
                     if ($("[name='id_penawaran']").val() == jArray3[i]['id_penawaran']) {
                         ada2 = true;
-                        break;
-                    }else if ($("[name='id_penawaran']").val() != jArray3[i]['id_penawaran']) {
+                        if (jArray3[i]['status'] == '0') {
+                            document.getElementById("btnSubmit").disabled = true;
+                            break;
+                        }
+                    } else if ($("[name='id_penawaran']").val() != jArray3[i]['id_penawaran']) {
                         ada2 = false;
                     }
                 }
@@ -282,7 +350,7 @@
                 ada2 = true;
             }
             // ================================================
-            var jArray4 = <?php echo json_encode($proces4);?>;
+            var jArray4 = <?php echo json_encode($proces4); ?>;
             var ada3 = true;
             if (jArray4.length == 0) {
                 ada3 = false;
@@ -290,8 +358,11 @@
                 for (var i = 0; i < jArray4.length; i++) {
                     if ($("[name='id_penawaran']").val() == jArray4[i]['id_penawaran']) {
                         ada3 = true;
-                        break;
-                    }else if ($("[name='id_penawaran']").val() != jArray4[i]['id_penawaran']) {
+                        if (jArray4[i]['status'] == '0') {
+                            document.getElementById("btnSubmit").disabled = true;
+                            break;
+                        }
+                    } else if ($("[name='id_penawaran']").val() != jArray4[i]['id_penawaran']) {
                         ada3 = false;
                     }
                 }
@@ -303,7 +374,7 @@
                 ada3 = true;
             }
             // ================================================
-            var jArray5 = <?php echo json_encode($proces5);?>;
+            var jArray5 = <?php echo json_encode($proces5); ?>;
             var ada4 = true;
             if (jArray5.length == 0) {
                 ada4 = false;
@@ -311,8 +382,11 @@
                 for (var i = 0; i < jArray5.length; i++) {
                     if ($("[name='id_penawaran']").val() == jArray5[i]['id_penawaran']) {
                         ada4 = true;
-                        break;
-                    }else if ($("[name='id_penawaran']").val() != jArray5[i]['id_penawaran']) {
+                        if (jArray5[i]['status'] == '0') {
+                            document.getElementById("btnSubmit").disabled = true;
+                            break;
+                        }
+                    } else if ($("[name='id_penawaran']").val() != jArray5[i]['id_penawaran']) {
                         ada4 = false;
                     }
                 }
@@ -495,6 +569,7 @@
                 }
             });
         }
+
         function btnAcc1(id) {
             $.ajax({
                 url: "autocomplete.php",
@@ -522,13 +597,14 @@
                 }
             });
         }
+
         function btnAcc2(id) {
             $.ajax({
                 url: "autocomplete.php",
                 method: "POST",
                 data: {
                     query: id,
-                    ctr: "AccPengiriman"
+                    ctr: "AccPengiriman2"
                 },
                 success: function(data) {
 
@@ -542,20 +618,21 @@
                 method: "POST",
                 data: {
                     query: id,
-                    ctr: "DeclinePengiriman"
+                    ctr: "DeclinePengiriman2"
                 },
                 success: function(data) {
 
                 }
             });
         }
+
         function btnAcc3(id) {
             $.ajax({
                 url: "autocomplete.php",
                 method: "POST",
                 data: {
                     query: id,
-                    ctr: "AccPengiriman"
+                    ctr: "AccPengiriman3"
                 },
                 success: function(data) {
 
@@ -569,20 +646,21 @@
                 method: "POST",
                 data: {
                     query: id,
-                    ctr: "DeclinePengiriman"
+                    ctr: "DeclinePengiriman3"
                 },
                 success: function(data) {
 
                 }
             });
         }
+
         function btnAcc4(id) {
             $.ajax({
                 url: "autocomplete.php",
                 method: "POST",
                 data: {
                     query: id,
-                    ctr: "AccPengiriman"
+                    ctr: "AccPengiriman4"
                 },
                 success: function(data) {
 
@@ -596,20 +674,21 @@
                 method: "POST",
                 data: {
                     query: id,
-                    ctr: "DeclinePengiriman"
+                    ctr: "DeclinePengiriman4"
                 },
                 success: function(data) {
 
                 }
             });
         }
+
         function btnAcc5(id) {
             $.ajax({
                 url: "autocomplete.php",
                 method: "POST",
                 data: {
                     query: id,
-                    ctr: "AccPengiriman"
+                    ctr: "AccPengiriman5"
                 },
                 success: function(data) {
 
@@ -623,7 +702,7 @@
                 method: "POST",
                 data: {
                     query: id,
-                    ctr: "DeclinePengiriman"
+                    ctr: "DeclinePengiriman5"
                 },
                 success: function(data) {
 
