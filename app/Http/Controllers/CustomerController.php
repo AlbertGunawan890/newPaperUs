@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
-
+use App\Imports\CustomerImport;
+use Maatwebsite\Excel\Facades\Excel;
 class CustomerController extends Controller
 {
     public function show()
@@ -120,5 +121,27 @@ class CustomerController extends Controller
         } else {
             return redirect('/mastercustomer');
         }
+    }
+    public function uploadUsers(Request $request)
+    {
+          // validasi
+            $this->validate($request, [
+                'file' => 'required|mimes:csv,xls,xlsx'
+            ]);
+
+            // menangkap file excel
+            $file = $request->file('file');
+
+            // membuat nama file unik
+            $nama_file = rand().$file->getClientOriginalName();
+
+            // upload ke folder file_siswa di dalam folder public
+            $file->move('fileImport',$nama_file);
+
+            // import data
+            Excel::import(new CustomerImport, public_path('/fileImport/'.$nama_file));
+
+            // alihkan halaman kembali
+            return redirect('/mastercustomer');
     }
 }

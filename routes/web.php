@@ -190,3 +190,9 @@ Route::get('/laporantransaksi', function () {
 Route::get('/masterrole', function () {
     return view('masterrole');
 });
+
+Route::post('import', [PegawaiController::class, 'uploadUsers']);
+Route::post('import', [CustomerController::class, 'uploadUsers']);
+Route::post('import', [SupplierController::class, 'uploadUsers']);
+Route::post('import', [BoxController::class, 'uploadUsers']);
+Route::post('import', [vendorController::class, 'uploadUsers']);

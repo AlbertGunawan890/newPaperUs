@@ -15,11 +15,30 @@
                     Tambah Data
                 </button>
             </a>
-            <a href={{ url('') }}>
-                <button type="button" class="btn btn-primary my-auto">
-                    Import Data
-                </button>
-            </a>
+            <br>
+
+           <div style="margin-top:20px;">
+            <form method="post" action="{{ url('/import') }}" enctype="multipart/form-data">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>
+                    </div>
+                    <div class="modal-body">
+
+                        {{ csrf_field() }}
+
+                        <label>Pilih file excel</label>
+                        <div class="form-group">
+                            <input type="file" name="file" required="required">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Import</button>
+                    </div>
+                </div>
+            </form>
+           </div>
 
         </div>
         <div class="card-body">

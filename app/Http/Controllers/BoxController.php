@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Box;
 use Illuminate\Http\Request;
+use App\Imports\BoxImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BoxController extends Controller
 {
@@ -101,5 +103,27 @@ class BoxController extends Controller
             return redirect("/masterbox");
         }
 
+    }
+    public function uploadUsers(Request $request)
+    {
+          // validasi
+            $this->validate($request, [
+                'file' => 'required|mimes:csv,xls,xlsx'
+            ]);
+
+            // menangkap file excel
+            $file = $request->file('file');
+
+            // membuat nama file unik
+            $nama_file = rand().$file->getClientOriginalName();
+
+            // upload ke folder file_siswa di dalam folder public
+            $file->move('fileImport',$nama_file);
+
+            // import data
+            Excel::import(new CustomerImport, public_path('/fileImport/'.$nama_file));
+
+            // alihkan halaman kembali
+            return redirect('/masterbox');
     }
 }
