@@ -80,7 +80,7 @@
                         <a class="collapse-item" href="{{ url('mastersupplier') }}">Master Supplier</a>
                         <a class="collapse-item" href="{{ url('masterbox') }}">Master Box</a>
                         <a class="collapse-item" href="{{ url('mastervendor') }}">Master Vendor</a>
-                        <a class="collapse-item" href="{{ url('permissionrole') }}">Permission Role</a>
+                        <a class="collapse-item" href="{{ url('masterrole') }}">Permission Role</a>
                     </div>
                 </div>
             </li>
