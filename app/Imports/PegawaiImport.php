@@ -30,8 +30,9 @@ class PegawaiImport implements ToModel, WithHeadingRow
             "notelp_pegawai" => $row['notelp_pegawai'],
             "fax_pegawai" => $row['fax_pegawai'],
             "email_pegawai" => $row['email_pegawai'],
-            "kontak_personal" => $row['kontak_personal'],
-            "password" => $row['password'] = Hash::make($row['password'])
+            "kontak_personal" => $row['kontak_pegawai'],
+            "password" => $row['password'] = Hash::make($row['password']),
+            "role" => $row['role'],
         ]);
     }
 }

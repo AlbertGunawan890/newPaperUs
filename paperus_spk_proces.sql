@@ -9,7 +9,6 @@ MySQL - 10.4.27-MariaDB : Database - db_paperus
 /*!40101 SET SQL_MODE=''*/;
 
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 CREATE DATABASE /*!32312 IF NOT EXISTS*/`db_paperus` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
@@ -40,12 +39,12 @@ DROP TABLE IF EXISTS `master_box`;
 
 CREATE TABLE `master_box` (
   `id_box` varchar(255) NOT NULL,
-  `tipe_box` varchar(255) NOT NULL,
-  `nama_box` varchar(255) NOT NULL,
-  `panjang_box` varchar(255) NOT NULL,
-  `lebar_box` varchar(255) NOT NULL,
-  `tinggi_box` varchar(255) NOT NULL,
-  `keterangan` varchar(255) NOT NULL,
+  `tipe_box` varchar(255) DEFAULT NULL,
+  `nama_box` varchar(255) DEFAULT NULL,
+  `panjang_box` varchar(255) DEFAULT NULL,
+  `lebar_box` varchar(255) DEFAULT NULL,
+  `tinggi_box` varchar(255) DEFAULT NULL,
+  `keterangan` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -55,6 +54,7 @@ CREATE TABLE `master_box` (
 /*Data for the table `master_box` */
 
 insert  into `master_box`(`id_box`,`tipe_box`,`nama_box`,`panjang_box`,`lebar_box`,`tinggi_box`,`keterangan`,`created_at`,`updated_at`,`deleted_at`) values 
+('a','a',NULL,'a','a','a','a','2023-06-10 13:50:05','2023-06-10 13:50:05',NULL),
 ('B001','a','a','a','a','a','a','2023-05-16 03:38:28','2023-05-16 03:38:28',NULL);
 
 /*Table structure for table `master_customer` */
@@ -88,7 +88,8 @@ CREATE TABLE `master_customer` (
 /*Data for the table `master_customer` */
 
 insert  into `master_customer`(`id_customer`,`nama_customer`,`npwp_customer`,`alamat_customer`,`provinsi_customer`,`kota_customer`,`kecamatan_customer`,`kelurahan_customer`,`kodepos_customer`,`notelp_customer`,`nofax_customer`,`email_customer`,`batasan_hutang`,`hutang_sekarang`,`hutang_tersedia`,`no_rekening`,`metode_pembayaran`,`created_at`,`updated_at`,`deleted_at`) values 
-('CU001','a','a','a','a','a','a','a','a','1','1','1@gmail.com',NULL,'1','1','1','1','2023-05-16 03:22:35','2023-05-16 03:25:13','2023-05-16 03:25:13'),
+('a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','2023-06-10 13:44:28','2023-06-10 13:44:28',NULL),
+('CU001','a','a','a','a','a','a','a','a','1','1','1@gmail.com',NULL,'1','1','1','1','2023-05-16 03:22:35','2023-05-16 03:25:13',NULL),
 ('CU002','a','a','a','a','a','a','aa','a','1','1','1@gmail.com',NULL,'1','1','123','1','2023-05-16 03:31:26','2023-05-16 03:31:26',NULL);
 
 /*Table structure for table `master_desain` */
@@ -116,7 +117,8 @@ CREATE TABLE `master_desain` (
 
 insert  into `master_desain`(`id_desain`,`id_penawaran`,`pic`,`jenis_box`,`link_desain`,`pisau`,`plat`,`status_desain`,`created_at`,`updated_at`,`deleted_at`) values 
 ('DE001','P001','Angga','10x10 cm','asdadasdasdasd','a','qwerty',1,NULL,NULL,NULL),
-('DE002','P002','Budi','10x10 cm',NULL,'a','qwer',1,'2023-05-25 04:27:20','2023-05-25 04:27:20',NULL);
+('DE002','P002','Budi','10x10 cm',NULL,'a','qwer',1,'2023-05-25 04:27:20','2023-05-25 04:27:20',NULL),
+('DE003','P003','Leni','besar','asdasdsad','a','qwer',1,'2023-06-09 02:53:25','2023-06-09 02:53:25',NULL);
 
 /*Table structure for table `master_desaingunting` */
 
@@ -141,16 +143,16 @@ CREATE TABLE `master_pegawai` (
   `nama_pegawai` varchar(255) NOT NULL,
   `npwp_pegawai` varchar(255) NOT NULL,
   `alamat_pegawai` varchar(255) NOT NULL,
-  `provinsi_pegawai` varchar(255) NOT NULL,
-  `kota_pegawai` varchar(255) NOT NULL,
-  `kecamatan_pegawai` varchar(255) NOT NULL,
-  `kelurahan_pegawai` varchar(255) NOT NULL,
-  `kodepos_pegawai` varchar(255) NOT NULL,
-  `notelp_pegawai` varchar(255) NOT NULL,
-  `fax_pegawai` varchar(255) NOT NULL,
-  `email_pegawai` varchar(255) NOT NULL,
-  `kontak_personal` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `provinsi_pegawai` varchar(255) DEFAULT NULL,
+  `kota_pegawai` varchar(255) DEFAULT NULL,
+  `kecamatan_pegawai` varchar(255) DEFAULT NULL,
+  `kelurahan_pegawai` varchar(255) DEFAULT NULL,
+  `kodepos_pegawai` varchar(255) DEFAULT NULL,
+  `notelp_pegawai` varchar(255) DEFAULT NULL,
+  `fax_pegawai` varchar(255) DEFAULT NULL,
+  `email_pegawai` varchar(255) DEFAULT NULL,
+  `kontak_personal` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -160,7 +162,8 @@ CREATE TABLE `master_pegawai` (
 /*Data for the table `master_pegawai` */
 
 insert  into `master_pegawai`(`id_pegawai`,`nama_pegawai`,`npwp_pegawai`,`alamat_pegawai`,`provinsi_pegawai`,`kota_pegawai`,`kecamatan_pegawai`,`kelurahan_pegawai`,`kodepos_pegawai`,`notelp_pegawai`,`fax_pegawai`,`email_pegawai`,`kontak_personal`,`password`,`created_at`,`updated_at`,`deleted_at`) values 
-('P001','Hwe','231312','Surabaya','Jawa Timur','Bandung','Sidoarjo','Sidoarjo','61213','12345','12345','lala@gmail.com','+123456789','$2y$10$IZYmK/V56VjFYPh8lPkrr.nhVE7MlFjjFThig4rkqSfUfpGH8zjzC','2023-05-09 03:48:33','2023-05-16 03:36:10','2023-05-16 03:36:10'),
+('a','a','a','alamat_pegawai','a','a','a','a','a','a','a','a','a','$2y$10$itvBIA.vdoG0shJcShq4H.RUs2VrgxUag0UYJ2Lr3wQaCKNbsySLK','2023-06-10 13:41:54','2023-06-10 13:41:54',NULL),
+('P001','Hwe','231312','Surabaya','Jawa Timur','Bandung','Sidoarjo','Sidoarjo','61213','12345','12345','lala@gmail.com','+123456789','$2y$10$IZYmK/V56VjFYPh8lPkrr.nhVE7MlFjjFThig4rkqSfUfpGH8zjzC','2023-05-09 03:48:33','2023-05-16 03:36:10',NULL),
 ('P002','a','a','a','a','a','a','a','a','12','21','admi5n@gmail.com','aa','$2y$10$e55uX.uzuTjFdS1mzCdsfOcelzZBuAnswRctdgbIveO9Oh.i43zuy','2023-06-06 06:41:35','2023-06-06 06:41:35',NULL);
 
 /*Table structure for table `master_pembayaran` */
@@ -192,7 +195,8 @@ CREATE TABLE `master_pembayaran` (
 
 insert  into `master_pembayaran`(`id_pembayaran`,`id_penawaran`,`nama_brand`,`pic`,`jenis_box`,`qty`,`jum_produksi`,`harga`,`pembayaran`,`sisa`,`termin`,`status_pembayaran`,`created_at`,`updated_at`,`deleted_at`) values 
 ('PB001','P001','Sidu','Angga','10x10 cm','5','10','45000','45000','0','2023-04-10',1,NULL,NULL,NULL),
-('PB002','P002','Sidu','Budi','10x10 cm','5','100','45000','45000','0','2023-05-25',1,'2023-05-25 04:26:55','2023-05-25 04:26:55',NULL);
+('PB002','P002','Sidu','Budi','10x10 cm','5','100','45000','45000','0','2023-05-25',1,'2023-05-25 04:26:55','2023-05-25 04:26:55',NULL),
+('PB003','P003','REEBOK','Leni','besar','15','1','74250',NULL,NULL,'2023-06-09',1,'2023-06-09 02:52:57','2023-06-09 02:52:57',NULL);
 
 /*Table structure for table `master_pembelianbarang` */
 
@@ -244,7 +248,8 @@ CREATE TABLE `master_penagihan` (
 /*Data for the table `master_penagihan` */
 
 insert  into `master_penagihan`(`id_penagihan`,`id_penawaran`,`pic`,`jenis_box`,`jumlah`,`nominal`,`sudah_terbayar`,`sisa_hutang`,`jumlah_bayar`,`status_penagihan`,`created_at`,`updated_at`,`deleted_at`) values 
-('PH001','P001','Angga','10x10 cm','5','45000','20000','25000','25000',-1,'2023-05-30 04:51:01','2023-05-30 04:51:01',NULL);
+('PH001','P001','Angga','10x10 cm','5','45000','20000','25000','25000',-1,'2023-05-30 04:51:01','2023-05-30 04:51:01',NULL),
+('PH002','P001','Angga','10x10 cm','5','45000','45000','0','0',0,'2023-06-08 04:08:15','2023-06-08 04:12:14','2023-06-08 04:12:14');
 
 /*Table structure for table `master_penawaran` */
 
@@ -276,7 +281,8 @@ CREATE TABLE `master_penawaran` (
 
 insert  into `master_penawaran`(`id_penawaran`,`nama_brand`,`pic`,`jenis_box`,`panjang`,`lebar`,`tinggi`,`qty`,`jum_produksi`,`harga_satuan`,`harga_satuan_terakhir`,`diskon`,`net`,`harga_net_terakhir`,`status_penawaran`,`created_at`,`updated_at`,`deleted_at`) values 
 ('P001','Sidu','Angga','10x10 cm','12','12','12','5','10','10000','0','10','45000',NULL,1,NULL,NULL,NULL),
-('P002','Sidu','Budi','10x10 cm','12','12','12','10','100','2000','10000','10','18000',NULL,1,'2023-05-30 02:22:38','2023-05-30 02:22:38',NULL);
+('P002','Sidu','Budi','10x10 cm','12','12','12','10','100','2000','10000','10','18000',NULL,1,'2023-05-30 02:22:38','2023-05-30 02:22:38',NULL),
+('P003','REEBOK','Leni','besar','12','13','14','15','1','5000','0','1','74250',NULL,1,'2023-06-09 02:52:37','2023-06-09 02:52:37',NULL);
 
 /*Table structure for table `master_pengiriman` */
 
@@ -292,14 +298,17 @@ CREATE TABLE `master_pengiriman` (
   `qty` varchar(255) DEFAULT NULL,
   `tanggal` date DEFAULT NULL,
   `status_pengiriman` bigint(10) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`no_spk`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `master_pengiriman` */
 
-insert  into `master_pengiriman`(`no_spk`,`no_surat_jalan`,`no_kendaraan`,`nama_pengiriman`,`nama_penerima`,`alamat_penerima`,`qty`,`tanggal`,`status_pengiriman`) values 
-('SP001','Los angeles','1','asd','12 8 Let It Be','Los angeles','12','2023-05-16',1),
-('SP002','1','1','1','1','1','1','2023-06-09',-1);
+insert  into `master_pengiriman`(`no_spk`,`no_surat_jalan`,`no_kendaraan`,`nama_pengiriman`,`nama_penerima`,`alamat_penerima`,`qty`,`tanggal`,`status_pengiriman`,`created_at`,`updated_at`,`deleted_at`) values 
+('SP001','Los angeles','1','asd','12 8 Let It Be','Los angeles','12','2023-05-16',1,NULL,NULL,NULL),
+('SP002','1','1','1','1','1','1','2023-06-09',-1,NULL,'2023-06-08 03:56:08','2023-06-08 03:56:08');
 
 /*Table structure for table `master_spk` */
 
@@ -321,7 +330,8 @@ CREATE TABLE `master_spk` (
 
 insert  into `master_spk`(`no_spk`,`id_penawaran`,`pic`,`jenis_box`,`jum_produksi`,`link_desain`,`pisau`,`plat`) values 
 ('SP001','P001','Angga','10x10 cm','10','asdadasdasdasd','a','qwerty'),
-('SP002','P001','Angga','10x10 cm','10','asdadasdasdasd','a','qwerty');
+('SP002','P001','Angga','10x10 cm','10','asdadasdasdasd','a','qwerty'),
+('SP003','P002','Budi','10x10 cm','100',NULL,'a','qwer');
 
 /*Table structure for table `master_stokbarang` */
 
@@ -379,6 +389,7 @@ CREATE TABLE `master_supplier` (
 /*Data for the table `master_supplier` */
 
 insert  into `master_supplier`(`id_supplier`,`nama_supplier`,`npwp_supplier`,`alamat_supplier`,`provinsi_supplier`,`kota_supplier`,`kecamatan_supplier`,`kelurahan_supplier`,`kodepos_supplier`,`notelp_supplier`,`email_supplier`,`item`,`nama_bank`,`no_rekening`,`created_at`,`updated_at`,`deleted_at`) values 
+('a','a','a','a','a','a','a','a','a','a','a','a','a','a','2023-06-10 13:47:53','2023-06-10 13:47:53',NULL),
 ('S001','Umbrella Corporation','123','Kabupaten Cikalang no 5','Sulawesi Selatan','Surabaya','Surabaya','Surabaya','5','123456','lalaland@gmail.com','Pisau','Bca','123','2023-05-16 03:23:20','2023-05-16 03:29:24','2023-05-16 03:29:24'),
 ('S002','a','a','a','a','a','a','a','a','23','asd@gmail.com','sda','sad','ad','2023-06-06 06:29:47','2023-06-06 06:49:25','2023-06-06 06:49:25'),
 ('S003','q','q','q','q','q','q','q','q','1','1@gmail.com','q','q','q','2023-06-06 06:49:48','2023-06-06 06:49:48',NULL);
@@ -414,6 +425,7 @@ CREATE TABLE `master_vendor` (
 /*Data for the table `master_vendor` */
 
 insert  into `master_vendor`(`id_vendor`,`nama_vendor`,`jenis_item`,`kategori_vendor`,`alamat_vendor`,`kota_vendor`,`kecamatan_vendor`,`kelurahan_vendor`,`email_vendor`,`nama_bank`,`no_akun`,`no_rekening`,`batasan_hutang`,`hutang_sekarang`,`hutang_tersedia`,`sisa_hutang`,`metode_pembayaran`,`created_at`,`updated_at`,`deleted_at`) values 
+('a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','2023-06-10 13:53:58','2023-06-10 13:53:58',NULL),
 ('V001','Sidu','Kertas','Kertas','asd','asd','asd','asd','sidu@gmail.com','bca','123','12334234234','324234234','324234234','34234234','324234234','transfer','2023-03-21 04:21:43','2023-03-21 04:21:43',NULL),
 ('V002','Kiki','Kertas','Kertas','asddsdas','aasdasd','sadasdasd','sdasdasd','kiki@gmail.com','bca','123','32423423434','234234234','344543543','53453453','453453453','transfer','2023-03-21 04:21:43','2023-05-16 03:55:07','2023-05-16 03:55:07');
 
@@ -483,17 +495,18 @@ CREATE TABLE `processing1` (
   `proses` varchar(255) DEFAULT NULL,
   `status` bigint(1) DEFAULT NULL,
   PRIMARY KEY (`id_proses1`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `processing1` */
 
 insert  into `processing1`(`id_proses1`,`id_penawaran`,`nama_brand`,`proses`,`status`) values 
-(1,'P001','Sidu','Kertas',0),
-(2,'P001','Sidu','Tinta',0),
-(3,'P001','Sidu','Laminasi',0),
-(4,'P002','Sidu','Laminasi',0),
-(5,'P002','Sidu','Plong',0),
-(6,'P002','Sidu','Hotprint',0);
+(1,'P001','Sidu','Kertas',1),
+(2,'P001','Sidu','Tinta',1),
+(3,'P001','Sidu','Laminasi',1),
+(4,'P002','Sidu','Laminasi',-1),
+(5,'P002','Sidu','Plong',-1),
+(6,'P002','Sidu','Hotprint',-1),
+(21,'P003','REEBOK','Kertas',1);
 
 /*Table structure for table `processing2` */
 
@@ -506,12 +519,13 @@ CREATE TABLE `processing2` (
   `proses` varchar(255) DEFAULT NULL,
   `status` bigint(1) DEFAULT NULL,
   PRIMARY KEY (`id_proses2`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `processing2` */
 
 insert  into `processing2`(`id_proses2`,`id_penawaran`,`nama_brand`,`proses`,`status`) values 
-(10,'P001','Sidu','Kertas',0);
+(10,'P001','Sidu','Kertas',0),
+(11,'P003','REEBOK','Tinta',0);
 
 /*Table structure for table `processing3` */
 
@@ -584,7 +598,7 @@ CREATE TABLE `spk_processing1` (
   `status` bigint(1) DEFAULT NULL,
   `no_spk` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `spk_processing1` */
 
@@ -594,7 +608,14 @@ insert  into `spk_processing1`(`id`,`id_proses`,`jenis_proses`,`nama_vendor`,`ju
 (3,'3','Laminasi','Sidu','5','3000','15000','0','0',1,'SP001'),
 (4,'1','Kertas','Sidu','0','0','0','0','0',1,'SP002'),
 (5,'2','Tinta','Sidu','0','0','0','0','0',1,'SP002'),
-(6,'3','Laminasi','Sidu','0','0','0','0','0',1,'SP002');
+(6,'3','Laminasi','Sidu','0','0','0','0','0',1,'SP002'),
+(7,'4','Laminasi','Sidu','0','0','0','0','0',1,'SP003'),
+(8,'5','Plong','Sidu','0','0','0','0','0',1,'SP003'),
+(9,'6','Hotprint','Sidu','0','0','0','0','0',1,'SP003'),
+(10,'1','Kertas','---Pilih Vendor---','','','0','0','0',1,'SP004'),
+(11,'2','Tinta','---Pilih Vendor---','','','0','0','0',1,'SP004'),
+(12,'3','Laminasi','---Pilih Vendor---','','','0','0','0',1,'SP004'),
+(13,'10','','---Pilih Vendor---','','','','','',1,'SP004');
 
 /*Table structure for table `users` */
 
@@ -616,6 +637,5 @@ CREATE TABLE `users` (
 /*Data for the table `users` */
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;

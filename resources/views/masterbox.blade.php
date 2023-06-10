@@ -16,7 +16,7 @@
                     </button>
                 </a>
                 <div style="margin-top:20px;">
-                    <form method="post" action="{{ url('/import') }}" enctype="multipart/form-data">
+                    <form method="post" action="{{ url('/importBox') }}" enctype="multipart/form-data">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>

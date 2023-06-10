@@ -139,7 +139,7 @@ class SupplierController extends Controller
             $file->move('fileImport',$nama_file);
 
             // import data
-            Excel::import(new CustomerImport, public_path('/fileImport/'.$nama_file));
+            Excel::import(new SupplierImport, public_path('/fileImport/'.$nama_file));
 
             // alihkan halaman kembali
             return redirect('/mastersupplier');

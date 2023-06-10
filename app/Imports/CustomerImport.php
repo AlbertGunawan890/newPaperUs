@@ -26,11 +26,11 @@ class CustomerImport implements ToModel, WithHeadingRow
             "kelurahan_customer" => $row['kelurahan_customer'],
             "kodepos_customer" => $row['kodepos_customer'],
             "notelp_customer" => $row['notelp_customer'],
-            "nofax_customer" => $row['fax_customer'],
+            "nofax_customer" => $row['nofax_customer'],
             "email_customer" => $row['email_customer'],
             "batasan_hutang" => $row['batasan_hutang'],
             "hutang_sekarang" => $row['hutang_sekarang'],
-            "hutang_tersedia" => $row['hutang_teredia'],
+            "hutang_tersedia" => $row['hutang_tersedia'],
             "no_rekening" => $row['no_rekening'],
             "metode_pembayaran" => $row['metode_pembayaran']
         ]);

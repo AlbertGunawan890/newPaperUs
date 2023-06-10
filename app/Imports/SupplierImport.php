@@ -5,7 +5,7 @@ namespace App\Imports;
 use App\Models\Supplier;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
-class SupplierImport implements ToModel
+class SupplierImport implements ToModel, WithHeadingRow
 {
     /**
     * @param array $row
@@ -28,7 +28,7 @@ class SupplierImport implements ToModel
             "email_supplier" => $row['email_supplier'],
             "item" => $row['item'],
             "nama_bank" => $row['nama_bank'],
-            "no_rekening" => $row['rekening']
+            "no_rekening" => $row['no_rekening']
         ]);
     }
 }

@@ -16,21 +16,23 @@ class VendorImport implements ToModel, WithHeadingRow
     public function model(array $row)
     {
         return new Vendor([
-            "id_vendor" => $row['id_supplier'],
-            "nama_vendor" => $row['nama_supplier'],
-            "jenis_item" => $row['npwp_supplier'],
-            "kategori_vendor" => $row['alamat_supplier'],
-            "alamat_vendor" => $row['provinsi_supplier'],
-            "kota_vendor" => $row['kota_supplier'],
-            "kecamatan_vendor" => $row['kota_supplier'],
-            "email_vendor" => $row['email_supplier'],
+            "id_vendor" => $row['id_vendor'],
+            "nama_vendor" => $row['nama_vendor'],
+            "jenis_item" => $row['jenis_item'],
+            "kategori_vendor" => $row['kategori_vendor'],
+            "alamat_vendor" => $row['alamat_vendor'],
+            "kota_vendor" => $row['kota_vendor'],
+            "kecamatan_vendor" => $row['kecamatan_vendor'],
+            "kelurahan_vendor" => $row['kelurahan_vendor'],
+            "email_vendor" => $row['email_vendor'],
             "nama_bank" => $row['nama_bank'],
             "no_akun" => $row['no_akun'],
-            "no_rekening" => $row['rekening'],
+            "no_rekening" => $row['no_rekening'],
             "batasan_hutang" => $row['batasan_hutang'],
             "hutang_sekarang" => $row['hutang_sekarang'],
-            "hutang_tersedia" => $row['hutang_teredia'],
-            "sisa_hutang" => $row['sisa_hutang']
+            "hutang_tersedia" => $row['hutang_tersedia'],
+            "sisa_hutang" => $row['sisa_hutang'],
+            "metode_pembayaran" => $row['metode_pembayaran']
         ]);
     }
 }

@@ -137,7 +137,7 @@ class VendorController extends Controller
             $file->move('fileImport',$nama_file);
 
             // import data
-            Excel::import(new CustomerImport, public_path('/fileImport/'.$nama_file));
+            Excel::import(new VendorImport, public_path('/fileImport/'.$nama_file));
 
             // alihkan halaman kembali
             return redirect('/mastervendor');

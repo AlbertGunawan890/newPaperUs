@@ -191,8 +191,8 @@ Route::get('/masterrole', function () {
     return view('masterrole');
 });
 
-Route::post('import', [PegawaiController::class, 'uploadUsers']);
-Route::post('import', [CustomerController::class, 'uploadUsers']);
-Route::post('import', [SupplierController::class, 'uploadUsers']);
-Route::post('import', [BoxController::class, 'uploadUsers']);
-Route::post('import', [vendorController::class, 'uploadUsers']);
+Route::post('importPegawai', [PegawaiController::class, 'uploadUsers']);
+Route::post('importCustomer', [CustomerController::class, 'uploadUsers']);
+Route::post('importSupplier', [SupplierController::class, 'uploadUsers']);
+Route::post('importBox', [BoxController::class, 'uploadUsers']);
+Route::post('importVendor', [vendorController::class, 'uploadUsers']);

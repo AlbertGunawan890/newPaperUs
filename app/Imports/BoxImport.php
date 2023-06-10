@@ -18,6 +18,7 @@ class BoxImport implements ToModel, WithHeadingRow
         return new Box([
             "id_box" => $row['id_box'],
             "tipe_box" => $row['tipe_box'],
+            "nama_box" => $row['nama_box'],
             "panjang_box" => $row['panjang_box'],
             "lebar_box" => $row['lebar_box'],
             "tinggi_box" => $row['tinggi_box'],
