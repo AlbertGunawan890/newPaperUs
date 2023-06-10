@@ -23,7 +23,9 @@
                         <th>ID Penawaran</th>
                         <th>PIC</th>
                         <th>Link Desain</th>
-                        <th style="min-width: 250px">Aksi</th>
+                        <th>Penerimaan</th>
+                        <th>Aksi</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,19 +36,14 @@
                         <td>{{ $prm->pic }}</td>
                         <td>{{ $prm->link_desain }}</td>
                         <td>
+                            <button type="button" class="btn btn-success"
+                            onclick="rbCheckAcc('{{ $prm->id_desain }}');window.location.reload();"><i
+                                class="fas fa-check"></i></button>
+                            <button type="button" class="btn btn-danger"
+                            onclick="rbCheckDecline('{{ $prm->id_desain }}');window.location.reload();"><i
+                                class="fas fa-times"></i></button></td>
+                        <td>
                             <div style="display: flex">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" id="rbcekd{{ $ctr2 - 1 }}" type="radio"
-                                        onclick="rbCheckDecline(name)" name="{{ $prm->id_desain }}" id="inlineRadio1"
-                                        value="option1">
-                                    <label class="form-check-label" for="inlineRadio1">Reject</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" id="rbceka{{ $ctr2 - 1 }}" type="radio"
-                                        onclick="rbCheckAcc(name)" name="{{ $prm->id_desain }}" id="inlineRadio2"
-                                        value="option2">
-                                    <label class="form-check-label" for="inlineRadio2">Accept</label>
-                                </div>
                                 <button type="button" style="margin-right: 5px;" class="btn btn-warning"
                                     data-toggle="modal" data-target="#exampleModal">
                                     <i class="fas fa-edit"></i>
@@ -75,7 +72,7 @@
                                                             class="selectpicker form-control" name="id_penawaran"
                                                             onchange="nama_brand_change()">
                                                             <option selected>Pilih No. Penawaran</option>
-                                                        
+
                                                         </select>
 
                                                         <label class="label">Customer</label>
@@ -118,7 +115,13 @@
                                     <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                                 </form>
                             </div>
+                            @if ($prm->status_desain == '1')
+                            <td>Diterima</td>
+                        @else
+                            <td>Ditolak</td>
+                        @endif
                         </td>
+
                     </tr>
                     <?php $ctr2++; ?>
                     @endforeach
@@ -126,19 +129,21 @@
             </table>
         </div>
         <script>
-            var jArray = < ? php echo json_encode($desain); ? > ;
-            for (var i = 0; i < jArray.length; i++) {
-                if (jArray[i]['status_desain'] == 1) {
-                    document.getElementById("rbceka" + i.toString()).checked = true;
-                } else if (jArray[i]['status_desain'] == -1) {
-                    document.getElementById("rbcekd" + i.toString()).checked = true;
-                } else {
-                    document.getElementById("rbceka" + i.toString()).checked = false;
-                    document.getElementById("rbcekd" + i.toString()).checked = false;
-                }
-            }
+            // var jArray = < ? php echo json_encode($desain); ? > ;
+
+            // for (var i = 0; i < jArray.length; i++) {
+            //     if (jArray[i]['status_desain'] == 1) {
+            //         document.getElementById("rbceka" + i.toString()).checked = true;
+            //     } else if (jArray[i]['status_desain'] == -1) {
+            //         document.getElementById("rbcekd" + i.toString()).checked = true;
+            //     } else {
+            //         document.getElementById("rbceka" + i.toString()).checked = false;
+            //         document.getElementById("rbcekd" + i.toString()).checked = false;
+            //     }
+            // }
 
             function rbCheckAcc(name) {
+                console.log(name);
                 $.ajax({
                     url: "autocomplete.php",
                     method: "POST",
@@ -153,6 +158,8 @@
             }
 
             function rbCheckDecline(name) {
+
+                console.log("asda")
                 $.ajax({
                     url: "autocomplete.php",
                     method: "POST",
@@ -165,6 +172,20 @@
                     }
                 });
             }
+
+            function btnAcc(id) {
+            $.ajax({
+                url: "autocomplete.php",
+                method: "POST",
+                data: {
+                    query: id,
+                    ctr: "AccDesain"
+                },
+                success: function(data) {
+
+                }
+            });
+        }
 
         </script>
     </div>
