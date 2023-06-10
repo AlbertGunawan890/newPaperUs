@@ -142,6 +142,7 @@ Route::get('/tambahvendor', function () {
 });
 
 
+
 Route::get('/tambahpembelian', [PembelianBarangcontroller::class, "show"]);
 // Route::get('/tambahpembelian', function () {
 //     return view('tambahpembelian');
@@ -185,4 +186,7 @@ Route::get('/laporankeuangan', function () {
 });
 Route::get('/laporantransaksi', function () {
     return view('laporantransaksi');
+});
+Route::get('/masterrole', function () {
+    return view('masterrole');
 });

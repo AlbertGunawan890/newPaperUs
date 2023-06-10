@@ -1,28 +1,34 @@
 @extends('layouts.master')
 @section('content')
-    <!-- Begin Page Content -->
-    <div class="container-fluid">
+<!-- Begin Page Content -->
+<div class="container-fluid">
 
-        <!-- Page Heading -->
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Master Pegawai</h1>
-        </div>
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Master Pegawai</h1>
+    </div>
 
-        <div class="card">
-            <div class="card-header">
-              <a href={{ url('tambahpegawai') }}>
+    <div class="card">
+        <div class="card-header">
+            <a href={{ url('tambahpegawai') }}>
                 <button type="button" class="btn btn-primary my-auto">
                     Tambah Data
-                  </button>
-                </a>
+                </button>
+            </a>
+            <a href={{ url('') }}>
+                <button type="button" class="btn btn-primary my-auto">
+                    Import Data
+                </button>
+            </a>
 
-            </div>
-            <div class="card-body">
+        </div>
+        <div class="card-body">
             <form action="">
                 @csrf
 
             </form>
-            <table id="tabelMasterPegawai" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
+            <table id="tabelMasterPegawai" class="table table-bordered table-no-wrap table-responsive"
+                style="width:100%">
                 <thead>
                     <tr>
                         <th>ID Pegawai</th>
@@ -46,8 +52,8 @@
                                 {{-- <form action="">
                                     @csrf --}}
                                 <button type="button" style="margin-right: 5px;" class="btn btn-warning"
-                                data-toggle="modal" data-target="#exampleModal" onclick="btnedit({{$prm}})">
-                                <i class="fas fa-edit"></i>
+                                    data-toggle="modal" data-target="#exampleModal" onclick="btnedit({{$prm}})">
+                                    <i class="fas fa-edit"></i>
                                 </button>
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
@@ -65,11 +71,10 @@
                                             </div>
                                             <div class="form-group">
                                                 <form action="{{ url('/doEditpegawai') }}" method="post">
-                                                @csrf
+                                                    @csrf
                                                     <div class="modal-body text-left">
                                                         <label class="label">ID Pegawai</label>
-                                                        <input name="id_pegawai" class="form-control"
-                                                            value="" readonly>
+                                                        <input name="id_pegawai" class="form-control" value="" readonly>
 
                                                         <label class="label">Nama Pegawai</label>
                                                         <input name="nama" class="form-control"
@@ -98,7 +103,7 @@
                                     </div>
                                 </div>
                                 </form>
-                                <form  action="{{ url('masterpegawai/delete/' . $prm->id_pegawai) }}" method="POST">
+                                <form action="{{ url('masterpegawai/delete/' . $prm->id_pegawai) }}" method="POST">
                                     @csrf
                                     <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                                 </form>
@@ -112,17 +117,18 @@
             </table>
 
         </div>
-        </div>
-
     </div>
-    <script>
-        function btnedit(arrPegawai){
-            $("[name='id_pegawai']").val(arrPegawai['id_pegawai']);
-            $("[name='nama']").val(arrPegawai['nama_pegawai']);
-            $("[name='alamat']").val(arrPegawai['alamat_pegawai']);
-            $("[name='notelp']").val(arrPegawai['notelp_pegawai']);
-            $("[name='email']").val(arrPegawai['email_pegawai']);
-        }
-    </script>
-    <!-- /.container-fluid -->
+
+</div>
+<script>
+    function btnedit(arrPegawai) {
+        $("[name='id_pegawai']").val(arrPegawai['id_pegawai']);
+        $("[name='nama']").val(arrPegawai['nama_pegawai']);
+        $("[name='alamat']").val(arrPegawai['alamat_pegawai']);
+        $("[name='notelp']").val(arrPegawai['notelp_pegawai']);
+        $("[name='email']").val(arrPegawai['email_pegawai']);
+    }
+
+</script>
+<!-- /.container-fluid -->
 @endsection

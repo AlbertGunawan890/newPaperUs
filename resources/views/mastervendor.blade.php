@@ -15,6 +15,11 @@
                         Tambah Data
                     </button>
                 </a>
+                <a href={{ url('') }}>
+                    <button type="button" class="btn btn-primary my-auto">
+                        Import Data
+                    </button>
+                </a>
             </div>
             <div class="card-body">
                 <table id="tabelMasterVendor" class="table table-bordered table-no-wrap table-responsive" style="width:100%">
