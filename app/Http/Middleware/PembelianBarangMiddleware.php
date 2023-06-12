@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Str;
 
-class MasterPegawaiMiddleware
+class PembelianBarangMiddleware
 {
     /**
      * Handle an incoming request.
@@ -19,7 +19,7 @@ class MasterPegawaiMiddleware
     {
         $role = $request->session()->get('user_now')->role;
         $role = Str::lower(str_replace(' ', '', $role));
-        $cek = Permission::where('daftar_berita',"Master Pegawai")->first();
+        $cek = Permission::where('daftar_berita',"Pembelian Barang")->first();
         if($role=="superadmin"){
             return $next($request);
         }else if($role=="admin"&&$cek->admin==true){

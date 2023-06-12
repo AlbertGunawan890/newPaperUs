@@ -293,13 +293,14 @@ CREATE TABLE `master_pengiriman` (
   `alamat_penerima` varchar(255) DEFAULT NULL,
   `qty` varchar(255) DEFAULT NULL,
   `tanggal` date DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`no_spk`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `master_pengiriman` */
 
-insert  into `master_pengiriman`(`no_spk`,`no_surat_jalan`,`no_kendaraan`,`nama_pengiriman`,`nama_penerima`,`alamat_penerima`,`qty`,`tanggal`) values 
-('SP001','Los angeles','1','asd','12 8 Let It Be','Los angeles','12','2023-05-16');
+insert  into `master_pengiriman`(`no_spk`,`no_surat_jalan`,`no_kendaraan`,`nama_pengiriman`,`nama_penerima`,`alamat_penerima`,`qty`,`tanggal`,`deleted_at`) values 
+('SP001','Los angeles','1','asd','12 8 Let It Be','Los angeles','12','2023-05-16',NULL);
 
 /*Table structure for table `master_spk` */
 
