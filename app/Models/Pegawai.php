@@ -27,7 +27,8 @@ class Pegawai extends Model
         'fax_pegawai',
         'email_pegawai',
         'kontak_personal',
-        'password'
+        'password',
+        'role'
     ];
     protected $keyType = 'string';
 }

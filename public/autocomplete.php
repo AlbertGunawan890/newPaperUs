@@ -462,4 +462,14 @@ else if ($_REQUEST["ctr"] == "AccSPKProcess1") {
         VALUES ('','$id_proses','$jenis_proses','$nama_vendor','$jumlah','$harga_satuan','$harga_total','$harga_satuan_sebelumnya','$harga_total_sebelumnya',1,'$no_spk')";
         $result = mysqli_query($connect, $query);
     }
+}else if($_REQUEST["ctr"]=="Factivitytrue"){
+    if(isset($_POST["query1"])&&isset($_POST["query2"])){
+        $query = "UPDATE permission SET ".$_POST["query1"]. "= 1 WHERE daftar_berita='".$_POST["query2"]."'";
+        $result = mysqli_query($connect, $query);
+    }
+}else if($_REQUEST["ctr"]=="Factivityfalse"){
+    if(isset($_POST["query1"])&&isset($_POST["query2"])){
+        $query = "UPDATE permission SET ".$_POST["query1"]. "= 0 WHERE daftar_berita='".$_POST["query2"]."'";
+        $result = mysqli_query($connect, $query);
+    }
 }

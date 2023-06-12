@@ -23,11 +23,11 @@ class PegawaiController extends Controller
             $ctr = intval(substr($p->id_pegawai, 2)) + 1;
         }
         if($ctr<10){
-            $kode = "P00{$ctr}";
+            $kode = "PG00{$ctr}";
         }else if($ctr<100){
-            $kode = "P0{$ctr}";
+            $kode = "PG0{$ctr}";
         }else{
-            $kode = "P{$ctr}";
+            $kode = "PG{$ctr}";
         }
         $req->validate(
             [
@@ -66,7 +66,8 @@ class PegawaiController extends Controller
             'fax_pegawai'=>$req->fax,
             'email_pegawai'=>$req->email,
             'kontak_personal'=>$req->kontak_personal,
-            'password'=> $password
+            'password'=> $password,
+            'role'=> $req->role,
 
         ]);
         return redirect("/masterpegawai");

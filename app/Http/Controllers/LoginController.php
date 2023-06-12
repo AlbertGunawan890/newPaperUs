@@ -2,30 +2,41 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pegawai;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
+    public function toLoginPage(){
+        session()->put('user_now', '');
+        return view('login');
+    }
     public function login(Request $req)
     {
         $login = $req->user;
         $password =$req->password;
-        // $user = modelpegawai::withTrashed()->where('email_pegawai' , $login)->first();
-        // if($user==null){
-        //     return redirect("/")->with("error","Email anda salah! ");
-        // }else{
-        //     $role = $user->role_pegawai;
-        //     $role = Str::lower(str_replace(' ', '', $role));
+        $user = Pegawai::withTrashed()->where('email_pegawai' , $login)->first();
+        if($user==null){
+            return redirect("/")->with("error","Email anda salah! ");
+        }else{
+            $passwordUser = $user->password;
+            // $role = Str::lower(str_replace(' ', '', $role));
 
-        //     if($role==$password){
-        //         $req->session()->put('user_now', $user);
-        //             $data = json_decode($req->device);
-        //             $this->cekActivityLogin( $req->ip(),$data,$user->nama_pegawai);
-        //         return View ("/sidebar/dashboard");
-        //     }else{
-        //         return redirect ("/")->with("error","Password anda salah! ");
-        //     }
-        // }
-        return view("/layouts/master");
+            if(Hash::check($password, $passwordUser)){
+                $req->session()->put('user_now', $user);
+                return View ("/layouts/master");
+            }else{
+                return redirect ("/")->with("error","Password anda salah! ");
+            }
+        }
+    }
+
+    public function logout(Request $request)
+    {
+        $user = session()->get('user_now');
+
+        session()->forget('user_now');
+        return redirect("/");
     }
 }

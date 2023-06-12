@@ -57,6 +57,13 @@
                 <label class="label">Password</label>
                 <input name="password" type="password" class="form-control" placeholder="Masukkan Password">
 
+                <label class="label">Role</label>
+                <select data-live-search="true" class="selectpicker form-control" name="role">
+                    <option selected>Pilih Role</option>
+                    <option >Super Admin</option>
+                    <option >Admin</option>
+                    <option >Accounting</option>
+                </select>
                 <br>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
