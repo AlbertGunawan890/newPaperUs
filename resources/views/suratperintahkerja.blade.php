@@ -211,18 +211,19 @@
 
     <script>
         var ctrSubmit = 0;
+        document.getElementById("btnSubmit").disabled = true;
         function nama_brand_change() {
             var jArray1 = <?php echo json_encode($proces1); ?>;
-            for (var i = 0; i < jArray1.length; i++) {
-                if ($("[name='id_penawaran']").val() == jArray1[i]['id_penawaran']) {
-                    if (jArray1[i]['status'] == '0'||jArray1[i]['status'] == '-1') {
-                        document.getElementById("btnSubmit").disabled = true;
-                        break;
-                    }else{
-                        document.getElementById("btnSubmit").disabled = false;
-                    }
-                }
-            }
+            // for (var i = 0; i < jArray1.length; i++) {
+            //     if ($("[name='id_penawaran']").val() == jArray1[i]['id_penawaran']) {
+            //         if (jArray1[i]['status'] == '0'||jArray1[i]['status'] == '-1') {
+            //             document.getElementById("btnSubmit").disabled = true;
+            //             break;
+            //         }else{
+            //             document.getElementById("btnSubmit").disabled = false;
+            //         }
+            //     }
+            // }
             // ===========================================
             var jArray2 = <?php echo json_encode($proces2); ?>;
             var ada = true;
@@ -340,50 +341,65 @@
             });
         }
 
+        function cek($sum){
+            ctrSubmit += $sum;
+            if($("[name='total']").val() == ctrSubmit){
+                document.getElementById("btnSubmit").disabled = false;
+            }else{
+                document.getElementById("btnSubmit").disabled = true;
+            }
+        }
+
         function Rule1($id) {
             var a = document.getElementById("btnAcc" + $id);
             var b = document.getElementById("btnDecline" + $id);
-            // $ctrSubmit++s;
             console.log(ctrSubmit);
+            cek(1);
             a.style.display = "none";
             b.style.display = "block";
         }
 
         function Rule2($id) {
-            var a = document.getElementById("btnAcc2" + $id);
-            var b = document.getElementById("btnDecline2" + $id);
+            var a = document.getElementById("btnAcc" + $id);
+            var b = document.getElementById("btnDecline" + $id);
+            cek(-1);
             b.style.display = "none";
             a.style.display = "block";
         }
         function Rule3($id) {
             var a = document.getElementById("btnAcc2" + $id);
             var b = document.getElementById("btnDecline2" + $id);
+            cek(1);
             a.style.display = "none";
             b.style.display = "block";
         }
 
         function Rule4($id) {
-            var a = document.getElementById("btnAcc3" + $id);
-            var b = document.getElementById("btnDecline3" + $id);
+            var a = document.getElementById("btnAcc2" + $id);
+            var b = document.getElementById("btnDecline2" + $id);
+            cek(-1);
             b.style.display = "none";
             a.style.display = "block";
         }
         function Rule5($id) {
             var a = document.getElementById("btnAcc3" + $id);
             var b = document.getElementById("btnDecline3" + $id);
+            cek(1);
             a.style.display = "none";
             b.style.display = "block";
         }
 
         function Rule6($id) {
-            var a = document.getElementById("btnAcc4" + $id);
-            var b = document.getElementById("btnDecline4" + $id);
+            var a = document.getElementById("btnAcc3" + $id);
+            var b = document.getElementById("btnDecline3" + $id);
+            cek(-1);
             b.style.display = "none";
             a.style.display = "block";
         }
         function Rule7($id) {
             var a = document.getElementById("btnAcc4" + $id);
             var b = document.getElementById("btnDecline4" + $id);
+            cek(1);
             a.style.display = "none";
             b.style.display = "block";
         }
@@ -391,12 +407,14 @@
         function Rule8($id) {
             var a = document.getElementById("btnAcc4" + $id);
             var b = document.getElementById("btnDecline4" + $id);
+            cek(-1);
             b.style.display = "none";
             a.style.display = "block";
         }
         function Rule9($id) {
             var a = document.getElementById("btnAcc5" + $id);
             var b = document.getElementById("btnDecline5" + $id);
+            cek(1);
             a.style.display = "none";
             b.style.display = "block";
         }
@@ -404,6 +422,7 @@
         function Rule10($id) {
             var a = document.getElementById("btnAcc5" + $id);
             var b = document.getElementById("btnDecline5" + $id);
+            cek(-1);
             b.style.display = "none";
             a.style.display = "block";
         }
