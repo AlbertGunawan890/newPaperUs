@@ -133,6 +133,13 @@
                     </div>
                 </div>
             </li>
+             <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('home') }}">
+                    <i class="fas fa-fw fa-arrow-right"></i>
+                    <span>Logout</span></a>
+            </li>
+
             <!--<li class="nav-item">
                 <a class="nav-link" href="{{ url('kartustok') }}">
                     <i class="fas fa-layer-group"></i>
