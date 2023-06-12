@@ -51,6 +51,7 @@
 
                     <label for="exampleFormControlTextarea1" class="label">Jenis Plat</label>
                     <input class="form-control" name="plat" placeholder="Jenis Plat">
+                    <input type="hidden" name="total" value="0">
                     <button type="submit" class="btn btn-primary" id="btnSubmit">Submit</button>
                     {{-- <input type="hidden" name="temp"> --}}
                 </form>
@@ -209,87 +210,7 @@
     <br>
 
     <script>
-        function Rule1($id) {
-            var a = document.getElementById("btnAcc" + $id);
-            var b = document.getElementById("btnDecline" + $id);
-            a.style.display = "none";
-            b.style.display = "block";
-        }
-
-        function Rule2($id) {
-            var a = document.getElementById("btnAcc2" + $id);
-            var b = document.getElementById("btnDecline2" + $id);
-            b.style.display = "none";
-            a.style.display = "block";
-        }
-        function Rule3($id) {
-            var a = document.getElementById("btnAcc2" + $id);
-            var b = document.getElementById("btnDecline2" + $id);
-            a.style.display = "none";
-            b.style.display = "block";
-        }
-
-        function Rule4($id) {
-            var a = document.getElementById("btnAcc3" + $id);
-            var b = document.getElementById("btnDecline3" + $id);
-            b.style.display = "none";
-            a.style.display = "block";
-        }
-        function Rule5($id) {
-            var a = document.getElementById("btnAcc3" + $id);
-            var b = document.getElementById("btnDecline3" + $id);
-            a.style.display = "none";
-            b.style.display = "block";
-        }
-
-        function Rule6($id) {
-            var a = document.getElementById("btnAcc4" + $id);
-            var b = document.getElementById("btnDecline4" + $id);
-            b.style.display = "none";
-            a.style.display = "block";
-        }
-        function Rule7($id) {
-            var a = document.getElementById("btnAcc4" + $id);
-            var b = document.getElementById("btnDecline4" + $id);
-            a.style.display = "none";
-            b.style.display = "block";
-        }
-
-        function Rule8($id) {
-            var a = document.getElementById("btnAcc4" + $id);
-            var b = document.getElementById("btnDecline4" + $id);
-            b.style.display = "none";
-            a.style.display = "block";
-        }
-        function Rule9($id) {
-            var a = document.getElementById("btnAcc5" + $id);
-            var b = document.getElementById("btnDecline5" + $id);
-            a.style.display = "none";
-            b.style.display = "block";
-        }
-
-        function Rule10($id) {
-            var a = document.getElementById("btnAcc5" + $id);
-            var b = document.getElementById("btnDecline5" + $id);
-            b.style.display = "none";
-            a.style.display = "block";
-        }
-        var jArray = <?php echo json_encode($no_spk); ?>;
-        var no_spk = "";
-        var temp = 0;
-        if (jArray.length == 0) {
-            no_spk = "SP0";
-        } else {
-            for (var i = 0; i < jArray.length; i++) {
-                no_spk = jArray[i]['no_spk'];
-            }
-        }
-
-        temp = parseInt(no_spk.substring(no_spk.length, 2)) + 1;
-        no_spk = "SP" + temp.toString().padStart(3, '0');
-        document.getElementsByName("no_spk")[0].value = no_spk.toString();
-
-        function nama_brand_change() {
+function nama_brand_change() {
             var jArray1 = <?php echo json_encode($proces1); ?>;
             for (var i = 0; i < jArray1.length; i++) {
                 if ($("[name='id_penawaran']").val() == jArray1[i]['id_penawaran']) {
@@ -412,9 +333,92 @@
                     $("[name='link_desain']").val(temp[3]);
                     $("[name='pisau']").val(temp[4]);
                     $("[name='plat']").val(temp[5]);
+                    $("[name='total']").val(temp[6]);
+                    console.log(temp);
                 }
             });
         }
+
+        function Rule1($id) {
+            var a = document.getElementById("btnAcc" + $id);
+            var b = document.getElementById("btnDecline" + $id);
+            console.log($("[name='total']").val());
+            a.style.display = "none";
+            b.style.display = "block";
+        }
+
+        function Rule2($id) {
+            var a = document.getElementById("btnAcc2" + $id);
+            var b = document.getElementById("btnDecline2" + $id);
+            b.style.display = "none";
+            a.style.display = "block";
+        }
+        function Rule3($id) {
+            var a = document.getElementById("btnAcc2" + $id);
+            var b = document.getElementById("btnDecline2" + $id);
+            a.style.display = "none";
+            b.style.display = "block";
+        }
+
+        function Rule4($id) {
+            var a = document.getElementById("btnAcc3" + $id);
+            var b = document.getElementById("btnDecline3" + $id);
+            b.style.display = "none";
+            a.style.display = "block";
+        }
+        function Rule5($id) {
+            var a = document.getElementById("btnAcc3" + $id);
+            var b = document.getElementById("btnDecline3" + $id);
+            a.style.display = "none";
+            b.style.display = "block";
+        }
+
+        function Rule6($id) {
+            var a = document.getElementById("btnAcc4" + $id);
+            var b = document.getElementById("btnDecline4" + $id);
+            b.style.display = "none";
+            a.style.display = "block";
+        }
+        function Rule7($id) {
+            var a = document.getElementById("btnAcc4" + $id);
+            var b = document.getElementById("btnDecline4" + $id);
+            a.style.display = "none";
+            b.style.display = "block";
+        }
+
+        function Rule8($id) {
+            var a = document.getElementById("btnAcc4" + $id);
+            var b = document.getElementById("btnDecline4" + $id);
+            b.style.display = "none";
+            a.style.display = "block";
+        }
+        function Rule9($id) {
+            var a = document.getElementById("btnAcc5" + $id);
+            var b = document.getElementById("btnDecline5" + $id);
+            a.style.display = "none";
+            b.style.display = "block";
+        }
+
+        function Rule10($id) {
+            var a = document.getElementById("btnAcc5" + $id);
+            var b = document.getElementById("btnDecline5" + $id);
+            b.style.display = "none";
+            a.style.display = "block";
+        }
+        var jArray = <?php echo json_encode($no_spk); ?>;
+        var no_spk = "";
+        var temp = 0;
+        if (jArray.length == 0) {
+            no_spk = "SP0";
+        } else {
+            for (var i = 0; i < jArray.length; i++) {
+                no_spk = jArray[i]['no_spk'];
+            }
+        }
+
+        temp = parseInt(no_spk.substring(no_spk.length, 2)) + 1;
+        no_spk = "SP" + temp.toString().padStart(3, '0');
+        document.getElementsByName("no_spk")[0].value = no_spk.toString();
 
         function nama_brand_change_processing1() {
             $.ajax({

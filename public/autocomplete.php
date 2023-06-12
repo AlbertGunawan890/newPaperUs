@@ -152,6 +152,24 @@ else if ($_REQUEST["ctr"] == "PenawaranSPK") {
         } else {
             $output .= '';
         }
+        $query = "SELECT SUM(t.subtotal) as total FROM (
+                SELECT 'p1' as p, COUNT(p1.id_penawaran) as subtotal FROM processing1 p1 WHERE p1.id_penawaran = '". $row["query"] ."'
+                UNION
+                    SELECT 'p2' as p, COUNT(p2.id_penawaran) as subtotal FROM processing2 p2 WHERE p2.id_penawaran = '". $row["query"] ."'
+                UNION
+                    SELECT 'p3' as p, COUNT(p3.id_penawaran) as subtotal FROM processing3 p3 WHERE p3.id_penawaran = '". $row["query"] ."'
+                UNION
+                    SELECT 'p4' as p, COUNT(p4.id_penawaran) as subtotal FROM processing4 p4 WHERE p4.id_penawaran = '". $row["query"] ."'
+                UNION
+                    SELECT 'p5' as p, COUNT(p5.id_penawaran) as subtotal FROM processing5 p5 WHERE p5.id_penawaran = '". $row["query"] ."'
+            ) t";
+        $result = mysqli_query($connect, $query);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_array($result)) {
+                $output .= "," . $row["total"];
+            }
+        }
+        // $output .= "," . $result[0];
         echo $output;
     }
 }
