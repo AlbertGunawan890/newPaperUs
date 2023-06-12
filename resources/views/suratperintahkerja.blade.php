@@ -210,7 +210,8 @@
     <br>
 
     <script>
-function nama_brand_change() {
+        var ctrSubmit = 0;
+        function nama_brand_change() {
             var jArray1 = <?php echo json_encode($proces1); ?>;
             for (var i = 0; i < jArray1.length; i++) {
                 if ($("[name='id_penawaran']").val() == jArray1[i]['id_penawaran']) {
@@ -342,7 +343,8 @@ function nama_brand_change() {
         function Rule1($id) {
             var a = document.getElementById("btnAcc" + $id);
             var b = document.getElementById("btnDecline" + $id);
-            console.log($("[name='total']").val());
+            // $ctrSubmit++s;
+            console.log(ctrSubmit);
             a.style.display = "none";
             b.style.display = "block";
         }
