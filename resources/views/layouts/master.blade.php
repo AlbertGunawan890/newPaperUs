@@ -133,6 +133,10 @@
                     </div>
                 </div>
             </li>
+            <li class="nav-item bg-danger">
+                <a class="nav-link" href="{{ url('home') }}">
+                    <span>Logout</span></a>
+            </li>
             <!--<li class="nav-item">
                 <a class="nav-link" href="{{ url('kartustok') }}">
                     <i class="fas fa-layer-group"></i>
