@@ -9,7 +9,6 @@ MySQL - 10.4.27-MariaDB : Database - db_paperus
 /*!40101 SET SQL_MODE=''*/;
 
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 CREATE DATABASE /*!32312 IF NOT EXISTS*/`db_paperus` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
@@ -154,14 +153,16 @@ CREATE TABLE `master_pegawai` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
+  `role` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_pegawai`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `master_pegawai` */
 
-insert  into `master_pegawai`(`id_pegawai`,`nama_pegawai`,`npwp_pegawai`,`alamat_pegawai`,`provinsi_pegawai`,`kota_pegawai`,`kecamatan_pegawai`,`kelurahan_pegawai`,`kodepos_pegawai`,`notelp_pegawai`,`fax_pegawai`,`email_pegawai`,`kontak_personal`,`password`,`created_at`,`updated_at`,`deleted_at`) values 
-('P001','Hwe','231312','Surabaya','Jawa Timur','Bandung','Sidoarjo','Sidoarjo','61213','12345','12345','lala@gmail.com','+123456789','$2y$10$IZYmK/V56VjFYPh8lPkrr.nhVE7MlFjjFThig4rkqSfUfpGH8zjzC','2023-05-09 03:48:33','2023-05-16 03:36:10','2023-05-16 03:36:10'),
-('P002','a','a','a','a','a','a','a','a','12','21','admi5n@gmail.com','aa','$2y$10$e55uX.uzuTjFdS1mzCdsfOcelzZBuAnswRctdgbIveO9Oh.i43zuy','2023-06-06 06:41:35','2023-06-06 06:41:35',NULL);
+insert  into `master_pegawai`(`id_pegawai`,`nama_pegawai`,`npwp_pegawai`,`alamat_pegawai`,`provinsi_pegawai`,`kota_pegawai`,`kecamatan_pegawai`,`kelurahan_pegawai`,`kodepos_pegawai`,`notelp_pegawai`,`fax_pegawai`,`email_pegawai`,`kontak_personal`,`password`,`created_at`,`updated_at`,`deleted_at`,`role`) values 
+('PG001','Hwe','123','Kabupaten Cikalang no 5','Sulawesi Selatan','Pilih Kota','Sidoarjo','Sidoarjo','3334534','123456','123','superadmin@gmail.com','+123456789','$2y$10$K6gOrc2q7EvzPLsvQuLuLOq6xM75G6LbVv.C2rXGAOEgHJxhonDqG','2023-06-12 14:45:05','2023-06-12 14:45:05',NULL,'Super Admin'),
+('PG002','Jef','123','Kabupaten Cikalang no 5','Sulawesi Selatan','Pilih Kota','Surabaya','Sidoarjo','3334534','123456','2','admin@gmail.com','+123456789','$2y$10$qzO/MymEraRcIPqGmqsoxOY09xgqapREMIy5KHF04uUJWODYT0ivW','2023-06-12 14:45:25','2023-06-12 14:45:25',NULL,'Admin'),
+('PG003','Al','123','Kabupaten Cikalang no 5','Sulawesi Selatan','Pilih Kota','Surabaya','Sidoarjo','3334534','123456','12','accounting@gmail.com','+123456789','$2y$10$lfKW3rldRRawOWdSusP1AuWXHxSptreCzl.KK2eYFDs0QWa32fq4e','2023-06-12 14:45:44','2023-06-12 14:45:44',NULL,'Accounting');
 
 /*Table structure for table `master_pembayaran` */
 
@@ -649,6 +650,5 @@ CREATE TABLE `users` (
 /*Data for the table `users` */
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
