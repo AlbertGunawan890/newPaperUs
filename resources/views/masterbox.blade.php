@@ -15,6 +15,11 @@
                         Tambah Data
                     </button>
                 </a>
+                <a href="/public/master_box.xlsx" download>
+                    <button type="button" class="btn btn-warning my-auto">
+                        Template
+                    </button>
+                  </a>
                 <div style="margin-top:20px;">
                     <form method="post" action="{{ url('/importBox') }}" enctype="multipart/form-data">
                         <div class="modal-content">
@@ -36,6 +41,7 @@
                             </div>
                         </div>
                     </form>
+
                    </div>
             </div>
             <div class="card-body">
