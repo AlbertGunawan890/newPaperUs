@@ -15,6 +15,11 @@
                         Tambah Data
                     </button>
                 </a>
+                <a href="{{asset('/master_supplier.xlsx')}}" target="_blank" download>
+                    <button class="btn btn-warning my-auto">
+                        Template
+                    </button>
+                </a>
                 <div style="margin-top:20px;">
                     <form method="post" action="{{ url('/importSupplier') }}" enctype="multipart/form-data">
                         <div class="modal-content">

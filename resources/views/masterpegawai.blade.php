@@ -15,6 +15,11 @@
                     Tambah Data
                 </button>
             </a>
+            <a href="{{asset('/master_pegawai.xlsx')}}" target="_blank" download>
+                <button class="btn btn-warning my-auto">
+                    Template
+                </button>
+            </a>
             <br>
            <div style="margin-top:20px;">
             <form method="post" action="{{ url('/importPegawai') }}" enctype="multipart/form-data">
